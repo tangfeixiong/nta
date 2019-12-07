@@ -1,0 +1,126 @@
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker network ls --no-trunc
+NETWORK ID                                                         NAME                DRIVER              SCOPE
+04558f242dd96f2febbfb78f5377f11e675a48952da1270a737f6cdc7b16fe27   bridge              bridge              local
+2876392c2648c2e1e8f73632df561116c02a4179e8e2ce44301c73732e85b453   host                host                local
+4492b7b8a8b72d47eaec4b9b40b7244dc8fa192263894b5d6edabae26ed735e2   none                null                local
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker network inspect bridge host none
+[
+    {
+        "Name": "bridge",
+        "Id": "04558f242dd96f2febbfb78f5377f11e675a48952da1270a737f6cdc7b16fe27",
+        "Created": "2019-12-07T13:04:33.571369357Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "ba104ce9f4e85b02529da07c393da3a2c38f8324529f98280d35328a4faad222": {
+                "Name": "mynginx1",
+                "EndpointID": "6012de9b6e2867ba1142b38c59671026039ef03e93904c1af749e00bd7d6b34e",
+                "MacAddress": "02:42:ac:11:00:02",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    },
+    {
+        "Name": "host",
+        "Id": "2876392c2648c2e1e8f73632df561116c02a4179e8e2ce44301c73732e85b453",
+        "Created": "2019-12-07T13:04:33.516253211Z",
+        "Scope": "local",
+        "Driver": "host",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": []
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    },
+    {
+        "Name": "none",
+        "Id": "4492b7b8a8b72d47eaec4b9b40b7244dc8fa192263894b5d6edabae26ed735e2",
+        "Created": "2019-12-07T13:04:33.489730657Z",
+        "Scope": "local",
+        "Driver": "null",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": []
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ brctl show docker0
+bridge name	bridge id		STP enabled	interfaces
+docker0		8000.0242761a54c0	no		vethefc9000
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ ip a show docker0
+4: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
+    link/ether 02:42:76:1a:54:c0 brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::42:76ff:fe1a:54c0/64 scope link 
+       valid_lft forever preferred_lft forever
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker run -d -p48080:48080 -v /Users/fanhongling/Downloads:/mnt --name gofileserver docker.io/tangfeixiong/gofileserver
+4d0e46ce2bfd9cfcdee1ba2ff914a083c092123ff1ad3620e7505d8e2310e9a1
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker ps
+CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS              PORTS                      NAMES
+4d0e46ce2bfd        tangfeixiong/gofileserver   "/gofileserver"          3 seconds ago       Up 2 seconds        0.0.0.0:48080->48080/tcp   gofileserver
+ba104ce9f4e8        nginx                       "nginx -g 'daemon of…"   2 hours ago         Up 2 hours          0.0.0.0:80->80/tcp         mynginx1
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo brctl show docker0
+bridge name	bridge id		STP enabled	interfaces
+docker0		8000.0242761a54c0	no		veth027e7f9
+                                       vethefc9000
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo arp -i docker0
+Address                  HWtype  HWaddress           Flags Mask            Iface
+172.17.0.2               ether   02:42:ac:11:00:02   C                     docker0
+172.17.0.3               ether   02:42:ac:11:00:03   C                     docker0

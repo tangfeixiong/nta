@@ -6,11 +6,9 @@
 
 笔记本计算机： Mac pro
 
-网络
+__网络__
 
-+ Wifi
-
-  物理网络
+Wifi： 物理网络
 
 
     en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -21,18 +19,16 @@
     	media: autoselect
     	status: active
 
-+ VirtualBox private network
-
-  虚拟网络
+VirtualBox private network： 虚拟网络
 
 
     vboxnet1: flags=8943<UP,BROADCAST,RUNNING,PROMISC,SIMPLEX,MULTICAST> mtu 1500
     	ether 0a:00:27:00:00:01 
     	inet 172.28.128.1 netmask 0xffffff00 broadcast 172.28.128.255
 
-  南北向：NAT， 由VirtualBox的网络模块管理配置
-  
-  如Vagrantfile中
+__南北向__
+
+NAT： 由VirtualBox的网络模块管理配置。 如Vagrantfile中
 
 
     ﻿# Docker unencrypted TCP listening port
@@ -42,11 +38,9 @@
 
 Ubuntu 18.04
 
-网络
+__网络__
 
-+ 虚拟机的网卡
-
-  在vboxnet1
+虚拟机的网卡: 在vboxnet1
 
 
     vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta$ ip addr show enp0s8
@@ -58,9 +52,7 @@ Ubuntu 18.04
            valid_lft forever preferred_lft forever
 
 
-+ docker0
-
-  安装docker engine后
+Linux Bridge: docker0. 安装docker engine后
 
 
     vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta$ ip addr show docker0
@@ -71,14 +63,16 @@ Ubuntu 18.04
         inet6 fe80::42:76ff:fe1a:54c0/64 scope link 
            valid_lft forever preferred_lft forever
 
-  North-South flow：由docker的network管理配置
+__North-South flow__
+
+由docker的network管理配置
   
-  如下docker命令中的`-p80:80`， 前一个80指明虚拟机的任何ip地址的80端口，后一个80是容器的ip地址
+如下docker命令中的`-p80:80`， 前一个80指明虚拟机的任何ip地址的80端口(也即masquerade为enp0s8)，后一个80是容器的ip地址
   
   
     ﻿vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker run -d -p80:80 --name mynginx1 nginx
 
-  路由表
+基于NetFilter的路由表
 
 
     vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta$ sudo iptables -L -n -t nat
@@ -306,6 +300,6 @@ Docker示例环境
 [gopacket.md.txt](../gopacket.md.txt)
 
 1. 使用AF_PACKET接口以zero-copy的方式从socket上读取数据报 － http://man7.org/linux/man-pages/man7/packet.7.html
-2. ARP解析ip地址到mac地址 － https://www.veracode.com/security/arp-spoofing
-3. 使用pcap抓包 － https://github.com/sofwerx/pcas/wiki/PCAS-Project-Pcap-File-Analysis-Guide
-4. 使用pfring抓包 - https://www.ntop.org/guides/pf_ring/
+1. ARP解析ip地址到mac地址 － https://www.veracode.com/security/arp-spoofing
+1. 使用pcap抓包 － https://github.com/sofwerx/pcas/wiki/PCAS-Project-Pcap-File-Analysis-Guide
+1. 使用pfring抓包 - https://www.ntop.org/guides/pf_ring/

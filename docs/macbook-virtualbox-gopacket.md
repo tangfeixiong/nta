@@ -33,10 +33,10 @@
   南北向：NAT， 由VirtualBox的网络模块管理配置
   
   如Vagrantfile中
-  
 
-      ﻿# Docker unencrypted TCP listening port
-    ﻿  config.vm.network "forwarded_port", guest: 2375, host: 2375
+
+    ﻿# Docker unencrypted TCP listening port
+    ﻿config.vm.network "forwarded_port", guest: 2375, host: 2375
 
 ### VM
 
@@ -61,7 +61,7 @@ Ubuntu 18.04
 + docker0
 
   安装docker engine后
-  
+
 
     vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta$ ip addr show docker0
     4: docker0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default 
@@ -79,8 +79,8 @@ Ubuntu 18.04
     ﻿vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker run -d -p80:80 --name mynginx1 nginx
 
   路由表
-  
-  
+
+
     vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta$ sudo iptables -L -n -t nat
     Chain PREROUTING (policy ACCEPT)
     target     prot opt source               destination         
@@ -127,7 +127,7 @@ Ubuntu 18.04
 
 配置2个bridge上的container实现通信，使用虚接口，如
 
-    
+
     ip link add veth0 type veth peer name veth1
     ifconfig veth0 up
     ifconfig veth1 up

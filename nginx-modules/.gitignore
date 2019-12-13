@@ -1,0 +1,9 @@
+!.gitignore
+nginx*
+naxsi*
+*.tar
+*.gz
+*.asc
+*.tar.gz
+*.tar.gz.asc
+*/

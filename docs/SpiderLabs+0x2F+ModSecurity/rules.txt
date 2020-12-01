@@ -1,0 +1,49 @@
+
+Best Honeypots for Detecting Network Threats
+
+https://securitytrails.com/blog/top-20-honeypots
+
+
+https://www.projecthoneypot.org/
+
+
+https://www.honeynet.org/
+
+
+https://github.com/OWASP/Honeypot-Project
+
+
+google://honeypot project
+
+
+
+Freeaqingme/libmodsecurity.go
+
+https://gist.github.com/Freeaqingme/b2a7b452c22f8e8a95e898751308c478
+
+
+ModSecurity Golang port
+
+https://github.com/senghoo/modsecurity-go
+
+
+ModSecurity 2 for Java - BETA Testers Needed
+
+https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/modsecurity-for-java-beta-testers-needed/
+
+https://github.com/mihaipitu/ModSecurity/tree/master/java
+
+
+ModSecurity-envoy
+
+https://github.com/octarinesec/ModSecurity-envoy
+
+Enabling ModSecurity in the Kubernetes Ingress-NGINX Controller
+
+https://medium.com/@awkwardferny/enabling-modsecurity-in-the-kubernetes-ingress-nginx-controller-111f9c877998
+
+https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/third-party-addons/modsecurity.md
+
+Quick security wins in Golang
+
+https://blog.rapid7.com/2016/07/13/quick-security-wins-in-golang/

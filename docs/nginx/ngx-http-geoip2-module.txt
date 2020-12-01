@@ -1,0 +1,24 @@
+Repository - https://github.com/leev/ngx_http_geoip2_module
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/SpiderLabs/ModSecurity$ cd ../../tangfeixiong/nta/nginx-modules/
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/nginx-modules$ curl -jkSL https://github.com/leev/ngx_http_geoip2_module/archive/3.3.tar.gz -o ngx_http_geoip2_module-3.3.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   132    0   132    0     0     34      0 --:--:--  0:00:03 --:--:--    34
+100  8509    0  8509    0     0   1679      0 --:--:--  0:00:05 --:--:--  8399
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/nginx-modules$ tar zxvf ngx_http_geoip2_module-3.3.tar.gz 
+ngx_http_geoip2_module-3.3/
+ngx_http_geoip2_module-3.3/LICENSE
+ngx_http_geoip2_module-3.3/README.md
+ngx_http_geoip2_module-3.3/config
+ngx_http_geoip2_module-3.3/ngx_http_geoip2_module.c
+ngx_http_geoip2_module-3.3/ngx_stream_geoip2_module.c
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/nginx-modules$ ls
+naxsi-0.56             nginx-1.10.3             nginx-1.14.0         nginx-1.15.12               ngx_http_geoip2_module-3.3.tar.gz
+naxsi_0.56.tar.gz      nginx-1.10.3.tar.gz      nginx-1.14.0.tar.gz  nginx-1.9.2
+naxsi_0.56.tar.gz.asc  nginx-1.10.3.tar.gz.asc  nginx-1.14.2         ngx_http_geoip2_module-3.3
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/nginx-modules$ cd nginx-1.14.0/
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/nginx-modules/nginx-1.14.0$ ./configure <...required compiler args...> --add-dynamic-module=../ngx_http_geoip2_module-3.3
+
+关于<...required compiler args...>可参见 ../spiderlabs0x2Fmodsecurity/build-screen-ngx-http-modsecurity-module.txt#sucessfully-demo

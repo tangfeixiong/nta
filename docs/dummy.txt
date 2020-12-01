@@ -1,0 +1,9 @@
+
+https://backreference.org/2014/06/17/port-mirroring-with-linux-bridges/
+
+https://jamielinux.com/docs/libvirt-networking-handbook/custom-nat-based-network.html
+https://jamielinux.com/docs/libvirt-networking-handbook/appendix/dummy-interface-on-debian.html
+
+http://arthurchiao.art/blog/trafic-mirror-with-ovs/
+
+http://docs.openvswitch.org/en/latest/faq/configuration/

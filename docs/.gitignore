@@ -1,7 +1,11 @@
 
-web-application-firewall-guide*
+.pdf
+.ppt
+.pptx
+.doc
+.docx
 
 *.zip
 *.tar
 *.gz
-
+*.bz2

@@ -1,0 +1,11 @@
+*.pdf
+*.tar
+*.gz
+*.txt
+
+builtins/
+etc/
+fileserver/
+log/
+mnt/
+rules/

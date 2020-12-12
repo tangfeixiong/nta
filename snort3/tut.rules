@@ -1,0 +1,159 @@
+
+#;; Uses OpenAppID to check for Facebook traffic
+
+# alert tcp any any -> any any ( msg:"Facebook Detected"; appids:"Facebook";sid:10000001; )
+
+
+#;; Detect ICMP traffic
+
+alert icmp any any -> any any (msg:"ICMP Traffic Detected";sid:10000002;)
+
+#;; Bad rule for validate
+
+# alert ip any any -> any any (msg: "IP Packet detected";sid:10000003;)
+
+#
+# using the http_uri content option after each content match
+#
+alert http any any -> any any
+(
+    msg: "Snort 3 http_uri sticky buffer Example";
+    flow: to_server,established; 
+    http_uri;
+    content: "malicious";
+    content: "vulnerability", within 20; 
+    sid:10000004;
+)
+
+#
+# target the content match at a specific field within the HTTP request header (case insensitive)
+#
+alert http
+(
+    msg: "Snort 3 http_header sticky buffer Example";
+    http_header:field user-agent;
+    content: "fake";
+    sid:2;
+)
+
+#
+# pcre
+#
+alert http any any -> any any
+(
+    msg: "Snort 3 http_uri sticky buffer Example";
+    http_uri;
+    content: "/pcre=";
+    pcre:"/\/pcre\x3d\w+/";
+    sid:3;
+)
+
+#
+# URL Length with "bufferlen" Option
+#
+alert http any any -> any any
+(
+    msg: "Snort 3 http_uri sticky buffer - bufferlen";
+    http_uri;
+    content:"/tmp";
+    bufferlen:<40;
+    sid:4;
+)
+
+#;; User-Agent Length with "bufferlen" Option
+
+alert http any any -> any any
+(
+msg: "Snort 3 http_uri sticky buffer Example";
+http_header:field user-agent;
+content:"malicious";
+bufferlen:=10;
+sid:5;
+)
+
+#
+# detecting malicious content traversing the network over HTTP (download) and SMTP (upload)
+#
+alert file
+(
+    msg:"Alert File example";
+    file_data;
+    content:"malicious-vulnerable";
+    sid:6;
+)
+
+#;; Detect Single File Type
+
+alert file any any -> any any \
+( \
+    msg: "PDF File Detected"; \
+    file_type: "PDF"; \
+    sid:8; \
+)
+
+#;; Detect Single File Type with Version
+
+alert file any any -> any any \
+( \
+    msg: "PDF File version 1.5 Detected"; \
+    file_type: "PDF,1.5"; \
+    sid:9; \
+)
+
+#;; Detect Single File Type with Multiple Versions
+
+alert file any any -> any any \
+( \
+    msg: "PDF File version 1.5 Detected"; \
+    file_type: "PDF,1.5,1.7"; \
+    sid:10; \
+)
+
+#;; Detect Multiple File Types
+
+alert file any any -> any any \
+( \
+    msg: "PDF or MSEXE Files Detected"; \
+    file_type: "PDF MSEXE"; \
+    sid:11; \
+)
+
+#;; Detect Multiple File Types and Versions
+
+alert file any any -> any any \
+( \
+    msg: "PDF File version 1.5 Detected"; \
+    file_type: "PDF,1.5,1.7 RAR,1.1"; \
+    sid:12; \
+)
+
+#;; Application Detection with OpenAppID (ODP)
+
+# alert file any any -> any any
+# (
+#     msg: "Firefox Detected";
+#     appids: "Firefox";
+#     sid:13;
+# )
+
+#
+#;; ‘Service’ Key in Metadata
+#
+alert tcp any any -> any any
+(
+    msg:"Service Key Example";
+    content:"/svc=";
+    service:http, smtp;
+    sid:14;
+)
+
+#
+#;; Rule Remarks Option
+#
+alert tcp any any -> any any
+(
+    msg: "rem option Example";
+    content:"/rem=";
+    rem: "tlp white";
+    sid:15;
+)

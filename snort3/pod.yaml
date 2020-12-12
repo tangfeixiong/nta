@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: snort-lab
+  name: snort-lab
+  namespace: default
+spec:
+  containers:
+  - image: tangfeixiong/gofileserver:ubuntu18.04 # kennethreitz/httpbin # see http://httpbin.org/#/
+    imagePullPolicy: IfNotPresent
+    name: gofileserver
+    ports:
+    - containerPort: 80
+      name: web
+      protocol: TCP
+    resources:
+      requests:
+        memory: "16Mi"
+        cpu: "50m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    volumeMounts:
+    - mountPath: /mnt
+      name: snort-vol
+      subPath: mnt
+  - args: ["snort", "-d", "-e", "-c", "/etc/snort/snort.lua", "-Q", "--rule-path", "/usr/local/etc/snort/rules", "-l", "/var/log/snort", "-v", "-k", "none"]
+    image: tangfeixiong/snort:3.0.3-5
+    imagePullPolicy: IfNotPresent
+    name: snort
+    securityContext:
+      privileged: true
+      capabilities:
+        add: ["NET_ADMIN"]
+    volumeMounts:
+    - mountPath: /etc/snort/snort.lua
+      name: snort-vol
+      subPath: snort.lua
+    - mountPath: /etc/snort/nfq.lua
+      name: snort-vol
+      subPath: nfq.lua
+    - mountPath: /usr/local/etc/snort/rules/local.rules
+      name: snort-vol
+      subPath: tut.rules
+    - mountPath: /var/log/snort
+      name: snort-vol
+      subPath: log
+    - mountPath: /dev/log
+      name: syslog-socket
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  initContainers:
+  - name: init-nfq
+    image: tangfeixiong/snort:3.0.3-5
+    command: ["iptables", "-I", "INPUT", "1", "-j", "NFQUEUE", "--queue-num", "0"]
+    securityContext:
+      privileged: true
+      capabilities: 
+        add: ["NET_ADMIN"]
+  nodeName: develop3
+  restartPolicy: Always
+  securityContext: {}
+  serviceAccountName: default
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+    operator: Exists
+  volumes:
+  - hostPath:
+      path: /app/cloud/tangfx/snort3/
+      type: "Directory"
+    name: snort-vol
+  - hostPath:
+      path: /run/systemd/journal/socket
+      type: "Socket"
+    name: syslog-socket
+  

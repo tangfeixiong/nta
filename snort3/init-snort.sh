@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
 
-iptables -F INPUT
-iptables -A INPUT -j NFQUEUE --queue-num 0
+/usr/sbin/iptables -F 
+/usr/sbin/iptables -t nat -I PREROUTING -j NFQUEUE --queue-num 0
+/usr/sbin/iptables -I FORWARD -j NFQUEUE --queue-num 0
+/usr/sbin/iptables -I INPUT -j NFQUEUE --queue-num 0

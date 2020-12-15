@@ -2,10 +2,20 @@
 *.tar
 *.gz
 *.txt
+*.csv
+*.log
+
+Changing-from-IDS-to-IPS-with-NFQueue
+ip-block-list
+snort3-community*.rules
+snort3-community-rules/
 
 builtins/
 etc/
-fileserver/
-log/
-mnt/
 rules/
+odp/
+
+log/
+ubuntu-bionic/
+vol-mnt/
+

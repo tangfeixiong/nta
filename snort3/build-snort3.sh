@@ -344,7 +344,7 @@ build_snort3()
     cd build
     make -j $(nproc)
 	make install
-    config_snort3
+    # config_snort3
 	
 	make clean
     cd $BUILD_PATH
@@ -508,40 +508,34 @@ case $cmds in
     build_hwloc
     ;;
 
-	snort3|snort)
-		build_snort3
-		;;
+  snort3|snort)
+    build_snort3
+    ;;
 
-	config-snort3)
-		config_snort3
-		;;
-
-	all)
-	    init_builds
-	    
-	    build_pcre
-	    
-	    # Install luajit from openresty fork
-	    export LUAJIT_LIB=/usr/local/lib
-	    export LUA_LIB_DIR="$LUAJIT_LIB/lua"
-	    export LUAJIT_INC=/usr/local/include/luajit-2.1
-	    
-	    build_luajit
-	    
-	    build_libpcap
-	    
-	    build_libdaq
-	    
-	    build_libdnet
-	    
-	    build_hwloc
-	    
-	    build_snort3
-		
-		config_snort3
-	    
-	    clean_builds
-	    ;;
+  all)
+    init_builds
+    
+    build_pcre
+    
+    # Install luajit from openresty fork
+    export LUAJIT_LIB=/usr/local/lib
+    export LUA_LIB_DIR="$LUAJIT_LIB/lua"
+    export LUAJIT_INC=/usr/local/include/luajit-2.1
+    
+    build_luajit
+    
+    build_libpcap
+    
+    build_libdaq
+    
+    build_libdnet
+    
+    build_hwloc
+    
+    build_snort3
+    
+    clean_builds
+    ;;
 
   *)
     echo "Execute: $(basename $0) <command>

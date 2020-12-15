@@ -7,19 +7,30 @@
 
 FROM ubuntu:18.04 as builder
 
-COPY ./build_dep.sh /   
+COPY ./build-dep.sh /build.sh 
 
 RUN set -xe; \
     # sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list; 
     # sed -i 's%http://archive.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g;s%http://security.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g' /etc/apt/sources.list;
     # sed -i 's%http://archive.ubuntu.com/%http://mirrors.yun-idc.com/ubuntu/%g' /etc/apt/sources.list;
-    sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list; \
+    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list;
 	\
-    /build_dep.sh init; \
-	\
-    /build_dep.sh snort3_deps_and_opts;
+    /build.sh init
 
-# Reserve times skipping to re-build dependent libs
+RUN /build.sh luajit2
+RUN /build.sh safeclib
+RUN /build.sh pcre
+RUN /build.sh gperftools
+RUN /build.sh ragel
+RUN /build.sh libpcap
+RUN /build.sh hyperscan
+RUN /build.sh libdnet
+RUN /build.sh hwloc
+RUN /build.sh flatbuffers
+RUN /build.sh libdaq
+
+# Just avoid to re-build dependency
+
 COPY ./build.sh /
 
 RUN /build.sh snort3; \
@@ -32,82 +43,96 @@ FROM ubuntu:18.04
 LABEL maintainer="tangfeixiong <tangfx128@gmail.com>" \
     project="snort3" \
     repository="https://github.com/snort3/snort3" \
-	tags="docker_19.03.6 ubuntu_18.04.1 snort_3.0.3-5"
+	tags="docker19.03.6 ubuntu18.04.1 snort3.0.3-5"
 
 ENV PATH=$PATH:/usr/local/luajit/bin:/usr/local/nginx/sbin:/usr/local/nginx/bin
 
-ENV LUA_PATH="/urs/local/snort/include/snort/lua/\?.lua\;/usr/local/share/luajit-2.1.0-beta3/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/lib/lua/?.lua;;"
+ENV LUA_PATH="/urs/local/snort/include/snort/lua/\?.lua\;/usr/local/share/luajit-2.1.0-beta3/?.lua;/usr/local/share/lua/?.lua;/usr/local/lib/lua/?.lua;;"
 ENV LUA_CPATH="/usr/local/lib/lua/?/?.so;/usr/local/lib/lua/?.so;;"
 ENV SNORT_LUA_PATH=/usr/local/snort/etc/snort
 
 COPY --from=builder /usr/local /usr/local
-COPY --from=builder /opt /opt
-COPY --from=builder /etc/snort /etc/snort
-COPY --from=builder /usr/local/lib/snort_dynamicrules /usr/local/lib/snort_dynamicrules
-COPY --from=builder /var/log/snort /var/log/snort
-# COPY --from=builder /etc/nginx /etc/nginx
 
-RUN set -e; \
-    # sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list 
-    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g' /etc/apt/sources.list
-    sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list; \
-	apt-get update \
-  && apt-get upgrade \
-  && apt-get install -y --no-install-recommends \
-    openssl \
-    libpcre++0v5 \
-    zlib1g \
-    libgeoip1 \
-	libdumbnet1 \
-	liblzma5 \
-	libsqlite3-0 \
-    libyajl2 \
-    liblmdb0 \
-    libxml2 \
-    libmaxminddb0 \
-    libunwind8 \
-    libyaml-cpp0.5v5 \
-	libnetfilter-queue1 \
-	libmnl0 \
-	uuid \
-	flex bison \
-    curl ca-certificates \
-    patch \
-    dumb-init \
-    tzdata \
-    nano vim \
-    \
-    ethtool iproute2 iptables iputils-ping netcat \
-    tcpdump wget 
-	
 RUN set -xe; \
-  # && ln -s /usr/local/nginx/sbin/nginx /sbin/nginx 
-  && group1=$(cat /etc/group | grep www-data); \
-     if [ -z $group1 ]; then addgroup --system --gid 101 www-data; fi \
-  && user1=$(cat /etc/passwd | grep www-data); \
-     if [ -z $user1 ]; then adduser --system --uid 101 --home /usr/local/nginx \
-    --shell /sbin/nologin --ingroup www-data www-data; fi \
-  && /bin/bash -eu -c ' \
-    writeDirs=( \
-      /var/log/nginx \
-      /var/lib/nginx/body \
-      /var/lib/nginx/fastcgi \
-      /var/lib/nginx/proxy \
-      /var/lib/nginx/scgi \
-      /var/lib/nginx/uwsgi \
-      /var/log/audit \
-  ); \
-  for dir in "${writeDirs[@]}"; do \
-    mkdir -p ${dir}; \
-    chown -R www-data.www-data ${dir}; \
-  done'
+    # sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list;
+    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g' /etc/apt/sources.list;
+    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list; 
+	apt-get update; \
+    # apt-get upgrade;
+    apt-get autoclean \
+    && apt-get install -y --no-install-recommends \
+        openssl \
+        libpcre++0v5 \
+        zlib1g \
+        libgeoip1 \
+        libdumbnet1 \
+        liblzma5 \
+        libsqlite3-0 \
+        libyajl2 \
+        liblmdb0 \
+        libxml2 \
+        libmaxminddb0 \
+        libunwind8 \
+        libyaml-cpp0.5v5 \
+        libnetfilter-queue1 \
+        libmnl0 \
+        uuid \
+        \
+        flex bison \
+        patch \
+        dumb-init \
+        tzdata \
+        nano vim \
+        \
+        curl ca-certificates \
+        ethtool iproute2 iptables iputils-ping netcat \
+        tcpdump wget; \ 
+    apt-get autoremove; \
+    apt-get clean; \
+    rm -rf /var/lib/apt/lists/*
+	
+#RUN set -xe; \
+#  # && ln -s /usr/local/nginx/sbin/nginx /sbin/nginx 
+#  && group1=$(cat /etc/group | grep www-data); \
+#     if [ -z $group1 ]; then addgroup --system --gid 101 www-data; fi \
+#  && user1=$(cat /etc/passwd | grep www-data); \
+#     if [ -z $user1 ]; then adduser --system --uid 101 --home /usr/local/nginx \
+#    --shell /sbin/nologin --ingroup www-data www-data; fi \
+#  && /bin/bash -eu -c ' \
+#    writeDirs=( \
+#      /var/log/nginx \
+#      /var/lib/nginx/body \
+#      /var/lib/nginx/fastcgi \
+#      /var/lib/nginx/proxy \
+#      /var/lib/nginx/scgi \
+#      /var/lib/nginx/uwsgi \
+#      /var/log/audit \
+#  ); \
+#  for dir in "${writeDirs[@]}"; do \
+#    mkdir -p ${dir}; \
+#    chown -R www-data.www-data ${dir}; \
+#  done'
+#
+#EXPOSE 80 443
 
-RUN ln -s /usr/local/snort/bin/snort /bin/snort; \
-    echo -e '#!/bin/sh\n\nexec /usr/local/snort/bin/snort -c /etc/snort/etc/snort/snort.lua "$@"' >>/entrypoint.sh && \
-	chmod a+x /entrypoint.sh
+RUN set -xe; \
+    mkdir -p /var/log/snort; \
+    mkdir -p /etc/snort; \
+    mkdir -p /etc/rules; \
+	mkdir -p /etc/builtin_rules; \
+	mkdir -p /etc/so_rules; \
+	mkdir -p /etc/lists; \
+    ln -s /usr/local/snort/bin/snort /bin/snort; \
+    cp -r /usr/local/snort/etc/snort /usr/local/etc/; \
+    echo -e '#!/bin/sh \n \
+exec /usr/local/snort/bin/snort -c /etc/snort.lua "$@" \
+' >>/entrypoint.sh && \
+	  chmod a+x /entrypoint.sh
 
-# EXPOSE 80 443
+WORKDIR /usr/local/etc/snort
 
-CMD ["snort", "-d", "-i", "eth0", "-c", "/etc/snort/snort.lua", "--rule-path", "/etc/snort/snort3-community-rules/"]
+VOLUME ["/var/log/snort", "/etc/rules", "/etc/builtin_rules", "/etc/so_rules", "/etc/lists"]
+
+CMD ["snort", "-d", "-i", "eth0", "-c", "/user/local/etc/snort/snort.lua", "-R", "/usr/local/etc/snort3-community-rules/snort3-community.rules", "--rule-path", "/usr/local/etc/rules"]
 # CMD ["-i", "eth0"]
 # ENTRYPOINT ["/entrypoint.sh"]

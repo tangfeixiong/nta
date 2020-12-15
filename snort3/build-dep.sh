@@ -27,6 +27,8 @@ export FLATBUFFERS_VERSION=v1.12.0
 export SNORT_VERSION=3.0.3-5
 export SNORT_RULES_SNAPSHOT=3000
 
+### Nginx and ModSecurity
+export NGINX_VERSION=1.19.4
 export MODSECURITY_LIB_VERSION=v3.0.4
 export OWASP_MODSECURITY_CRS_VERSION=v3.3.0
 
@@ -102,6 +104,7 @@ build_with_git()
 init_builds()
 {
   apt-get update
+  apt-get autoclean
   apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
@@ -236,7 +239,7 @@ build_safeclib()
 
 	echo "
       $(basename ${url}) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -276,7 +279,7 @@ build_pcre()
 	
 	echo "
       $(basename ${url} ".tar.gz") build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		url: ${url}
 "
@@ -309,7 +312,7 @@ build_gperftools()
 
 	echo "
       $(basename ${url}) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -351,8 +354,8 @@ build_colm()
 
 	echo "
       $(basename $url ".tar.gz") build completed
-	    source: ${src}
-        version: ${ver}
+		source: ${src}
+		version: ${ver}
 		url: ${url}
 "	
 }
@@ -394,8 +397,8 @@ build_ragel()
 
 	echo "
       $(basename $url ".tar.gz") build completed
-	    source: ${src}
-        version: ${ver}
+		source: ${src}
+		version: ${ver}
 		url: ${url}
 "
 }
@@ -450,7 +453,7 @@ build_hyperscan()
 	
 	echo "
       $(basename $url) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -463,7 +466,7 @@ build_hyperscan_with_deps()
 	build_pcre
 	build_gperftools
 	build_ragel
-	build_libpcap
+	# build_libpcap
 	build_hyperscan
 }
 
@@ -471,6 +474,11 @@ build_hyperscan_with_deps()
 build_luajit()
 {
 	echo "To build Luajit..."
+	
+    # Install luajit from openresty fork
+    export LUAJIT_LIB=/usr/local/lib
+    export LUA_LIB_DIR="$LUAJIT_LIB/lua"
+    export LUAJIT_INC=/usr/local/include/luajit-2.1
 	
 	local url="https://github.com/openresty/luajit2"
 	local dest=${url#http*://}
@@ -493,7 +501,7 @@ build_luajit()
 
 	echo "
       $(basename ${url}) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -622,7 +630,7 @@ build_libpcap()
 
 	echo "
       $(basename ${url}) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git source: ${url}
 		git tag: ${tag}
@@ -653,10 +661,10 @@ build_libdnet()
 
 	echo "
       $(basename $url) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
-        git source: ${url}
-    	git tag: ${tag}
+		git source: ${url}
+		git tag: ${tag}
 "
 }
 
@@ -685,7 +693,7 @@ build_hwloc()
 
 	echo "
       $(basename ${url}) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -719,7 +727,7 @@ build_flatbuffers()
 	
 	echo "
       $(basename $url) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
 		git tag: ${tag}
@@ -755,11 +763,31 @@ build_libdaq()
 
 	echo "
       $(basename $url) build completed
-	    source: ${src}
+		source: ${src}
 		version: ${ver}
 		git url: ${url}
-    	git tag: ${tag}
+		git tag: ${tag}
 "
+}
+
+build_snort2()
+{
+	build_libpcap
+	build_libdnet
+	build_hwloc
+	build_libdaq
+	build_luajit
+}
+
+build_deps_and_opts_with_hyperscan()
+{
+	build_luajit
+	build_libpcap
+    build_hyperscan_with_deps		
+	build_libdnet
+	build_hwloc
+	build_flatbuffers	
+	build_libdaq
 }
 
 build_snort3()
@@ -782,7 +810,7 @@ build_snort3()
     cd $src
 	local tag=$(git describe --tags --abbrev=0)
 	
-    ./configure_cmake.sh --prefix=${MY_PATH} --disable-docs
+    ./configure_cmake.sh --prefix=${MY_PATH} --disable-docs --enable-tcmalloc
     cd build
     make -j $(nproc)
 	make install
@@ -855,7 +883,8 @@ fetch_snort3_community_rules()
 clean_builds()
 {
     apt-get clean
-
+    rm -rf /var/lib/apt/lists/*
+	
     # remove .a files
     find /usr/local -name "*.a" -print | xargs /bin/rm
 }
@@ -874,122 +903,52 @@ export CTEST_BUILD_FLAGS=${MAKEFLAGS}
 export HUNTER_JOBS_NUMBER=${CORES}
 export HUNTER_USE_CACHE_SERVERS=true
 
-cmds=${1-"all"}
+cmds=${1-"help"}
 
 case $cmds in
     init)
-        init_builds
-        ;;
-    
+	    init_builds
+	    ;;
     clean)
-        clean_builds
-        ;;
-    
-    pcap|libpcap)
-        # build_libpcap
-		build_with_git "https://github.com/the-tcpdump-group/libpcap" $PCAP_VERSION
-        ;;
-    
-    dnet|libdnet)
-        # build_libdnet
-		build_with_git "https://github.com/ofalk/libdnet" $DNET_VERSION
-        ;;
-
-    hwloc)
-        build_hwloc
-        ;;
-    
-    daq|libdaq)
-        build_libdaq
-        ;;
-    
-    luajit|luajit2)   
-        # Install luajit from openresty fork
-        export LUAJIT_LIB=/usr/local/lib
-        export LUA_LIB_DIR="$LUAJIT_LIB/lua"
-        export LUAJIT_INC=/usr/local/include/luajit-2.1
-
-        build_luajit
-        ;;
+	    clean_builds
+	    ;;
+		
+    deps-and-opts-with-hyperscan)
+		build_deps_and_opts_with_hyperscan
+		;;
 
     snort3|snort)
         build_snort3
         ;;
 
-    snort3_deps)
-		build_libpcap
-		build_libdnet
-		build_hwloc
-		build_libdaq
-		build_luajit
-		;;
-	
-    safeclib)
-        build_safeclib
-		;;
-    
-    pcre)
-        build_pcre
-        ;;
-		
-    gperftools|tcmalloc)
-	    build_gperftools
-	    ;;
-		
-    ragel)
-	    build_ragel
-		;;
-		
-    hyperscan)
-	    build_hyperscan
-		;;
-		
-    hyperscan-with-deps)
-        build_hyperscan_with_deps
-		;;
-	
-	flatbuffers)
-	    build_flatbuffers
-		;;
-		
-    snort3_deps_and_opts)
-		build_hyperscan_with_deps		
-		build_libdnet
-		build_hwloc
-		build_libdaq
-		build_luajit
-		build_flatbuffers
-		;;
-
     all)
 	    init_builds
 	    
-	    build_pcre
-	    
-	    # Install luajit from openresty fork
-	    export LUAJIT_LIB=/usr/local/lib
-	    export LUA_LIB_DIR="$LUAJIT_LIB/lua"
-	    export LUAJIT_INC=/usr/local/include/luajit-2.1
-	    
-	    build_luajit
-	    
-	    build_libpcap
-	    
-	    build_libdnet
-	    
-	    build_hwloc
-	    
-	    build_libdaq
+	    build_deps_and_opts_with_hyperscan
 	    
 	    build_snort3
 	    
 	    clean_builds
 	    ;;
+		
+    luajit2|luajit) build_luajit;;
+	safeclib) build_safeclib;;
+	pcre) build_pcre;;
+	gperftools) build_gperftools;;
+	ragel) build_ragel;;
+	libpcap) build_libpcap;;
+	hyperscan) build_hyperscan;;
+	libdnet) build_libdnet;;
+	hwloc) build_hwloc;;
+    flatbuffers) build_flatbuffers;;	
+	libdaq) build_libdaq;;
 
   *)
+    rmdir $BUILD_PATH
     echo "Execute: $(basename $0) <command>
-        Commands: pcre, luajit, pcap, daq, dnet, hwloc, snort3
-    " >> /dev/stderr
+      Commands: deps-and-opts-with-hyperscan, snort3, all
+" >> /dev/stderr
+	exit 1
     ;;
 esac
 

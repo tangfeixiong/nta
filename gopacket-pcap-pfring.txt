@@ -1,4 +1,4 @@
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-cache madison docker.io
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-cache madison docker.io
  docker.io | 18.09.7-0ubuntu1~18.04.4 | http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages
  docker.io | 18.09.7-0ubuntu1~18.04.4 | http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages
  docker.io | 17.12.1-0ubuntu1 | http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages
@@ -11,7 +11,7 @@ https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.16.md#unchanged
 + The list of validated docker versions remains unchanged.
     * The current list is 1.13.1, 17.03, 17.06, 17.09, 18.06, 18.09. (#72823, #72831)
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get install -y docker.io
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get install -y docker.io
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -74,7 +74,7 @@ Processing triggers for ureadahead (0.100.0-20) ...
 Processing triggers for systemd (237-3ubuntu10.29) ...
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo systemctl --no-pager status docker
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo systemctl --no-pager status docker
 ● docker.service - Docker Application Container Engine
    Loaded: loaded (/lib/systemd/system/docker.service; disabled; vendor preset: enabled)
    Active: active (running) since Sat 2019-12-07 13:04:33 UTC; 49s ago
@@ -96,8 +96,8 @@ Dec 07 13:04:33 ubuntu-bionic systemd[1]: Started Docker Application Container E
 Dec 07 13:04:33 ubuntu-bionic dockerd[4953]: time="2019-12-07T13:04:33.760559979Z" level=info msg="API listen on /var/run/docker.sock"
 Hint: Some lines were ellipsized, use -l to show in full.
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo usermod -aG docker vagrant
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ su - vagrant
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo usermod -aG docker vagrant
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ su - vagrant
 Password: 
 
 vagrant@ubuntu-bionic:~$ docker pull nginx
@@ -109,14 +109,14 @@ bee5d581ef8b: Pull complete
 Digest: sha256:50cf965a6e08ec5784009d0fccb380fc479826b6e0e65684d9879170a9df8566
 Status: Downloaded newer image for nginx:latest
 
-vagrant@ubuntu-bionic:~$ cd /Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker run -d -p80:80 --name mynginx1 nginx
+vagrant@ubuntu-bionic:~$ cd /Users/fanhongling/go/src/github.com/google/gopacket/examples
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ docker run -d -p80:80 --name mynginx1 nginx
 ba104ce9f4e85b02529da07c393da3a2c38f8324529f98280d35328a4faad222
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ docker ps
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 ba104ce9f4e8        nginx               "nginx -g 'daemon of…"   12 seconds ago      Up 11 seconds       0.0.0.0:80->80/tcp   mynginx1
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ curl localhost:80
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ curl localhost:80
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,20 +144,20 @@ Commercial support is available at
 </html>
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google$ git clone https://github.com/google/gopacket gopacket
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google$ git clone https://github.com/google/gopacket gopacket
 Cloning into 'gopacket'...
 remote: Enumerating objects: 6876, done.
 remote: Total 6876 (delta 0), reused 0 (delta 0), pack-reused 6876
 Receiving objects: 100% (6876/6876), 5.20 MiB | 1.69 MiB/s, done.
 Resolving deltas: 100% (4742/4742), done.
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google$ cd gopacket/
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket$ cd examples/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google$ cd gopacket/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket$ cd examples/
 
 http://man7.org/linux/man-pages/man7/packet.7.html
 https://blog.csdn.net/an_zhenwei/article/details/16861805
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ go run ./afpacket/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ go run ./afpacket/
 go: downloading golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
 go: downloading golang.org/x/sys v0.0.0-20190405154228-4b34438f7a67
 go: extracting golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3
@@ -171,7 +171,7 @@ go: finding golang.org/x/sys v0.0.0-20190405154228-4b34438f7a67
 compilation terminated.
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get install -y libpcap-dev
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get install -y libpcap-dev
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -197,14 +197,14 @@ Setting up libpcap-dev:amd64 (1.8.1-6ubuntu1) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ go run ./afpacket/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ go run ./afpacket/
 2019/12/07 11:43:33 Starting on interface "any"
 2019/12/07 11:43:33 operation not permitted
 exit status 1
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ go install ./afpacket/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ go install ./afpacket/
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/afpacket 
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/afpacket 
 2019/12/07 11:52:13 Starting on interface "any"
 2019/12/07 11:52:20 Read in 60 bytes in 1 packets
 2019/12/07 11:52:20 Stats {received dropped queue-freeze}: {4 0 1}
@@ -259,7 +259,7 @@ round-trip min/avg/max/stddev = 0.204/0.278/0.391/0.081 ms
 https://www.dummies.com/programming/networking/network-administration-arp-command/
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/arpscan 
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/arpscan 
 2019/12/07 12:06:18 Using network range 172.28.128.4/24 for interface enp0s8
 2019/12/07 12:06:18 interface lo: skipping localhost
 2019/12/07 12:06:18 Using network range 10.0.2.15/24 for interface enp0s3
@@ -289,7 +289,7 @@ fanhonglingdeMacBook-Pro:scikit-learn-lab fanhongling$ arp -a
 ? (192.168.0.255) at ff:ff:ff:ff:ff:ff on en0 ifscope [ethernet]
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/bidirectional -i docker0
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/bidirectional -i docker0
 2019/12/07 13:40:49 starting capture on interface "docker0"
 2019/12/07 13:40:49 reading in packets
 2019/12/07 13:40:53 [172.17.0.1->172.17.0.2:42122->80] created first side of bidirectional stream
@@ -330,7 +330,7 @@ Commercial support is available at
 
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/httpassembly -i docker02019/12/07 13:38:32 Starting capture on interface "docker0"
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/httpassembly -i docker02019/12/07 13:38:32 Starting capture on interface "docker0"
 2019/12/07 13:38:32 reading in packets
 2019/12/07 13:38:42 Received request from stream 172.17.0.1->172.17.0.2 42118->80 : &{GET / HTTP/1.1 1 1 map[Accept:[*/*] User-Agent:[curl/7.58.0]] {} <nil> 0 [] false 172.17.0.2 map[] map[] <nil> map[]  / <nil> <nil> <nil> <nil>} with 0 bytes in request body
 2019/12/07 13:37:53 Error reading stream 172.17.0.1->172.17.0.2 42116->80 : malformed HTTP request ""
@@ -375,7 +375,7 @@ Commercial support is available at
 </html>
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/pcapdump -i docker0
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/pcapdump -i docker0
 Starting to read packets
 PACKET: 74 bytes, wire length 74 cap length 74 @ 2019-12-07 13:35:46.605770277 +0000 UTC
 - Layer 1 (14 bytes) = Ethernet	{Contents=[..14..] Payload=[..60..] SrcMAC=02:42:76:1a:54:c0 DstMAC=02:42:ac:11:00:02 EthernetType=IPv4 Length=0}
@@ -450,7 +450,7 @@ Connection: close
 
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ go install ./pfdump/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ go install ./pfdump/
 # github.com/google/gopacket/pfring
 ../pfring/pfring.go:14:10: fatal error: pfring.h: No such file or directory
  #include <pfring.h>
@@ -461,7 +461,7 @@ compilation terminated.
 https://www.ntop.org/guides/pf_ring/get_started/packages_installation.html
 http://packages.ntop.org/apt-stable/
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get install -y software-properties-common
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get install -y software-properties-common
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -492,28 +492,28 @@ Setting up python3-software-properties (0.96.24.32.11) ...
 Processing triggers for dbus (1.12.2-1ubuntu1.1) ...
 Setting up software-properties-common (0.96.24.32.11) ...
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo add-apt-repository universe
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo add-apt-repository universe
 'universe' distribution component is already enabled for all sources.
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ curl http://apt-stable.ntop.org/18.04/all/apt-ntop-stable.deb -o /home/vagrant/apt-ntop-stable.deb
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ curl http://apt-stable.ntop.org/18.04/all/apt-ntop-stable.deb -o /home/vagrant/apt-ntop-stable.deb
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   334  100   334    0     0    270      0  0:00:01  0:00:01 --:--:--   270
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt install /home/vagrant/apt-ntop-stable.deb 
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt install /home/vagrant/apt-ntop-stable.deb 
 Reading package lists... Error!
 E: Sub-process Popen returned an error code (2)
 E: Encountered a section with no Package: header
 E: Problem with MergeList /home/vagrant/apt-ntop-stable.deb
 E: The package lists or status file could not be parsed or opened.
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ echo -e "deb http://apt-stable.ntop.org/18.04 x64/\ndeb http://apt-stable.ntop.org/18.04 all/" | sudo tee /etc/apt/sources.list.d/ntop.list
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ echo -e "deb http://apt-stable.ntop.org/18.04 x64/\ndeb http://apt-stable.ntop.org/18.04 all/" | sudo tee /etc/apt/sources.list.d/ntop.list
 deb http://apt-stable.ntop.org/18.04 x64/
 deb http://apt-stable.ntop.org/18.04 all/
 
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get update
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get update
 Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]                                    
 Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease                                                                  
 Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]                                                                          
@@ -537,13 +537,13 @@ W: GPG error: http://packages.ntop.org/apt-stable/18.04 all/ InRelease: The foll
 E: The repository 'http://apt-stable.ntop.org/18.04 all/ InRelease' is not signed.
 N: Updating from such a repository can't be done securely, and is therefore disabled by default.
 N: See apt-secure(8) manpage for repository creation and user configuration details.
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ curl http://packages.ntop.org/apt-stable/ntop.key| sudo apt-key add -
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ curl http://packages.ntop.org/apt-stable/ntop.key| sudo apt-key add -
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  3201  100  3201    0     0   2379      0  0:00:01  0:00:01 --:--:--  2379
 OK
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get update
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get update
 Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease          
 Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease                                  
 Hit:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease                                        
@@ -556,7 +556,7 @@ Fetched 10.5 kB in 6s (1736 B/s)
 Reading package lists... Done
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo apt-get install -y pfring
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo apt-get install -y pfring
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
@@ -612,10 +612,10 @@ depmod...
 DKMS: install completed.
 Processing triggers for libc-bin (2.27-3ubuntu1) ...
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ go install ./pfdump/
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ go install ./pfdump/
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/pfdump -i vethefc9000@if5
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/pfdump -i vethefc9000@if5
 Starting to read packets
 PACKET: 74 bytes, wire length 74 cap length 74 @ 2019-12-07 14:23:55.058676736 +0000 UTC
 - Layer 1 (14 bytes) = Ethernet	{Contents=[..14..] Payload=[..60..] SrcMAC=02:42:76:1a:54:c0 DstMAC=02:42:ac:11:00:02 EthernetType=IPv4 Length=0}
@@ -731,10 +731,10 @@ Commercial support is available at
 </html>
 
 
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/statsassembly -i vethefc9000@if5
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/statsassembly -i vethefc9000@if5
 2019/12/07 14:32:55 starting capture on interface "vethefc9000@if5"
 2019/12/07 14:32:55 error opening pcap handle: vethefc9000@if5: No such device exists (SIOCGIFHWADDR: No such device)
-vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/statsassembly -i docker0
+vagrant@ubuntu-bionic:/Users/fanhongling/go/src/github.com/google/gopacket/examples$ sudo /home/vagrant/go/bin/statsassembly -i docker0
 2019/12/07 14:33:25 starting capture on interface "docker0"
 2019/12/07 14:33:25 reading in packets
 2019/12/07 14:34:25 error getting packet: Timeout Expired

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  httpbin:
+    image: kennethreitz/httpbin
+    #container_name: httpbin
+    expose:
+    - "80"
+    networks:
+    - waf
+    #privileged: true
+    #user: root:root
+  nginx-modsecurity:
+    container_name: nginx-modsecurity-demo
+    #image: tangfeixiong/nginx_modsecurity_ubuntu1804
+    image: tangfeixiong/nginx_modsecurity_build
+    command: '/usr/local/nginx/sbin/nginx -g "daemon off;"'
+    #ports:
+    #- 80:80
+    expose:
+    - "80"
+    networks:
+    - waf
+    volumes:
+    - ./vol-mnt/etc/nginx/nginx.conf-reverse-proxy-httpbin:/etc/nginx/nginx.conf
+
+networks:
+  waf:

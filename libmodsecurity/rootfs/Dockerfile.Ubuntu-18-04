@@ -1,0 +1,71 @@
+FROM ubuntu:18.04 as builder
+
+COPY . /
+
+RUN set -xe \
+  && /build.sh
+
+RUN cp /main.conf /etc/nginx/modsecurity/main.conf \
+  && cp /nginx.conf-libmodsecurity /etc/nginx/nginx.conf \
+  && /usr/local/nginx/sbin/nginx -V
+
+EXPOSE 80
+
+# Use a multi-stage build
+FROM ubuntu:18.04
+
+ENV PATH=$PATH:/usr/local/luajit/bin:/usr/local/nginx/sbin:/usr/local/nginx/bin
+
+ENV LUA_PATH="/usr/local/share/luajit-2.1.0-beta3/?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/lib/lua/?.lua;;"
+ENV LUA_CPATH="/usr/local/lib/lua/?/?.so;/usr/local/lib/lua/?.so;;"
+
+COPY --from=builder /usr/local /usr/local
+COPY --from=builder /opt /opt
+COPY --from=builder /etc/nginx /etc/nginx
+
+RUN export APT_SRC=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ \
+  && sed -i "s%http://archive.ubuntu.com/%${APT_SRC}%g" /etc/apt/sources.list \
+  \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends \
+    openssl libssl1.0.0 libssl1.1 \
+    libpcre16-3 libpcre32-3 \
+    zlib1g \
+    libgeoip1 \
+    curl ca-certificates \
+    patch \
+	ssdeep libfuzzy2 \
+	liblua5.1-0 `#luajit` \
+    libyajl2 \
+    liblmdb0 \
+    libxml2 \
+    libmaxminddb0 \
+    libyaml-0-2 `#libyaml-cpp-dev` \
+    dumb-init \
+    nano vim \
+    tzdata \
+  \
+  && ln -s /usr/local/nginx/sbin/nginx /sbin/nginx \
+  && `#addgroup --system --gid 101 www-data` \
+  && `#adduser --system --no-create-home --disabled-password --uid 101 \
+        --home /usr/local/nginx --shell /sbin/nologin --ingroup www-data \
+		--gecos www-data www-data` \
+  \
+  && bash -eu -c ' \
+  writeDirs=( \
+    /var/log/nginx \
+    /var/lib/nginx/body \
+    /var/lib/nginx/fastcgi \
+    /var/lib/nginx/proxy \
+    /var/lib/nginx/scgi \
+    /var/lib/nginx/uwsgi \
+    /var/log/audit \
+  ); \
+  for dir in "${writeDirs[@]}"; do \
+    mkdir -p ${dir}; \
+    chown -R www-data.www-data ${dir}; \
+  done'
+
+EXPOSE 80 443
+
+CMD ["nginx", "-g", "daemon off;"]

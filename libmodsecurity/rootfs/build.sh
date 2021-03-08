@@ -9,9 +9,11 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export APT_DEB_REPO=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
-# sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list 
-sed -i "s%http://archive.ubuntu.com/%${APT_DEB_REPO}%g" /etc/apt/sources.list
+#export APT_MIRROR=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
+#APT_MIRROR=http://cn.archive.ubuntu.com/
+#APT_MIRROR=https://mirrors.aliyun.com/ubuntu/
+#sed -i "s%http://archive.ubuntu.com/%${APT_MIRROR}%g;s%http://security.ubuntu.com/%${APT_MIRROR}%g' /etc/apt/sources.list 
+#sed -i "s%http://archive.ubuntu.com/%${APT_MIRROR}%g" /etc/apt/sources.list
 
 export NGINX_GIT_REPO=https://github.com/nginx/nginx.git
 export NGINX_GIT_TAG=release-1.19.6
@@ -76,15 +78,15 @@ get_src()
 # install required packages to build
 `# apk add` \
 apt-get update && apt-get install -y \
-  git curl ca-certificates \
-  g++ flex bison doxygen libyajl-dev libgeoip-dev libtool dh-autoreconf libcurl4-gnutls-dev libxml2 libpcre++-dev libxml2-dev \
-  liblmdb++-dev libfuzzy-dev liblmdb0 ssdeep luajit liblua5.1-0-dev libssl-dev \
+  apt-transport-https git \
+  g++ flex bison doxygen libyajl-dev libgeoip-dev libtool dh-autoreconf \
+  libcurl4-gnutls-dev libxml2 libpcre++-dev libxml2-dev zlib1g-dev \
+  liblmdb++-dev libfuzzy-dev liblmdb0 ssdeep luajit liblua5.1-0-dev \
   `# bash` \
   `# gcc` \
   `# clang` \
   `# libc-dev` \
-  make \
-  automake \
+  make automake \
   `# openssl-dev` \
   `# pcre-dev` \
   `# zlib-dev` \
@@ -97,11 +99,12 @@ apt-get update && apt-get install -y \
   `# mercurial` \
   `# alpine-sdk` \
   `# findutils` \
-  `# curl ca-certificates` \
+  curl ca-certificates \
   patch \
   `# libaio-dev` \
-  openssl \
-  cmake \
+  openssl libssl-dev \
+  cmake libsqlite3-dev libpcap-dev libunwind-dev uuid-dev \
+  libmnl-dev libnetfilter-queue-dev libdumbnet-dev libhwloc-dev \
   `# util-linux` \
   `# lmdb-tools` \
   wget \

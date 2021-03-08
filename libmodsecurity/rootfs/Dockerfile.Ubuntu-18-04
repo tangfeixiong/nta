@@ -5,9 +5,9 @@ COPY . /
 RUN set -xe \
   && /build.sh
 
-RUN cp /main.conf /etc/nginx/modsecurity/main.conf \
-  && cp /nginx.conf-libmodsecurity /etc/nginx/nginx.conf \
-  && /usr/local/nginx/sbin/nginx -V
+RUN mkdir -p /usr/local/etc/nginx/ \
+  && mv /nginx.conf /main.conf /usr/local/etc/nginx/ \
+  && /usr/local/nginx/sbin/nginx -c /usr/local/etc/nginx/nginx.conf -t
 
 EXPOSE 80
 
@@ -28,21 +28,21 @@ RUN export APT_SRC=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ \
   \
   && apt-get update \
   && apt-get install -y --no-install-recommends \
+    curl ca-certificates libcurl3-gnutls libcurl4 \
     openssl libssl1.0.0 libssl1.1 \
-    libpcre16-3 libpcre32-3 \
     zlib1g \
+	liblua5.1-0 `#luajit libluajit-5.1-2` \
+    libpcre3 \
     libgeoip1 \
-    curl ca-certificates \
-    patch \
-	ssdeep libfuzzy2 \
-	liblua5.1-0 `#luajit` \
-    libyajl2 \
     liblmdb0 \
-    libxml2 \
     libmaxminddb0 \
+	ssdeep libfuzzy2 \
+    libxml2 \
+    libyajl2 \
     libyaml-0-2 `#libyaml-cpp-dev` \
     dumb-init \
-    nano vim \
+    patch \
+    nano `#vim` \
     tzdata \
   \
   && ln -s /usr/local/nginx/sbin/nginx /sbin/nginx \
@@ -54,12 +54,15 @@ RUN export APT_SRC=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ \
   && bash -eu -c ' \
   writeDirs=( \
     /var/log/nginx \
+    /var/log/audit \
     /var/lib/nginx/body \
     /var/lib/nginx/fastcgi \
     /var/lib/nginx/proxy \
     /var/lib/nginx/scgi \
     /var/lib/nginx/uwsgi \
-    /var/log/audit \
+    /opt/modsecurity/var/log \
+	/opt/modsecurity/var/audit \
+	/opt/modsecurity/var/upload \
   ); \
   for dir in "${writeDirs[@]}"; do \
     mkdir -p ${dir}; \
@@ -67,5 +70,7 @@ RUN export APT_SRC=http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ \
   done'
 
 EXPOSE 80 443
+
+#VOLUME ["/etc/nginx/modsecurity", "/etc/nginx/owasp-modsecurity-crs", "/usr/local/etc/nginx"]
 
 CMD ["nginx", "-g", "daemon off;"]

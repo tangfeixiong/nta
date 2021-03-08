@@ -1,0 +1,3 @@
+*
+!libmodsecurity/rootfs
+!snort3/build*

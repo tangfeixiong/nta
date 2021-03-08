@@ -1,0 +1,2200 @@
+
+root@96f413953c2f:/tmp# \
+mkdir -p /tmp/github.com+0x2F+snort3+0x2F+snort3 && \
+curl -sSL https://github.com/snort3/snort3/archive/3.1.1.0.tar.gz | \
+tar -C /tmp/github.com+0x2F+snort3+0x2F+snort3 -zxf -
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0# ./configure_cmake.sh --prefix=/usr/local/snort  --enable-tcmalloc
+Build Directory : build
+Source Directory: /tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0
+-- The CXX compiler identification is GNU 7.5.0
+-- The C compiler identification is GNU 7.5.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Checking for module 'libdaq>=3.0.0'
+--   Found libdaq, version 3.0.0
+-- Found DAQ: /usr/local/lib/libdaq.so  
+-- Checking for module 'libdaq_static_fst'
+--   Found libdaq_static_fst, version 3.0.0
+-- Checking for module 'libdaq_static_dump'
+--   Found libdaq_static_dump, version 3.0.0
+-- Checking for module 'libdaq_static_nfq'
+--   Found libdaq_static_nfq, version 3.0.0
+-- Checking for module 'libdaq_static_pcap'
+--   Found libdaq_static_pcap, version 3.0.0
+-- Checking for module 'libdaq_static_afpacket'
+--   Found libdaq_static_afpacket, version 3.0.0
+-- Checking for module 'libdaq_static_trace'
+--   Found libdaq_static_trace, version 3.0.0
+-- Checking for module 'libdaq_static_bpf'
+--   Found libdaq_static_bpf, version 3.0.0
+-- Found DNET: /usr/include  
+-- Checking for module 'hwloc'
+--   Found hwloc, version 2.4.1rc3-git
+-- Found HWLOC: /usr/local/lib/libhwloc.so  
+-- Checking for module 'luajit'
+--   Found luajit, version 2.1.0-beta3
+-- Found LuaJIT: /usr/local/lib/libluajit-5.1.so (found version "2.1.0-beta3") 
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1") 
+-- Found PCAP: /usr/local/lib/libpcap.so  
+-- Performing Test PCAP_LINKS_SOLO
+-- Performing Test PCAP_LINKS_SOLO - Success
+-- Checking for module 'libpcre'
+--   Found libpcre, version 8.44
+-- Found PCRE: /usr/local/include  
+-- Found ZLIB: /usr/lib/x86_64-linux-gnu/libz.so (found version "1.2.11") 
+-- install w3m to build all-in-one text user manual (missing: W3M_EXE) 
+-- Checking for module 'libhs'
+--   Found libhs, version 5.4.0
+-- Checking for module 'libsafec'
+--   Found libsafec, version 02092020.0-g6d921f
+-- Performing Test ICONV_IS_BUILT_IN
+-- Performing Test ICONV_IS_BUILT_IN - Success
+-- Checking for module 'uuid'
+--   Found uuid, version 2.31.1
+-- Checking for module 'libunwind'
+--   Found libunwind, version 1.21
+-- Found Libunwind: /usr/lib/x86_64-linux-gnu/libunwind.so (found version "1.21") 
+-- Performing Test HAS_C_HIDDEN
+-- Performing Test HAS_C_HIDDEN - Success
+-- Performing Test HAS_CXX_HIDDEN
+-- Performing Test HAS_CXX_HIDDEN - Success
+-- Checking for module 'libtcmalloc'
+--   Found libtcmalloc, version 2.9.0
+-- Found TCMalloc: /usr/local/lib/libtcmalloc.so (found version "2.9.0") 
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for malloc_trim
+-- Looking for malloc_trim - found
+-- Looking for memrchr
+-- Looking for memrchr - found
+-- Looking for sigaction
+-- Looking for sigaction - found
+-- Looking for basename_r
+-- Looking for basename_r - not found
+-- Performing Test HAVE_GNU_STRERROR_R
+-- Performing Test HAVE_GNU_STRERROR_R - Success
+-- Looking for getrpcent
+-- Looking for getrpcent - found
+-- Check size of long int
+-- Check size of long int - done
+-- Check size of unsigned long int
+-- Check size of unsigned long int - done
+-- Performing Test INLINE
+-- Performing Test INLINE - Success
+-- Performing Test RESTRICT
+-- Performing Test RESTRICT - Success
+-- Looking for hs_scan in /usr/local/lib/libhs.a
+-- Looking for hs_scan in /usr/local/lib/libhs.a - found
+-- Looking for hs_compile_lit
+-- Looking for hs_compile_lit - not found
+-- Looking for lzma_code in /usr/lib/x86_64-linux-gnu/liblzma.so
+-- Looking for lzma_code in /usr/lib/x86_64-linux-gnu/liblzma.so - found
+-- Looking for backtrace in /usr/lib/x86_64-linux-gnu/libunwind.so
+-- Looking for backtrace in /usr/lib/x86_64-linux-gnu/libunwind.so - found
+-- Looking for printf_s in /usr/local/lib/libsafec-3.6.0.so
+-- Looking for printf_s in /usr/local/lib/libsafec-3.6.0.so - found
+-- Looking for uuid_parse in /usr/lib/x86_64-linux-gnu/libuuid.so
+-- Looking for uuid_parse in /usr/lib/x86_64-linux-gnu/libuuid.so - found
+
+-------------------------------------------------------
+snort version 3.1.1.0
+
+Install options:
+    prefix:     /usr/local/snort
+    includes:   /usr/local/snort/include/snort
+    plugins:    /usr/local/snort/lib/snort
+
+Compiler options:
+    CC:             /usr/bin/cc
+    CXX:            /usr/bin/c++
+    CFLAGS:            -fvisibility=hidden   -DNDEBUG -g -ggdb  -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free  -O2 -g -DNDEBUG
+    CXXFLAGS:          -fvisibility=hidden   -DNDEBUG -g -ggdb  -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free  -O2 -g -DNDEBUG
+    EXE_LDFLAGS:        
+    MODULE_LDFLAGS:     
+
+Feature options:
+    DAQ Modules:    Static (afpacket;bpf;dump;fst;nfq;pcap;trace)
+    Flatbuffers:    ON
+    Hyperscan:      ON
+    ICONV:          ON
+    Libunwind:      ON
+    LZMA:           ON
+    RPC DB:         Built-in
+    SafeC:          ON
+    TCMalloc:       ON
+    UUID:           ON
+-------------------------------------------------------
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# makeScanning dependencies of target tcp_connector
+[  0%] Building CXX object src/connectors/tcp_connector/CMakeFiles/tcp_connector.dir/tcp_connector.cc.o
+[  0%] Building CXX object src/connectors/tcp_connector/CMakeFiles/tcp_connector.dir/tcp_connector_module.cc.o
+[  0%] Built target tcp_connector
+Scanning dependencies of target ips_actions
+[  0%] Building CXX object src/actions/CMakeFiles/ips_actions.dir/actions.cc.o
+[  0%] Building CXX object src/actions/CMakeFiles/ips_actions.dir/ips_actions.cc.o
+[  0%] Building CXX object src/actions/CMakeFiles/ips_actions.dir/act_replace.cc.o
+[  0%] Building CXX object src/actions/CMakeFiles/ips_actions.dir/act_react.cc.o
+[  0%] Building CXX object src/actions/CMakeFiles/ips_actions.dir/act_reject.cc.o
+[  0%] Built target ips_actions
+Scanning dependencies of target codecs
+[  0%] Building CXX object src/codecs/CMakeFiles/codecs.dir/codec_api.cc.o
+[  0%] Building CXX object src/codecs/CMakeFiles/codecs.dir/codec_module.cc.o
+[  0%] Built target codecs
+Scanning dependencies of target root_codecs
+[  0%] Building CXX object src/codecs/root/CMakeFiles/root_codecs.dir/cd_eth.cc.o
+[  0%] Building CXX object src/codecs/root/CMakeFiles/root_codecs.dir/cd_raw.cc.o
+[  0%] Built target root_codecs
+Scanning dependencies of target link_codecs
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_arp.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_erspan2.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_erspan3.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_ciscometadata.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_fabricpath.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_mpls.cc.o
+[  0%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_ppp_encap.cc.o
+[  1%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_pppoe.cc.o
+[  1%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_trans_bridge.cc.o
+[  1%] Building CXX object src/codecs/link/CMakeFiles/link_codecs.dir/cd_vlan.cc.o
+[  1%] Built target link_codecs
+Scanning dependencies of target ip_codecs
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_ipv4.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_hop_opts.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_tcp.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_auth.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_bad_proto.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_dst_opts.cc.o
+[  1%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_esp.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_frag.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_gre.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_icmp4.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_icmp6.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_igmp.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_ipv6.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_no_next.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_mobility.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_pgm.cc.o
+[  2%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_routing.cc.o
+[  3%] Building CXX object src/codecs/ip/CMakeFiles/ip_codecs.dir/cd_udp.cc.o
+[  3%] Built target ip_codecs
+Scanning dependencies of target misc_codecs
+[  3%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_default.cc.o
+[  3%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_gtp.cc.o
+[  3%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_icmp4_ip.cc.o
+[  3%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_icmp6_ip.cc.o
+[  3%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_llc.cc.o
+[  4%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_teredo.cc.o
+[  4%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_user.cc.o
+[  4%] Building CXX object src/codecs/misc/CMakeFiles/misc_codecs.dir/cd_vxlan.cc.o
+[  4%] Built target misc_codecs
+Scanning dependencies of target control
+[  4%] Building CXX object src/control/CMakeFiles/control.dir/idle_processing.cc.o
+[  4%] Built target control
+Scanning dependencies of target detection
+[  4%] Building CXX object src/detection/CMakeFiles/detection.dir/context_switcher.cc.o
+[  4%] Building CXX object src/detection/CMakeFiles/detection.dir/detect.cc.o
+[  4%] Building CXX object src/detection/CMakeFiles/detection.dir/detection_engine.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/detection_module.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/detection_options.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/detection_util.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/detect_trace.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/fp_config.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/fp_create.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/fp_detect.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/fp_utils.cc.o
+[  5%] Building CXX object src/detection/CMakeFiles/detection.dir/ips_context.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/ips_context_chain.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/ips_context_data.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/pcrm.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/regex_offload.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/rtn_checks.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/rules.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/service_map.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/sfrim.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/signature.cc.o
+[  6%] Building CXX object src/detection/CMakeFiles/detection.dir/treenodes.cc.o
+[  7%] Building CXX object src/detection/CMakeFiles/detection.dir/tag.cc.o
+[  7%] Built target detection
+Scanning dependencies of target dump_config
+[  7%] Building CXX object src/dump_config/CMakeFiles/dump_config.dir/config_data.cc.o
+[  7%] Building CXX object src/dump_config/CMakeFiles/dump_config.dir/config_output.cc.o
+[  7%] Building CXX object src/dump_config/CMakeFiles/dump_config.dir/json_config_output.cc.o
+[  7%] Building CXX object src/dump_config/CMakeFiles/dump_config.dir/text_config_output.cc.o
+[  7%] Built target dump_config
+Scanning dependencies of target events
+[  7%] Building CXX object src/events/CMakeFiles/events.dir/event.cc.o
+[  8%] Building CXX object src/events/CMakeFiles/events.dir/event_queue.cc.o
+[  8%] Building CXX object src/events/CMakeFiles/events.dir/sfeventq.cc.o
+[  8%] Built target events
+Scanning dependencies of target file_api
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/circular_buffer.cc.o
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_capture.cc.o
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_cache.cc.o
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_config.cc.o
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_flows.cc.o
+[  8%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_identifier.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_lib.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_log.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_mempool.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_module.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_policy.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_segment.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_service.cc.o
+[  9%] Building CXX object src/file_api/CMakeFiles/file_api.dir/file_stats.cc.o
+[  9%] Built target file_api
+Scanning dependencies of target filter
+[  9%] Building CXX object src/filters/CMakeFiles/filter.dir/detection_filter.cc.o
+[  9%] Building CXX object src/filters/CMakeFiles/filter.dir/rate_filter.cc.o
+[  9%] Building CXX object src/filters/CMakeFiles/filter.dir/sfthreshold.cc.o
+[  9%] Building CXX object src/filters/CMakeFiles/filter.dir/sfrf.cc.o
+[  9%] Building CXX object src/filters/CMakeFiles/filter.dir/sfthd.cc.o
+[  9%] Built target filter
+Scanning dependencies of target flow
+[  9%] Building CXX object src/flow/CMakeFiles/flow.dir/deferred_trust.cc.o
+[  9%] Building CXX object src/flow/CMakeFiles/flow.dir/expect_cache.cc.o
+[  9%] Building CXX object src/flow/CMakeFiles/flow.dir/flow.cc.o
+[  9%] Building CXX object src/flow/CMakeFiles/flow.dir/flow_cache.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/flow_control.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/flow_data.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/flow_key.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/flow_stash.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/ha.cc.o
+[ 10%] Building CXX object src/flow/CMakeFiles/flow.dir/ha_module.cc.o
+[ 10%] Built target flow
+Scanning dependencies of target framework
+[ 10%] Building CXX object src/framework/CMakeFiles/framework.dir/codec.cc.o
+[ 10%] Building CXX object src/framework/CMakeFiles/framework.dir/cursor.cc.o
+[ 10%] Building CXX object src/framework/CMakeFiles/framework.dir/data_bus.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/inspector.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/ips_option.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/packet_constraints.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/parameter.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/module.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/mpse.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/mpse_batch.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/range.cc.o
+[ 11%] Building CXX object src/framework/CMakeFiles/framework.dir/value.cc.o
+[ 11%] Built target framework
+Scanning dependencies of target hash
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/ghash.cc.o
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/hashes.cc.o
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/hash_lru_cache.cc.o
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/hash_key_operations.cc.o
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/lru_cache_shared.cc.o
+[ 11%] Building CXX object src/hash/CMakeFiles/hash.dir/primetable.cc.o
+[ 12%] Building CXX object src/hash/CMakeFiles/hash.dir/xhash.cc.o
+[ 12%] Building CXX object src/hash/CMakeFiles/hash.dir/zhash.cc.o
+[ 12%] Built target hash
+Scanning dependencies of target latency
+[ 12%] Building CXX object src/latency/CMakeFiles/latency.dir/latency_module.cc.o
+[ 13%] Building CXX object src/latency/CMakeFiles/latency.dir/packet_latency.cc.o
+[ 13%] Building CXX object src/latency/CMakeFiles/latency.dir/rule_latency.cc.o
+[ 13%] Built target latency
+Scanning dependencies of target log
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/log.cc.o
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/log_text.cc.o
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/messages.cc.o
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/obfuscator.cc.o
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/text_log.cc.o
+[ 13%] Building CXX object src/log/CMakeFiles/log.dir/u2_packet.cc.o
+[ 13%] Built target log
+[ 13%] Generating lua_finalize.h
+[ 13%] Generating lua_bootstrap.h
+Scanning dependencies of target main
+[ 13%] Building CXX object src/main/CMakeFiles/main.dir/analyzer.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/analyzer_command.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/help.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/modules.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/oops_handler.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/policy.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/request.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/shell.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/snort.cc.o
+[ 14%] Building CXX object src/main/CMakeFiles/main.dir/snort_config.cc.o
+[ 15%] Building CXX object src/main/CMakeFiles/main.dir/snort_debug.cc.o
+[ 15%] Building CXX object src/main/CMakeFiles/main.dir/snort_module.cc.o
+[ 15%] Building CXX object src/main/CMakeFiles/main.dir/swapper.cc.o
+[ 15%] Building CXX object src/main/CMakeFiles/main.dir/thread.cc.o
+[ 15%] Building CXX object src/main/CMakeFiles/main.dir/thread_config.cc.o
+[ 15%] Built target main
+[ 15%] Generating lua_coreinit.h
+[ 15%] Generating plugffi.lua, snort_plugin.lua
+Scanning dependencies of target managers
+[ 15%] Building CXX object src/managers/CMakeFiles/managers.dir/action_manager.cc.o
+[ 15%] Building CXX object src/managers/CMakeFiles/managers.dir/codec_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/event_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/inspector_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/ips_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/module_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/mpse_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/plugin_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/script_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/so_manager.cc.o
+[ 16%] Building CXX object src/managers/CMakeFiles/managers.dir/connector_manager.cc.o
+[ 16%] Built target managers
+Scanning dependencies of target memory
+[ 16%] Building CXX object src/memory/CMakeFiles/memory.dir/memory_cap.cc.o
+[ 17%] Building CXX object src/memory/CMakeFiles/memory.dir/memory_module.cc.o
+[ 17%] Building CXX object src/memory/CMakeFiles/memory.dir/prune_handler.cc.o
+[ 17%] Built target memory
+Scanning dependencies of target mime
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_config.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_context_data.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_decode.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_log.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_paf.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/file_mime_process.cc.o
+[ 17%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_base.cc.o
+[ 18%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_b64.cc.o
+[ 18%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_bit.cc.o
+[ 18%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_buffer.cc.o
+[ 18%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_qp.cc.o
+[ 18%] Building CXX object src/mime/CMakeFiles/mime.dir/decode_uu.cc.o
+[ 18%] Built target mime
+Scanning dependencies of target packet_io
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/active.cc.o
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/sfdaq.cc.o
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/sfdaq_config.cc.o
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/sfdaq_instance.cc.o
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/sfdaq_module.cc.o
+[ 18%] Building CXX object src/packet_io/CMakeFiles/packet_io.dir/trough.cc.o
+[ 18%] Built target packet_io
+Scanning dependencies of target parser
+[ 18%] Building CXX object src/parser/CMakeFiles/parser.dir/arg_list.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parser.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_conf.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_ip.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_ports.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_rule.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_so_rule.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_stream.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/parse_utils.cc.o
+[ 19%] Building CXX object src/parser/CMakeFiles/parser.dir/cmd_line.cc.o
+[ 20%] Building CXX object src/parser/CMakeFiles/parser.dir/config_file.cc.o
+[ 20%] Building CXX object src/parser/CMakeFiles/parser.dir/vars.cc.o
+[ 20%] Built target parser
+Scanning dependencies of target payload_injector
+[ 20%] Building CXX object src/payload_injector/CMakeFiles/payload_injector.dir/payload_injector.cc.o
+[ 20%] Building CXX object src/payload_injector/CMakeFiles/payload_injector.dir/payload_injector_module.cc.o
+[ 20%] Building CXX object src/payload_injector/CMakeFiles/payload_injector.dir/payload_injector_translate_page.cc.o
+[ 20%] Built target payload_injector
+Scanning dependencies of target ports
+[ 20%] Building CXX object src/ports/CMakeFiles/ports.dir/port_group.cc.o
+[ 20%] Building CXX object src/ports/CMakeFiles/ports.dir/port_item.cc.o
+[ 20%] Building CXX object src/ports/CMakeFiles/ports.dir/port_object.cc.o
+[ 20%] Building CXX object src/ports/CMakeFiles/ports.dir/port_object2.cc.o
+[ 21%] Building CXX object src/ports/CMakeFiles/ports.dir/port_table.cc.o
+[ 21%] Building CXX object src/ports/CMakeFiles/ports.dir/port_utils.cc.o
+[ 21%] Building CXX object src/ports/CMakeFiles/ports.dir/port_var_table.cc.o
+[ 21%] Building CXX object src/ports/CMakeFiles/ports.dir/rule_port_tables.cc.o
+[ 21%] Built target ports
+Scanning dependencies of target protocols
+[ 21%] Building CXX object src/protocols/CMakeFiles/protocols.dir/layer.cc.o
+[ 21%] Building CXX object src/protocols/CMakeFiles/protocols.dir/packet.cc.o
+[ 22%] Building CXX object src/protocols/CMakeFiles/protocols.dir/ip.cc.o
+[ 22%] Building CXX object src/protocols/CMakeFiles/protocols.dir/ipv4_options.cc.o
+[ 22%] Building CXX object src/protocols/CMakeFiles/protocols.dir/ssl.cc.o
+[ 22%] Building CXX object src/protocols/CMakeFiles/protocols.dir/tcp_options.cc.o
+[ 22%] Building CXX object src/protocols/CMakeFiles/protocols.dir/packet_manager.cc.o
+[ 22%] Built target protocols
+Scanning dependencies of target sfip
+[ 22%] Building CXX object src/sfip/CMakeFiles/sfip.dir/sf_cidr.cc.o
+[ 23%] Building CXX object src/sfip/CMakeFiles/sfip.dir/sf_ip.cc.o
+[ 23%] Building CXX object src/sfip/CMakeFiles/sfip.dir/sf_ipvar.cc.o
+[ 23%] Building CXX object src/sfip/CMakeFiles/sfip.dir/sf_vartable.cc.o
+[ 23%] Built target sfip
+Scanning dependencies of target sfrt
+[ 23%] Building CXX object src/sfrt/CMakeFiles/sfrt.dir/sfrt.cc.o
+[ 23%] Building CXX object src/sfrt/CMakeFiles/sfrt.dir/sfrt_dir.cc.o
+[ 23%] Building CXX object src/sfrt/CMakeFiles/sfrt.dir/sfrt_flat.cc.o
+[ 23%] Building CXX object src/sfrt/CMakeFiles/sfrt.dir/sfrt_flat_dir.cc.o
+[ 23%] Built target sfrt
+Scanning dependencies of target service_inspectors
+[ 23%] Building CXX object src/service_inspectors/CMakeFiles/service_inspectors.dir/service_inspectors.cc.o
+[ 23%] Built target service_inspectors
+Scanning dependencies of target back_orifice
+[ 23%] Building CXX object src/service_inspectors/back_orifice/CMakeFiles/back_orifice.dir/back_orifice.cc.o
+[ 23%] Built target back_orifice
+Scanning dependencies of target cip
+[ 23%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/cip.cc.o
+[ 23%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/cip_module.cc.o
+[ 23%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/cip_paf.cc.o
+[ 23%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/cip_parsing.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/cip_session.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_attribute.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_class.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_connpathclass.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_enipcommand.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_enipreq.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_eniprsp.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_instance.cc.o
+[ 24%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_req.cc.o
+[ 25%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_rsp.cc.o
+[ 25%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_service.cc.o
+[ 25%] Building CXX object src/service_inspectors/cip/CMakeFiles/cip.dir/ips_cip_status.cc.o
+[ 25%] Built target cip
+Scanning dependencies of target dce_rpc
+[ 25%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_co.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_common.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_context_data.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_expected_session.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_proxy.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_proxy_module.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_proxy_splitter.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_server.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_server_module.cc.o
+[ 26%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_http_server_splitter.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_list.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb2.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb2_commands.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb2_utils.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_commands.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_module.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_paf.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_transaction.cc.o
+[ 27%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_transaction_utils.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_smb_utils.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_tcp.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_tcp_module.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_tcp_paf.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_udp.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_udp_module.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_udp_processing.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/dce_utils.cc.o
+[ 28%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/ips_dce_iface.cc.o
+[ 29%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/ips_dce_opnum.cc.o
+[ 29%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/ips_dce_stub_data.cc.o
+[ 29%] Building CXX object src/service_inspectors/dce_rpc/CMakeFiles/dce_rpc.dir/smb_message.cc.o
+[ 29%] Built target dce_rpc
+Scanning dependencies of target dnp3
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/dnp3.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/dnp3_map.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/dnp3_module.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/dnp3_reassembly.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/dnp3_paf.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/ips_dnp3_data.cc.o
+[ 29%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/ips_dnp3_func.cc.o
+[ 30%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/ips_dnp3_ind.cc.o
+[ 30%] Building CXX object src/service_inspectors/dnp3/CMakeFiles/dnp3.dir/ips_dnp3_obj.cc.o
+[ 30%] Built target dnp3
+Scanning dependencies of target dns
+[ 30%] Building CXX object src/service_inspectors/dns/CMakeFiles/dns.dir/dns.cc.o
+[ 30%] Building CXX object src/service_inspectors/dns/CMakeFiles/dns.dir/dns_module.cc.o
+[ 30%] Built target dns
+Scanning dependencies of target ftp_telnet
+[ 30%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ft_main.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_data.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_bounce_lookup.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_cmd_lookup.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_module.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_parse.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_print.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftp_splitter.cc.o
+[ 31%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftpdata_splitter.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftpp_si.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/ftpp_ui_config.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/pp_ftp.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/pp_telnet.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/telnet.cc.o
+[ 32%] Building CXX object src/service_inspectors/ftp_telnet/CMakeFiles/ftp_telnet.dir/telnet_module.cc.o
+[ 32%] Built target ftp_telnet
+Scanning dependencies of target gtp_inspect
+[ 32%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/gtp.cc.o
+[ 32%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/gtp_inspect.cc.o
+[ 32%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/gtp_module.cc.o
+[ 32%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/gtp_parser.cc.o
+[ 33%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/ips_gtp_info.cc.o
+[ 33%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/ips_gtp_type.cc.o
+[ 33%] Building CXX object src/service_inspectors/gtp/CMakeFiles/gtp_inspect.dir/ips_gtp_version.cc.o
+[ 33%] Built target gtp_inspect
+Scanning dependencies of target http_inspect
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/ips_http.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_buffer_info.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_inspect.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_section.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_start.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_request.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_status.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_head_shared.cc.o
+[ 33%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_head_shared_util.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_header.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_body.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_body_chunk.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_body_cl.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_body_h2.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_body_old.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_msg_trailer.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_query_parser.cc.o
+[ 34%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_header_normalizer.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_uri.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_uri_norm.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_normalizers.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_str_to_code.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_api.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_tables.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_module.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_test_input.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_flow_data.cc.o
+[ 35%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_context_data.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_transaction.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_test_manager.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_field.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_stream_splitter_finish.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_stream_splitter_reassemble.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_stream_splitter_scan.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_cutter.cc.o
+[ 36%] Building CXX object src/service_inspectors/http_inspect/CMakeFiles/http_inspect.dir/http_js_norm.cc.o
+[ 36%] Built target http_inspect
+Scanning dependencies of target http2_inspect
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_api.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_data_frame.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_data_cutter.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_flow_data.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_frame.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_headers_frame.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_headers_frame_header.cc.o
+[ 36%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_headers_frame_trailer.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_headers_frame_with_startline.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_hpack.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_hpack_dynamic_table.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_hpack_int_decode.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_hpack_string_decode.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_hpack_table.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_huffman_state_machine.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_inspect.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_module.cc.o
+[ 37%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_push_promise_frame.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_request_line.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_settings_frame.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_start_line.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_status_line.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_stream.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_stream_splitter.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_stream_splitter_impl.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_tables.cc.o
+[ 38%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/http2_utils.cc.o
+[ 39%] Building CXX object src/service_inspectors/http2_inspect/CMakeFiles/http2_inspect.dir/ips_http2.cc.o
+[ 39%] Built target http2_inspect
+Scanning dependencies of target imap
+[ 39%] Building CXX object src/service_inspectors/imap/CMakeFiles/imap.dir/imap.cc.o
+[ 40%] Building CXX object src/service_inspectors/imap/CMakeFiles/imap.dir/imap_paf.cc.o
+[ 40%] Building CXX object src/service_inspectors/imap/CMakeFiles/imap.dir/imap_module.cc.o
+[ 40%] Built target imap
+Scanning dependencies of target modbus
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/modbus.cc.o
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/modbus_decode.cc.o
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/modbus_module.cc.o
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/modbus_paf.cc.o
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/ips_modbus_data.cc.o
+[ 40%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/ips_modbus_func.cc.o
+[ 41%] Building CXX object src/service_inspectors/modbus/CMakeFiles/modbus.dir/ips_modbus_unit.cc.o
+[ 41%] Built target modbus
+Scanning dependencies of target netflow
+[ 41%] Building CXX object src/service_inspectors/netflow/CMakeFiles/netflow.dir/netflow_module.cc.o
+[ 41%] Building CXX object src/service_inspectors/netflow/CMakeFiles/netflow.dir/netflow.cc.o
+[ 41%] Built target netflow
+Scanning dependencies of target pop
+[ 41%] Building CXX object src/service_inspectors/pop/CMakeFiles/pop.dir/pop.cc.o
+[ 41%] Building CXX object src/service_inspectors/pop/CMakeFiles/pop.dir/pop_paf.cc.o
+[ 42%] Building CXX object src/service_inspectors/pop/CMakeFiles/pop.dir/pop_module.cc.o
+[ 42%] Built target pop
+Scanning dependencies of target rpc_decode
+[ 42%] Building CXX object src/service_inspectors/rpc_decode/CMakeFiles/rpc_decode.dir/rpc_decode.cc.o
+[ 42%] Building CXX object src/service_inspectors/rpc_decode/CMakeFiles/rpc_decode.dir/rpc_module.cc.o
+[ 42%] Built target rpc_decode
+Scanning dependencies of target s7commplus
+[ 42%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/s7comm.cc.o
+[ 42%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/s7comm_decode.cc.o
+[ 42%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/s7comm_module.cc.o
+[ 43%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/s7comm_paf.cc.o
+[ 43%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/ips_s7comm_content.cc.o
+[ 43%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/ips_s7comm_func.cc.o
+[ 43%] Building CXX object src/service_inspectors/s7commplus/CMakeFiles/s7commplus.dir/ips_s7comm_opcode.cc.o
+[ 43%] Built target s7commplus
+Scanning dependencies of target sip
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_parser.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_dialog.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_utils.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_config.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_module.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/sip_splitter.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/ips_sip.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/ips_sip_stat_code.cc.o
+[ 44%] Building CXX object src/service_inspectors/sip/CMakeFiles/sip.dir/ips_sip_method.cc.o
+[ 44%] Built target sip
+Scanning dependencies of target smtp
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp.cc.o
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp_paf.cc.o
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp_util.cc.o
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp_xlink2state.cc.o
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp_module.cc.o
+[ 45%] Building CXX object src/service_inspectors/smtp/CMakeFiles/smtp.dir/smtp_normalize.cc.o
+[ 45%] Built target smtp
+Scanning dependencies of target ssh
+[ 45%] Building CXX object src/service_inspectors/ssh/CMakeFiles/ssh.dir/ssh.cc.o
+[ 45%] Building CXX object src/service_inspectors/ssh/CMakeFiles/ssh.dir/ssh_module.cc.o
+[ 45%] Building CXX object src/service_inspectors/ssh/CMakeFiles/ssh.dir/ssh_splitter.cc.o
+[ 45%] Built target ssh
+Scanning dependencies of target ssl
+[ 46%] Building CXX object src/service_inspectors/ssl/CMakeFiles/ssl.dir/ips_ssl_state.cc.o
+[ 46%] Building CXX object src/service_inspectors/ssl/CMakeFiles/ssl.dir/ips_ssl_version.cc.o
+[ 46%] Building CXX object src/service_inspectors/ssl/CMakeFiles/ssl.dir/ssl_inspector.cc.o
+[ 46%] Building CXX object src/service_inspectors/ssl/CMakeFiles/ssl.dir/ssl_module.cc.o
+[ 46%] Building CXX object src/service_inspectors/ssl/CMakeFiles/ssl.dir/ssl_splitter.cc.o
+[ 46%] Built target ssl
+Scanning dependencies of target wizard
+[ 46%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/curses.cc.o
+[ 46%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/magic.cc.o
+[ 46%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/hexes.cc.o
+[ 46%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/spells.cc.o
+[ 46%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/wizard.cc.o
+[ 47%] Building CXX object src/service_inspectors/wizard/CMakeFiles/wizard.dir/wiz_module.cc.o
+[ 47%] Built target wizard
+Scanning dependencies of target stream_paf
+[ 47%] Building CXX object src/stream/CMakeFiles/stream_paf.dir/flush_bucket.cc.o
+[ 47%] Building CXX object src/stream/CMakeFiles/stream_paf.dir/paf.cc.o
+[ 47%] Built target stream_paf
+Scanning dependencies of target stream
+[ 47%] Building CXX object src/stream/CMakeFiles/stream.dir/stream.cc.o
+[ 47%] Building CXX object src/stream/CMakeFiles/stream.dir/stream_inspectors.cc.o
+[ 47%] Building CXX object src/stream/CMakeFiles/stream.dir/stream_splitter.cc.o
+[ 47%] Built target stream
+Scanning dependencies of target stream_base
+[ 47%] Building CXX object src/stream/base/CMakeFiles/stream_base.dir/stream_base.cc.o
+[ 48%] Building CXX object src/stream/base/CMakeFiles/stream_base.dir/stream_ha.cc.o
+[ 48%] Building CXX object src/stream/base/CMakeFiles/stream_base.dir/stream_module.cc.o
+[ 48%] Built target stream_base
+Scanning dependencies of target stream_ip
+[ 48%] Building CXX object src/stream/ip/CMakeFiles/stream_ip.dir/ip_defrag.cc.o
+[ 50%] Building CXX object src/stream/ip/CMakeFiles/stream_ip.dir/ip_ha.cc.o
+[ 50%] Building CXX object src/stream/ip/CMakeFiles/stream_ip.dir/ip_module.cc.o
+[ 50%] Building CXX object src/stream/ip/CMakeFiles/stream_ip.dir/ip_session.cc.o
+[ 50%] Building CXX object src/stream/ip/CMakeFiles/stream_ip.dir/stream_ip.cc.o
+[ 50%] Built target stream_ip
+Scanning dependencies of target stream_icmp
+[ 50%] Building CXX object src/stream/icmp/CMakeFiles/stream_icmp.dir/icmp_ha.cc.o
+[ 50%] Building CXX object src/stream/icmp/CMakeFiles/stream_icmp.dir/icmp_module.cc.o
+[ 50%] Building CXX object src/stream/icmp/CMakeFiles/stream_icmp.dir/icmp_session.cc.o
+[ 50%] Building CXX object src/stream/icmp/CMakeFiles/stream_icmp.dir/stream_icmp.cc.o
+[ 50%] Built target stream_icmp
+Scanning dependencies of target stream_tcp
+[ 50%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/held_packet_queue.cc.o
+[ 50%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/ips_stream_reassemble.cc.o
+[ 50%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/ips_stream_size.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/segment_overlap_editor.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/stream_tcp.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_event_logger.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_ha.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_module.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_normalizer.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_normalizers.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_reassembler.cc.o
+[ 51%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_reassemblers.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_segment_descriptor.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_segment_node.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_session.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_closed.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_close_wait.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_closing.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_established.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_fin_wait1.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_fin_wait2.cc.o
+[ 52%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_handler.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_last_ack.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_listen.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_machine.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_none.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_syn_recv.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_syn_sent.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_state_time_wait.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_stream_config.cc.o
+[ 53%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_stream_session.cc.o
+[ 54%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_stream_tracker.cc.o
+[ 54%] Building CXX object src/stream/tcp/CMakeFiles/stream_tcp.dir/tcp_trace.cc.o
+[ 54%] Built target stream_tcp
+Scanning dependencies of target stream_udp
+[ 54%] Building CXX object src/stream/udp/CMakeFiles/stream_udp.dir/stream_udp.cc.o
+[ 54%] Building CXX object src/stream/udp/CMakeFiles/stream_udp.dir/udp_ha.cc.o
+[ 54%] Building CXX object src/stream/udp/CMakeFiles/stream_udp.dir/udp_module.cc.o
+[ 54%] Building CXX object src/stream/udp/CMakeFiles/stream_udp.dir/udp_session.cc.o
+[ 54%] Built target stream_udp
+Scanning dependencies of target stream_user
+[ 54%] Building CXX object src/stream/user/CMakeFiles/stream_user.dir/user_module.cc.o
+[ 54%] Building CXX object src/stream/user/CMakeFiles/stream_user.dir/user_session.cc.o
+[ 54%] Building CXX object src/stream/user/CMakeFiles/stream_user.dir/stream_user.cc.o
+[ 54%] Built target stream_user
+Scanning dependencies of target stream_file
+[ 54%] Building CXX object src/stream/file/CMakeFiles/stream_file.dir/file_module.cc.o
+[ 54%] Building CXX object src/stream/file/CMakeFiles/stream_file.dir/file_session.cc.o
+[ 54%] Building CXX object src/stream/file/CMakeFiles/stream_file.dir/stream_file.cc.o
+[ 54%] Built target stream_file
+Scanning dependencies of target target_based
+[ 54%] Building CXX object src/target_based/CMakeFiles/target_based.dir/host_attributes.cc.o
+[ 55%] Building CXX object src/target_based/CMakeFiles/target_based.dir/snort_protocols.cc.o
+[ 55%] Built target target_based
+Scanning dependencies of target host_tracker
+[ 55%] Building CXX object src/host_tracker/CMakeFiles/host_tracker.dir/host_cache.cc.o
+[ 55%] Building CXX object src/host_tracker/CMakeFiles/host_tracker.dir/host_cache_allocator.cc.o
+[ 55%] Building CXX object src/host_tracker/CMakeFiles/host_tracker.dir/host_cache_module.cc.o
+[ 55%] Building CXX object src/host_tracker/CMakeFiles/host_tracker.dir/host_tracker_module.cc.o
+[ 56%] Building CXX object src/host_tracker/CMakeFiles/host_tracker.dir/host_tracker.cc.o
+[ 56%] Built target host_tracker
+Scanning dependencies of target pub_sub
+[ 56%] Building CXX object src/pub_sub/CMakeFiles/pub_sub.dir/cip_events.cc.o
+[ 56%] Building CXX object src/pub_sub/CMakeFiles/pub_sub.dir/http_events.cc.o
+[ 56%] Building CXX object src/pub_sub/CMakeFiles/pub_sub.dir/sip_events.cc.o
+[ 56%] Built target pub_sub
+Scanning dependencies of target time
+[ 56%] Building CXX object src/time/CMakeFiles/time.dir/packet_time.cc.o
+[ 56%] Building CXX object src/time/CMakeFiles/time.dir/periodic.cc.o
+[ 56%] Built target time
+Scanning dependencies of target profiler
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/memory_context.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/memory_profiler.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/profiler.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/profiler_stats_table.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/profiler_nodes.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/rule_profiler.cc.o
+[ 57%] Building CXX object src/profiler/CMakeFiles/profiler.dir/time_profiler.cc.o
+[ 57%] Built target profiler
+Scanning dependencies of target trace
+[ 57%] Building CXX object src/trace/CMakeFiles/trace.dir/trace.cc.o
+[ 57%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_api.cc.o
+[ 57%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_config.cc.o
+[ 57%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_loggers.cc.o
+[ 58%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_module.cc.o
+[ 58%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_parser.cc.o
+[ 58%] Building CXX object src/trace/CMakeFiles/trace.dir/trace_swap.cc.o
+[ 58%] Built target trace
+Scanning dependencies of target utils
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/boyer_moore.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/dyn_array.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/kmap.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/segment_mem.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/sflsq.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/stats.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/util.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/util_ber.cc.o
+[ 59%] Building CXX object src/utils/CMakeFiles/utils.dir/util_cstring.cc.o
+[ 60%] Building CXX object src/utils/CMakeFiles/utils.dir/util_jsnorm.cc.o
+[ 60%] Building CXX object src/utils/CMakeFiles/utils.dir/util_net.cc.o
+[ 60%] Building CXX object src/utils/CMakeFiles/utils.dir/util_unfold.cc.o
+[ 60%] Building CXX object src/utils/CMakeFiles/utils.dir/util_utf.cc.o
+[ 60%] Built target utils
+Scanning dependencies of target helpers
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/hyper_scratch_allocator.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/hyper_search.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/base64_encoder.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/boyer_moore_search.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/chunk.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/directory.cc.o
+[ 60%] Building CXX object src/helpers/CMakeFiles/helpers.dir/discovery_filter.cc.o
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/json_stream.cc.o
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/literal_search.cc.o
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/markup.cc.o
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/process.cc.o
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/sigsafe.cc.o
+/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/src/helpers/sigsafe.cc: In member function 'void SigSafePrinter::write_string(const char*)':
+/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/src/helpers/sigsafe.cc:216:9 warning: ignoring return value of 'ssize_t write(int, const void*, size_t)', declared with attribute warn_unused_result [-Wunused-result]
+         (void) write(fd, str, len);
+         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 61%] Building CXX object src/helpers/CMakeFiles/helpers.dir/scratch_allocator.cc.o
+[ 61%] Built target helpers
+Scanning dependencies of target lua
+[ 61%] Building CXX object src/lua/CMakeFiles/lua.dir/lua.cc.o
+[ 61%] Building CXX object src/lua/CMakeFiles/lua.dir/lua_ref.cc.o
+[ 61%] Building CXX object src/lua/CMakeFiles/lua.dir/lua_util.cc.o
+[ 61%] Built target lua
+Scanning dependencies of target decompress
+[ 61%] Building CXX object src/decompress/CMakeFiles/decompress.dir/file_decomp.cc.o
+[ 61%] Building CXX object src/decompress/CMakeFiles/decompress.dir/file_decomp_pdf.cc.o
+[ 61%] Building CXX object src/decompress/CMakeFiles/decompress.dir/file_decomp_swf.cc.o
+[ 61%] Building CXX object src/decompress/CMakeFiles/decompress.dir/file_decomp_zip.cc.o
+[ 61%] Built target decompress
+Scanning dependencies of target ips_options
+[ 61%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/extract.cc.o
+[ 61%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_classtype.cc.o
+[ 61%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_content.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_detection_filter.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_dsize.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_file_data.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_flow.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_flowbits.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_hash.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_luajit.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_metadata.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_options.cc.o
+[ 62%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_pkt_data.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_reference.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_replace.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_service.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_so.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/asn1_detect.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/asn1_util.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ack.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_asn1.cc.o
+[ 63%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_base64.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ber_data.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ber_skip.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_bufferlen.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_byte_extract.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_byte_jump.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_byte_math.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_byte_test.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_cvs.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_enable.cc.o
+[ 64%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_file_type.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_flags.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_fragbits.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_fragoffset.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_gid.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_icmp_id.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_icmp_seq.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_icode.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_id.cc.o
+[ 65%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ipopts.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ip_proto.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_isdataat.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_itype.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_msg.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_pcre.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_priority.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_raw_data.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_rem.cc.o
+[ 66%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_rev.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_rpc.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_seq.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_sid.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_soid.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_tag.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_target.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_tos.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_ttl.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_window.cc.o
+[ 67%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_regex.cc.o
+[ 68%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/ips_sd_pattern.cc.o
+[ 68%] Building CXX object src/ips_options/CMakeFiles/ips_options.dir/sd_credit_card.cc.o
+[ 68%] Built target ips_options
+Scanning dependencies of target loggers
+[ 68%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_luajit.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_sf_socket.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/log_codecs.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/loggers.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_csv.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_fast.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_full.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_json.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_syslog.cc.o
+[ 69%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_talos.cc.o
+[ 70%] Building CXX object src/loggers/CMakeFiles/loggers.dir/alert_unixsock.cc.o
+[ 70%] Building CXX object src/loggers/CMakeFiles/loggers.dir/log_hext.cc.o
+[ 70%] Building CXX object src/loggers/CMakeFiles/loggers.dir/log_pcap.cc.o
+[ 70%] Building CXX object src/loggers/CMakeFiles/loggers.dir/unified2.cc.o
+[ 70%] Built target loggers
+Scanning dependencies of target network_inspectors
+[ 70%] Building CXX object src/network_inspectors/CMakeFiles/network_inspectors.dir/network_inspectors.cc.o
+[ 70%] Built target network_inspectors
+Scanning dependencies of target appid
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/app_forecast.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_api.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_app_descriptor.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_config.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_debug.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_detector.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_discovery.cc.o
+[ 70%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_ha.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_http_session.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_peg_counts.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_session.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_session_api.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_inspector.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_module.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_stats.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/app_info_table.cc.o
+[ 71%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/host_port_app_cache.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_http_event_handler.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/ips_appid_option.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/lua_detector_api.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/lua_detector_flow_api.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/lua_detector_module.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_state.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/tp_appid_utils.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/tp_lib_handler.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_aim.cc.o
+[ 72%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_bit.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_bit_tracker.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_detector.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_msn.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_rtp.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_ssh.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_timbuktu.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_tns.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_vnc.cc.o
+[ 73%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_app_ym.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/client_plugins/client_discovery.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_dns.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_imap.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_kerberos.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_pattern.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_pop3.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_sip.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/detector_smtp.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/dns_patterns.cc.o
+[ 74%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/http_url_patterns.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/sip_patterns.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/detector_plugins/ssl_patterns.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/dcerpc.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_battle_field.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_bgp.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_bit.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_bootp.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_dcerpc.cc.o
+[ 75%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_detector.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_direct_connect.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_discovery.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_flap.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_ftp.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_irc.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_lpr.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_mdns.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_mysql.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_netbios.cc.o
+[ 76%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_nntp.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_ntp.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_radius.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_regtest.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rexec.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rfb.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rlogin.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rpc.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rshell.cc.o
+[ 77%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rsync.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_rtmp.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_snmp.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_ssh.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_ssl.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_telnet.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_tftp.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_timbuktu.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/service_plugins/service_tns.cc.o
+[ 78%] Building CXX object src/network_inspectors/appid/CMakeFiles/appid.dir/appid_utils/sf_mlmp.cc.o
+[ 78%] Built target appid
+Scanning dependencies of target arp_spoof
+[ 79%] Building CXX object src/network_inspectors/arp_spoof/CMakeFiles/arp_spoof.dir/arp_spoof.cc.o
+[ 79%] Building CXX object src/network_inspectors/arp_spoof/CMakeFiles/arp_spoof.dir/arp_module.cc.o
+[ 79%] Built target arp_spoof
+Scanning dependencies of target binder
+[ 79%] Building CXX object src/network_inspectors/binder/CMakeFiles/binder.dir/binder.cc.o
+[ 79%] Building CXX object src/network_inspectors/binder/CMakeFiles/binder.dir/binding.cc.o
+[ 79%] Building CXX object src/network_inspectors/binder/CMakeFiles/binder.dir/bind_module.cc.o
+[ 79%] Built target binder
+Scanning dependencies of target normalize
+[ 79%] Building CXX object src/network_inspectors/normalize/CMakeFiles/normalize.dir/normalize.cc.o
+[ 79%] Building CXX object src/network_inspectors/normalize/CMakeFiles/normalize.dir/norm_module.cc.o
+[ 79%] Building CXX object src/network_inspectors/normalize/CMakeFiles/normalize.dir/norm.cc.o
+[ 79%] Built target normalize
+Scanning dependencies of target packet_capture
+[ 79%] Building CXX object src/network_inspectors/packet_capture/CMakeFiles/packet_capture.dir/capture_module.cc.o
+[ 80%] Building CXX object src/network_inspectors/packet_capture/CMakeFiles/packet_capture.dir/packet_capture.cc.o
+[ 80%] Built target packet_capture
+Scanning dependencies of target packet_tracer
+[ 80%] Building CXX object src/network_inspectors/packet_tracer/CMakeFiles/packet_tracer.dir/packet_tracer.cc.o
+[ 80%] Building CXX object src/network_inspectors/packet_tracer/CMakeFiles/packet_tracer.dir/packet_tracer_module.cc.o
+[ 80%] Built target packet_tracer
+Scanning dependencies of target perf_monitor
+[ 80%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/base_tracker.cc.o
+[ 80%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/csv_formatter.cc.o
+[ 80%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/cpu_tracker.cc.o
+[ 80%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/fbs_formatter.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/flow_tracker.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/flow_ip_tracker.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/json_formatter.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/perf_formatter.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/perf_module.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/perf_monitor.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/perf_tracker.cc.o
+[ 81%] Building CXX object src/network_inspectors/perf_monitor/CMakeFiles/perf_monitor.dir/text_formatter.cc.o
+[ 81%] Built target perf_monitor
+Scanning dependencies of target port_scan
+[ 81%] Building CXX object src/network_inspectors/port_scan/CMakeFiles/port_scan.dir/port_scan.cc.o
+[ 81%] Building CXX object src/network_inspectors/port_scan/CMakeFiles/port_scan.dir/ps_detect.cc.o
+[ 81%] Building CXX object src/network_inspectors/port_scan/CMakeFiles/port_scan.dir/ps_module.cc.o
+[ 81%] Building CXX object src/network_inspectors/port_scan/CMakeFiles/port_scan.dir/ipobj.cc.o
+[ 81%] Built target port_scan
+Scanning dependencies of target reputation
+[ 81%] Building CXX object src/network_inspectors/reputation/CMakeFiles/reputation.dir/reputation_inspect.cc.o
+[ 81%] Building CXX object src/network_inspectors/reputation/CMakeFiles/reputation.dir/reputation_module.cc.o
+[ 82%] Building CXX object src/network_inspectors/reputation/CMakeFiles/reputation.dir/reputation_parse.cc.o
+[ 82%] Built target reputation
+Scanning dependencies of target rna
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/data_purge_cmd.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_app_discovery.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_event_handler.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_fingerprint.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_fingerprint_tcp.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_fingerprint_ua.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_fingerprint_udp.cc.o
+[ 82%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_inspector.cc.o
+[ 83%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_flow.cc.o
+[ 83%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_logger.cc.o
+[ 83%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_mac_cache.cc.o
+[ 83%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_module.cc.o
+[ 83%] Building CXX object src/network_inspectors/rna/CMakeFiles/rna.dir/rna_pnd.cc.o
+[ 83%] Built target rna
+Scanning dependencies of target search_engines
+[ 83%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_std.cc.o
+[ 83%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/acsmx.cc.o
+[ 83%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_banded.cc.o
+[ 83%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_full.cc.o
+[ 83%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_sparse.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_sparse_bands.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/acsmx2.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/acsmx2_api.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/hyperscan.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/search_engines.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/search_tool.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/ac_bnfa.cc.o
+[ 84%] Building CXX object src/search_engines/CMakeFiles/search_engines.dir/bnfa_search.cc.o
+[ 84%] Built target search_engines
+Scanning dependencies of target side_channel
+[ 84%] Building CXX object src/side_channel/CMakeFiles/side_channel.dir/side_channel.cc.o
+[ 84%] Building CXX object src/side_channel/CMakeFiles/side_channel.dir/side_channel_module.cc.o
+[ 84%] Built target side_channel
+Scanning dependencies of target connectors
+[ 85%] Building CXX object src/connectors/CMakeFiles/connectors.dir/connectors.cc.o
+[ 85%] Built target connectors
+Scanning dependencies of target file_connector
+[ 85%] Building CXX object src/connectors/file_connector/CMakeFiles/file_connector.dir/file_connector.cc.o
+[ 86%] Building CXX object src/connectors/file_connector/CMakeFiles/file_connector.dir/file_connector_module.cc.o
+[ 86%] Built target file_connector
+Scanning dependencies of target snort
+[ 86%] Building CXX object src/CMakeFiles/snort.dir/main.cc.o
+[ 86%] Linking CXX executable snort
+[ 86%] Built target snort
+Scanning dependencies of target api_options
+[ 86%] Generating api_options.h
+[ 86%] Built target api_options
+Scanning dependencies of target fbstreamer
+[ 86%] Building CXX object tools/flatbuffers/CMakeFiles/fbstreamer.dir/fbstreamer.cc.o
+[ 86%] Linking CXX executable fbstreamer
+[ 86%] Built target fbstreamer
+Scanning dependencies of target u2boat
+[ 86%] Building CXX object tools/u2boat/CMakeFiles/u2boat.dir/u2boat.cc.o
+[ 86%] Linking CXX executable u2boat
+[ 86%] Built target u2boat
+Scanning dependencies of target u2spewfoo
+[ 86%] Building CXX object tools/u2spewfoo/CMakeFiles/u2spewfoo.dir/u2spewfoo.cc.o
+[ 86%] Linking CXX executable u2spewfoo
+[ 86%] Built target u2spewfoo
+Scanning dependencies of target rule_states
+[ 86%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_base64_decode.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_content.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_convert_comma_list.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_dce_iface.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_dnp3_obj.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_dsize.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_file_data.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_file_type.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_gid_sid.cc.o
+[ 87%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_http_encode.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_isdataat.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_metadata.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_pcre.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_react.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_replace.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_resp.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_sd_pattern.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_stream_reassemble.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_stream_size.cc.o
+[ 88%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_tag.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_threshold.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_ttl.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_unchanged.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_unsupported.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_urilen.cc.o
+[ 89%] Building CXX object tools/snort2lua/rule_states/CMakeFiles/rule_states.dir/rule_api.cc.o
+[ 89%] Built target rule_states
+Scanning dependencies of target config_states
+[ 89%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_alertfile.cc.o
+[ 89%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_binding.cc.o
+[ 89%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_checksums.cc.o
+[ 89%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_classification.cc.o
+[ 89%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_daq.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_daq_mode.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_daq_var.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_decode_esp.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_default_rule_state.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_deleted.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_detection.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_event_trace.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_file.cc.o
+[ 90%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_event_queue.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_ignore_ports.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_ipv6_frag.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_memcaps.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_mpls_payload_type.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_na_policy_mode.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_no_option.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_one_int_option.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_one_string_option.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_order.cc.o
+[ 91%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_paf_max.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_policy_id.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_policy_mode.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_policy_uuid.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_ppm.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_profile.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_reference.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_response.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_tunnel_verdicts.cc.o
+[ 92%] Building CXX object tools/snort2lua/config_states/CMakeFiles/config_states.dir/config_api.cc.o
+[ 92%] Built target config_states
+Scanning dependencies of target conversion_data
+[ 92%] Building CXX object tools/snort2lua/data/CMakeFiles/conversion_data.dir/dt_data.cc.o
+[ 92%] Building CXX object tools/snort2lua/data/CMakeFiles/conversion_data.dir/dt_rule_api.cc.o
+[ 92%] Building CXX object tools/snort2lua/data/CMakeFiles/conversion_data.dir/dt_state_api.cc.o
+[ 92%] Building CXX object tools/snort2lua/data/CMakeFiles/conversion_data.dir/dt_table_api.cc.o
+[ 92%] Built target conversion_data
+Scanning dependencies of target data_types
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_comment.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_include.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_option.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_table.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_rule.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_rule_option.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_rule_suboption.cc.o
+[ 93%] Building CXX object tools/snort2lua/data/data_types/CMakeFiles/data_types.dir/dt_var.cc.o
+[ 93%] Built target data_types
+Scanning dependencies of target snort2lua_helpers
+[ 93%] Building CXX object tools/snort2lua/helpers/CMakeFiles/snort2lua_helpers.dir/converter.cc.o
+[ 93%] Building CXX object tools/snort2lua/helpers/CMakeFiles/snort2lua_helpers.dir/s2l_util.cc.o
+[ 93%] Building CXX object tools/snort2lua/helpers/CMakeFiles/snort2lua_helpers.dir/parse_cmd_line.cc.o
+[ 93%] Building CXX object tools/snort2lua/helpers/CMakeFiles/snort2lua_helpers.dir/util_binder.cc.o
+[ 93%] Building CXX object tools/snort2lua/helpers/CMakeFiles/snort2lua_helpers.dir/s2l_markup.cc.o
+[ 93%] Built target snort2lua_helpers
+Scanning dependencies of target keyword_states
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_attribute_table.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_config.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_deleted.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_event_filter.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_file.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_include.cc.o
+[ 93%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_output.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_paths.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_preprocessor.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_rate_filter.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_rule.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_rule_state.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_ruletype.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_var.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/kws_suppress.cc.o
+[ 94%] Building CXX object tools/snort2lua/keyword_states/CMakeFiles/keyword_states.dir/keywords_api.cc.o
+[ 94%] Built target keyword_states
+Scanning dependencies of target output_states
+[ 94%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_csv.cc.o
+[ 94%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_deleted.cc.o
+[ 94%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_fast.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_full.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_null.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_tcpdump.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_test.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_syslog.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_unified2.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/out_unixsock.cc.o
+[ 95%] Building CXX object tools/snort2lua/output_states/CMakeFiles/output_states.dir/output_api.cc.o
+[ 95%] Built target output_states
+Scanning dependencies of target preprocessor_states
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_appid.cc.o
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_arpspoof.cc.o
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_bo.cc.o
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_dcerpc.cc.o
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_dcerpc_server.cc.o
+[ 95%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_dnp3.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_frag3_engine.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_frag3_global.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_ftp_telnet.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_ftp_telnet_protocol.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_gtp.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_http_inspect.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_http_inspect_server.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_normalizers.cc.o
+[ 96%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_perfmonitor.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_reputation.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_rpc_decode.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_sdf.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_sip.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_ssh.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_ssl.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_dns.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_pop.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_imap.cc.o
+[ 97%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_modbus.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_rna.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_smtp.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_sfportscan.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_stream5_ip.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_stream5_global.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_stream5_tcp.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_stream5_udp.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/pps_stream5_ha.cc.o
+[ 98%] Building CXX object tools/snort2lua/preprocessor_states/CMakeFiles/preprocessor_states.dir/preprocessor_api.cc.o
+[ 98%] Built target preprocessor_states
+Scanning dependencies of target snort2lua
+[ 98%] Building CXX object tools/snort2lua/CMakeFiles/snort2lua.dir/snort2lua.cc.o
+[100%] Building CXX object tools/snort2lua/CMakeFiles/snort2lua.dir/init_state.cc.o
+[100%] Linking CXX executable snort2lua
+[100%] Built target snort2lua
+Scanning dependencies of target daq_hext
+[100%] Building C object daqs/CMakeFiles/daq_hext.dir/daq_hext.c.o
+[100%] Linking C shared module daq_hext.so
+[100%] Built target daq_hext
+Scanning dependencies of target daq_file
+[100%] Building C object daqs/CMakeFiles/daq_file.dir/daq_file.c.o
+[100%] Linking C shared module daq_file.so
+[100%] Built target daq_file
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# make install
+[  0%] Built target tcp_connector
+[  0%] Built target ips_actions
+[  0%] Built target codecs
+[  0%] Built target root_codecs
+[  1%] Built target link_codecs
+[  3%] Built target ip_codecs
+[  4%] Built target misc_codecs
+[  4%] Built target control
+[  7%] Built target detection
+[  7%] Built target dump_config
+[  8%] Built target events
+[  9%] Built target file_api
+[  9%] Built target filter
+[ 10%] Built target flow
+[ 11%] Built target framework
+[ 12%] Built target hash
+[ 13%] Built target latency
+[ 13%] Built target log
+[ 15%] Built target main
+[ 16%] Built target managers
+[ 17%] Built target memory
+[ 18%] Built target mime
+[ 18%] Built target packet_io
+[ 20%] Built target parser
+[ 20%] Built target payload_injector
+[ 21%] Built target ports
+[ 22%] Built target protocols
+[ 23%] Built target sfip
+[ 23%] Built target sfrt
+[ 23%] Built target service_inspectors
+[ 23%] Built target back_orifice
+[ 25%] Built target cip
+[ 29%] Built target dce_rpc
+[ 30%] Built target dnp3
+[ 30%] Built target dns
+[ 32%] Built target ftp_telnet
+[ 33%] Built target gtp_inspect
+[ 36%] Built target http_inspect
+[ 39%] Built target http2_inspect
+[ 40%] Built target imap
+[ 41%] Built target modbus
+[ 41%] Built target netflow
+[ 42%] Built target pop
+[ 42%] Built target rpc_decode
+[ 43%] Built target s7commplus
+[ 44%] Built target sip
+[ 45%] Built target smtp
+[ 45%] Built target ssh
+[ 46%] Built target ssl
+[ 47%] Built target wizard
+[ 47%] Built target stream_paf
+[ 47%] Built target stream
+[ 48%] Built target stream_base
+[ 50%] Built target stream_ip
+[ 50%] Built target stream_icmp
+[ 54%] Built target stream_tcp
+[ 54%] Built target stream_udp
+[ 54%] Built target stream_user
+[ 54%] Built target stream_file
+[ 55%] Built target target_based
+[ 56%] Built target host_tracker
+[ 56%] Built target pub_sub
+[ 56%] Built target time
+[ 57%] Built target profiler
+[ 58%] Built target trace
+[ 60%] Built target utils
+[ 61%] Built target helpers
+[ 61%] Built target lua
+[ 61%] Built target decompress
+[ 68%] Built target ips_options
+[ 70%] Built target loggers
+[ 70%] Built target network_inspectors
+[ 78%] Built target appid
+[ 79%] Built target arp_spoof
+[ 79%] Built target binder
+[ 79%] Built target normalize
+[ 80%] Built target packet_capture
+[ 80%] Built target packet_tracer
+[ 81%] Built target perf_monitor
+[ 81%] Built target port_scan
+[ 82%] Built target reputation
+[ 83%] Built target rna
+[ 84%] Built target search_engines
+[ 84%] Built target side_channel
+[ 85%] Built target connectors
+[ 86%] Built target file_connector
+[ 86%] Built target snort
+[ 86%] Built target api_options
+[ 86%] Built target fbstreamer
+[ 86%] Built target u2boat
+[ 86%] Built target u2spewfoo
+[ 89%] Built target rule_states
+[ 92%] Built target config_states
+[ 92%] Built target conversion_data
+[ 93%] Built target data_types
+[ 93%] Built target snort2lua_helpers
+[ 94%] Built target keyword_states
+[ 95%] Built target output_states
+[ 98%] Built target preprocessor_states
+[100%] Built target snort2lua
+[100%] Built target daq_hext
+[100%] Built target daq_file
+Install the project...
+-- Install configuration: "RelWithDebInfo"
+-- Installing: /usr/local/snort/lib/pkgconfig/snort.pc
+-- Installing: /usr/local/snort/bin/snort
+-- Installing: /usr/local/snort/include/snort/actions/actions.h
+-- Installing: /usr/local/snort/include/snort/codecs/codec_module.h
+-- Installing: /usr/local/snort/include/snort/detection/detect.h
+-- Installing: /usr/local/snort/include/snort/detection/detection_engine.h
+-- Installing: /usr/local/snort/include/snort/detection/detection_options.h
+-- Installing: /usr/local/snort/include/snort/detection/detection_util.h
+-- Installing: /usr/local/snort/include/snort/detection/detect_trace.h
+-- Installing: /usr/local/snort/include/snort/detection/ips_context.h
+-- Installing: /usr/local/snort/include/snort/detection/ips_context_chain.h
+-- Installing: /usr/local/snort/include/snort/detection/ips_context_data.h
+-- Installing: /usr/local/snort/include/snort/detection/regex_offload.h
+-- Installing: /usr/local/snort/include/snort/detection/rule_option_types.h
+-- Installing: /usr/local/snort/include/snort/detection/rules.h
+-- Installing: /usr/local/snort/include/snort/detection/signature.h
+-- Installing: /usr/local/snort/include/snort/detection/treenodes.h
+-- Installing: /usr/local/snort/include/snort/events/event.h
+-- Installing: /usr/local/snort/include/snort/events/event_queue.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_api.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_capture.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_config.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_flows.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_identifier.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_lib.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_module.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_policy.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_segment.h
+-- Installing: /usr/local/snort/include/snort/file_api/file_service.h
+-- Installing: /usr/local/snort/include/snort/flow/deferred_trust.h
+-- Installing: /usr/local/snort/include/snort/flow/expect_cache.h
+-- Installing: /usr/local/snort/include/snort/flow/flow.h
+-- Installing: /usr/local/snort/include/snort/flow/flow_data.h
+-- Installing: /usr/local/snort/include/snort/flow/flow_key.h
+-- Installing: /usr/local/snort/include/snort/flow/flow_stash.h
+-- Installing: /usr/local/snort/include/snort/flow/ha.h
+-- Installing: /usr/local/snort/include/snort/flow/stash_item.h
+-- Installing: /usr/local/snort/include/snort/framework/base_api.h
+-- Installing: /usr/local/snort/include/snort/framework/bits.h
+-- Installing: /usr/local/snort/include/snort/framework/codec.h
+-- Installing: /usr/local/snort/include/snort/framework/counts.h
+-- Installing: /usr/local/snort/include/snort/framework/cursor.h
+-- Installing: /usr/local/snort/include/snort/framework/data_bus.h
+-- Installing: /usr/local/snort/include/snort/framework/decode_data.h
+-- Installing: /usr/local/snort/include/snort/framework/endianness.h
+-- Installing: /usr/local/snort/include/snort/framework/inspector.h
+-- Installing: /usr/local/snort/include/snort/framework/ips_action.h
+-- Installing: /usr/local/snort/include/snort/framework/ips_option.h
+-- Installing: /usr/local/snort/include/snort/framework/logger.h
+-- Installing: /usr/local/snort/include/snort/framework/lua_api.h
+-- Installing: /usr/local/snort/include/snort/framework/module.h
+-- Installing: /usr/local/snort/include/snort/framework/mpse.h
+-- Installing: /usr/local/snort/include/snort/framework/mpse_batch.h
+-- Installing: /usr/local/snort/include/snort/framework/packet_constraints.h
+-- Installing: /usr/local/snort/include/snort/framework/parameter.h
+-- Installing: /usr/local/snort/include/snort/framework/range.h
+-- Installing: /usr/local/snort/include/snort/framework/so_rule.h
+-- Installing: /usr/local/snort/include/snort/framework/value.h
+-- Installing: /usr/local/snort/include/snort/framework/connector.h
+-- Installing: /usr/local/snort/include/snort/framework/api_options.h
+-- Installing: /usr/local/snort/include/snort/hash/ghash.h
+-- Installing: /usr/local/snort/include/snort/hash/hashes.h
+-- Installing: /usr/local/snort/include/snort/hash/hash_defs.h
+-- Installing: /usr/local/snort/include/snort/hash/hash_key_operations.h
+-- Installing: /usr/local/snort/include/snort/hash/lru_cache_shared.h
+-- Installing: /usr/local/snort/include/snort/hash/xhash.h
+-- Installing: /usr/local/snort/include/snort/log/log.h
+-- Installing: /usr/local/snort/include/snort/log/log_text.h
+-- Installing: /usr/local/snort/include/snort/log/messages.h
+-- Installing: /usr/local/snort/include/snort/log/obfuscator.h
+-- Installing: /usr/local/snort/include/snort/log/text_log.h
+-- Installing: /usr/local/snort/include/snort/log/unified2.h
+-- Installing: /usr/local/snort/include/snort/log/u2_packet.h
+-- Installing: /usr/local/snort/include/snort/main/analyzer_command.h
+-- Installing: /usr/local/snort/include/snort/main/policy.h
+-- Installing: /usr/local/snort/include/snort/main/request.h
+-- Installing: /usr/local/snort/include/snort/main/snort.h
+-- Installing: /usr/local/snort/include/snort/main/snort_config.h
+-- Installing: /usr/local/snort/include/snort/main/snort_debug.h
+-- Installing: /usr/local/snort/include/snort/main/snort_types.h
+-- Installing: /usr/local/snort/include/snort/main/swapper.h
+-- Installing: /usr/local/snort/include/snort/main/thread.h
+-- Installing: /usr/local/snort/include/snort/main/thread_config.h
+-- Installing: /usr/local/snort/include/snort/managers/codec_manager.h
+-- Installing: /usr/local/snort/include/snort/managers/inspector_manager.h
+-- Installing: /usr/local/snort/include/snort/lua/snort_plugin.lua
+-- Installing: /usr/local/snort/include/snort/memory/memory_cap.h
+-- Installing: /usr/local/snort/include/snort/mime/decode_b64.h
+-- Installing: /usr/local/snort/include/snort/mime/decode_base.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_config.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_context_data.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_decode.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_log.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_paf.h
+-- Installing: /usr/local/snort/include/snort/mime/file_mime_process.h
+-- Installing: /usr/local/snort/include/snort/packet_io/active.h
+-- Installing: /usr/local/snort/include/snort/packet_io/sfdaq.h
+-- Installing: /usr/local/snort/include/snort/packet_io/sfdaq_instance.h
+-- Installing: /usr/local/snort/include/snort/payload_injector/payload_injector.h
+-- Installing: /usr/local/snort/include/snort/protocols/arp.h
+-- Installing: /usr/local/snort/include/snort/protocols/bpdu.h
+-- Installing: /usr/local/snort/include/snort/protocols/cdp.h
+-- Installing: /usr/local/snort/include/snort/protocols/cisco_meta_data.h
+-- Installing: /usr/local/snort/include/snort/protocols/eapol.h
+-- Installing: /usr/local/snort/include/snort/protocols/eth.h
+-- Installing: /usr/local/snort/include/snort/protocols/icmp4.h
+-- Installing: /usr/local/snort/include/snort/protocols/icmp6.h
+-- Installing: /usr/local/snort/include/snort/protocols/ip.h
+-- Installing: /usr/local/snort/include/snort/protocols/ipv4.h
+-- Installing: /usr/local/snort/include/snort/protocols/ipv4_options.h
+-- Installing: /usr/local/snort/include/snort/protocols/ipv6.h
+-- Installing: /usr/local/snort/include/snort/protocols/gre.h
+-- Installing: /usr/local/snort/include/snort/protocols/layer.h
+-- Installing: /usr/local/snort/include/snort/protocols/linux_sll.h
+-- Installing: /usr/local/snort/include/snort/protocols/mpls.h
+-- Installing: /usr/local/snort/include/snort/protocols/packet.h
+-- Installing: /usr/local/snort/include/snort/protocols/packet_manager.h
+-- Installing: /usr/local/snort/include/snort/protocols/protocol_ids.h
+-- Installing: /usr/local/snort/include/snort/protocols/ssl.h
+-- Installing: /usr/local/snort/include/snort/protocols/tcp.h
+-- Installing: /usr/local/snort/include/snort/protocols/tcp_options.h
+-- Installing: /usr/local/snort/include/snort/protocols/teredo.h
+-- Installing: /usr/local/snort/include/snort/protocols/token_ring.h
+-- Installing: /usr/local/snort/include/snort/protocols/udp.h
+-- Installing: /usr/local/snort/include/snort/protocols/wlan.h
+-- Installing: /usr/local/snort/include/snort/protocols/vlan.h
+-- Installing: /usr/local/snort/include/snort/sfip/sf_cidr.h
+-- Installing: /usr/local/snort/include/snort/sfip/sf_ip.h
+-- Installing: /usr/local/snort/include/snort/sfip/sf_returns.h
+-- Installing: /usr/local/snort/include/snort/stream/paf.h
+-- Installing: /usr/local/snort/include/snort/stream/stream.h
+-- Installing: /usr/local/snort/include/snort/stream/stream_splitter.h
+-- Installing: /usr/local/snort/include/snort/target_based/snort_protocols.h
+-- Installing: /usr/local/snort/include/snort/host_tracker/host_cache.h
+-- Installing: /usr/local/snort/include/snort/host_tracker/host_cache_allocator.h
+-- Installing: /usr/local/snort/include/snort/host_tracker/host_cache_interface.h
+-- Installing: /usr/local/snort/include/snort/host_tracker/host_tracker.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/appid_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/cip_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/data_decrypt_event.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/daq_message_event.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/dcerpc_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/dhcp_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/expect_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/finalize_packet_event.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/http_events.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/opportunistic_tls_event.h
+-- Installing: /usr/local/snort/include/snort/pub_sub/sip_events.h
+-- Installing: /usr/local/snort/include/snort/time/clock_defs.h
+-- Installing: /usr/local/snort/include/snort/time/packet_time.h
+-- Installing: /usr/local/snort/include/snort/time/stopwatch.h
+-- Installing: /usr/local/snort/include/snort/profiler/memory_defs.h
+-- Installing: /usr/local/snort/include/snort/profiler/memory_context.h
+-- Installing: /usr/local/snort/include/snort/profiler/memory_profiler_defs.h
+-- Installing: /usr/local/snort/include/snort/profiler/profiler.h
+-- Installing: /usr/local/snort/include/snort/profiler/profiler_defs.h
+-- Installing: /usr/local/snort/include/snort/profiler/rule_profiler_defs.h
+-- Installing: /usr/local/snort/include/snort/profiler/time_profiler_defs.h
+-- Installing: /usr/local/snort/include/snort/trace/trace.h
+-- Installing: /usr/local/snort/include/snort/trace/trace_api.h
+-- Installing: /usr/local/snort/include/snort/trace/trace_logger.h
+-- Installing: /usr/local/snort/include/snort/utils/boyer_moore.h
+-- Installing: /usr/local/snort/include/snort/utils/cpp_macros.h
+-- Installing: /usr/local/snort/include/snort/utils/endian.h
+-- Installing: /usr/local/snort/include/snort/utils/event_gen.h
+-- Installing: /usr/local/snort/include/snort/utils/infractions.h
+-- Installing: /usr/local/snort/include/snort/utils/kmap.h
+-- Installing: /usr/local/snort/include/snort/utils/memcap_allocator.h
+-- Installing: /usr/local/snort/include/snort/utils/primed_allocator.h
+-- Installing: /usr/local/snort/include/snort/utils/safec.h
+-- Installing: /usr/local/snort/include/snort/utils/segment_mem.h
+-- Installing: /usr/local/snort/include/snort/utils/sflsq.h
+-- Installing: /usr/local/snort/include/snort/utils/stats.h
+-- Installing: /usr/local/snort/include/snort/utils/util.h
+-- Installing: /usr/local/snort/include/snort/utils/util_ber.h
+-- Installing: /usr/local/snort/include/snort/utils/util_cstring.h
+-- Installing: /usr/local/snort/include/snort/utils/util_jsnorm.h
+-- Installing: /usr/local/snort/include/snort/utils/util_unfold.h
+-- Installing: /usr/local/snort/include/snort/utils/util_utf.h
+-- Installing: /usr/local/snort/include/snort/helpers/hyper_scratch_allocator.h
+-- Installing: /usr/local/snort/include/snort/helpers/hyper_search.h
+-- Installing: /usr/local/snort/include/snort/helpers/base64_encoder.h
+-- Installing: /usr/local/snort/include/snort/helpers/boyer_moore_search.h
+-- Installing: /usr/local/snort/include/snort/helpers/literal_search.h
+-- Installing: /usr/local/snort/include/snort/helpers/scratch_allocator.h
+-- Installing: /usr/local/snort/include/snort/helpers/json_stream.h
+-- Installing: /usr/local/snort/include/snort/decompress/file_decomp.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_api.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_app_descriptor.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_dns_session.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_http_session.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_session_api.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/appid_types.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/application_ids.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/tp_appid_module_api.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/tp_appid_session_api.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/appid/tp_appid_types.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/packet_tracer/packet_tracer.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/reputation/reputation_common.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_fingerprint.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_fingerprint_tcp.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_fingerprint_ua.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_fingerprint_udp.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_flow.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_inspector.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_logger.h
+-- Installing: /usr/local/snort/include/snort/network_inspectors/rna/rna_name.h
+-- Installing: /usr/local/snort/include/snort/search_engines/search_common.h
+-- Installing: /usr/local/snort/include/snort/search_engines/search_tool.h
+-- Installing: /usr/local/snort/bin/appid_detector_builder.sh
+-- Installing: /usr/local/snort/bin/fbstreamer
+-- Installing: /usr/local/snort/bin/u2boat
+-- Installing: /usr/local/snort/share/doc/snort/README.u2boat
+-- Installing: /usr/local/snort/bin/u2spewfoo
+-- Installing: /usr/local/snort/bin/snort2lua
+-- Installing: /usr/local/snort/etc/snort/balanced.lua
+-- Installing: /usr/local/snort/etc/snort/connectivity.lua
+-- Installing: /usr/local/snort/etc/snort/file_magic.lua
+-- Installing: /usr/local/snort/etc/snort/inline.lua
+-- Installing: /usr/local/snort/etc/snort/max_detect.lua
+-- Installing: /usr/local/snort/etc/snort/security.lua
+-- Installing: /usr/local/snort/etc/snort/snort.lua
+-- Installing: /usr/local/snort/etc/snort/snort_defaults.lua
+-- Installing: /usr/local/snort/etc/snort/talos.lua
+-- Installing: /usr/local/snort/lib/snort/daqs/daq_file.so
+-- Installing: /usr/local/snort/lib/snort/daqs/daq_hext.so
+-- Installing: /usr/local/snort/include/snort/daqs/daq_user.h
+-- Installing: /usr/local/snort/share/doc/snort/active.txt
+-- Installing: /usr/local/snort/share/doc/snort/appid.txt
+-- Installing: /usr/local/snort/share/doc/snort/binder.txt
+-- Installing: /usr/local/snort/share/doc/snort/byte_extract.txt
+-- Installing: /usr/local/snort/share/doc/snort/byte_jump.txt
+-- Installing: /usr/local/snort/share/doc/snort/byte_math.txt
+-- Installing: /usr/local/snort/share/doc/snort/byte_options.txt
+-- Installing: /usr/local/snort/share/doc/snort/byte_test.txt
+-- Installing: /usr/local/snort/share/doc/snort/concepts.txt
+-- Installing: /usr/local/snort/share/doc/snort/connectors.txt
+-- Installing: /usr/local/snort/share/doc/snort/dump_config.txt
+-- Installing: /usr/local/snort/share/doc/snort/daq.txt
+-- Installing: /usr/local/snort/share/doc/snort/dcerpc.txt
+-- Installing: /usr/local/snort/share/doc/snort/errors.txt
+-- Installing: /usr/local/snort/share/doc/snort/features.txt
+-- Installing: /usr/local/snort/share/doc/snort/file_processing.txt
+-- Installing: /usr/local/snort/share/doc/snort/ftp.txt
+-- Installing: /usr/local/snort/share/doc/snort/high_availability.txt
+-- Installing: /usr/local/snort/share/doc/snort/http_inspect.txt
+-- Installing: /usr/local/snort/share/doc/snort/http2_inspect.txt
+-- Installing: /usr/local/snort/share/doc/snort/overview.txt
+-- Installing: /usr/local/snort/share/doc/snort/params.txt
+-- Installing: /usr/local/snort/share/doc/snort/perf_monitor.txt
+-- Installing: /usr/local/snort/share/doc/snort/pop_imap.txt
+-- Installing: /usr/local/snort/share/doc/snort/port_scan.txt
+-- Installing: /usr/local/snort/share/doc/snort/sensitive_data.txt
+-- Installing: /usr/local/snort/share/doc/snort/side_channel.txt
+-- Installing: /usr/local/snort/share/doc/snort/smtp.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort2x.png
+-- Installing: /usr/local/snort/share/doc/snort/snort3x.png
+-- Installing: /usr/local/snort/share/doc/snort/snort_user.txt
+-- Installing: /usr/local/snort/share/doc/snort/snorty.png
+-- Installing: /usr/local/snort/share/doc/snort/telnet.txt
+-- Installing: /usr/local/snort/share/doc/snort/terms.txt
+-- Installing: /usr/local/snort/share/doc/snort/trace.txt
+-- Installing: /usr/local/snort/share/doc/snort/tutorial.txt
+-- Installing: /usr/local/snort/share/doc/snort/usage.txt
+-- Installing: /usr/local/snort/share/doc/snort/wizard.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort_user.text
+-- Installing: /usr/local/snort/share/doc/snort/appendix.txt
+-- Installing: /usr/local/snort/share/doc/snort/building.txt
+-- Installing: /usr/local/snort/share/doc/snort/enviro.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort_reference.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort_reference.text
+-- Installing: /usr/local/snort/share/doc/snort/differences.txt
+-- Up-to-date: /usr/local/snort/share/doc/snort/overview.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort2lua.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort_upgrade.txt
+-- Installing: /usr/local/snort/share/doc/snort/config_changes.txt
+-- Installing: /usr/local/snort/share/doc/snort/snort_upgrade.text
+-- Installing: /usr/local/snort/share/doc/snort/snort_devel.txt
+-- Installing: /usr/local/snort/share/doc/snort/extending.txt
+-- Installing: /usr/local/snort/share/doc/snort/style.txt
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# /usr/local/snort/bin/snort -V
+
+   ,,_     -*> Snort++ <*-
+  o"  )~   Version 3.1.1.0
+   ''''    By Martin Roesch & The Snort Team
+           http://snort.org/contact#team
+           Copyright (C) 2014-2020 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using DAQ version 3.0.0
+           Using LuaJIT version 2.1.0-beta3
+           Using OpenSSL 1.1.1  11 Sep 2018
+           Using libpcap version 1.10.0 (with TPACKET_V3)
+           Using PCRE version 8.44 2020-02-12
+           Using ZLIB version 1.2.11
+           Using FlatBuffers 1.12.0
+           Using Hyperscan version 5.4.0 2021-02-26
+           Using LZMA version 5.2.2
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# mkdir -p /etc/snort /etc/rules
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# cp /
+usr/local/snort/etc/snort/*.lua /etc/snort/
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/snort3$ docker cp snort.lua snort3-nginx-modsec-dev:/etc/snort/snort.lua
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/snort3$ docker cp vol-mnt/etc/rules/ snort3-nginx-modsec-dev:/etc/
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# mkdir /usr/local/snort/etc/rules
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/tangfeixiong/nta/snort3$ docker cp tut.rules snort3-nginx-modsec-dev:/usr/local/snort/etc/rules/local.rules
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# /usr/local/snort/bin/snort -c /etc/snort/snort.lua --rule-path /usr/local/snort/etc/rules/ -T -v
+--------------------------------------------------
+o")~   Snort++ 3.1.1.0
+--------------------------------------------------
+Loading /etc/snort/snort.lua:
+Loading snort_defaults.lua:
+Finished snort_defaults.lua:
+Loading file_magic.lua:
+Finished file_magic.lua:
+	Lua Allowlist Keywords for /etc/snort/snort.lua:
+		default_classifications, default_ftp_server, default_gtp,
+		default_hi_port_scan, default_low_port_scan, default_med_port_scan,
+		default_references, default_smtp, default_variables, default_wizard,
+		file_magic, ftp_command_specs, gtp_v0_info, gtp_v0_msg, gtp_v1_info,
+		gtp_v1_msg, gtp_v2_info, gtp_v2_msg, http_methods, icmp_hi_sweep,
+		icmp_low_sweep, icmp_med_sweep, ip_hi_decoy, ip_hi_dist, ip_hi_proto,
+		ip_hi_sweep, ip_low_decoy, ip_low_dist, ip_low_proto, ip_low_sweep,
+		ip_med_decoy, ip_med_dist, ip_med_proto, ip_med_sweep, netflow_versions,
+		sip_methods, smtp_default_alt_max_command_lines, tcp_hi_decoy, tcp_hi_dist,
+		tcp_hi_ports, tcp_hi_sweep, tcp_low_decoy, tcp_low_dist, tcp_low_ports,
+		tcp_low_sweep, tcp_med_decoy, tcp_med_dist, tcp_med_ports, tcp_med_sweep,
+		telnet_commands, udp_hi_decoy, udp_hi_dist, udp_hi_ports, udp_hi_sweep,
+		udp_low_decoy, udp_low_dist, udp_low_ports, udp_low_sweep, udp_med_decoy,
+		udp_med_dist, udp_med_ports, udp_med_sweep
+	profiler
+	perf_monitor
+	detection
+	trace
+	normalizer
+	telnet
+	log_hext
+	log_codecs
+	alert_json
+	alert_csv
+	reject
+	ips
+	classifications
+	references
+	output
+	wizard
+	appid
+	ftp_data
+	ftp_client
+	gtp_inspect
+	dce_http_server
+	dce_http_proxy
+	dce_udp
+	dce_tcp
+	dce_smb
+	ssl
+	ssh
+	sip
+	rpc_decode
+	modbus
+	imap
+	http2_inspect
+	http_inspect
+	dns
+	dnp3
+	back_orifice
+	stream_udp
+	stream_icmp
+	stream_ip
+	active
+	alerts
+	daq
+	decode
+	host_cache
+	hosts
+	network
+	packets
+	process
+	search_engine
+	so_proxy
+	host_tracker
+	stream
+	stream_tcp
+	stream_user
+	stream_file
+	arp_spoof
+	pop
+	port_scan
+	smtp
+	ftp_server
+	file_id
+	binder
+Finished /etc/snort/snort.lua:
+Loading ips.rules:
+Finished ips.rules:
+Loading rule args:
+Loading /usr/local/snort/etc/rules//local.rules:
+Finished /usr/local/snort/etc/rules//local.rules:
+Finished rule args:
+--------------------------------------------------
+rule counts
+       total rules loaded: 3
+   total rules not loaded: 3
+               text rules: 3
+            option chains: 3
+            chain headers: 3
+--------------------------------------------------
+port rule counts
+             tcp     udp    icmp      ip
+     any       0       0       1       0
+     dst       1       0       0       0
+   total       1       0       1       0
+--------------------------------------------------
+ips policies rule stats
+              id  loaded  shared enabled    file
+               0       3       0       3    /etc/snort/snort.lua
+--------------------------------------------------
+service rule counts          to-srv  to-cli
+                     http:        1       1
+                    http2:        1       1
+                    total:        2       2
+--------------------------------------------------
+fast pattern service groups  to-srv  to-cli
+                   packet:        2       2
+--------------------------------------------------
+search engine
+                instances: 4
+                 patterns: 4
+--------------------------------------------------
+Inspection Policy : policy id 0 : /etc/snort/snort.lua
+--------------------------------------------------
+appid:
+         app_stats_period: 300
+  app_stats_rollover_size: 20971520
+       list_odp_detectors: disabled
+    tp_appid_stats_enable: disabled
+     tp_appid_config_dump: disabled
+         log_all_sessions: disabled
+                log_stats: disabled
+                   memcap: 1048576
+--------------------------------------------------
+arp_spoof:
+--------------------------------------------------
+back_orifice:
+--------------------------------------------------
+binder:
+                 bindings:
+                           { when = { role = server, proto = udp, ports = 53 },
+                             use = { type = dns } }
+                           { when = { role = server, proto = tcp, ports = 53 },
+                             use = { type = dns } }
+                           { when = { role = server, proto = tcp, ports = 111 },
+                             use = { type = rpc_decode } }
+                           { when = { role = server, proto = tcp, ports = 502 },
+                             use = { type = modbus } }
+                           { when = { role = server, proto = tcp, ports = 2123 2152 3386 },
+                             use = { type = gtp_inspect } }
+                           { when = { service = dcerpc, proto = tcp },
+                             use = { type = dce_tcp } }
+                           { when = { service = dcerpc, proto = udp },
+                             use = { type = dce_udp } }
+                           { when = { service = netbios-ssn },
+                             use = { type = dce_smb } }
+                           { when = { service = dce_http_server },
+                             use = { type = dce_http_server } }
+                           { when = { service = dce_http_proxy },
+                             use = { type = dce_http_proxy } }
+                           { when = { service = dnp3 },
+                             use = { type = dnp3 } }
+                           { when = { service = dns },
+                             use = { type = dns } }
+                           { when = { service = ftp },
+                             use = { type = ftp_server } }
+                           { when = { service = ftp-data },
+                             use = { type = ftp_data } }
+                           { when = { service = gtp },
+                             use = { type = gtp_inspect } }
+                           { when = { service = imap },
+                             use = { type = imap } }
+                           { when = { service = http },
+                             use = { type = http_inspect } }
+                           { when = { service = http2 },
+                             use = { type = http2_inspect } }
+                           { when = { service = modbus },
+                             use = { type = modbus } }
+                           { when = { service = pop3 },
+                             use = { type = pop } }
+                           { when = { service = ssh },
+                             use = { type = ssh } }
+                           { when = { service = sip },
+                             use = { type = sip } }
+                           { when = { service = smtp },
+                             use = { type = smtp } }
+                           { when = { service = ssl },
+                             use = { type = ssl } }
+                           { when = { service = sunrpc },
+                             use = { type = rpc_decode } }
+                           { when = { service = telnet },
+                             use = { type = telnet } }
+                           { when = { },
+                             use = { type = wizard } }
+--------------------------------------------------
+dce_http_proxy:
+--------------------------------------------------
+dce_http_server:
+--------------------------------------------------
+dce_smb:
+             limit_alerts: enabled
+           disable_defrag: disabled
+             max_frag_len: 65535
+                   policy: WinXP
+     reassemble_threshold: 0
+   smb_fingerprint_policy: disabled
+            smb_max_chain: 3
+         smb_max_compound: 3
+       valid_smb_versions: all
+           smb_file_depth: 16384
+       smb_invalid_shares: none
+          smb_legacy_mode: disabled
+           smb_max_credit: 8192
+--------------------------------------------------
+dce_tcp:
+             limit_alerts: enabled
+           disable_defrag: disabled
+             max_frag_len: 65535
+                   policy: WinXP
+     reassemble_threshold: 0
+--------------------------------------------------
+dce_udp:
+             limit_alerts: enabled
+           disable_defrag: disabled
+             max_frag_len: 65535
+--------------------------------------------------
+dnp3:
+                check_crc: disabled
+--------------------------------------------------
+dns:
+--------------------------------------------------
+file_id:
+              enable_type: enabled
+               type_depth: 1460
+         enable_signature: disabled
+     block_timeout_lookup: disabled
+           enable_capture: disabled
+           lookup_timeout: 2
+         max_files_cached: 65536
+       max_files_per_flow: 128
+          show_data_depth: 100
+               trace_type: disabled
+          trace_signature: disabled
+             trace_stream: disabled
+            verdict_delay: 0
+--------------------------------------------------
+ftp_client:
+                   bounce: disabled
+ ignore_telnet_erase_cmds: disabled
+             max_resp_len: 4294967295
+              telnet_cmds: disabled
+--------------------------------------------------
+ftp_data:
+--------------------------------------------------
+ftp_server:
+          check_encrypted: disabled
+        def_max_param_len: 100
+        encrypted_traffic: disabled
+         ignore_data_chan: disabled
+ ignore_telnet_erase_cmds: disabled
+              telnet_cmds: disabled
+               print_cmds: disabled
+--------------------------------------------------
+gtp_inspect:
+--------------------------------------------------
+http2_inspect:
+--------------------------------------------------
+http_inspect:
+            request_depth: -1 (unlimited)
+           response_depth: -1 (unlimited)
+                    unzip: enabled
+            normalize_utf: enabled
+           decompress_pdf: disabled
+           decompress_swf: disabled
+           decompress_zip: disabled
+      detained_inspection: disabled
+         script_detection: disabled
+     normalize_javascript: disabled
+max_javascript_whitespaces: 200
+                percent_u: disabled
+                     utf8: enabled
+           utf8_bare_byte: disabled
+              iis_unicode: disabled
+    iis_unicode_code_page: 1252
+        iis_double_decode: enabled
+      oversize_dir_length: 300
+       backslash_to_slash: enabled
+            plus_to_space: enabled
+            simplify_path: enabled
+              xff_headers: x-forwarded-for true-client-ip
+--------------------------------------------------
+imap:
+         b64_decode_depth: -1 (unlimited)
+          qp_decode_depth: -1 (unlimited)
+          uu_decode_depth: -1 (unlimited)
+      bitenc_decode_depth: -1 (unlimited)
+           decompress_pdf: disabled
+           decompress_swf: disabled
+           decompress_zip: disabled
+--------------------------------------------------
+modbus:
+--------------------------------------------------
+normalizer:
+                      ip4: disabled
+                      ip6: disabled
+                    icmp4: disabled
+                    icmp6: disabled
+                      tcp: enabled
+                      tcp: { ecn = disabled, block = disabled, rsv = disabled, pad = disabled, req_urg
+                           = disabled, req_pay = disabled, req_urp = disabled, urp = disabled, ips =
+                           enabled, trim = disabled }
+--------------------------------------------------
+perf_monitor:
+                     base: enabled
+                      cpu: disabled
+                  summary: disabled
+                     flow: disabled
+                  flow_ip: disabled
+                  packets: 10000
+                  seconds: 60
+            max_file_size: 1073741312
+                   output: file
+                   format: csv
+--------------------------------------------------
+pop:
+         b64_decode_depth: -1 (unlimited)
+          qp_decode_depth: -1 (unlimited)
+          uu_decode_depth: -1 (unlimited)
+      bitenc_decode_depth: -1 (unlimited)
+           decompress_pdf: disabled
+           decompress_swf: disabled
+           decompress_zip: disabled
+--------------------------------------------------
+port_scan:
+                   memcap: 10485760
+                   protos: all
+               scan_types: all
+                alert_all: disabled
+        include_midstream: disabled
+               tcp_window: 90
+               udp_window: 90
+                ip_window: 90
+              icmp_window: 90
+--------------------------------------------------
+rpc_decode:
+--------------------------------------------------
+sip:
+      ignore_call_channel: disabled
+          max_call_id_len: 256
+          max_contact_len: 256
+          max_content_len: 1024
+              max_dialogs: 4
+             max_from_len: 256
+      max_requestName_len: 20
+               max_to_len: 256
+              max_uri_len: 256
+              max_via_len: 1024
+                  methods: invite cancel ack bye register options
+--------------------------------------------------
+smtp:
+                normalize: none
+           normalize_cmds: ATRN AUTH BDAT DATA DEBUG EHLO EMAL ESAM ESND ESOM ETRN EVFY EXPN HELO HELP
+                           IDENT MAIL NOOP ONEX QUEU QUIT RCPT RSET SAML SEND STARTTLS SOML TICK TIME
+                           TURN TURNME VERB VRFY X-EXPS XADR XAUTH XCIR XEXCH50 XGEN XLICENSE
+                           X-LINK2STATE XQUE XSTA XTRN XUSR CHUNKING X-ADAT X-DRCP X-ERCP X-EXCH50
+          ignore_tls_data: disabled
+     max_command_line_len: 512
+ alt_max_command_line_len: { {ATRN, 255}, {AUTH, 246}, {BDAT, 255}, {DATA, 246}, {DEBUG, 255}, {EHLO,
+                           500}, {EMAL, 255}, {ESAM, 255}, {ESND, 255}, {ESOM, 255}, {ETRN, 500},
+                           {EVFY, 255}, {EXPN, 255}, {HELO, 500}, {HELP, 500}, {IDENT, 255}, {MAIL,
+                           260}, {NOOP, 255}, {ONEX, 246}, {QUEU, 246}, {QUIT, 246}, {RCPT, 300},
+                           {RSET, 255}, {SAML, 246}, {SEND, 246}, {SIZE, 255}, {STARTTLS, 246}, {SOML,
+                           246}, {TICK, 246}, {TIME, 246}, {TURN, 246}, {TURNME, 246}, {VERB, 246},
+                           {VRFY, 255}, {X-EXPS, 246}, {XADR, 246}, {XAUTH, 246}, {XCIR, 246},
+                           {XEXCH50, 246}, {XGEN, 246}, {XLICENSE, 246}, {X-LINK2STATE, 246}, {XQUE,
+                           246}, {XSTA, 246}, {XTRN, 246}, {XUSR, 246} }
+      max_header_line_len: 1000
+max_auth_command_line_len: 1000
+ max_response_line_length: 512
+              xlink2state: alert
+             invalid_cmds: none
+                auth_cmds: AUTH X-EXPS XAUTH
+         binary_data_cmds: BDAT XEXCH50
+                data_cmds: DATA
+               valid_cmds: ATRN AUTH BDAT DATA DEBUG EHLO EMAL ESAM ESND ESOM ETRN EVFY EXPN HELO HELP
+                           IDENT MAIL NOOP ONEX QUEU QUIT RCPT RSET SAML SEND SIZE STARTTLS SOML TICK
+                           TIME TURN TURNME VERB VRFY X-EXPS XADR XAUTH XCIR XEXCH50 XGEN XLICENSE
+                           X-LINK2STATE XQUE XSTA XTRN XUSR * CHUNKING X-ADAT X-DRCP X-ERCP X-EXCH50
+         b64_decode_depth: -1 (unlimited)
+          qp_decode_depth: -1 (unlimited)
+          uu_decode_depth: -1 (unlimited)
+      bitenc_decode_depth: -1 (unlimited)
+              ignore_data: disabled
+           decompress_pdf: disabled
+           decompress_swf: disabled
+           decompress_zip: disabled
+             log_mailfrom: disabled
+               log_rcptto: disabled
+             log_filename: enabled
+           log_email_hdrs: disabled
+--------------------------------------------------
+so_proxy:
+--------------------------------------------------
+ssh:
+    max_encrypted_packets: 25
+         max_client_bytes: 19600
+   max_server_version_len: 80
+--------------------------------------------------
+ssl:
+            trust_servers: disabled
+     max_heartbeat_length: 0
+--------------------------------------------------
+stream:
+            ip_frags_only: disabled
+                max_flows: 476288
+          pruning_timeout: 30
+                 ip_cache: { idle_timeout = 180, cap_weight = 0 }
+                tcp_cache: { idle_timeout = 3600, cap_weight = 11000 }
+                udp_cache: { idle_timeout = 180, cap_weight = 0 }
+               icmp_cache: { idle_timeout = 180, cap_weight = 0 }
+               user_cache: { idle_timeout = 180, cap_weight = 0 }
+               file_cache: { idle_timeout = 180, cap_weight = 32 }
+--------------------------------------------------
+stream_file:
+                   upload: disabled
+--------------------------------------------------
+stream_icmp:
+          session_timeout: 30
+--------------------------------------------------
+stream_ip:
+                max_frags: 8192
+             max_overlaps: 0
+          min_frag_length: 0
+                  min_ttl: 1
+                   policy: linux
+          session_timeout: 30
+--------------------------------------------------
+stream_tcp:
+             flush_factor: 0
+                  max_pdu: 16384
+               max_window: 0
+                   no_ack: disabled
+            overlap_limit: 0
+                   policy: bsd
+              queue_limit: { max_bytes = 1048576, max_segments = 2621 }
+         reassemble_async: enabled
+             require_3whs: -1 (disabled)
+          session_timeout: 30
+           small_segments: { count = 0, maximum_size = 0 }
+               track_only: disabled
+--------------------------------------------------
+stream_udp:
+          session_timeout: 30
+--------------------------------------------------
+stream_user:
+          session_timeout: 30
+--------------------------------------------------
+telnet:
+        ayt_attack_thresh: -1
+          check_encrypted: disabled
+        encrypted_traffic: disabled
+                normalize: disabled
+--------------------------------------------------
+wizard:
+--------------------------------------------------
+nfq DAQ configured to passive.
+--------------------------------------------------
+host_cache
+    memcap: 8388608 bytes
+
+Snort successfully validated the configuration (with 0 warnings).
+o")~   Snort exiting
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+snort3/snort3-3.1.1.0/build# /usr/local/snort/bin/snort -c /etc/snort/snort.lua --rule-path /etc/rules/ -T -q
+
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/snort3/snort3$ \
+docker commit -a "tangfeixiong <tangfx128@google.com>" \
+-m "Nginx with ModSecurity and Snort all-in-one" \
+-c "EXPOSE 80 443" \
+-c 'ENV NGINX_VERSION=1.19.4 MODSECURITY_VERSION=3.0.4 SNORT_VERSION=3.1.1.0' \
+snort3-nginx-modsec-dev tangfeixiong/nginx-modsecurity-snort-dev

@@ -1,0 +1,1819 @@
+# Previous builds
+# Colm:
+# + 0.14.2
+# Ragel:
+# + 7.0.1
+# + 6.10
+
+root@96f413953c2f:/tmp# \
+mkdir -p github.com/adrian-thurston/colm-0.14.7 && \
+curl -sSL https://github.com/adrian-thurston/colm/archive/0.14.7.tar.gz | \
+tar -C ./github.com/adrian-thurston/colm-0.14.7/ --strip-components=1 -zx
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# ./autogen.sh 
++ case `uname` in
+++ uname
++ libtoolize --quiet --copy --force
++ aclocal
++ autoheader
++ automake --foreign --add-missing
+configure.ac:35: installing './compile'
+configure.ac:47: installing './config.guess'
+configure.ac:47: installing './config.sub'
+configure.ac:26: installing './install-sh'
+configure.ac:26: installing './missing'
+src/Makefile.am: installing './depcomp'
++ autoconf
+
+#root@96f413953c2f:/tmp/www.colm.net/files/colm/colm-0.14.2$ \
+#./configure --disable-debug --disable-manual
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# ./configure --enable-debug=no --enable-manual=no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking size of int... 4
+checking size of void *... 8
+checking size of long... 8
+checking size of unsigned long... 8
+checking size of unsigned long long... 8
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for unistd.h... (cached) yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for ar... ar
+checking for ranlib... ranlib
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether make sets $(MAKE)... (cached) yes
+checking for asciidoc... no
+checking for pygmentize... no
+checking for ./DIST... no
+checking for gdc-8... no
+checking for gdc-7... no
+checking for gdc-6... no
+checking for gdc-5... no
+checking for javac... no
+checking for ruby... no
+checking for mcs... no
+checking for go... no
+checking for ocaml... no
+checking for rustc... no
+checking for julia... no
+checking for gnustep-config... no
+checking checking if ragel ASM tests will build ... ... no
+checking for crack... no
+checking for fopencookie... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/aapl/Makefile
+config.status: creating src/libfsm/Makefile
+config.status: creating src/cgil/Makefile
+config.status: creating src/Makefile
+config.status: creating test/Makefile
+config.status: creating test/aapl.d/Makefile
+config.status: creating test/colm.d/Makefile
+config.status: creating test/rlhc.d/Makefile
+config.status: creating test/rlparse.d/Makefile
+config.status: creating test/trans.d/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/colm/Makefile
+config.status: creating src/config.h
+config.status: creating src/defs.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configuration of colm complete
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# make
+Making all in src
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make  all-recursive
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+Making all in aapl
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+Making all in libfsm
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-idbase.lo -MD -MP -MF .deps/libfsm_la-idbase.Tpo -c -o libfsm_la-idbase.lo `test -f 'idbase.cc' || echo './'`idbase.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-idbase.lo -MD -MP -MF .deps/libfsm_la-idbase.Tpo -c idbase.cc  -fPIC -DPIC -o .libs/libfsm_la-idbase.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-idbase.lo -MD -MP -MF .deps/libfsm_la-idbase.Tpo -c idbase.cc -o libfsm_la-idbase.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-idbase.Tpo .deps/libfsm_la-idbase.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmstate.lo -MD -MP -MF .deps/libfsm_la-fsmstate.Tpo -c -o libfsm_la-fsmstate.lo `test -f 'fsmstate.cc' || echo './'`fsmstate.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmstate.lo -MD -MP -MF .deps/libfsm_la-fsmstate.Tpo -c fsmstate.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmstate.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmstate.lo -MD -MP -MF .deps/libfsm_la-fsmstate.Tpo -c fsmstate.cc -o libfsm_la-fsmstate.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmstate.Tpo .deps/libfsm_la-fsmstate.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmbase.lo -MD -MP -MF .deps/libfsm_la-fsmbase.Tpo -c -o libfsm_la-fsmbase.lo `test -f 'fsmbase.cc' || echo './'`fsmbase.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmbase.lo -MD -MP -MF .deps/libfsm_la-fsmbase.Tpo -c fsmbase.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmbase.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmbase.lo -MD -MP -MF .deps/libfsm_la-fsmbase.Tpo -c fsmbase.cc -o libfsm_la-fsmbase.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmbase.Tpo .deps/libfsm_la-fsmbase.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmattach.lo -MD -MP -MF .deps/libfsm_la-fsmattach.Tpo -c -o libfsm_la-fsmattach.lo `test -f 'fsmattach.cc' || echo './'`fsmattach.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmattach.lo -MD -MP -MF .deps/libfsm_la-fsmattach.Tpo -c fsmattach.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmattach.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmattach.lo -MD -MP -MF .deps/libfsm_la-fsmattach.Tpo -c fsmattach.cc -o libfsm_la-fsmattach.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmattach.Tpo .deps/libfsm_la-fsmattach.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmmin.lo -MD -MP -MF .deps/libfsm_la-fsmmin.Tpo -c -o libfsm_la-fsmmin.lo `test -f 'fsmmin.cc' || echo './'`fsmmin.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmmin.lo -MD -MP -MF .deps/libfsm_la-fsmmin.Tpo -c fsmmin.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmmin.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmmin.lo -MD -MP -MF .deps/libfsm_la-fsmmin.Tpo -c fsmmin.cc -o libfsm_la-fsmmin.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmmin.Tpo .deps/libfsm_la-fsmmin.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmgraph.lo -MD -MP -MF .deps/libfsm_la-fsmgraph.Tpo -c -o libfsm_la-fsmgraph.lo `test -f 'fsmgraph.cc' || echo './'`fsmgraph.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmgraph.lo -MD -MP -MF .deps/libfsm_la-fsmgraph.Tpo -c fsmgraph.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmgraph.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmgraph.lo -MD -MP -MF .deps/libfsm_la-fsmgraph.Tpo -c fsmgraph.cc -o libfsm_la-fsmgraph.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmgraph.Tpo .deps/libfsm_la-fsmgraph.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmap.lo -MD -MP -MF .deps/libfsm_la-fsmap.Tpo -c -o libfsm_la-fsmap.lo `test -f 'fsmap.cc' || echo './'`fsmap.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmap.lo -MD -MP -MF .deps/libfsm_la-fsmap.Tpo -c fsmap.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmap.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmap.lo -MD -MP -MF .deps/libfsm_la-fsmap.Tpo -c fsmap.cc -o libfsm_la-fsmap.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmap.Tpo .deps/libfsm_la-fsmap.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmcond.lo -MD -MP -MF .deps/libfsm_la-fsmcond.Tpo -c -o libfsm_la-fsmcond.lo `test -f 'fsmcond.cc' || echo './'`fsmcond.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmcond.lo -MD -MP -MF .deps/libfsm_la-fsmcond.Tpo -c fsmcond.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmcond.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmcond.lo -MD -MP -MF .deps/libfsm_la-fsmcond.Tpo -c fsmcond.cc -o libfsm_la-fsmcond.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmcond.Tpo .deps/libfsm_la-fsmcond.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-fsmnfa.lo -MD -MP -MF .deps/libfsm_la-fsmnfa.Tpo -c -o libfsm_la-fsmnfa.lo `test -f 'fsmnfa.cc' || echo './'`fsmnfa.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmnfa.lo -MD -MP -MF .deps/libfsm_la-fsmnfa.Tpo -c fsmnfa.cc  -fPIC -DPIC -o .libs/libfsm_la-fsmnfa.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-fsmnfa.lo -MD -MP -MF .deps/libfsm_la-fsmnfa.Tpo -c fsmnfa.cc -o libfsm_la-fsmnfa.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-fsmnfa.Tpo .deps/libfsm_la-fsmnfa.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-common.lo -MD -MP -MF .deps/libfsm_la-common.Tpo -c -o libfsm_la-common.lo `test -f 'common.cc' || echo './'`common.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-common.lo -MD -MP -MF .deps/libfsm_la-common.Tpo -c common.cc  -fPIC -DPIC -o .libs/libfsm_la-common.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-common.lo -MD -MP -MF .deps/libfsm_la-common.Tpo -c common.cc -o libfsm_la-common.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-common.Tpo .deps/libfsm_la-common.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-redfsm.lo -MD -MP -MF .deps/libfsm_la-redfsm.Tpo -c -o libfsm_la-redfsm.lo `test -f 'redfsm.cc' || echo './'`redfsm.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-redfsm.lo -MD -MP -MF .deps/libfsm_la-redfsm.Tpo -c redfsm.cc  -fPIC -DPIC -o .libs/libfsm_la-redfsm.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-redfsm.lo -MD -MP -MF .deps/libfsm_la-redfsm.Tpo -c redfsm.cc -o libfsm_la-redfsm.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-redfsm.Tpo .deps/libfsm_la-redfsm.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-gendata.lo -MD -MP -MF .deps/libfsm_la-gendata.Tpo -c -o libfsm_la-gendata.lo `test -f 'gendata.cc' || echo './'`gendata.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gendata.lo -MD -MP -MF .deps/libfsm_la-gendata.Tpo -c gendata.cc  -fPIC -DPIC -o .libs/libfsm_la-gendata.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gendata.lo -MD -MP -MF .deps/libfsm_la-gendata.Tpo -c gendata.cc -o libfsm_la-gendata.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-gendata.Tpo .deps/libfsm_la-gendata.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-allocgen.lo -MD -MP -MF .deps/libfsm_la-allocgen.Tpo -c -o libfsm_la-allocgen.lo `test -f 'allocgen.cc' || echo './'`allocgen.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-allocgen.lo -MD -MP -MF .deps/libfsm_la-allocgen.Tpo -c allocgen.cc  -fPIC -DPIC -o .libs/libfsm_la-allocgen.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-allocgen.lo -MD -MP -MF .deps/libfsm_la-allocgen.Tpo -c allocgen.cc -o libfsm_la-allocgen.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-allocgen.Tpo .deps/libfsm_la-allocgen.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-codegen.lo -MD -MP -MF .deps/libfsm_la-codegen.Tpo -c -o libfsm_la-codegen.lo `test -f 'codegen.cc' || echo './'`codegen.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-codegen.lo -MD -MP -MF .deps/libfsm_la-codegen.Tpo -c codegen.cc  -fPIC -DPIC -o .libs/libfsm_la-codegen.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-codegen.lo -MD -MP -MF .deps/libfsm_la-codegen.Tpo -c codegen.cc -o libfsm_la-codegen.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-codegen.Tpo .deps/libfsm_la-codegen.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-actexp.lo -MD -MP -MF .deps/libfsm_la-actexp.Tpo -c -o libfsm_la-actexp.lo `test -f 'actexp.cc' || echo './'`actexp.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-actexp.lo -MD -MP -MF .deps/libfsm_la-actexp.Tpo -c actexp.cc  -fPIC -DPIC -o .libs/libfsm_la-actexp.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-actexp.lo -MD -MP -MF .deps/libfsm_la-actexp.Tpo -c actexp.cc -o libfsm_la-actexp.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-actexp.Tpo .deps/libfsm_la-actexp.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-binvar.lo -MD -MP -MF .deps/libfsm_la-binvar.Tpo -c -o libfsm_la-binvar.lo `test -f 'binvar.cc' || echo './'`binvar.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binvar.lo -MD -MP -MF .deps/libfsm_la-binvar.Tpo -c binvar.cc  -fPIC -DPIC -o .libs/libfsm_la-binvar.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binvar.lo -MD -MP -MF .deps/libfsm_la-binvar.Tpo -c binvar.cc -o libfsm_la-binvar.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-binvar.Tpo .deps/libfsm_la-binvar.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-tables.lo -MD -MP -MF .deps/libfsm_la-tables.Tpo -c -o libfsm_la-tables.lo `test -f 'tables.cc' || echo './'`tables.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tables.lo -MD -MP -MF .deps/libfsm_la-tables.Tpo -c tables.cc  -fPIC -DPIC -o .libs/libfsm_la-tables.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tables.lo -MD -MP -MF .deps/libfsm_la-tables.Tpo -c tables.cc -o libfsm_la-tables.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-tables.Tpo .deps/libfsm_la-tables.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-tabgoto.lo -MD -MP -MF .deps/libfsm_la-tabgoto.Tpo -c -o libfsm_la-tabgoto.lo `test -f 'tabgoto.cc' || echo './'`tabgoto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabgoto.lo -MD -MP -MF .deps/libfsm_la-tabgoto.Tpo -c tabgoto.cc  -fPIC -DPIC -o .libs/libfsm_la-tabgoto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabgoto.lo -MD -MP -MF .deps/libfsm_la-tabgoto.Tpo -c tabgoto.cc -o libfsm_la-tabgoto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-tabgoto.Tpo .deps/libfsm_la-tabgoto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-tabbreak.lo -MD -MP -MF .deps/libfsm_la-tabbreak.Tpo -c -o libfsm_la-tabbreak.lo `test -f 'tabbreak.cc' || echo './'`tabbreak.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabbreak.lo -MD -MP -MF .deps/libfsm_la-tabbreak.Tpo -c tabbreak.cc  -fPIC -DPIC -o .libs/libfsm_la-tabbreak.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabbreak.lo -MD -MP -MF .deps/libfsm_la-tabbreak.Tpo -c tabbreak.cc -o libfsm_la-tabbreak.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-tabbreak.Tpo .deps/libfsm_la-tabbreak.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-tabvar.lo -MD -MP -MF .deps/libfsm_la-tabvar.Tpo -c -o libfsm_la-tabvar.lo `test -f 'tabvar.cc' || echo './'`tabvar.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabvar.lo -MD -MP -MF .deps/libfsm_la-tabvar.Tpo -c tabvar.cc  -fPIC -DPIC -o .libs/libfsm_la-tabvar.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-tabvar.lo -MD -MP -MF .deps/libfsm_la-tabvar.Tpo -c tabvar.cc -o libfsm_la-tabvar.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-tabvar.Tpo .deps/libfsm_la-tabvar.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-binary.lo -MD -MP -MF .deps/libfsm_la-binary.Tpo -c -o libfsm_la-binary.lo `test -f 'binary.cc' || echo './'`binary.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binary.lo -MD -MP -MF .deps/libfsm_la-binary.Tpo -c binary.cc  -fPIC -DPIC -o .libs/libfsm_la-binary.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binary.lo -MD -MP -MF .deps/libfsm_la-binary.Tpo -c binary.cc -o libfsm_la-binary.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-binary.Tpo .deps/libfsm_la-binary.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-bingoto.lo -MD -MP -MF .deps/libfsm_la-bingoto.Tpo -c -o libfsm_la-bingoto.lo `test -f 'bingoto.cc' || echo './'`bingoto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-bingoto.lo -MD -MP -MF .deps/libfsm_la-bingoto.Tpo -c bingoto.cc  -fPIC -DPIC -o .libs/libfsm_la-bingoto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-bingoto.lo -MD -MP -MF .deps/libfsm_la-bingoto.Tpo -c bingoto.cc -o libfsm_la-bingoto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-bingoto.Tpo .deps/libfsm_la-bingoto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-binbreak.lo -MD -MP -MF .deps/libfsm_la-binbreak.Tpo -c -o libfsm_la-binbreak.lo `test -f 'binbreak.cc' || echo './'`binbreak.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binbreak.lo -MD -MP -MF .deps/libfsm_la-binbreak.Tpo -c binbreak.cc  -fPIC -DPIC -o .libs/libfsm_la-binbreak.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-binbreak.lo -MD -MP -MF .deps/libfsm_la-binbreak.Tpo -c binbreak.cc -o libfsm_la-binbreak.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-binbreak.Tpo .deps/libfsm_la-binbreak.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-actloop.lo -MD -MP -MF .deps/libfsm_la-actloop.Tpo -c -o libfsm_la-actloop.lo `test -f 'actloop.cc' || echo './'`actloop.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-actloop.lo -MD -MP -MF .deps/libfsm_la-actloop.Tpo -c actloop.cc  -fPIC -DPIC -o .libs/libfsm_la-actloop.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-actloop.lo -MD -MP -MF .deps/libfsm_la-actloop.Tpo -c actloop.cc -o libfsm_la-actloop.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-actloop.Tpo .deps/libfsm_la-actloop.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-flat.lo -MD -MP -MF .deps/libfsm_la-flat.Tpo -c -o libfsm_la-flat.lo `test -f 'flat.cc' || echo './'`flat.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flat.lo -MD -MP -MF .deps/libfsm_la-flat.Tpo -c flat.cc  -fPIC -DPIC -o .libs/libfsm_la-flat.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flat.lo -MD -MP -MF .deps/libfsm_la-flat.Tpo -c flat.cc -o libfsm_la-flat.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-flat.Tpo .deps/libfsm_la-flat.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-flatgoto.lo -MD -MP -MF .deps/libfsm_la-flatgoto.Tpo -c -o libfsm_la-flatgoto.lo `test -f 'flatgoto.cc' || echo './'`flatgoto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatgoto.lo -MD -MP -MF .deps/libfsm_la-flatgoto.Tpo -c flatgoto.cc  -fPIC -DPIC -o .libs/libfsm_la-flatgoto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatgoto.lo -MD -MP -MF .deps/libfsm_la-flatgoto.Tpo -c flatgoto.cc -o libfsm_la-flatgoto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-flatgoto.Tpo .deps/libfsm_la-flatgoto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-flatbreak.lo -MD -MP -MF .deps/libfsm_la-flatbreak.Tpo -c -o libfsm_la-flatbreak.lo `test -f 'flatbreak.cc' || echo './'`flatbreak.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatbreak.lo -MD -MP -MF .deps/libfsm_la-flatbreak.Tpo -c flatbreak.cc  -fPIC -DPIC -o .libs/libfsm_la-flatbreak.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatbreak.lo -MD -MP -MF .deps/libfsm_la-flatbreak.Tpo -c flatbreak.cc -o libfsm_la-flatbreak.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-flatbreak.Tpo .deps/libfsm_la-flatbreak.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-flatvar.lo -MD -MP -MF .deps/libfsm_la-flatvar.Tpo -c -o libfsm_la-flatvar.lo `test -f 'flatvar.cc' || echo './'`flatvar.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatvar.lo -MD -MP -MF .deps/libfsm_la-flatvar.Tpo -c flatvar.cc  -fPIC -DPIC -o .libs/libfsm_la-flatvar.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-flatvar.lo -MD -MP -MF .deps/libfsm_la-flatvar.Tpo -c flatvar.cc -o libfsm_la-flatvar.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-flatvar.Tpo .deps/libfsm_la-flatvar.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-switch.lo -MD -MP -MF .deps/libfsm_la-switch.Tpo -c -o libfsm_la-switch.lo `test -f 'switch.cc' || echo './'`switch.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switch.lo -MD -MP -MF .deps/libfsm_la-switch.Tpo -c switch.cc  -fPIC -DPIC -o .libs/libfsm_la-switch.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switch.lo -MD -MP -MF .deps/libfsm_la-switch.Tpo -c switch.cc -o libfsm_la-switch.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-switch.Tpo .deps/libfsm_la-switch.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-switchgoto.lo -MD -MP -MF .deps/libfsm_la-switchgoto.Tpo -c -o libfsm_la-switchgoto.lo `test -f 'switchgoto.cc' || echo './'`switchgoto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchgoto.lo -MD -MP -MF .deps/libfsm_la-switchgoto.Tpo -c switchgoto.cc  -fPIC -DPIC -o .libs/libfsm_la-switchgoto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchgoto.lo -MD -MP -MF .deps/libfsm_la-switchgoto.Tpo -c switchgoto.cc -o libfsm_la-switchgoto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-switchgoto.Tpo .deps/libfsm_la-switchgoto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-switchbreak.lo -MD -MP -MF .deps/libfsm_la-switchbreak.Tpo -c -o libfsm_la-switchbreak.lo `test -f 'switchbreak.cc' || echo './'`switchbreak.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchbreak.lo -MD -MP -MF .deps/libfsm_la-switchbreak.Tpo -c switchbreak.cc  -fPIC -DPIC -o .libs/libfsm_la-switchbreak.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchbreak.lo -MD -MP -MF .deps/libfsm_la-switchbreak.Tpo -c switchbreak.cc -o libfsm_la-switchbreak.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-switchbreak.Tpo .deps/libfsm_la-switchbreak.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-switchvar.lo -MD -MP -MF .deps/libfsm_la-switchvar.Tpo -c -o libfsm_la-switchvar.lo `test -f 'switchvar.cc' || echo './'`switchvar.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchvar.lo -MD -MP -MF .deps/libfsm_la-switchvar.Tpo -c switchvar.cc  -fPIC -DPIC -o .libs/libfsm_la-switchvar.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-switchvar.lo -MD -MP -MF .deps/libfsm_la-switchvar.Tpo -c switchvar.cc -o libfsm_la-switchvar.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-switchvar.Tpo .deps/libfsm_la-switchvar.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-goto.lo -MD -MP -MF .deps/libfsm_la-goto.Tpo -c -o libfsm_la-goto.lo `test -f 'goto.cc' || echo './'`goto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-goto.lo -MD -MP -MF .deps/libfsm_la-goto.Tpo -c goto.cc  -fPIC -DPIC -o .libs/libfsm_la-goto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-goto.lo -MD -MP -MF .deps/libfsm_la-goto.Tpo -c goto.cc -o libfsm_la-goto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-goto.Tpo .deps/libfsm_la-goto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-gotoloop.lo -MD -MP -MF .deps/libfsm_la-gotoloop.Tpo -c -o libfsm_la-gotoloop.lo `test -f 'gotoloop.cc' || echo './'`gotoloop.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gotoloop.lo -MD -MP -MF .deps/libfsm_la-gotoloop.Tpo -c gotoloop.cc  -fPIC -DPIC -o .libs/libfsm_la-gotoloop.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gotoloop.lo -MD -MP -MF .deps/libfsm_la-gotoloop.Tpo -c gotoloop.cc -o libfsm_la-gotoloop.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-gotoloop.Tpo .deps/libfsm_la-gotoloop.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-gotoexp.lo -MD -MP -MF .deps/libfsm_la-gotoexp.Tpo -c -o libfsm_la-gotoexp.lo `test -f 'gotoexp.cc' || echo './'`gotoexp.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gotoexp.lo -MD -MP -MF .deps/libfsm_la-gotoexp.Tpo -c gotoexp.cc  -fPIC -DPIC -o .libs/libfsm_la-gotoexp.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-gotoexp.lo -MD -MP -MF .deps/libfsm_la-gotoexp.Tpo -c gotoexp.cc -o libfsm_la-gotoexp.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-gotoexp.Tpo .deps/libfsm_la-gotoexp.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-ipgoto.lo -MD -MP -MF .deps/libfsm_la-ipgoto.Tpo -c -o libfsm_la-ipgoto.lo `test -f 'ipgoto.cc' || echo './'`ipgoto.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-ipgoto.lo -MD -MP -MF .deps/libfsm_la-ipgoto.Tpo -c ipgoto.cc  -fPIC -DPIC -o .libs/libfsm_la-ipgoto.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-ipgoto.lo -MD -MP -MF .deps/libfsm_la-ipgoto.Tpo -c ipgoto.cc -o libfsm_la-ipgoto.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-ipgoto.Tpo .deps/libfsm_la-ipgoto.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-dot.lo -MD -MP -MF .deps/libfsm_la-dot.Tpo -c -o libfsm_la-dot.lo `test -f 'dot.cc' || echo './'`dot.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-dot.lo -MD -MP -MF .deps/libfsm_la-dot.Tpo -c dot.cc  -fPIC -DPIC -o .libs/libfsm_la-dot.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-dot.lo -MD -MP -MF .deps/libfsm_la-dot.Tpo -c dot.cc -o libfsm_la-dot.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-dot.Tpo .deps/libfsm_la-dot.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/aapl   -Wall -g -MT libfsm_la-asm.lo -MD -MP -MF .deps/libfsm_la-asm.Tpo -c -o libfsm_la-asm.lo `test -f 'asm.cc' || echo './'`asm.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-asm.lo -MD -MP -MF .deps/libfsm_la-asm.Tpo -c asm.cc  -fPIC -DPIC -o .libs/libfsm_la-asm.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../../src -I../../src/aapl -Wall -g -MT libfsm_la-asm.lo -MD -MP -MF .deps/libfsm_la-asm.Tpo -c asm.cc -o libfsm_la-asm.o >/dev/null 2>&1
+mv -f .deps/libfsm_la-asm.Tpo .deps/libfsm_la-asm.Plo
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g -release 0.14.7 -no-undefined -Wl,--no-undefined  -o libfsm.la -rpath /usr/local/lib libfsm_la-idbase.lo libfsm_la-fsmstate.lo libfsm_la-fsmbase.lo libfsm_la-fsmattach.lo libfsm_la-fsmmin.lo libfsm_la-fsmgraph.lo libfsm_la-fsmap.lo libfsm_la-fsmcond.lo libfsm_la-fsmnfa.lo libfsm_la-common.lo libfsm_la-redfsm.lo libfsm_la-gendata.lo libfsm_la-allocgen.lo libfsm_la-codegen.lo libfsm_la-actexp.lo libfsm_la-binvar.lo libfsm_la-tables.lo libfsm_la-tabgoto.lo libfsm_la-tabbreak.lo libfsm_la-tabvar.lo libfsm_la-binary.lo libfsm_la-bingoto.lo libfsm_la-binbreak.lo libfsm_la-actloop.lo libfsm_la-flat.lo libfsm_la-flatgoto.lo libfsm_la-flatbreak.lo libfsm_la-flatvar.lo libfsm_la-switch.lo libfsm_la-switchgoto.lo libfsm_la-switchbreak.lo libfsm_la-switchvar.lo libfsm_la-goto.lo libfsm_la-gotoloop.lo libfsm_la-gotoexp.lo libfsm_la-ipgoto.lo libfsm_la-dot.lo libfsm_la-asm.lo  
+libtool: link: g++  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o  .libs/libfsm_la-idbase.o .libs/libfsm_la-fsmstate.o .libs/libfsm_la-fsmbase.o .libs/libfsm_la-fsmattach.o .libs/libfsm_la-fsmmin.o .libs/libfsm_la-fsmgraph.o .libs/libfsm_la-fsmap.o .libs/libfsm_la-fsmcond.o .libs/libfsm_la-fsmnfa.o .libs/libfsm_la-common.o .libs/libfsm_la-redfsm.o .libs/libfsm_la-gendata.o .libs/libfsm_la-allocgen.o .libs/libfsm_la-codegen.o .libs/libfsm_la-actexp.o .libs/libfsm_la-binvar.o .libs/libfsm_la-tables.o .libs/libfsm_la-tabgoto.o .libs/libfsm_la-tabbreak.o .libs/libfsm_la-tabvar.o .libs/libfsm_la-binary.o .libs/libfsm_la-bingoto.o .libs/libfsm_la-binbreak.o .libs/libfsm_la-actloop.o .libs/libfsm_la-flat.o .libs/libfsm_la-flatgoto.o .libs/libfsm_la-flatbreak.o .libs/libfsm_la-flatvar.o .libs/libfsm_la-switch.o .libs/libfsm_la-switchgoto.o .libs/libfsm_la-switchbreak.o .libs/libfsm_la-switchvar.o .libs/libfsm_la-goto.o .libs/libfsm_la-gotoloop.o .libs/libfsm_la-gotoexp.o .libs/libfsm_la-ipgoto.o .libs/libfsm_la-dot.o .libs/libfsm_la-asm.o   -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o  -g -Wl,--no-undefined   -Wl,-soname -Wl,libfsm-0.14.7.so -o .libs/libfsm-0.14.7.so
+libtool: link: (cd ".libs" && rm -f "libfsm.so" && ln -s "libfsm-0.14.7.so" "libfsm.so")
+libtool: link: ar cru .libs/libfsm.a  libfsm_la-idbase.o libfsm_la-fsmstate.o libfsm_la-fsmbase.o libfsm_la-fsmattach.o libfsm_la-fsmmin.o libfsm_la-fsmgraph.o libfsm_la-fsmap.o libfsm_la-fsmcond.o libfsm_la-fsmnfa.o libfsm_la-common.o libfsm_la-redfsm.o libfsm_la-gendata.o libfsm_la-allocgen.o libfsm_la-codegen.o libfsm_la-actexp.o libfsm_la-binvar.o libfsm_la-tables.o libfsm_la-tabgoto.o libfsm_la-tabbreak.o libfsm_la-tabvar.o libfsm_la-binary.o libfsm_la-bingoto.o libfsm_la-binbreak.o libfsm_la-actloop.o libfsm_la-flat.o libfsm_la-flatgoto.o libfsm_la-flatbreak.o libfsm_la-flatvar.o libfsm_la-switch.o libfsm_la-switchgoto.o libfsm_la-switchbreak.o libfsm_la-switchvar.o libfsm_la-goto.o libfsm_la-gotoloop.o libfsm_la-gotoexp.o libfsm_la-ipgoto.o libfsm_la-dot.o libfsm_la-asm.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libfsm.a
+libtool: link: ( cd ".libs" && rm -f "libfsm.la" && ln -s "../libfsm.la" "libfsm.la" )
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+Making all in cgil
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-resolve.o -MD -MP -MF .deps/libprog_a-resolve.Tpo -c -o libprog_a-resolve.o `test -f 'resolve.cc' || echo './'`resolve.cc
+mv -f .deps/libprog_a-resolve.Tpo .deps/libprog_a-resolve.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-lookup.o -MD -MP -MF .deps/libprog_a-lookup.Tpo -c -o libprog_a-lookup.o `test -f 'lookup.cc' || echo './'`lookup.cc
+mv -f .deps/libprog_a-lookup.Tpo .deps/libprog_a-lookup.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-synthesis.o -MD -MP -MF .deps/libprog_a-synthesis.Tpo -c -o libprog_a-synthesis.o `test -f 'synthesis.cc' || echo './'`synthesis.cc
+mv -f .deps/libprog_a-synthesis.Tpo .deps/libprog_a-synthesis.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-parsetree.o -MD -MP -MF .deps/libprog_a-parsetree.Tpo -c -o libprog_a-parsetree.o `test -f 'parsetree.cc' || echo './'`parsetree.cc
+mv -f .deps/libprog_a-parsetree.Tpo .deps/libprog_a-parsetree.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmstate.o -MD -MP -MF .deps/libprog_a-fsmstate.Tpo -c -o libprog_a-fsmstate.o `test -f 'fsmstate.cc' || echo './'`fsmstate.cc
+mv -f .deps/libprog_a-fsmstate.Tpo .deps/libprog_a-fsmstate.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmbase.o -MD -MP -MF .deps/libprog_a-fsmbase.Tpo -c -o libprog_a-fsmbase.o `test -f 'fsmbase.cc' || echo './'`fsmbase.cc
+mv -f .deps/libprog_a-fsmbase.Tpo .deps/libprog_a-fsmbase.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmattach.o -MD -MP -MF .deps/libprog_a-fsmattach.Tpo -c -o libprog_a-fsmattach.o `test -f 'fsmattach.cc' || echo './'`fsmattach.cc
+mv -f .deps/libprog_a-fsmattach.Tpo .deps/libprog_a-fsmattach.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmmin.o -MD -MP -MF .deps/libprog_a-fsmmin.Tpo -c -o libprog_a-fsmmin.o `test -f 'fsmmin.cc' || echo './'`fsmmin.cc
+mv -f .deps/libprog_a-fsmmin.Tpo .deps/libprog_a-fsmmin.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmgraph.o -MD -MP -MF .deps/libprog_a-fsmgraph.Tpo -c -o libprog_a-fsmgraph.o `test -f 'fsmgraph.cc' || echo './'`fsmgraph.cc
+mv -f .deps/libprog_a-fsmgraph.Tpo .deps/libprog_a-fsmgraph.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-pdagraph.o -MD -MP -MF .deps/libprog_a-pdagraph.Tpo -c -o libprog_a-pdagraph.o `test -f 'pdagraph.cc' || echo './'`pdagraph.cc
+mv -f .deps/libprog_a-pdagraph.Tpo .deps/libprog_a-pdagraph.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-pdabuild.o -MD -MP -MF .deps/libprog_a-pdabuild.Tpo -c -o libprog_a-pdabuild.o `test -f 'pdabuild.cc' || echo './'`pdabuild.cc
+mv -f .deps/libprog_a-pdabuild.Tpo .deps/libprog_a-pdabuild.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-pdacodegen.o -MD -MP -MF .deps/libprog_a-pdacodegen.Tpo -c -o libprog_a-pdacodegen.o `test -f 'pdacodegen.cc' || echo './'`pdacodegen.cc
+mv -f .deps/libprog_a-pdacodegen.Tpo .deps/libprog_a-pdacodegen.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmcodegen.o -MD -MP -MF .deps/libprog_a-fsmcodegen.Tpo -c -o libprog_a-fsmcodegen.o `test -f 'fsmcodegen.cc' || echo './'`fsmcodegen.cc
+mv -f .deps/libprog_a-fsmcodegen.Tpo .deps/libprog_a-fsmcodegen.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-redfsm.o -MD -MP -MF .deps/libprog_a-redfsm.Tpo -c -o libprog_a-redfsm.o `test -f 'redfsm.cc' || echo './'`redfsm.cc
+mv -f .deps/libprog_a-redfsm.Tpo .deps/libprog_a-redfsm.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmexec.o -MD -MP -MF .deps/libprog_a-fsmexec.Tpo -c -o libprog_a-fsmexec.o `test -f 'fsmexec.cc' || echo './'`fsmexec.cc
+mv -f .deps/libprog_a-fsmexec.Tpo .deps/libprog_a-fsmexec.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-redbuild.o -MD -MP -MF .deps/libprog_a-redbuild.Tpo -c -o libprog_a-redbuild.o `test -f 'redbuild.cc' || echo './'`redbuild.cc
+mv -f .deps/libprog_a-redbuild.Tpo .deps/libprog_a-redbuild.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-closure.o -MD -MP -MF .deps/libprog_a-closure.Tpo -c -o libprog_a-closure.o `test -f 'closure.cc' || echo './'`closure.cc
+mv -f .deps/libprog_a-closure.Tpo .deps/libprog_a-closure.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-fsmap.o -MD -MP -MF .deps/libprog_a-fsmap.Tpo -c -o libprog_a-fsmap.o `test -f 'fsmap.cc' || echo './'`fsmap.cc
+mv -f .deps/libprog_a-fsmap.Tpo .deps/libprog_a-fsmap.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-dotgen.o -MD -MP -MF .deps/libprog_a-dotgen.Tpo -c -o libprog_a-dotgen.o `test -f 'dotgen.cc' || echo './'`dotgen.cc
+mv -f .deps/libprog_a-dotgen.Tpo .deps/libprog_a-dotgen.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-pcheck.o -MD -MP -MF .deps/libprog_a-pcheck.Tpo -c -o libprog_a-pcheck.o `test -f 'pcheck.cc' || echo './'`pcheck.cc
+mv -f .deps/libprog_a-pcheck.Tpo .deps/libprog_a-pcheck.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-ctinput.o -MD -MP -MF .deps/libprog_a-ctinput.Tpo -c -o libprog_a-ctinput.o `test -f 'ctinput.cc' || echo './'`ctinput.cc
+mv -f .deps/libprog_a-ctinput.Tpo .deps/libprog_a-ctinput.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-declare.o -MD -MP -MF .deps/libprog_a-declare.Tpo -c -o libprog_a-declare.o `test -f 'declare.cc' || echo './'`declare.cc
+mv -f .deps/libprog_a-declare.Tpo .deps/libprog_a-declare.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-codegen.o -MD -MP -MF .deps/libprog_a-codegen.Tpo -c -o libprog_a-codegen.o `test -f 'codegen.cc' || echo './'`codegen.cc
+mv -f .deps/libprog_a-codegen.Tpo .deps/libprog_a-codegen.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-exports.o -MD -MP -MF .deps/libprog_a-exports.Tpo -c -o libprog_a-exports.o `test -f 'exports.cc' || echo './'`exports.cc
+mv -f .deps/libprog_a-exports.Tpo .deps/libprog_a-exports.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-compiler.o -MD -MP -MF .deps/libprog_a-compiler.Tpo -c -o libprog_a-compiler.o `test -f 'compiler.cc' || echo './'`compiler.cc
+mv -f .deps/libprog_a-compiler.Tpo .deps/libprog_a-compiler.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-parser.o -MD -MP -MF .deps/libprog_a-parser.Tpo -c -o libprog_a-parser.o `test -f 'parser.cc' || echo './'`parser.cc
+mv -f .deps/libprog_a-parser.Tpo .deps/libprog_a-parser.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT libprog_a-reduce.o -MD -MP -MF .deps/libprog_a-reduce.Tpo -c -o libprog_a-reduce.o `test -f 'reduce.cc' || echo './'`reduce.cc
+mv -f .deps/libprog_a-reduce.Tpo .deps/libprog_a-reduce.Po
+rm -f libprog.a
+ar cru libprog.a libprog_a-resolve.o libprog_a-lookup.o libprog_a-synthesis.o libprog_a-parsetree.o libprog_a-fsmstate.o libprog_a-fsmbase.o libprog_a-fsmattach.o libprog_a-fsmmin.o libprog_a-fsmgraph.o libprog_a-pdagraph.o libprog_a-pdabuild.o libprog_a-pdacodegen.o libprog_a-fsmcodegen.o libprog_a-redfsm.o libprog_a-fsmexec.o libprog_a-redbuild.o libprog_a-closure.o libprog_a-fsmap.o libprog_a-dotgen.o libprog_a-pcheck.o libprog_a-ctinput.o libprog_a-declare.o libprog_a-codegen.o libprog_a-exports.o libprog_a-compiler.o libprog_a-parser.o libprog_a-reduce.o 
+ar: `u' modifier ignored since `D' is the default (see `U')
+ranlib libprog.a
+depbase=`echo map.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT map.lo -MD -MP -MF $depbase.Tpo -c -o map.lo map.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT map.lo -MD -MP -MF .deps/map.Tpo -c map.c  -fPIC -DPIC -o .libs/map.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT map.lo -MD -MP -MF .deps/map.Tpo -c map.c -o map.o >/dev/null 2>&1
+depbase=`echo pdarun.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT pdarun.lo -MD -MP -MF $depbase.Tpo -c -o pdarun.lo pdarun.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT pdarun.lo -MD -MP -MF .deps/pdarun.Tpo -c pdarun.c  -fPIC -DPIC -o .libs/pdarun.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT pdarun.lo -MD -MP -MF .deps/pdarun.Tpo -c pdarun.c -o pdarun.o >/dev/null 2>&1
+depbase=`echo list.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT list.lo -MD -MP -MF $depbase.Tpo -c -o list.lo list.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT list.lo -MD -MP -MF .deps/list.Tpo -c list.c  -fPIC -DPIC -o .libs/list.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT list.lo -MD -MP -MF .deps/list.Tpo -c list.c -o list.o >/dev/null 2>&1
+depbase=`echo input.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT input.lo -MD -MP -MF $depbase.Tpo -c -o input.lo input.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT input.lo -MD -MP -MF .deps/input.Tpo -c input.c  -fPIC -DPIC -o .libs/input.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT input.lo -MD -MP -MF .deps/input.Tpo -c input.c -o input.o >/dev/null 2>&1
+depbase=`echo stream.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT stream.lo -MD -MP -MF $depbase.Tpo -c -o stream.lo stream.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT stream.lo -MD -MP -MF .deps/stream.Tpo -c stream.c  -fPIC -DPIC -o .libs/stream.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT stream.lo -MD -MP -MF .deps/stream.Tpo -c stream.c -o stream.o >/dev/null 2>&1
+depbase=`echo debug.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT debug.lo -MD -MP -MF $depbase.Tpo -c -o debug.lo debug.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c debug.c  -fPIC -DPIC -o .libs/debug.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c debug.c -o debug.o >/dev/null 2>&1
+depbase=`echo codevect.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT codevect.lo -MD -MP -MF $depbase.Tpo -c -o codevect.lo codevect.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT codevect.lo -MD -MP -MF .deps/codevect.Tpo -c codevect.c  -fPIC -DPIC -o .libs/codevect.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT codevect.lo -MD -MP -MF .deps/codevect.Tpo -c codevect.c -o codevect.o >/dev/null 2>&1
+depbase=`echo pool.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT pool.lo -MD -MP -MF $depbase.Tpo -c -o pool.lo pool.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT pool.lo -MD -MP -MF .deps/pool.Tpo -c pool.c  -fPIC -DPIC -o .libs/pool.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT pool.lo -MD -MP -MF .deps/pool.Tpo -c pool.c -o pool.o >/dev/null 2>&1
+depbase=`echo string.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT string.lo -MD -MP -MF $depbase.Tpo -c -o string.lo string.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT string.lo -MD -MP -MF .deps/string.Tpo -c string.c  -fPIC -DPIC -o .libs/string.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT string.lo -MD -MP -MF .deps/string.Tpo -c string.c -o string.o >/dev/null 2>&1
+depbase=`echo tree.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT tree.lo -MD -MP -MF $depbase.Tpo -c -o tree.lo tree.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT tree.lo -MD -MP -MF .deps/tree.Tpo -c tree.c  -fPIC -DPIC -o .libs/tree.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT tree.lo -MD -MP -MF .deps/tree.Tpo -c tree.c -o tree.o >/dev/null 2>&1
+depbase=`echo iter.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT iter.lo -MD -MP -MF $depbase.Tpo -c -o iter.lo iter.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT iter.lo -MD -MP -MF .deps/iter.Tpo -c iter.c  -fPIC -DPIC -o .libs/iter.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT iter.lo -MD -MP -MF .deps/iter.Tpo -c iter.c -o iter.o >/dev/null 2>&1
+depbase=`echo bytecode.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT bytecode.lo -MD -MP -MF $depbase.Tpo -c -o bytecode.lo bytecode.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT bytecode.lo -MD -MP -MF .deps/bytecode.Tpo -c bytecode.c  -fPIC -DPIC -o .libs/bytecode.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT bytecode.lo -MD -MP -MF .deps/bytecode.Tpo -c bytecode.c -o bytecode.o >/dev/null 2>&1
+depbase=`echo program.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT program.lo -MD -MP -MF $depbase.Tpo -c -o program.lo program.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT program.lo -MD -MP -MF .deps/program.Tpo -c program.c  -fPIC -DPIC -o .libs/program.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT program.lo -MD -MP -MF .deps/program.Tpo -c program.c -o program.o >/dev/null 2>&1
+depbase=`echo struct.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT struct.lo -MD -MP -MF $depbase.Tpo -c -o struct.lo struct.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT struct.lo -MD -MP -MF .deps/struct.Tpo -c struct.c  -fPIC -DPIC -o .libs/struct.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT struct.lo -MD -MP -MF .deps/struct.Tpo -c struct.c -o struct.o >/dev/null 2>&1
+depbase=`echo commit.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT commit.lo -MD -MP -MF $depbase.Tpo -c -o commit.lo commit.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT commit.lo -MD -MP -MF .deps/commit.Tpo -c commit.c  -fPIC -DPIC -o .libs/commit.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT commit.lo -MD -MP -MF .deps/commit.Tpo -c commit.c -o commit.o >/dev/null 2>&1
+depbase=`echo print.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude   -Wall -g -MT print.lo -MD -MP -MF $depbase.Tpo -c -o print.lo print.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT print.lo -MD -MP -MF .deps/print.Tpo -c print.c  -fPIC -DPIC -o .libs/print.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../src/aapl -Iinclude -Wall -g -MT print.lo -MD -MP -MF .deps/print.Tpo -c print.c -o print.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc  -Wall -g -release 0.14.7 -no-undefined -Wl,--no-undefined  -o libcolm.la -rpath /usr/local/lib map.lo pdarun.lo list.lo input.lo stream.lo debug.lo codevect.lo pool.lo string.lo tree.lo iter.lo bytecode.lo program.lo struct.lo commit.lo print.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/map.o .libs/pdarun.o .libs/list.o .libs/input.o .libs/stream.o .libs/debug.o .libs/codevect.o .libs/pool.o .libs/string.o .libs/tree.o .libs/iter.o .libs/bytecode.o .libs/program.o .libs/struct.o .libs/commit.o .libs/print.o    -g -Wl,--no-undefined   -Wl,-soname -Wl,libcolm-0.14.7.so -o .libs/libcolm-0.14.7.so
+libtool: link: (cd ".libs" && rm -f "libcolm.so" && ln -s "libcolm-0.14.7.so" "libcolm.so")
+libtool: link: ar cru .libs/libcolm.a  map.o pdarun.o list.o input.o stream.o debug.o codevect.o pool.o string.o tree.o iter.o bytecode.o program.o struct.o commit.o print.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libcolm.a
+libtool: link: ( cd ".libs" && rm -f "libcolm.la" && ln -s "../libcolm.la" "libcolm.la" )
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT colm-main.o -MD -MP -MF .deps/colm-main.Tpo -c -o colm-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/colm-main.Tpo .deps/colm-main.Po
+sedsubst: generating colm-wrap from colm-wrap.sh
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT bootstrap2-main.o -MD -MP -MF .deps/bootstrap2-main.Tpo -c -o bootstrap2-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/bootstrap2-main.Tpo .deps/bootstrap2-main.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DCONS_INIT -Wall -g -MT bootstrap0-consinit.o -MD -MP -MF .deps/bootstrap0-consinit.Tpo -c -o bootstrap0-consinit.o `test -f 'consinit.cc' || echo './'`consinit.cc
+mv -f .deps/bootstrap0-consinit.Tpo .deps/bootstrap0-consinit.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DCONS_INIT -Wall -g -MT bootstrap0-main.o -MD -MP -MF .deps/bootstrap0-main.Tpo -c -o bootstrap0-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/bootstrap0-main.Tpo .deps/bootstrap0-main.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -Wall -DPREFIX='"/usr/local"' -DCONS_INIT -Wall -g -L.  -o bootstrap0 bootstrap0-consinit.o bootstrap0-main.o libprog.a libcolm.la 
+libtool: link: g++ -Wall -DPREFIX=\"/usr/local\" -DCONS_INIT -Wall -g -o .libs/bootstrap0 bootstrap0-consinit.o bootstrap0-main.o  -L. libprog.a ./.libs/libcolm.so
+mkdir -p gen
+./colm-wrap -w bootstrap0 -o gen/bootstrap1.pack \
+	-c -p gen/parse1.c -e gen/if1.h -x gen/if1.cc no-input
+./colm-wrap -o gen/if1.h gen/bootstrap1.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_INIT -Wall -g -MT bootstrap1-loadinit.o -MD -MP -MF .deps/bootstrap1-loadinit.Tpo -c -o bootstrap1-loadinit.o `test -f 'loadinit.cc' || echo './'`loadinit.cc
+mv -f .deps/bootstrap1-loadinit.Tpo .deps/bootstrap1-loadinit.Po
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_INIT -Wall -g -MT bootstrap1-main.o -MD -MP -MF .deps/bootstrap1-main.Tpo -c -o bootstrap1-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/bootstrap1-main.Tpo .deps/bootstrap1-main.Po
+./colm-wrap -o gen/if1.cc gen/bootstrap1.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_INIT -Wall -g -MT gen/bootstrap1-if1.o -MD -MP -MF gen/.deps/bootstrap1-if1.Tpo -c -o gen/bootstrap1-if1.o `test -f 'gen/if1.cc' || echo './'`gen/if1.cc
+mv -f gen/.deps/bootstrap1-if1.Tpo gen/.deps/bootstrap1-if1.Po
+./colm-wrap -o gen/parse1.c gen/bootstrap1.pack
+gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT gen/bootstrap1-parse1.o -MD -MP -MF gen/.deps/bootstrap1-parse1.Tpo -c -o gen/bootstrap1-parse1.o `test -f 'gen/parse1.c' || echo './'`gen/parse1.c
+mv -f gen/.deps/bootstrap1-parse1.Tpo gen/.deps/bootstrap1-parse1.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -Wall -DPREFIX='"/usr/local"' -DLOAD_INIT -Wall -g -L.  -o bootstrap1 bootstrap1-loadinit.o bootstrap1-main.o gen/bootstrap1-if1.o gen/bootstrap1-parse1.o libprog.a libcolm.la 
+libtool: link: g++ -Wall -DPREFIX=\"/usr/local\" -DLOAD_INIT -Wall -g -o .libs/bootstrap1 bootstrap1-loadinit.o bootstrap1-main.o gen/bootstrap1-if1.o gen/bootstrap1-parse1.o  -L. libprog.a ./.libs/libcolm.so
+mkdir -p gen
+./colm-wrap -w bootstrap1 -o gen/bootstrap2.pack \
+	-c -p gen/parse2.c -e gen/if2.h -x gen/if2.cc colm.lm
+./colm-wrap -o gen/if2.h gen/bootstrap2.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT bootstrap2-loadboot2.o -MD -MP -MF .deps/bootstrap2-loadboot2.Tpo -c -o bootstrap2-loadboot2.o `test -f 'loadboot2.cc' || echo './'`loadboot2.cc
+mv -f .deps/bootstrap2-loadboot2.Tpo .deps/bootstrap2-loadboot2.Po
+./colm-wrap -o gen/if2.cc gen/bootstrap2.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT gen/bootstrap2-if2.o -MD -MP -MF gen/.deps/bootstrap2-if2.Tpo -c -o gen/bootstrap2-if2.o `test -f 'gen/if2.cc' || echo './'`gen/if2.cc
+mv -f gen/.deps/bootstrap2-if2.Tpo gen/.deps/bootstrap2-if2.Po
+./colm-wrap -o gen/parse2.c gen/bootstrap2.pack
+gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT gen/bootstrap2-parse2.o -MD -MP -MF gen/.deps/bootstrap2-parse2.Tpo -c -o gen/bootstrap2-parse2.o `test -f 'gen/parse2.c' || echo './'`gen/parse2.c
+mv -f gen/.deps/bootstrap2-parse2.Tpo gen/.deps/bootstrap2-parse2.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -L.  -o bootstrap2 bootstrap2-main.o bootstrap2-loadboot2.o gen/bootstrap2-if2.o gen/bootstrap2-parse2.o libprog.a libcolm.la 
+libtool: link: g++ -Wall -DPREFIX=\"/usr/local\" -DLOAD_COLM -Wall -g -o .libs/bootstrap2 bootstrap2-main.o bootstrap2-loadboot2.o gen/bootstrap2-if2.o gen/bootstrap2-parse2.o  -L. libprog.a ./.libs/libcolm.so
+mkdir -p gen
+./colm-wrap -w ./bootstrap2 -o gen/bootstrap3.pack \
+	-c -p gen/parse3.c -e gen/if3.h -x gen/if3.cc prog.lm
+./colm-wrap -o gen/if3.h gen/bootstrap3.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT colm-loadcolm.o -MD -MP -MF .deps/colm-loadcolm.Tpo -c -o colm-loadcolm.o `test -f 'loadcolm.cc' || echo './'`loadcolm.cc
+mv -f .deps/colm-loadcolm.Tpo .deps/colm-loadcolm.Po
+./colm-wrap -o gen/if3.cc gen/bootstrap3.pack
+g++ -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -MT gen/colm-if3.o -MD -MP -MF gen/.deps/colm-if3.Tpo -c -o gen/colm-if3.o `test -f 'gen/if3.cc' || echo './'`gen/if3.cc
+mv -f gen/.deps/colm-if3.Tpo gen/.deps/colm-if3.Po
+./colm-wrap -o gen/parse3.c gen/bootstrap3.pack
+gcc -DHAVE_CONFIG_H -I.  -I../src/aapl  -Iinclude  -Wall -DPREFIX='"/usr/local"' -Wall -g -MT gen/colm-parse3.o -MD -MP -MF gen/.deps/colm-parse3.Tpo -c -o gen/colm-parse3.o `test -f 'gen/parse3.c' || echo './'`gen/parse3.c
+mv -f gen/.deps/colm-parse3.Tpo gen/.deps/colm-parse3.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -Wall -DPREFIX='"/usr/local"' -DLOAD_COLM -Wall -g -L.  -o colm colm-main.o colm-loadcolm.o gen/colm-if3.o gen/colm-parse3.o libprog.a -lcolm 
+libtool: link: g++ -Wall -DPREFIX=\"/usr/local\" -DLOAD_COLM -Wall -g -o .libs/colm colm-main.o colm-loadcolm.o gen/colm-if3.o gen/colm-parse3.o  -L. libprog.a /tmp/github.com/adrian-thurston/colm-0.14.7/src/.libs/libcolm.so
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+Making all in doc
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+Making all in colm
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+Making all in test
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+Making all in .
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+sedsubst: generating subject.mk from subject.mk.in
+sedsubst: generating subject.sh from subject.sh.in
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+Making all in aapl.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avltree.o -MD -MP -MF .deps/stress_avltree.Tpo -c -o stress_avltree.o stress_avltree.cpp
+mv -f .deps/stress_avltree.Tpo .deps/stress_avltree.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT util.o -MD -MP -MF .deps/util.Tpo -c -o util.o util.cpp
+mv -f .deps/util.Tpo .deps/util.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avltree stress_avltree.o util.o  
+libtool: link: g++ -Wall -g -o stress_avltree stress_avltree.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avliter.o -MD -MP -MF .deps/stress_avliter.Tpo -c -o stress_avliter.o stress_avliter.cpp
+mv -f .deps/stress_avliter.Tpo .deps/stress_avliter.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avliter stress_avliter.o util.o  
+libtool: link: g++ -Wall -g -o stress_avliter stress_avliter.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlmel.o -MD -MP -MF .deps/stress_avlmel.Tpo -c -o stress_avlmel.o stress_avlmel.cpp
+mv -f .deps/stress_avlmel.Tpo .deps/stress_avlmel.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlmel stress_avlmel.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlmel stress_avlmel.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlmelkey.o -MD -MP -MF .deps/stress_avlmelkey.Tpo -c -o stress_avlmelkey.o stress_avlmelkey.cpp
+mv -f .deps/stress_avlmelkey.Tpo .deps/stress_avlmelkey.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlmelkey stress_avlmelkey.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlmelkey stress_avlmelkey.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlitree.o -MD -MP -MF .deps/stress_avlitree.Tpo -c -o stress_avlitree.o stress_avlitree.cpp
+mv -f .deps/stress_avlitree.Tpo .deps/stress_avlitree.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlitree stress_avlitree.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlitree stress_avlitree.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlmap.o -MD -MP -MF .deps/stress_avlmap.Tpo -c -o stress_avlmap.o stress_avlmap.cpp
+mv -f .deps/stress_avlmap.Tpo .deps/stress_avlmap.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlmap stress_avlmap.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlmap stress_avlmap.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlset.o -MD -MP -MF .deps/stress_avlset.Tpo -c -o stress_avlset.o stress_avlset.cpp
+mv -f .deps/stress_avlset.Tpo .deps/stress_avlset.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlset stress_avlset.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlset stress_avlset.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlimel.o -MD -MP -MF .deps/stress_avlimel.Tpo -c -o stress_avlimel.o stress_avlimel.cpp
+mv -f .deps/stress_avlimel.Tpo .deps/stress_avlimel.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlimel stress_avlimel.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlimel stress_avlimel.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlimelkey.o -MD -MP -MF .deps/stress_avlimelkey.Tpo -c -o stress_avlimelkey.o stress_avlimelkey.cpp
+mv -f .deps/stress_avlimelkey.Tpo .deps/stress_avlimelkey.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlimelkey stress_avlimelkey.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlimelkey stress_avlimelkey.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avlimap.o -MD -MP -MF .deps/stress_avlimap.Tpo -c -o stress_avlimap.o stress_avlimap.cpp
+mv -f .deps/stress_avlimap.Tpo .deps/stress_avlimap.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avlimap stress_avlimap.o util.o  
+libtool: link: g++ -Wall -g -o stress_avlimap stress_avlimap.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_avliset.o -MD -MP -MF .deps/stress_avliset.Tpo -c -o stress_avliset.o stress_avliset.cpp
+mv -f .deps/stress_avliset.Tpo .deps/stress_avliset.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_avliset stress_avliset.o util.o  
+libtool: link: g++ -Wall -g -o stress_avliset stress_avliset.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_svector.o -MD -MP -MF .deps/stress_svector.Tpo -c -o stress_svector.o stress_svector.cpp
+mv -f .deps/stress_svector.Tpo .deps/stress_svector.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_svector stress_svector.o util.o  
+libtool: link: g++ -Wall -g -o stress_svector stress_svector.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_allsort.o -MD -MP -MF .deps/stress_allsort.Tpo -c -o stress_allsort.o stress_allsort.cpp
+mv -f .deps/stress_allsort.Tpo .deps/stress_allsort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_allsort stress_allsort.o util.o  
+libtool: link: g++ -Wall -g -o stress_allsort stress_allsort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT stress_stblsort.o -MD -MP -MF .deps/stress_stblsort.Tpo -c -o stress_stblsort.o stress_stblsort.cpp
+mv -f .deps/stress_stblsort.Tpo .deps/stress_stblsort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o stress_stblsort stress_stblsort.o util.o  
+libtool: link: g++ -Wall -g -o stress_stblsort stress_stblsort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_vector.o -MD -MP -MF .deps/test_vector.Tpo -c -o test_vector.o test_vector.cpp
+mv -f .deps/test_vector.Tpo .deps/test_vector.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_vector test_vector.o util.o  
+libtool: link: g++ -Wall -g -o test_vector test_vector.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_bsttable.o -MD -MP -MF .deps/test_bsttable.Tpo -c -o test_bsttable.o test_bsttable.cpp
+mv -f .deps/test_bsttable.Tpo .deps/test_bsttable.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_bsttable test_bsttable.o util.o  
+libtool: link: g++ -Wall -g -o test_bsttable test_bsttable.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_bstmap.o -MD -MP -MF .deps/test_bstmap.Tpo -c -o test_bstmap.o test_bstmap.cpp
+mv -f .deps/test_bstmap.Tpo .deps/test_bstmap.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_bstmap test_bstmap.o util.o  
+libtool: link: g++ -Wall -g -o test_bstmap test_bstmap.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_bstset.o -MD -MP -MF .deps/test_bstset.Tpo -c -o test_bstset.o test_bstset.cpp
+mv -f .deps/test_bstset.Tpo .deps/test_bstset.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_bstset test_bstset.o util.o  
+libtool: link: g++ -Wall -g -o test_bstset test_bstset.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_doublelist.o -MD -MP -MF .deps/test_doublelist.Tpo -c -o test_doublelist.o test_doublelist.cpp
+mv -f .deps/test_doublelist.Tpo .deps/test_doublelist.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_doublelist test_doublelist.o util.o  
+libtool: link: g++ -Wall -g -o test_doublelist test_doublelist.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_dlistval.o -MD -MP -MF .deps/test_dlistval.Tpo -c -o test_dlistval.o test_dlistval.cpp
+mv -f .deps/test_dlistval.Tpo .deps/test_dlistval.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_dlistval test_dlistval.o util.o  
+libtool: link: g++ -Wall -g -o test_dlistval test_dlistval.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_mergesort.o -MD -MP -MF .deps/test_mergesort.Tpo -c -o test_mergesort.o test_mergesort.cpp
+mv -f .deps/test_mergesort.Tpo .deps/test_mergesort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_mergesort test_mergesort.o util.o  
+libtool: link: g++ -Wall -g -o test_mergesort test_mergesort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_allavl.o -MD -MP -MF .deps/test_allavl.Tpo -c -o test_allavl.o test_allavl.cpp
+mv -f .deps/test_allavl.Tpo .deps/test_allavl.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_allavl test_allavl.o util.o  
+libtool: link: g++ -Wall -g -o test_allavl test_allavl.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_avliter.o -MD -MP -MF .deps/test_avliter.Tpo -c -o test_avliter.o test_avliter.cpp
+mv -f .deps/test_avliter.Tpo .deps/test_avliter.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_avliter test_avliter.o util.o  
+libtool: link: g++ -Wall -g -o test_avliter test_avliter.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_quicksort.o -MD -MP -MF .deps/test_quicksort.Tpo -c -o test_quicksort.o test_quicksort.cpp
+mv -f .deps/test_quicksort.Tpo .deps/test_quicksort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_quicksort test_quicksort.o util.o  
+libtool: link: g++ -Wall -g -o test_quicksort test_quicksort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_insertsort.o -MD -MP -MF .deps/test_insertsort.Tpo -c -o test_insertsort.o test_insertsort.cpp
+mv -f .deps/test_insertsort.Tpo .deps/test_insertsort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_insertsort test_insertsort.o util.o  
+libtool: link: g++ -Wall -g -o test_insertsort test_insertsort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_bubblesort.o -MD -MP -MF .deps/test_bubblesort.Tpo -c -o test_bubblesort.o test_bubblesort.cpp
+mv -f .deps/test_bubblesort.Tpo .deps/test_bubblesort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_bubblesort test_bubblesort.o util.o  
+libtool: link: g++ -Wall -g -o test_bubblesort test_bubblesort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_allsort.o -MD -MP -MF .deps/test_allsort.Tpo -c -o test_allsort.o test_allsort.cpp
+mv -f .deps/test_allsort.Tpo .deps/test_allsort.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_allsort test_allsort.o util.o  
+libtool: link: g++ -Wall -g -o test_allsort test_allsort.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_svector.o -MD -MP -MF .deps/test_svector.Tpo -c -o test_svector.o test_svector.cpp
+mv -f .deps/test_svector.Tpo .deps/test_svector.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_svector test_svector.o util.o  
+libtool: link: g++ -Wall -g -o test_svector test_svector.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_sbsttable.o -MD -MP -MF .deps/test_sbsttable.Tpo -c -o test_sbsttable.o test_sbsttable.cpp
+mv -f .deps/test_sbsttable.Tpo .deps/test_sbsttable.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_sbsttable test_sbsttable.o util.o  
+libtool: link: g++ -Wall -g -o test_sbsttable test_sbsttable.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_sbstmap.o -MD -MP -MF .deps/test_sbstmap.Tpo -c -o test_sbstmap.o test_sbstmap.cpp
+mv -f .deps/test_sbstmap.Tpo .deps/test_sbstmap.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_sbstmap test_sbstmap.o util.o  
+libtool: link: g++ -Wall -g -o test_sbstmap test_sbstmap.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_sbstset.o -MD -MP -MF .deps/test_sbstset.Tpo -c -o test_sbstset.o test_sbstset.cpp
+mv -f .deps/test_sbstset.Tpo .deps/test_sbstset.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_sbstset test_sbstset.o util.o  
+libtool: link: g++ -Wall -g -o test_sbstset test_sbstset.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_avlkeyless.o -MD -MP -MF .deps/test_avlkeyless.Tpo -c -o test_avlkeyless.o test_avlkeyless.cpp
+mv -f .deps/test_avlkeyless.Tpo .deps/test_avlkeyless.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_avlkeyless test_avlkeyless.o util.o  
+libtool: link: g++ -Wall -g -o test_avlkeyless test_avlkeyless.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_avlikeyless.o -MD -MP -MF .deps/test_avlikeyless.Tpo -c -o test_avlikeyless.o test_avlikeyless.cpp
+mv -f .deps/test_avlikeyless.Tpo .deps/test_avlikeyless.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_avlikeyless test_avlikeyless.o util.o  
+libtool: link: g++ -Wall -g -o test_avlikeyless test_avlikeyless.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_compare.o -MD -MP -MF .deps/test_compare.Tpo -c -o test_compare.o test_compare.cpp
+mv -f .deps/test_compare.Tpo .deps/test_compare.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_compare test_compare.o util.o  
+libtool: link: g++ -Wall -g -o test_compare test_compare.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_string.o -MD -MP -MF .deps/test_string.Tpo -c -o test_string.o test_string.cpp
+mv -f .deps/test_string.Tpo .deps/test_string.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_string test_string.o util.o  
+libtool: link: g++ -Wall -g -o test_string test_string.o util.o 
+g++ -DHAVE_CONFIG_H -I. -I../../src   -I/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl  -Wall -g -MT test_rope.o -MD -MP -MF .deps/test_rope.Tpo -c -o test_rope.o test_rope.cpp
+mv -f .deps/test_rope.Tpo .deps/test_rope.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g   -o test_rope test_rope.o util.o  
+libtool: link: g++ -Wall -g -o test_rope test_rope.o util.o 
+sedsubst: generating gentests from gentests.sh
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+Making all in colm.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+sedsubst: generating gentests from gentests.sh
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+Making all in rlhc.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+../../src/colm -b rlhc_object -o rlhc rlhc.lm
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+Making all in rlparse.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+../../src/colm -c -b rlparse_object -o parse.c -e if.h -x if.cc -m commit.cc rlparse.lm
+make  all-am
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-parse.o -MD -MP -MF .deps/rlparse-parse.Tpo -c -o rlparse-parse.o `test -f 'parse.c' || echo './'`parse.c
+mv -f .deps/rlparse-parse.Tpo .deps/rlparse-parse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-if.o -MD -MP -MF .deps/rlparse-if.Tpo -c -o rlparse-if.o `test -f 'if.cc' || echo './'`if.cc
+mv -f .deps/rlparse-if.Tpo .deps/rlparse-if.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-commit.o -MD -MP -MF .deps/rlparse-commit.Tpo -c -o rlparse-commit.o `test -f 'commit.cc' || echo './'`commit.cc
+mv -f .deps/rlparse-commit.Tpo .deps/rlparse-commit.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-actparams.o -MD -MP -MF .deps/rlparse-actparams.Tpo -c -o rlparse-actparams.o `test -f 'actparams.cc' || echo './'`actparams.cc
+mv -f .deps/rlparse-actparams.Tpo .deps/rlparse-actparams.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-parsetree.o -MD -MP -MF .deps/rlparse-parsetree.Tpo -c -o rlparse-parsetree.o `test -f 'parsetree.cc' || echo './'`parsetree.cc
+mv -f .deps/rlparse-parsetree.Tpo .deps/rlparse-parsetree.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-parsedata.o -MD -MP -MF .deps/rlparse-parsedata.Tpo -c -o rlparse-parsedata.o `test -f 'parsedata.cc' || echo './'`parsedata.cc
+mv -f .deps/rlparse-parsedata.Tpo .deps/rlparse-parsedata.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-common.o -MD -MP -MF .deps/rlparse-common.Tpo -c -o rlparse-common.o `test -f 'common.cc' || echo './'`common.cc
+mv -f .deps/rlparse-common.Tpo .deps/rlparse-common.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-fsmap.o -MD -MP -MF .deps/rlparse-fsmap.Tpo -c -o rlparse-fsmap.o `test -f 'fsmap.cc' || echo './'`fsmap.cc
+mv -f .deps/rlparse-fsmap.Tpo .deps/rlparse-fsmap.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-fsmbase.o -MD -MP -MF .deps/rlparse-fsmbase.Tpo -c -o rlparse-fsmbase.o `test -f 'fsmbase.cc' || echo './'`fsmbase.cc
+mv -f .deps/rlparse-fsmbase.Tpo .deps/rlparse-fsmbase.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-idbase.o -MD -MP -MF .deps/rlparse-idbase.Tpo -c -o rlparse-idbase.o `test -f 'idbase.cc' || echo './'`idbase.cc
+mv -f .deps/rlparse-idbase.Tpo .deps/rlparse-idbase.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-load.o -MD -MP -MF .deps/rlparse-load.Tpo -c -o rlparse-load.o `test -f 'load.cc' || echo './'`load.cc
+mv -f .deps/rlparse-load.Tpo .deps/rlparse-load.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-reducer.o -MD -MP -MF .deps/rlparse-reducer.Tpo -c -o rlparse-reducer.o `test -f 'reducer.cc' || echo './'`reducer.cc
+mv -f .deps/rlparse-reducer.Tpo .deps/rlparse-reducer.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-inputdata.o -MD -MP -MF .deps/rlparse-inputdata.Tpo -c -o rlparse-inputdata.o `test -f 'inputdata.cc' || echo './'`inputdata.cc
+mv -f .deps/rlparse-inputdata.Tpo .deps/rlparse-inputdata.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-fsmgraph.o -MD -MP -MF .deps/rlparse-fsmgraph.Tpo -c -o rlparse-fsmgraph.o `test -f 'fsmgraph.cc' || echo './'`fsmgraph.cc
+mv -f .deps/rlparse-fsmgraph.Tpo .deps/rlparse-fsmgraph.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-main.o -MD -MP -MF .deps/rlparse-main.Tpo -c -o rlparse-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/rlparse-main.Tpo .deps/rlparse-main.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT rlparse-dump.o -MD -MP -MF .deps/rlparse-dump.Tpo -c -o rlparse-dump.o `test -f 'dump.cc' || echo './'`dump.cc
+mv -f .deps/rlparse-dump.Tpo .deps/rlparse-dump.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g -L../../src  -o rlparse rlparse-parse.o rlparse-if.o rlparse-commit.o rlparse-actparams.o rlparse-parsetree.o rlparse-parsedata.o rlparse-common.o rlparse-fsmap.o rlparse-fsmbase.o rlparse-idbase.o rlparse-load.o rlparse-reducer.o rlparse-inputdata.o rlparse-fsmgraph.o rlparse-main.o rlparse-dump.o -lcolm 
+libtool: link: g++ -Wall -g -o .libs/rlparse rlparse-parse.o rlparse-if.o rlparse-commit.o rlparse-actparams.o rlparse-parsetree.o rlparse-parsedata.o rlparse-common.o rlparse-fsmap.o rlparse-fsmbase.o rlparse-idbase.o rlparse-load.o rlparse-reducer.o rlparse-inputdata.o rlparse-fsmgraph.o rlparse-main.o rlparse-dump.o  -L../../src /tmp/github.com/adrian-thurston/colm-0.14.7/src/.libs/libcolm.so
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+Making all in trans.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+../../src/colm -b trans_object -c -o trans.c trans.lm
+make  all-am
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT trans-actparams.o -MD -MP -MF .deps/trans-actparams.Tpo -c -o trans-actparams.o `test -f 'actparams.cc' || echo './'`actparams.cc
+mv -f .deps/trans-actparams.Tpo .deps/trans-actparams.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT trans-trans.o -MD -MP -MF .deps/trans-trans.Tpo -c -o trans-trans.o `test -f 'trans.c' || echo './'`trans.c
+mv -f .deps/trans-trans.Tpo .deps/trans-trans.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../src/include   -Wall -g -MT trans-main.o -MD -MP -MF .deps/trans-main.Tpo -c -o trans-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/trans-main.Tpo .deps/trans-main.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g -L../../src  -o trans trans-actparams.o trans-trans.o trans-main.o -lcolm 
+libtool: link: g++ -Wall -g -o .libs/trans trans-actparams.o trans-trans.o trans-main.o  -L../../src /tmp/github.com/adrian-thurston/colm-0.14.7/src/.libs/libcolm.so
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# make install
+Making install in src
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+Making install in aapl
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/include/aapl/'
+ /usr/bin/install -c -m 644 avlbasic.h avlimel.h avlmap.h bstcommon.h compare.h insertsort.h sbstset.h avlcommon.h avlimelkey.h avlmel.h bstmap.h dlcommon.h mergesort.h sbsttable.h avlibasic.h avliset.h avlmelkey.h bstset.h dlist.h quicksort.h svector.h avlikeyless.h avlitree.h avlset.h bsttable.h dlistmel.h resize.h table.h avlimap.h avlkeyless.h avltree.h bubblesort.h dlistval.h sbstmap.h vector.h astring.h buffer.h rope.h '/usr/local/include/aapl/'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/aapl'
+Making install in libfsm
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../../libtool   --mode=install /usr/bin/install -c   libfsm.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libfsm-0.14.7.so /usr/local/lib/libfsm-0.14.7.so
+libtool: install: (cd /usr/local/lib && { ln -s -f libfsm-0.14.7.so libfsm.so || { rm -f libfsm.so && ln -s libfsm-0.14.7.so libfsm.so; }; })
+libtool: install: /usr/bin/install -c .libs/libfsm.lai /usr/local/lib/libfsm.la
+libtool: install: /usr/bin/install -c .libs/libfsm.a /usr/local/lib/libfsm.a
+libtool: install: chmod 644 /usr/local/lib/libfsm.a
+libtool: install: ranlib /usr/local/lib/libfsm.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/include/libfsm/'
+ /usr/bin/install -c -m 644 action.h fsmgraph.h common.h gendata.h redfsm.h dot.h asm.h ragel.h '/usr/local/include/libfsm/'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/libfsm'
+Making install in cgil
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share'
+ /usr/bin/install -c -m 644 ril.lm rlhc-main.lm rlhc-c.lm rlhc-csharp.lm rlhc-go.lm rlhc-js.lm rlhc-ruby.lm rlhc-crack.lm rlhc-d.lm rlhc-java.lm rlhc-julia.lm rlhc-ocaml.lm rlhc-rust.lm '/usr/local/share'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src/cgil'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libcolm.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libcolm-0.14.7.so /usr/local/lib/libcolm-0.14.7.so
+libtool: install: (cd /usr/local/lib && { ln -s -f libcolm-0.14.7.so libcolm.so || { rm -f libcolm.so && ln -s libcolm-0.14.7.so libcolm.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcolm.lai /usr/local/lib/libcolm.la
+libtool: install: /usr/bin/install -c .libs/libcolm.a /usr/local/lib/libcolm.a
+libtool: install: chmod 644 /usr/local/lib/libcolm.a
+libtool: install: ranlib /usr/local/lib/libcolm.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c colm '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/colm /usr/local/bin/colm
+ /bin/mkdir -p '/usr/local/bin'
+ /usr/bin/install -c colm-wrap '/usr/local/bin'
+ /bin/mkdir -p '/usr/local/include/colm'
+ /usr/bin/install -c -m 644 config.h bytecode.h defs.h debug.h pool.h input.h pdarun.h map.h type.h tree.h struct.h program.h colm.h internal.h colmex.h '/usr/local/include/colm'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/src'
+Making install in doc
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+Making install in colm
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc/colm'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/doc'
+Making install in test
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+Making install in .
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share'
+ /usr/bin/install -c -m 644 runtests '/usr/local/share'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+Making install in aapl.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/aapl.d'
+Making install in colm.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/colm.d'
+Making install in rlhc.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlhc.d'
+Making install in rlparse.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make  install-am
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/rlparse.d'
+Making install in trans.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make  install-am
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test/trans.d'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7/test'
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share/doc/colm'
+ /usr/bin/install -c -m 644 colm.vim '/usr/local/share/doc/colm'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/colm-0.14.7'
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# /usr/local/bin/colm --help
+colm: error while loading shared libraries: libcolm-0.14.7.so: cannot open shared object file: No such file or directory
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# ldconfig
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/colm-0.14.7# colm --help
+usage: colm [options] file
+general:
+   -h, -H, -?, --help   print this usage and exit
+   -v --version         print version information and exit
+   -b <ident>           use <ident> as name of C object encapulaing the program
+   -o <file>            if -c given, write C parse object to <file>,
+                        otherwise write binary to <file>
+   -p <file>            write C parse object to <file>
+   -e <file>            write C++ export header to <file>
+   -x <file>            write C++ export code to <file>
+   -m <file>            write C++ commit code to <file>
+   -a <file>            additional code file to include in output program
+   -E N=V               set a string value available in the program
+   -I <path>            additional include path for the compiler
+   -i                   activate branchpoint information
+   -L <path>            additional library path for the linker
+   -l                   activate logging
+   -r                   run output program and replace process
+   -c                   compile only (don't produce binary)
+   -V                   print dot format (graphiz)
+   -d                   print verbose debug information
+   -D <tag>             print more information about <tag>
+                        (BYTECODE|PARSE|MATCH|COMPILE|POOL|PRINT|INPUT|SCAN
+
+
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston# \
+mkdir -p ragel-7.0.4 && \
+curl -sSL https://github.com/adrian-thurston/ragel/archive/7.0.4.tar.gz | \
+tar -C ./ragel-7.0.4 --strip-components=1 -zx
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# ./autogen.sh 
++ case `uname` in
+++ uname
++ libtoolize --quiet --copy --force
++ aclocal
++ autoheader
++ automake --foreign --add-missing
+configure.ac:34: installing './compile'
+configure.ac:84: installing './config.guess'
+configure.ac:84: installing './config.sub'
+configure.ac:26: installing './install-sh'
+configure.ac:26: installing './missing'
+src/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
++ autoconf
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# ./configure --disable-debug --disable-manual --with-colm=/usr/local/
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking size of int... 4
+checking size of long... 8
+checking size of void *... 8
+checking size of long... (cached) 8
+checking size of unsigned long... 8
+checking size of unsigned long long... 8
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking for unistd.h... (cached) yes
+checking for /usr/local//bin/colm... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for ar... ar
+checking for ranlib... ranlib
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether make sets $(MAKE)... (cached) yes
+checking for asciidoc... no
+checking for pygmentize... no
+checking for ./DIST... no
+checking for gdc-8... no
+checking for gdc-7... no
+checking for gdc-6... no
+checking for gdc-5... no
+checking for javac... no
+checking for ruby... no
+checking for mcs... no
+checking for go... no
+checking for ocaml... no
+checking for rustc... no
+checking for julia... no
+checking for gnustep-config... no
+checking if ragel ASM tests will build ... no
+checking for crack... no
+checking for "/usr/local//bin/colm"... (cached) yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating src/host-ruby/Makefile
+config.status: creating src/host-asm/Makefile
+config.status: creating src/host-julia/Makefile
+config.status: creating src/host-ocaml/Makefile
+config.status: creating src/host-c/Makefile
+config.status: creating src/host-d/Makefile
+config.status: creating src/host-csharp/Makefile
+config.status: creating src/host-go/Makefile
+config.status: creating src/host-java/Makefile
+config.status: creating src/host-rust/Makefile
+config.status: creating src/host-crack/Makefile
+config.status: creating src/host-js/Makefile
+config.status: creating test/Makefile
+config.status: creating test/ragel.d/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/ragel/Makefile
+config.status: creating src/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configuration of colm complete
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# make
+Making all in src
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+echo '#define VERSION "7.0.4"' > version.h
+echo '#define PUBDATE "February 2021"' >> version.h
+/usr/local//bin/colm-wrap -c -b rlparseC -o parse.pack -p parse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o parse.c parse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc parse.pack
+make  all-recursive
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making all in .
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-parsetree.lo -MD -MP -MF .deps/libragel_la-parsetree.Tpo -c -o libragel_la-parsetree.lo `test -f 'parsetree.cc' || echo './'`parsetree.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-parsetree.lo -MD -MP -MF .deps/libragel_la-parsetree.Tpo -c parsetree.cc  -fPIC -DPIC -o .libs/libragel_la-parsetree.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-parsetree.lo -MD -MP -MF .deps/libragel_la-parsetree.Tpo -c parsetree.cc -o libragel_la-parsetree.o >/dev/null 2>&1
+mv -f .deps/libragel_la-parsetree.Tpo .deps/libragel_la-parsetree.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-longest.lo -MD -MP -MF .deps/libragel_la-longest.Tpo -c -o libragel_la-longest.lo `test -f 'longest.cc' || echo './'`longest.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-longest.lo -MD -MP -MF .deps/libragel_la-longest.Tpo -c longest.cc  -fPIC -DPIC -o .libs/libragel_la-longest.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-longest.lo -MD -MP -MF .deps/libragel_la-longest.Tpo -c longest.cc -o libragel_la-longest.o >/dev/null 2>&1
+mv -f .deps/libragel_la-longest.Tpo .deps/libragel_la-longest.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-parsedata.lo -MD -MP -MF .deps/libragel_la-parsedata.Tpo -c -o libragel_la-parsedata.lo `test -f 'parsedata.cc' || echo './'`parsedata.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-parsedata.lo -MD -MP -MF .deps/libragel_la-parsedata.Tpo -c parsedata.cc  -fPIC -DPIC -o .libs/libragel_la-parsedata.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-parsedata.lo -MD -MP -MF .deps/libragel_la-parsedata.Tpo -c parsedata.cc -o libragel_la-parsedata.o >/dev/null 2>&1
+mv -f .deps/libragel_la-parsedata.Tpo .deps/libragel_la-parsedata.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-inputdata.lo -MD -MP -MF .deps/libragel_la-inputdata.Tpo -c -o libragel_la-inputdata.lo `test -f 'inputdata.cc' || echo './'`inputdata.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-inputdata.lo -MD -MP -MF .deps/libragel_la-inputdata.Tpo -c inputdata.cc  -fPIC -DPIC -o .libs/libragel_la-inputdata.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-inputdata.lo -MD -MP -MF .deps/libragel_la-inputdata.Tpo -c inputdata.cc -o libragel_la-inputdata.o >/dev/null 2>&1
+mv -f .deps/libragel_la-inputdata.Tpo .deps/libragel_la-inputdata.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-load.lo -MD -MP -MF .deps/libragel_la-load.Tpo -c -o libragel_la-load.lo `test -f 'load.cc' || echo './'`load.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-load.lo -MD -MP -MF .deps/libragel_la-load.Tpo -c load.cc  -fPIC -DPIC -o .libs/libragel_la-load.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-load.lo -MD -MP -MF .deps/libragel_la-load.Tpo -c load.cc -o libragel_la-load.o >/dev/null 2>&1
+mv -f .deps/libragel_la-load.Tpo .deps/libragel_la-load.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -DBINDIR='"/usr/local/bin"' -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT libragel_la-reducer.lo -MD -MP -MF .deps/libragel_la-reducer.Tpo -c -o libragel_la-reducer.lo `test -f 'reducer.cc' || echo './'`reducer.cc
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-reducer.lo -MD -MP -MF .deps/libragel_la-reducer.Tpo -c reducer.cc  -fPIC -DPIC -o .libs/libragel_la-reducer.o
+libtool: compile:  g++ -DHAVE_CONFIG_H -I. -I../aapl -I../colm/include -DBINDIR=\"/usr/local/bin\" -I/usr/local//include/aapl -I/usr/local//include -Wall -g -MT libragel_la-reducer.lo -MD -MP -MF .deps/libragel_la-reducer.Tpo -c reducer.cc -o libragel_la-reducer.o >/dev/null 2>&1
+mv -f .deps/libragel_la-reducer.Tpo .deps/libragel_la-reducer.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=link g++  -Wall -g -no-undefined -Wl,--no-undefined -L/usr/local//lib  -o libragel.la -rpath /usr/local/lib libragel_la-parsetree.lo libragel_la-longest.lo libragel_la-parsedata.lo libragel_la-inputdata.lo libragel_la-load.lo libragel_la-reducer.lo /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la 
+libtool: link: g++  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o  .libs/libragel_la-parsetree.o .libs/libragel_la-longest.o .libs/libragel_la-parsedata.o .libs/libragel_la-inputdata.o .libs/libragel_la-load.o .libs/libragel_la-reducer.o   -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o  -g -Wl,--no-undefined   -Wl,-soname -Wl,libragel.so.0 -o .libs/libragel.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libragel.so.0" && ln -s "libragel.so.0.0.0" "libragel.so.0")
+libtool: link: (cd ".libs" && rm -f "libragel.so" && ln -s "libragel.so.0.0.0" "libragel.so")
+libtool: link: ar cru .libs/libragel.a  libragel_la-parsetree.o libragel_la-longest.o libragel_la-parsedata.o libragel_la-inputdata.o libragel_la-load.o libragel_la-reducer.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libragel.a
+libtool: link: ( cd ".libs" && rm -f "libragel.la" && ln -s "../libragel.la" "libragel.la" )
+g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel-main.o -MD -MP -MF .deps/ragel-main.Tpo -c -o ragel-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel-main.Tpo .deps/ragel-main.Po
+gcc -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel-parse.o -MD -MP -MF .deps/ragel-parse.Tpo -c -o ragel-parse.o `test -f 'parse.c' || echo './'`parse.c
+mv -f .deps/ragel-parse.Tpo .deps/ragel-parse.Po
+g++ -DHAVE_CONFIG_H -I.  -I../aapl -I../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel-rlreduce.o -MD -MP -MF .deps/ragel-rlreduce.Tpo -c -o ragel-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel-rlreduce.Tpo .deps/ragel-rlreduce.Po
+/bin/bash ../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel ragel-main.o ragel-parse.o ragel-rlreduce.o  /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel ragel-main.o ragel-parse.o ragel-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ./.libs/libragel.so
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making all in host-ruby
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseRuby -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcRuby -o rlhc.c /usr/local//share/rlhc-ruby.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ruby-main.o -MD -MP -MF .deps/ragel_ruby-main.Tpo -c -o ragel_ruby-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_ruby-main.Tpo .deps/ragel_ruby-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ruby-rlhc.o -MD -MP -MF .deps/ragel_ruby-rlhc.Tpo -c -o ragel_ruby-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_ruby-rlhc.Tpo .deps/ragel_ruby-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ruby-rlparse.o -MD -MP -MF .deps/ragel_ruby-rlparse.Tpo -c -o ragel_ruby-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_ruby-rlparse.Tpo .deps/ragel_ruby-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ruby-rlreduce.o -MD -MP -MF .deps/ragel_ruby-rlreduce.Tpo -c -o ragel_ruby-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_ruby-rlreduce.Tpo .deps/ragel_ruby-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-ruby ragel_ruby-main.o ragel_ruby-rlhc.o ragel_ruby-rlparse.o ragel_ruby-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-ruby ragel_ruby-main.o ragel_ruby-rlhc.o ragel_ruby-rlparse.o ragel_ruby-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+Making all in host-asm
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseAsm -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_asm-main.o -MD -MP -MF .deps/ragel_asm-main.Tpo -c -o ragel_asm-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_asm-main.Tpo .deps/ragel_asm-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_asm-rlparse.o -MD -MP -MF .deps/ragel_asm-rlparse.Tpo -c -o ragel_asm-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_asm-rlparse.Tpo .deps/ragel_asm-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_asm-rlreduce.o -MD -MP -MF .deps/ragel_asm-rlreduce.Tpo -c -o ragel_asm-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_asm-rlreduce.Tpo .deps/ragel_asm-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-asm ragel_asm-main.o ragel_asm-rlparse.o ragel_asm-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-asm ragel_asm-main.o ragel_asm-rlparse.o ragel_asm-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+Making all in host-julia
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseJulia -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcJulia -o rlhc.c /usr/local//share/rlhc-julia.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_julia-main.o -MD -MP -MF .deps/ragel_julia-main.Tpo -c -o ragel_julia-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_julia-main.Tpo .deps/ragel_julia-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_julia-rlhc.o -MD -MP -MF .deps/ragel_julia-rlhc.Tpo -c -o ragel_julia-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_julia-rlhc.Tpo .deps/ragel_julia-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_julia-rlparse.o -MD -MP -MF .deps/ragel_julia-rlparse.Tpo -c -o ragel_julia-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_julia-rlparse.Tpo .deps/ragel_julia-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_julia-rlreduce.o -MD -MP -MF .deps/ragel_julia-rlreduce.Tpo -c -o ragel_julia-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_julia-rlreduce.Tpo .deps/ragel_julia-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-julia ragel_julia-main.o ragel_julia-rlhc.o ragel_julia-rlparse.o ragel_julia-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-julia ragel_julia-main.o ragel_julia-rlhc.o ragel_julia-rlparse.o ragel_julia-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+Making all in host-ocaml
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseOCaml -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcOCaml -o rlhc.c /usr/local//share/rlhc-ocaml.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ocaml-main.o -MD -MP -MF .deps/ragel_ocaml-main.Tpo -c -o ragel_ocaml-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_ocaml-main.Tpo .deps/ragel_ocaml-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ocaml-rlhc.o -MD -MP -MF .deps/ragel_ocaml-rlhc.Tpo -c -o ragel_ocaml-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_ocaml-rlhc.Tpo .deps/ragel_ocaml-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ocaml-rlparse.o -MD -MP -MF .deps/ragel_ocaml-rlparse.Tpo -c -o ragel_ocaml-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_ocaml-rlparse.Tpo .deps/ragel_ocaml-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_ocaml-rlreduce.o -MD -MP -MF .deps/ragel_ocaml-rlreduce.Tpo -c -o ragel_ocaml-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_ocaml-rlreduce.Tpo .deps/ragel_ocaml-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-ocaml ragel_ocaml-main.o ragel_ocaml-rlhc.o ragel_ocaml-rlparse.o ragel_ocaml-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-ocaml ragel_ocaml-main.o ragel_ocaml-rlhc.o ragel_ocaml-rlparse.o ragel_ocaml-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+Making all in host-c
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseC -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_c-main.o -MD -MP -MF .deps/ragel_c-main.Tpo -c -o ragel_c-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_c-main.Tpo .deps/ragel_c-main.Po
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcC -o rlhc.c /usr/local//share/rlhc-c.lm
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_c-rlhc.o -MD -MP -MF .deps/ragel_c-rlhc.Tpo -c -o ragel_c-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_c-rlhc.Tpo .deps/ragel_c-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_c-rlparse.o -MD -MP -MF .deps/ragel_c-rlparse.Tpo -c -o ragel_c-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_c-rlparse.Tpo .deps/ragel_c-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_c-rlreduce.o -MD -MP -MF .deps/ragel_c-rlreduce.Tpo -c -o ragel_c-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_c-rlreduce.Tpo .deps/ragel_c-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-c ragel_c-main.o ragel_c-rlhc.o ragel_c-rlparse.o ragel_c-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-c ragel_c-main.o ragel_c-rlhc.o ragel_c-rlparse.o ragel_c-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+Making all in host-d
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseD -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcD -o rlhc.c /usr/local//share/rlhc-d.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_d-main.o -MD -MP -MF .deps/ragel_d-main.Tpo -c -o ragel_d-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_d-main.Tpo .deps/ragel_d-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_d-rlhc.o -MD -MP -MF .deps/ragel_d-rlhc.Tpo -c -o ragel_d-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_d-rlhc.Tpo .deps/ragel_d-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_d-rlparse.o -MD -MP -MF .deps/ragel_d-rlparse.Tpo -c -o ragel_d-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_d-rlparse.Tpo .deps/ragel_d-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_d-rlreduce.o -MD -MP -MF .deps/ragel_d-rlreduce.Tpo -c -o ragel_d-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_d-rlreduce.Tpo .deps/ragel_d-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-d ragel_d-main.o ragel_d-rlhc.o ragel_d-rlparse.o ragel_d-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la  
+libtool: link: g++ -Wall -g -o .libs/ragel-d ragel_d-main.o ragel_d-rlhc.o ragel_d-rlparse.o ragel_d-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+Making all in host-csharp
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseCSharp -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcCSharp -o rlhc.c /usr/local//share/rlhc-csharp.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_csharp-main.o -MD -MP -MF .deps/ragel_csharp-main.Tpo -c -o ragel_csharp-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_csharp-main.Tpo .deps/ragel_csharp-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_csharp-rlhc.o -MD -MP -MF .deps/ragel_csharp-rlhc.Tpo -c -o ragel_csharp-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_csharp-rlhc.Tpo .deps/ragel_csharp-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_csharp-rlparse.o -MD -MP -MF .deps/ragel_csharp-rlparse.Tpo -c -o ragel_csharp-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_csharp-rlparse.Tpo .deps/ragel_csharp-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_csharp-rlreduce.o -MD -MP -MF .deps/ragel_csharp-rlreduce.Tpo -c -o ragel_csharp-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_csharp-rlreduce.Tpo .deps/ragel_csharp-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-csharp ragel_csharp-main.o ragel_csharp-rlhc.o ragel_csharp-rlparse.o ragel_csharp-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la  
+libtool: link: g++ -Wall -g -o .libs/ragel-csharp ragel_csharp-main.o ragel_csharp-rlhc.o ragel_csharp-rlparse.o ragel_csharp-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+Making all in host-go
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseGo -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcGo -o rlhc.c /usr/local//share/rlhc-go.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_go-main.o -MD -MP -MF .deps/ragel_go-main.Tpo -c -o ragel_go-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_go-main.Tpo .deps/ragel_go-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_go-rlhc.o -MD -MP -MF .deps/ragel_go-rlhc.Tpo -c -o ragel_go-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_go-rlhc.Tpo .deps/ragel_go-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_go-rlparse.o -MD -MP -MF .deps/ragel_go-rlparse.Tpo -c -o ragel_go-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_go-rlparse.Tpo .deps/ragel_go-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_go-rlreduce.o -MD -MP -MF .deps/ragel_go-rlreduce.Tpo -c -o ragel_go-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_go-rlreduce.Tpo .deps/ragel_go-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-go ragel_go-main.o ragel_go-rlhc.o ragel_go-rlparse.o ragel_go-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la  
+libtool: link: g++ -Wall -g -o .libs/ragel-go ragel_go-main.o ragel_go-rlhc.o ragel_go-rlparse.o ragel_go-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+Making all in host-java
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseJava -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcJava -o rlhc.c /usr/local//share/rlhc-java.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_java-main.o -MD -MP -MF .deps/ragel_java-main.Tpo -c -o ragel_java-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_java-main.Tpo .deps/ragel_java-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_java-rlhc.o -MD -MP -MF .deps/ragel_java-rlhc.Tpo -c -o ragel_java-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_java-rlhc.Tpo .deps/ragel_java-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_java-rlparse.o -MD -MP -MF .deps/ragel_java-rlparse.Tpo -c -o ragel_java-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_java-rlparse.Tpo .deps/ragel_java-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_java-rlreduce.o -MD -MP -MF .deps/ragel_java-rlreduce.Tpo -c -o ragel_java-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_java-rlreduce.Tpo .deps/ragel_java-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-java ragel_java-main.o ragel_java-rlhc.o ragel_java-rlparse.o ragel_java-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-java ragel_java-main.o ragel_java-rlhc.o ragel_java-rlparse.o ragel_java-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+Making all in host-rust
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseRust -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcRust -o rlhc.c /usr/local//share/rlhc-rust.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_rust-main.o -MD -MP -MF .deps/ragel_rust-main.Tpo -c -o ragel_rust-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_rust-main.Tpo .deps/ragel_rust-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_rust-rlhc.o -MD -MP -MF .deps/ragel_rust-rlhc.Tpo -c -o ragel_rust-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_rust-rlhc.Tpo .deps/ragel_rust-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_rust-rlparse.o -MD -MP -MF .deps/ragel_rust-rlparse.Tpo -c -o ragel_rust-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_rust-rlparse.Tpo .deps/ragel_rust-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_rust-rlreduce.o -MD -MP -MF .deps/ragel_rust-rlreduce.Tpo -c -o ragel_rust-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_rust-rlreduce.Tpo .deps/ragel_rust-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-rust ragel_rust-main.o ragel_rust-rlhc.o ragel_rust-rlparse.o ragel_rust-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-rust ragel_rust-main.o ragel_rust-rlhc.o ragel_rust-rlparse.o ragel_rust-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+Making all in host-crack
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseCrack -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcCrack -o rlhc.c /usr/local//share/rlhc-crack.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_crack-main.o -MD -MP -MF .deps/ragel_crack-main.Tpo -c -o ragel_crack-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_crack-main.Tpo .deps/ragel_crack-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_crack-rlhc.o -MD -MP -MF .deps/ragel_crack-rlhc.Tpo -c -o ragel_crack-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_crack-rlhc.Tpo .deps/ragel_crack-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_crack-rlparse.o -MD -MP -MF .deps/ragel_crack-rlparse.Tpo -c -o ragel_crack-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_crack-rlparse.Tpo .deps/ragel_crack-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_crack-rlreduce.o -MD -MP -MF .deps/ragel_crack-rlreduce.Tpo -c -o ragel_crack-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_crack-rlreduce.Tpo .deps/ragel_crack-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-crack ragel_crack-main.o ragel_crack-rlhc.o ragel_crack-rlparse.o ragel_crack-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la  
+libtool: link: g++ -Wall -g -o .libs/ragel-crack ragel_crack-main.o ragel_crack-rlhc.o ragel_crack-rlparse.o ragel_crack-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+Making all in host-js
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+/usr/local//bin/colm-wrap -c -I .. -b rlparseJs -o rlparse.pack -p rlparse.c -m rlreduce.cc rlparse.lm
+/usr/local//bin/colm-wrap -o rlparse.c rlparse.pack
+/usr/local//bin/colm-wrap -o rlreduce.cc rlparse.pack
+/usr/local//bin/colm -c -I /usr/local//share -b rlhcJs -o rlhc.c /usr/local//share/rlhc-js.lm
+make  all-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_js-main.o -MD -MP -MF .deps/ragel_js-main.Tpo -c -o ragel_js-main.o `test -f 'main.cc' || echo './'`main.cc
+mv -f .deps/ragel_js-main.Tpo .deps/ragel_js-main.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_js-rlhc.o -MD -MP -MF .deps/ragel_js-rlhc.Tpo -c -o ragel_js-rlhc.o `test -f 'rlhc.c' || echo './'`rlhc.c
+mv -f .deps/ragel_js-rlhc.Tpo .deps/ragel_js-rlhc.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_js-rlparse.o -MD -MP -MF .deps/ragel_js-rlparse.Tpo -c -o ragel_js-rlparse.o `test -f 'rlparse.c' || echo './'`rlparse.c
+mv -f .deps/ragel_js-rlparse.Tpo .deps/ragel_js-rlparse.Po
+g++ -DHAVE_CONFIG_H -I. -I../../src  -I../../aapl -I../../ragel -I../../colm/include -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT ragel_js-rlreduce.o -MD -MP -MF .deps/ragel_js-rlreduce.Tpo -c -o ragel_js-rlreduce.o `test -f 'rlreduce.cc' || echo './'`rlreduce.cc
+mv -f .deps/ragel_js-rlreduce.Tpo .deps/ragel_js-rlreduce.Po
+/bin/bash ../../libtool  --tag=CXX   --mode=link g++  -Wall -g  -L/usr/local//lib  -o ragel-js ragel_js-main.o ragel_js-rlhc.o ragel_js-rlparse.o ragel_js-rlreduce.o /usr/local//lib/libfsm.la /usr/local//lib/libcolm.la ../libragel.la 
+libtool: link: g++ -Wall -g -o .libs/ragel-js ragel_js-main.o ragel_js-rlhc.o ragel_js-rlparse.o ragel_js-rlreduce.o  -L/usr/local//lib /usr/local/lib/libfsm.so /usr/local/lib/libcolm.so ../.libs/libragel.so
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making all in doc
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+Making all in ragel
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+sedsubst: generating ragel.1 from ragel.1.in
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+Making all in test
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+Making all in .
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+sedsubst: generating runtests from runtests.sh
+sedsubst: generating subject.mk from subject.mk.in
+sedsubst: generating subject.sh from subject.sh.in
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+Making all in ragel.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+/usr/local//bin/colm -c -b trans_object -I../../src -I../../src/host-go -o trans.c trans.lm
+gcc -DHAVE_CONFIG_H -I. -I../../src   -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT trans-trans.o -MD -MP -MF .deps/trans-trans.Tpo -c -o trans-trans.o `test -f 'trans.c' || echo './'`trans.c
+mv -f .deps/trans-trans.Tpo .deps/trans-trans.Po
+gcc -DHAVE_CONFIG_H -I. -I../../src   -I/usr/local//include/aapl -I/usr/local//include   -Wall -g -MT trans-main.o -MD -MP -MF .deps/trans-main.Tpo -c -o trans-main.o `test -f 'main.c' || echo './'`main.c
+mv -f .deps/trans-main.Tpo .deps/trans-main.Po
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc  -Wall -g  -L/usr/local//lib  -o trans trans-trans.o trans-main.o -lcolm 
+libtool: link: gcc -Wall -g -o trans trans-trans.o trans-main.o  -L/usr/local//lib /usr/local/lib/libcolm.so
+sedsubst: generating gentests from gentests.sh
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# make install
+Making install in src
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+make  install-recursive
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making install in .
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libragel.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libragel.so.0.0.0 /usr/local/lib/libragel.so.0.0.0
+libtool: install: (cd /usr/local/lib && { ln -s -f libragel.so.0.0.0 libragel.so.0 || { rm -f libragel.so.0 && ln -s libragel.so.0.0.0 libragel.so.0; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libragel.so.0.0.0 libragel.so || { rm -f libragel.so && ln -s libragel.so.0.0.0 libragel.so; }; })
+libtool: install: /usr/bin/install -c .libs/libragel.lai /usr/local/lib/libragel.la
+libtool: install: /usr/bin/install -c .libs/libragel.a /usr/local/lib/libragel.a
+libtool: install: chmod 644 /usr/local/lib/libragel.a
+libtool: install: ranlib /usr/local/lib/libragel.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c ragel '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel /usr/local/bin/ragel
+ /bin/mkdir -p '/usr/local/share'
+ /usr/bin/install -c -m 644 ragel.lm '/usr/local/share'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making install in host-ruby
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-ruby '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-ruby /usr/local/bin/ragel-ruby
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ruby'
+Making install in host-asm
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-asm '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-asm /usr/local/bin/ragel-asm
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-asm'
+Making install in host-julia
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-julia '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-julia /usr/local/bin/ragel-julia
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-julia'
+Making install in host-ocaml
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-ocaml '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-ocaml /usr/local/bin/ragel-ocaml
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-ocaml'
+Making install in host-c
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-c '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-c /usr/local/bin/ragel-c
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-c'
+Making install in host-d
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-d '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-d /usr/local/bin/ragel-d
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-d'
+Making install in host-csharp
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-csharp '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-csharp /usr/local/bin/ragel-csharp
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-csharp'
+Making install in host-go
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-go '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-go /usr/local/bin/ragel-go
+ /bin/mkdir -p '/usr/local/share'
+ /usr/bin/install -c -m 644 out-go.lm '/usr/local/share'
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-go'
+Making install in host-java
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-java '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-java /usr/local/bin/ragel-java
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-java'
+Making install in host-rust
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-rust '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-rust /usr/local/bin/ragel-rust
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-rust'
+Making install in host-crack
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-crack '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-crack /usr/local/bin/ragel-crack
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-crack'
+Making install in host-js
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make  install-am
+make[4]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[5]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c ragel-js '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/ragel-js /usr/local/bin/ragel-js
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[4]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src/host-js'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/src'
+Making install in doc
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+Making install in ragel
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share/man/man1'
+ /usr/bin/install -c -m 644 ragel.1 '/usr/local/share/man/man1'
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc/ragel'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/doc'
+Making install in test
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+Making install in .
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+Making install in ragel.d
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+make[3]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test/ragel.d'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4/test'
+make[1]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+make[2]: Entering directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/share/doc/ragel'
+ /usr/bin/install -c -m 644 ragel.vim '/usr/local/share/doc/ragel'
+make[2]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+make[1]: Leaving directory '/tmp/github.com/adrian-thurston/ragel-7.0.4'
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# /usr/local/bin/ragel --help
+/usr/local/bin/ragel: error while loading shared libraries: libragel.so.0: cannot open shared object file: No such file or directory
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# ldconfig
+
+root@96f413953c2f:/tmp/github.com/adrian-thurston/ragel-7.0.4# /usr/local/bin/ragel --help
+usage: ragel [options] file
+general:
+   -h, -H, -?, --help   Print this usage and exit
+   -v, --version        Print version information and exit
+   -o <file>            Write output to <file>
+   -s                   Print some statistics and compilation info to stderr
+   -d                   Do not remove duplicates from action lists
+   -I <dir>             Add <dir> to the list of directories to search
+                        for included an imported files
+   --rlhc               Show the rlhc command used to compile
+   --save-temps         Do not delete intermediate file during compilation
+   --no-intermediate    Disable call to rlhc, leave behind intermediate
+error reporting format:
+   --error-format=gnu   file:line:column: message (default)
+   --error-format=msvc  file(line,column): message
+fsm minimization:
+   -n                   Do not perform minimization
+   -m                   Minimize at the end of the compilation
+   -l                   Minimize after most operations (default)
+   -e                   Minimize after every operation
+visualization:
+   -V                   Generate a dot file for Graphviz
+   -p                   Display printable characters on labels
+   -S <spec>            FSM specification to output (for graphviz output)
+   -M <machine>         Machine definition/instantiation to output (for
+                        graphviz output)
+host language binaries:
+   ragel, ragel-c       C, C++, Obj-C or Obj-C++
+                        All code styles supported.
+   ragel-asm            GNU AS, x86_64, System V ABI.
+                        Generated in a code style equivalent to -G2
+   ragel-d              D           All code styles supported
+   ragel-go             Go          All code styles supported
+   ragel-csharp         C#          -T0 -T1 -F0 -F1 -G0 -G1
+   ragel-java           Java        -T0 -T1 -F0 -F1
+   ragel-ruby           Ruby        -T0 -T1 -F0 -F1
+   ragel-ocaml          OCaml       -T0 -T1 -F0 -F1
+   ragel-rust           Rust        -T0 -T1 -F0 -F1
+   ragel-julia          Julia       -T0 -T1 -F0 -F1
+   ragel-crack          Crack       -T0 -T1 -F0 -F1
+   ragel-js             JavaScript  -T0 -T1 -F0 -F1
+line directives:
+   -L                   Inhibit writing of #line directives
+code style:
+   -T0                  Binary search (default)
+   -T1                  Binary search with expanded actions 
+   -F0                  Flat table
+   -F1                  Flat table with expanded actions
+   -G0                  Switch-driven
+   -G1                  Switch-driven with expanded actions
+   -G2                  Goto-driven with expanded actions
+large machines:
+   --integral-tables    Use integers for table data (default)
+   --string-tables      Encode table data into strings for faster host lang
+                        compilation
+analysis:
+   --prior-interaction          Search for condition-based general repetitions
+                                that will not function properly due to state mod
+                                overlap and must be NFA reps. 
+   --conds-depth=D              Search for high-cost conditions inside a prefix
+                                of the machine (depth D from start state).
+   --state-limit=L              Report fail if number of states exceeds this
+                                during compilation.
+   --breadth-check=E1,E2,..     Report breadth cost of named entry points and
+                                the start state.
+   --input-histogram=FN         Input char histogram for breadth check. If
+                                unspecified a flat histogram is used.
+testing:
+   --kelbt-frontend        Compile using original ragel + kelbt frontend
+                           Requires ragel be built with ragel + kelbt support
+   --colm-frontend         Compile using a colm-based recursive descent
+                           frontend
+   --reduce-frontend       Compile using a colm-based reducer (default)
+   --var-backend           Use the variable-based backend even if the host lang
+                           supports goto-based
+   --supported-host-langs  Show supported host languages by command line arg
+   --supported-frontends   Show supported frontends
+   --supported-backends    Show supported backends
+   --force-libragel        Cause mainline to behave like libragel
+

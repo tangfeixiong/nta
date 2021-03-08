@@ -1,7 +1,8 @@
+47.*
 bin/
-
 .vagrant/
 ubuntu-*-cloudimg-console.log
+*.pdf
 
 .DS_Store
 

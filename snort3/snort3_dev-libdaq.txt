@@ -1,0 +1,632 @@
+root@96f413953c2f:/tmp# \
+mkdir -p github.com+0x2F+snort3+0x2F+libdaq && \
+curl -sSL https://github.com/snort3/libdaq/archive/v3.0.0.tar.gz | \
+tar -C github.com+0x2F+snort3+0x2F+libdaq -zxf -
+
+
+
+# Depends
+# libnetfilter-queue-dev libmnl-dev - afpacket inline
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0# ./bootstrap + autoreconf -ivf --warnings=all
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force --warnings=all -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: running: /usr/bin/autoconf --force --warnings=all
+autoreconf: running: /usr/bin/autoheader --force --warnings=all
+autoreconf: running: automake --add-missing --copy --force-missing --warnings=all
+configure.ac:29: installing './ar-lib'
+configure.ac:26: installing './compile'
+configure.ac:34: installing './config.guess'
+configure.ac:34: installing './config.sub'
+configure.ac:19: installing './install-sh'
+configure.ac:19: installing './missing'
+api/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+autoreconf: Leaving directory `.'
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0# ./configure 
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking for a sed that does not truncate output... /bin/sed
+checking whether g++ supports C++11 features with -std=gnu++11... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -std=gnu++11 -E
+checking for ld used by g++ -std=gnu++11... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ -std=gnu++11 linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ -std=gnu++11 option to produce PIC... -fPIC -DPIC
+checking if g++ -std=gnu++11 PIC flag -fPIC -DPIC works... yes
+checking if g++ -std=gnu++11 static flag -static works... yes
+checking if g++ -std=gnu++11 supports -c -o file.o... yes
+checking if g++ -std=gnu++11 supports -c -o file.o... (cached) yes
+checking whether the g++ -std=gnu++11 linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking whether C preprocessor accepts -Wall... yes
+checking whether C preprocessor accepts -Wmissing-declarations... yes
+checking whether C preprocessor accepts -Wpointer-arith... yes
+checking whether C preprocessor accepts -Wcast-align... yes
+checking whether C preprocessor accepts -Wcast-qual... yes
+checking whether C preprocessor accepts -Wformat... yes
+checking whether C preprocessor accepts -Wformat-nonliteral... yes
+checking whether C preprocessor accepts -Wformat-security... yes
+checking whether C preprocessor accepts -Wundef... yes
+checking whether C preprocessor accepts -Wwrite-strings... yes
+checking whether C preprocessor accepts -Wextra... yes
+checking whether C preprocessor accepts -Wsign-compare... yes
+checking whether C preprocessor accepts -Wno-unused-parameter... yes
+checking whether C preprocessor accepts -fno-strict-aliasing... yes
+checking whether C preprocessor accepts -fdiagnostics-show-option... yes
+checking whether C preprocessor accepts -Wstrict-prototypes... yes
+checking whether C preprocessor accepts -Wmissing-prototypes... yes
+checking whether C preprocessor accepts -Wold-style-definition... yes
+checking whether C preprocessor accepts -Wnested-externs... yes
+checking whether to build with code coverage support... no
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+configure: WARNING: No libcmocka-1.0.0 or newer library found, cmocka tests will not be built
+checking pcap.h usability... yes
+checking pcap.h presence... yes
+checking for pcap.h... yes
+checking for pcap_lib_version in -lpcap... yes
+checking linux/if_ether.h usability... yes
+checking linux/if_ether.h presence... yes
+checking for linux/if_ether.h... yes
+checking linux/if_packet.h usability... yes
+checking linux/if_packet.h presence... yes
+checking for linux/if_packet.h... yes
+checking whether PACKET_FANOUT_QM is declared... yes
+checking whether PACKET_QDISC_BYPASS is declared... yes
+checking whether TP_STATUS_VLAN_TPID_VALID is declared... yes
+checking whether IPPROTO_DIVERT is declared... no
+checking for net/netmap.h... no
+checking for net/netmap_user.h... no
+checking whether NETMAP_API is declared... no
+checking linux/netfilter.h usability... yes
+checking linux/netfilter.h presence... yes
+checking for linux/netfilter.h... yes
+checking linux/netfilter/nfnetlink_queue.h usability... yes
+checking linux/netfilter/nfnetlink_queue.h presence... yes
+checking for linux/netfilter/nfnetlink_queue.h... yes
+checking libmnl/libmnl.h usability... yes
+checking libmnl/libmnl.h presence... yes
+checking for libmnl/libmnl.h... yes
+checking for mnl_socket_open in -lmnl... yes
+checking for dlopen in -ldl... yes
+checking for inttypes.h... (cached) yes
+checking for memory.h... (cached) yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for inline... inline
+checking for size_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uint8_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for gethostbyname... yes
+checking for getpagesize... (cached) yes
+checking for memset... yes
+checking for munmap... yes
+checking for socket... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strtoul... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating modules/afpacket/libdaq_static_afpacket.pc
+config.status: creating modules/bpf/libdaq_static_bpf.pc
+config.status: creating modules/dump/libdaq_static_dump.pc
+config.status: creating modules/fst/libdaq_static_fst.pc
+config.status: creating modules/nfq/libdaq_static_nfq.pc
+config.status: creating modules/pcap/libdaq_static_pcap.pc
+config.status: creating modules/trace/libdaq_static_trace.pc
+config.status: creating Makefile
+config.status: creating api/daq_version.h
+config.status: creating api/Makefile
+config.status: creating example/Makefile
+config.status: creating modules/Makefile
+config.status: creating test/Makefile
+config.status: creating libdaq.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+    libdaq 3.0.0
+
+    prefix:         /usr/local
+    sysconfdir:     ${prefix}/etc
+    libdir:         ${exec_prefix}/lib
+    includedir:     ${prefix}/include
+
+    cc:             gcc
+    cppflags:       
+    am_cppflags:     -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option
+    cflags:         -g -O2
+    am_cflags:       -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs
+    ldflags:        
+    am_ldflags:     
+    libs:           
+
+    code_coverage_enabled:  no
+    code_coverage_cppflags: 
+    code_coverage_cflags:   
+    code_coverage_ldflags:  
+
+    Build AFPacket DAQ module.. : yes
+    Build BPF DAQ module....... : yes
+    Build Divert DAQ module.... : no
+    Build Dump DAQ module...... : yes
+    Build FST DAQ module....... : yes
+    Build NFQ DAQ module....... : yes
+    Build PCAP DAQ module...... : yes
+    Build netmap DAQ module.... : no
+    Build Trace DAQ module..... : yes
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0# make
+make  all-recursive
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+Making all in api
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2 -MT libdaq_la-daq_base.lo -MD -MP -MF .deps/libdaq_la-daq_base.Tpo -c -o libdaq_la-daq_base.lo `test -f 'daq_base.c' || echo './'`daq_base.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_base.lo -MD -MP -MF .deps/libdaq_la-daq_base.Tpo -c daq_base.c  -fPIC -DPIC -o .libs/libdaq_la-daq_base.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_base.lo -MD -MP -MF .deps/libdaq_la-daq_base.Tpo -c daq_base.c -o libdaq_la-daq_base.o >/dev/null 2>&1
+mv -f .deps/libdaq_la-daq_base.Tpo .deps/libdaq_la-daq_base.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2 -MT libdaq_la-daq_base_api.lo -MD -MP -MF .deps/libdaq_la-daq_base_api.Tpo -c -o libdaq_la-daq_base_api.lo `test -f 'daq_base_api.c' || echo './'`daq_base_api.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_base_api.lo -MD -MP -MF .deps/libdaq_la-daq_base_api.Tpo -c daq_base_api.c  -fPIC -DPIC -o .libs/libdaq_la-daq_base_api.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_base_api.lo -MD -MP -MF .deps/libdaq_la-daq_base_api.Tpo -c daq_base_api.c -o libdaq_la-daq_base_api.o >/dev/null 2>&1
+mv -f .deps/libdaq_la-daq_base_api.Tpo .deps/libdaq_la-daq_base_api.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2 -MT libdaq_la-daq_config.lo -MD -MP -MF .deps/libdaq_la-daq_config.Tpo -c -o libdaq_la-daq_config.lo `test -f 'daq_config.c' || echo './'`daq_config.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_config.lo -MD -MP -MF .deps/libdaq_la-daq_config.Tpo -c daq_config.c  -fPIC -DPIC -o .libs/libdaq_la-daq_config.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_config.lo -MD -MP -MF .deps/libdaq_la-daq_config.Tpo -c daq_config.c -o libdaq_la-daq_config.o >/dev/null 2>&1
+mv -f .deps/libdaq_la-daq_config.Tpo .deps/libdaq_la-daq_config.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2 -MT libdaq_la-daq_instance_api_defaults.lo -MD -MP -MF .deps/libdaq_la-daq_instance_api_defaults.Tpo -c -o libdaq_la-daq_instance_api_defaults.lo `test -f 'daq_instance_api_defaults.c' || echo './'`daq_instance_api_defaults.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_instance_api_defaults.lo -MD -MP -MF .deps/libdaq_la-daq_instance_api_defaults.Tpo -c daq_instance_api_defaults.c  -fPIC -DPIC -o .libs/libdaq_la-daq_instance_api_defaults.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_instance_api_defaults.lo -MD -MP -MF .deps/libdaq_la-daq_instance_api_defaults.Tpo -c daq_instance_api_defaults.c -o libdaq_la-daq_instance_api_defaults.o >/dev/null 2>&1
+mv -f .deps/libdaq_la-daq_instance_api_defaults.Tpo .deps/libdaq_la-daq_instance_api_defaults.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2 -MT libdaq_la-daq_mod_ops.lo -MD -MP -MF .deps/libdaq_la-daq_mod_ops.Tpo -c -o libdaq_la-daq_mod_ops.lo `test -f 'daq_mod_ops.c' || echo './'`daq_mod_ops.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_mod_ops.lo -MD -MP -MF .deps/libdaq_la-daq_mod_ops.Tpo -c daq_mod_ops.c  -fPIC -DPIC -o .libs/libdaq_la-daq_mod_ops.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT libdaq_la-daq_mod_ops.lo -MD -MP -MF .deps/libdaq_la-daq_mod_ops.Tpo -c daq_mod_ops.c -o libdaq_la-daq_mod_ops.o >/dev/null 2>&1
+mv -f .deps/libdaq_la-daq_mod_ops.Tpo .deps/libdaq_la-daq_mod_ops.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs  -g -O2  -version-info 3:0:0  -o libdaq.la -rpath /usr/local/lib libdaq_la-daq_base.lo libdaq_la-daq_base_api.lo libdaq_la-daq_config.lo libdaq_la-daq_instance_api_defaults.lo libdaq_la-daq_mod_ops.lo -ldl 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libdaq_la-daq_base.o .libs/libdaq_la-daq_base_api.o .libs/libdaq_la-daq_config.o .libs/libdaq_la-daq_instance_api_defaults.o .libs/libdaq_la-daq_mod_ops.o   -ldl  -g -O2   -Wl,-soname -Wl,libdaq.so.3 -o .libs/libdaq.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libdaq.so.3" && ln -s "libdaq.so.3.0.0" "libdaq.so.3")
+libtool: link: (cd ".libs" && rm -f "libdaq.so" && ln -s "libdaq.so.3.0.0" "libdaq.so")
+libtool: link: ar cru .libs/libdaq.a  libdaq_la-daq_base.o libdaq_la-daq_base_api.o libdaq_la-daq_config.o libdaq_la-daq_instance_api_defaults.o libdaq_la-daq_mod_ops.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libdaq.a
+libtool: link: ( cd ".libs" && rm -f "libdaq.la" && ln -s "../libdaq.la" "libdaq.la" )
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+Making all in modules
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_libdaq_static_afpacket_la-daq_afpacket.Tpo -c -o afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.lo `test -f 'afpacket/daq_afpacket.c' || echo './'`afpacket/daq_afpacket.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_libdaq_static_afpacket_la-daq_afpacket.Tpo -c afpacket/daq_afpacket.c  -fPIC -DPIC -o afpacket/.libs/afpacket_libdaq_static_afpacket_la-daq_afpacket.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_libdaq_static_afpacket_la-daq_afpacket.Tpo -c afpacket/daq_afpacket.c -o afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.o >/dev/null 2>&1
+mv -f afpacket/.deps/afpacket_libdaq_static_afpacket_la-daq_afpacket.Tpo afpacket/.deps/afpacket_libdaq_static_afpacket_la-daq_afpacket.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o afpacket/libdaq_static_afpacket.la -rpath /usr/local/lib afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.lo  
+libtool: link: ar cru afpacket/.libs/libdaq_static_afpacket.a  afpacket/afpacket_libdaq_static_afpacket_la-daq_afpacket.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib afpacket/.libs/libdaq_static_afpacket.a
+libtool: link: ( cd "afpacket/.libs" && rm -f "libdaq_static_afpacket.la" && ln -s "../libdaq_static_afpacket.la" "libdaq_static_afpacket.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_libdaq_static_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_libdaq_static_bpf_la-daq_bpf.Tpo -c -o bpf/bpf_libdaq_static_bpf_la-daq_bpf.lo `test -f 'bpf/daq_bpf.c' || echo './'`bpf/daq_bpf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_libdaq_static_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_libdaq_static_bpf_la-daq_bpf.Tpo -c bpf/daq_bpf.c  -fPIC -DPIC -o bpf/.libs/bpf_libdaq_static_bpf_la-daq_bpf.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_libdaq_static_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_libdaq_static_bpf_la-daq_bpf.Tpo -c bpf/daq_bpf.c -o bpf/bpf_libdaq_static_bpf_la-daq_bpf.o >/dev/null 2>&1
+mv -f bpf/.deps/bpf_libdaq_static_bpf_la-daq_bpf.Tpo bpf/.deps/bpf_libdaq_static_bpf_la-daq_bpf.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o bpf/libdaq_static_bpf.la -rpath /usr/local/lib bpf/bpf_libdaq_static_bpf_la-daq_bpf.lo  
+libtool: link: ar cru bpf/.libs/libdaq_static_bpf.a  bpf/bpf_libdaq_static_bpf_la-daq_bpf.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib bpf/.libs/libdaq_static_bpf.a
+libtool: link: ( cd "bpf/.libs" && rm -f "libdaq_static_bpf.la" && ln -s "../libdaq_static_bpf.la" "libdaq_static_bpf.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_libdaq_static_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_libdaq_static_dump_la-daq_dump.Tpo -c -o dump/dump_libdaq_static_dump_la-daq_dump.lo `test -f 'dump/daq_dump.c' || echo './'`dump/daq_dump.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_libdaq_static_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_libdaq_static_dump_la-daq_dump.Tpo -c dump/daq_dump.c  -fPIC -DPIC -o dump/.libs/dump_libdaq_static_dump_la-daq_dump.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_libdaq_static_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_libdaq_static_dump_la-daq_dump.Tpo -c dump/daq_dump.c -o dump/dump_libdaq_static_dump_la-daq_dump.o >/dev/null 2>&1
+mv -f dump/.deps/dump_libdaq_static_dump_la-daq_dump.Tpo dump/.deps/dump_libdaq_static_dump_la-daq_dump.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o dump/libdaq_static_dump.la -rpath /usr/local/lib dump/dump_libdaq_static_dump_la-daq_dump.lo  
+libtool: link: ar cru dump/.libs/libdaq_static_dump.a  dump/dump_libdaq_static_dump_la-daq_dump.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib dump/.libs/libdaq_static_dump.a
+libtool: link: ( cd "dump/.libs" && rm -f "libdaq_static_dump.la" && ln -s "../libdaq_static_dump.la" "libdaq_static_dump.la" )
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example   -g -O2 -MT fst/fst_libdaq_static_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-daq_fst.Tpo -c -o fst/fst_libdaq_static_fst_la-daq_fst.lo `test -f 'fst/daq_fst.cc' || echo './'`fst/daq_fst.cc
+libtool: compile:  g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -g -O2 -MT fst/fst_libdaq_static_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-daq_fst.Tpo -c fst/daq_fst.cc  -fPIC -DPIC -o fst/.libs/fst_libdaq_static_fst_la-daq_fst.o
+libtool: compile:  g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -g -O2 -MT fst/fst_libdaq_static_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-daq_fst.Tpo -c fst/daq_fst.cc -o fst/fst_libdaq_static_fst_la-daq_fst.o >/dev/null 2>&1
+mv -f fst/.deps/fst_libdaq_static_fst_la-daq_fst.Tpo fst/.deps/fst_libdaq_static_fst_la-daq_fst.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_libdaq_static_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-PMurHash.Tpo -c -o fst/fst_libdaq_static_fst_la-PMurHash.lo `test -f 'fst/PMurHash.c' || echo './'`fst/PMurHash.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_libdaq_static_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-PMurHash.Tpo -c fst/PMurHash.c  -fPIC -DPIC -o fst/.libs/fst_libdaq_static_fst_la-PMurHash.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_libdaq_static_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_libdaq_static_fst_la-PMurHash.Tpo -c fst/PMurHash.c -o fst/fst_libdaq_static_fst_la-PMurHash.o >/dev/null 2>&1
+mv -f fst/.deps/fst_libdaq_static_fst_la-PMurHash.Tpo fst/.deps/fst_libdaq_static_fst_la-PMurHash.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -std=gnu++11  -g -O2 -static -avoid-version  -o fst/libdaq_static_fst.la -rpath /usr/local/lib fst/fst_libdaq_static_fst_la-daq_fst.lo fst/fst_libdaq_static_fst_la-PMurHash.lo  
+libtool: link: ar cru fst/.libs/libdaq_static_fst.a  fst/fst_libdaq_static_fst_la-daq_fst.o fst/fst_libdaq_static_fst_la-PMurHash.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib fst/.libs/libdaq_static_fst.a
+libtool: link: ( cd "fst/.libs" && rm -f "libdaq_static_fst.la" && ln -s "../libdaq_static_fst.la" "libdaq_static_fst.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_libdaq_static_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_libdaq_static_nfq_la-daq_nfq.Tpo -c -o nfq/nfq_libdaq_static_nfq_la-daq_nfq.lo `test -f 'nfq/daq_nfq.c' || echo './'`nfq/daq_nfq.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_libdaq_static_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_libdaq_static_nfq_la-daq_nfq.Tpo -c nfq/daq_nfq.c  -fPIC -DPIC -o nfq/.libs/nfq_libdaq_static_nfq_la-daq_nfq.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_libdaq_static_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_libdaq_static_nfq_la-daq_nfq.Tpo -c nfq/daq_nfq.c -o nfq/nfq_libdaq_static_nfq_la-daq_nfq.o >/dev/null 2>&1
+mv -f nfq/.deps/nfq_libdaq_static_nfq_la-daq_nfq.Tpo nfq/.deps/nfq_libdaq_static_nfq_la-daq_nfq.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o nfq/libdaq_static_nfq.la -rpath /usr/local/lib nfq/nfq_libdaq_static_nfq_la-daq_nfq.lo  
+libtool: link: ar cru nfq/.libs/libdaq_static_nfq.a  nfq/nfq_libdaq_static_nfq_la-daq_nfq.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib nfq/.libs/libdaq_static_nfq.a
+libtool: link: ( cd "nfq/.libs" && rm -f "libdaq_static_nfq.la" && ln -s "../libdaq_static_nfq.la" "libdaq_static_nfq.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_libdaq_static_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_libdaq_static_pcap_la-daq_pcap.Tpo -c -o pcap/pcap_libdaq_static_pcap_la-daq_pcap.lo `test -f 'pcap/daq_pcap.c' || echo './'`pcap/daq_pcap.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_libdaq_static_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_libdaq_static_pcap_la-daq_pcap.Tpo -c pcap/daq_pcap.c  -fPIC -DPIC -o pcap/.libs/pcap_libdaq_static_pcap_la-daq_pcap.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_libdaq_static_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_libdaq_static_pcap_la-daq_pcap.Tpo -c pcap/daq_pcap.c -o pcap/pcap_libdaq_static_pcap_la-daq_pcap.o >/dev/null 2>&1
+mv -f pcap/.deps/pcap_libdaq_static_pcap_la-daq_pcap.Tpo pcap/.deps/pcap_libdaq_static_pcap_la-daq_pcap.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o pcap/libdaq_static_pcap.la -rpath /usr/local/lib pcap/pcap_libdaq_static_pcap_la-daq_pcap.lo  
+libtool: link: ar cru pcap/.libs/libdaq_static_pcap.a  pcap/pcap_libdaq_static_pcap_la-daq_pcap.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib pcap/.libs/libdaq_static_pcap.a
+libtool: link: ( cd "pcap/.libs" && rm -f "libdaq_static_pcap.la" && ln -s "../libdaq_static_pcap.la" "libdaq_static_pcap.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_libdaq_static_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_libdaq_static_trace_la-daq_trace.Tpo -c -o trace/trace_libdaq_static_trace_la-daq_trace.lo `test -f 'trace/daq_trace.c' || echo './'`trace/daq_trace.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_libdaq_static_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_libdaq_static_trace_la-daq_trace.Tpo -c trace/daq_trace.c  -fPIC -DPIC -o trace/.libs/trace_libdaq_static_trace_la-daq_trace.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_libdaq_static_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_libdaq_static_trace_la-daq_trace.Tpo -c trace/daq_trace.c -o trace/trace_libdaq_static_trace_la-daq_trace.o >/dev/null 2>&1
+mv -f trace/.deps/trace_libdaq_static_trace_la-daq_trace.Tpo trace/.deps/trace_libdaq_static_trace_la-daq_trace.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -static -avoid-version  -o trace/libdaq_static_trace.la -rpath /usr/local/lib trace/trace_libdaq_static_trace_la-daq_trace.lo  
+libtool: link: ar cru trace/.libs/libdaq_static_trace.a  trace/trace_libdaq_static_trace_la-daq_trace.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib trace/.libs/libdaq_static_trace.a
+libtool: link: ( cd "trace/.libs" && rm -f "libdaq_static_trace.la" && ln -s "../libdaq_static_trace.la" "libdaq_static_trace.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_daq_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_daq_afpacket_la-daq_afpacket.Tpo -c -o afpacket/afpacket_daq_afpacket_la-daq_afpacket.lo `test -f 'afpacket/daq_afpacket.c' || echo './'`afpacket/daq_afpacket.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_daq_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_daq_afpacket_la-daq_afpacket.Tpo -c afpacket/daq_afpacket.c  -fPIC -DPIC -o afpacket/.libs/afpacket_daq_afpacket_la-daq_afpacket.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT afpacket/afpacket_daq_afpacket_la-daq_afpacket.lo -MD -MP -MF afpacket/.deps/afpacket_daq_afpacket_la-daq_afpacket.Tpo -c afpacket/daq_afpacket.c -o afpacket/afpacket_daq_afpacket_la-daq_afpacket.o >/dev/null 2>&1
+mv -f afpacket/.deps/afpacket_daq_afpacket_la-daq_afpacket.Tpo afpacket/.deps/afpacket_daq_afpacket_la-daq_afpacket.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared   -o afpacket/daq_afpacket.la -rpath /usr/local/lib/daq afpacket/afpacket_daq_afpacket_la-daq_afpacket.lo -lpcap -lpthread 
+libtool: link: gcc -shared  -fPIC -DPIC  afpacket/.libs/afpacket_daq_afpacket_la-daq_afpacket.o   -lpcap -lpthread  -g -O2   -Wl,-soname -Wl,daq_afpacket.so -o afpacket/.libs/daq_afpacket.so
+libtool: link: ( cd "afpacket/.libs" && rm -f "daq_afpacket.la" && ln -s "../daq_afpacket.la" "daq_afpacket.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_daq_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_daq_bpf_la-daq_bpf.Tpo -c -o bpf/bpf_daq_bpf_la-daq_bpf.lo `test -f 'bpf/daq_bpf.c' || echo './'`bpf/daq_bpf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_daq_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_daq_bpf_la-daq_bpf.Tpo -c bpf/daq_bpf.c  -fPIC -DPIC -o bpf/.libs/bpf_daq_bpf_la-daq_bpf.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT bpf/bpf_daq_bpf_la-daq_bpf.lo -MD -MP -MF bpf/.deps/bpf_daq_bpf_la-daq_bpf.Tpo -c bpf/daq_bpf.c -o bpf/bpf_daq_bpf_la-daq_bpf.o >/dev/null 2>&1
+mv -f bpf/.deps/bpf_daq_bpf_la-daq_bpf.Tpo bpf/.deps/bpf_daq_bpf_la-daq_bpf.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared   -o bpf/daq_bpf.la -rpath /usr/local/lib/daq bpf/bpf_daq_bpf_la-daq_bpf.lo -lpcap -lpthread 
+libtool: link: gcc -shared  -fPIC -DPIC  bpf/.libs/bpf_daq_bpf_la-daq_bpf.o   -lpcap -lpthread  -g -O2   -Wl,-soname -Wl,daq_bpf.so -o bpf/.libs/daq_bpf.so
+libtool: link: ( cd "bpf/.libs" && rm -f "daq_bpf.la" && ln -s "../daq_bpf.la" "daq_bpf.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_daq_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_daq_dump_la-daq_dump.Tpo -c -o dump/dump_daq_dump_la-daq_dump.lo `test -f 'dump/daq_dump.c' || echo './'`dump/daq_dump.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_daq_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_daq_dump_la-daq_dump.Tpo -c dump/daq_dump.c  -fPIC -DPIC -o dump/.libs/dump_daq_dump_la-daq_dump.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT dump/dump_daq_dump_la-daq_dump.lo -MD -MP -MF dump/.deps/dump_daq_dump_la-daq_dump.Tpo -c dump/daq_dump.c -o dump/dump_daq_dump_la-daq_dump.o >/dev/null 2>&1
+mv -f dump/.deps/dump_daq_dump_la-daq_dump.Tpo dump/.deps/dump_daq_dump_la-daq_dump.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared   -o dump/daq_dump.la -rpath /usr/local/lib/daq dump/dump_daq_dump_la-daq_dump.lo -lpcap 
+libtool: link: gcc -shared  -fPIC -DPIC  dump/.libs/dump_daq_dump_la-daq_dump.o   -lpcap  -g -O2   -Wl,-soname -Wl,daq_dump.so -o dump/.libs/daq_dump.so
+libtool: link: ( cd "dump/.libs" && rm -f "daq_dump.la" && ln -s "../daq_dump.la" "daq_dump.la" )
+/bin/bash ../libtool  --tag=CXX   --mode=compile g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO   -g -O2 -MT fst/fst_daq_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-daq_fst.Tpo -c -o fst/fst_daq_fst_la-daq_fst.lo `test -f 'fst/daq_fst.cc' || echo './'`fst/daq_fst.cc
+libtool: compile:  g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO -g -O2 -MT fst/fst_daq_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-daq_fst.Tpo -c fst/daq_fst.cc  -fPIC -DPIC -o fst/.libs/fst_daq_fst_la-daq_fst.o
+libtool: compile:  g++ -std=gnu++11 -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO -g -O2 -MT fst/fst_daq_fst_la-daq_fst.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-daq_fst.Tpo -c fst/daq_fst.cc -o fst/fst_daq_fst_la-daq_fst.o >/dev/null 2>&1
+mv -f fst/.deps/fst_daq_fst_la-daq_fst.Tpo fst/.deps/fst_daq_fst_la-daq_fst.Plo
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_daq_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-PMurHash.Tpo -c -o fst/fst_daq_fst_la-PMurHash.lo `test -f 'fst/PMurHash.c' || echo './'`fst/PMurHash.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_daq_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-PMurHash.Tpo -c fst/PMurHash.c  -fPIC -DPIC -o fst/.libs/fst_daq_fst_la-PMurHash.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -I../example -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT fst/fst_daq_fst_la-PMurHash.lo -MD -MP -MF fst/.deps/fst_daq_fst_la-PMurHash.Tpo -c fst/PMurHash.c -o fst/fst_daq_fst_la-PMurHash.o >/dev/null 2>&1
+mv -f fst/.deps/fst_daq_fst_la-PMurHash.Tpo fst/.deps/fst_daq_fst_la-PMurHash.Plo
+/bin/bash ../libtool  --tag=CXX   --mode=link g++ -std=gnu++11  -g -O2 -module -export-dynamic -avoid-version -shared  -o fst/daq_fst.la -rpath /usr/local/lib/daq fst/fst_daq_fst_la-daq_fst.lo fst/fst_daq_fst_la-PMurHash.lo  
+libtool: link: g++ -std=gnu++11  -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o  fst/.libs/fst_daq_fst_la-daq_fst.o fst/.libs/fst_daq_fst_la-PMurHash.o   -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o  -g -O2   -Wl,-soname -Wl,daq_fst.so -o fst/.libs/daq_fst.so
+libtool: link: ( cd "fst/.libs" && rm -f "daq_fst.la" && ln -s "../daq_fst.la" "daq_fst.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_daq_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_daq_nfq_la-daq_nfq.Tpo -c -o nfq/nfq_daq_nfq_la-daq_nfq.lo `test -f 'nfq/daq_nfq.c' || echo './'`nfq/daq_nfq.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_daq_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_daq_nfq_la-daq_nfq.Tpo -c nfq/daq_nfq.c  -fPIC -DPIC -o nfq/.libs/nfq_daq_nfq_la-daq_nfq.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT nfq/nfq_daq_nfq_la-daq_nfq.lo -MD -MP -MF nfq/.deps/nfq_daq_nfq_la-daq_nfq.Tpo -c nfq/daq_nfq.c -o nfq/nfq_daq_nfq_la-daq_nfq.o >/dev/null 2>&1
+mv -f nfq/.deps/nfq_daq_nfq_la-daq_nfq.Tpo nfq/.deps/nfq_daq_nfq_la-daq_nfq.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared  -o nfq/daq_nfq.la -rpath /usr/local/lib/daq nfq/nfq_daq_nfq_la-daq_nfq.lo -lmnl 
+libtool: link: gcc -shared  -fPIC -DPIC  nfq/.libs/nfq_daq_nfq_la-daq_nfq.o   -lmnl  -g -O2   -Wl,-soname -Wl,daq_nfq.so -o nfq/.libs/daq_nfq.so
+libtool: link: ( cd "nfq/.libs" && rm -f "daq_nfq.la" && ln -s "../daq_nfq.la" "daq_nfq.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO   -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_daq_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_daq_pcap_la-daq_pcap.Tpo -c -o pcap/pcap_daq_pcap_la-daq_pcap.lo `test -f 'pcap/daq_pcap.c' || echo './'`pcap/daq_pcap.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_daq_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_daq_pcap_la-daq_pcap.Tpo -c pcap/daq_pcap.c  -fPIC -DPIC -o pcap/.libs/pcap_daq_pcap_la-daq_pcap.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT pcap/pcap_daq_pcap_la-daq_pcap.lo -MD -MP -MF pcap/.deps/pcap_daq_pcap_la-daq_pcap.Tpo -c pcap/daq_pcap.c -o pcap/pcap_daq_pcap_la-daq_pcap.o >/dev/null 2>&1
+mv -f pcap/.deps/pcap_daq_pcap_la-daq_pcap.Tpo pcap/.deps/pcap_daq_pcap_la-daq_pcap.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared   -o pcap/daq_pcap.la -rpath /usr/local/lib/daq pcap/pcap_daq_pcap_la-daq_pcap.lo -lpcap -lpthread 
+libtool: link: gcc -shared  -fPIC -DPIC  pcap/.libs/pcap_daq_pcap_la-daq_pcap.o   -lpcap -lpthread  -g -O2   -Wl,-soname -Wl,daq_pcap.so -o pcap/.libs/daq_pcap.so
+libtool: link: ( cd "pcap/.libs" && rm -f "daq_pcap.la" && ln -s "../daq_pcap.la" "daq_pcap.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO  -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_daq_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_daq_trace_la-daq_trace.Tpo -c -o trace/trace_daq_trace_la-daq_trace.lo `test -f 'trace/daq_trace.c' || echo './'`trace/daq_trace.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_daq_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_daq_trace_la-daq_trace.Tpo -c trace/daq_trace.c  -fPIC -DPIC -o trace/.libs/trace_daq_trace_la-daq_trace.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option -I../api -DBUILDING_SO -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -MT trace/trace_daq_trace_la-daq_trace.lo -MD -MP -MF trace/.deps/trace_daq_trace_la-daq_trace.Tpo -c trace/daq_trace.c -o trace/trace_daq_trace_la-daq_trace.o >/dev/null 2>&1
+mv -f trace/.deps/trace_daq_trace_la-daq_trace.Tpo trace/.deps/trace_daq_trace_la-daq_trace.Plo
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wstrict-prototypes -Wmissing-prototypes -Wold-style-definition -Wnested-externs -g -O2 -module -export-dynamic -avoid-version -shared  -o trace/daq_trace.la -rpath /usr/local/lib/daq trace/trace_daq_trace_la-daq_trace.lo  
+libtool: link: gcc -shared  -fPIC -DPIC  trace/.libs/trace_daq_trace_la-daq_trace.o    -g -O2   -Wl,-soname -Wl,daq_trace.so -o trace/.libs/daq_trace.so
+libtool: link: ( cd "trace/.libs" && rm -f "daq_trace.la" && ln -s "../daq_trace.la" "daq_trace.la" )
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+Making all in example
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option  -Wall -I../api -g -O2 -MT daqtest.o -MD -MP -MF .deps/daqtest.Tpo -c -o daqtest.o daqtest.c
+daqtest.c: In function 'replace_icmp_data':
+daqtest.c:282:12: warning: cast discards 'const' qualifier from pointer target type [-Wcast-qual]
+     icmp = (IcmpHdr *) dtp->dd.icmp;
+            ^
+mv -f .deps/daqtest.Tpo .deps/daqtest.Po
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -I../api -g -O2   -o daqtest daqtest.o ../api/libdaq.la -lpthread 
+libtool: link: gcc -Wall -I../api -g -O2 -o .libs/daqtest daqtest.o  ../api/.libs/libdaq.so -lpthread
+gcc -DHAVE_CONFIG_H -I. -I..  -fvisibility=hidden -Wall -Wmissing-declarations -Wpointer-arith -Wcast-align -Wcast-qual -Wformat -Wformat-nonliteral -Wformat-security -Wundef -Wwrite-strings -Wextra -Wsign-compare -Wno-unused-parameter -fno-strict-aliasing -fdiagnostics-show-option  -Wall -I../api -DUSE_STATIC_MODULES -DBUILD_AFPACKET_MODULE -DBUILD_BPF_MODULE  -DBUILD_DUMP_MODULE -DBUILD_FST_MODULE  -DBUILD_NFQ_MODULE -DBUILD_PCAP_MODULE -DBUILD_TRACE_MODULE -g -O2 -MT daqtest_static-daqtest.o -MD -MP -MF .deps/daqtest_static-daqtest.Tpo -c -o daqtest_static-daqtest.o `test -f 'daqtest.c' || echo './'`daqtest.c
+daqtest.c: In function 'replace_icmp_data':
+daqtest.c:282:12: warning: cast discards 'const' qualifier from pointer target type [-Wcast-qual]
+     icmp = (IcmpHdr *) dtp->dd.icmp;
+            ^
+mv -f .deps/daqtest_static-daqtest.Tpo .deps/daqtest_static-daqtest.Po
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -Wall -I../api -DUSE_STATIC_MODULES -DBUILD_AFPACKET_MODULE -DBUILD_BPF_MODULE  -DBUILD_DUMP_MODULE -DBUILD_FST_MODULE  -DBUILD_NFQ_MODULE -DBUILD_PCAP_MODULE -DBUILD_TRACE_MODULE -g -O2 -static-libtool-libs   -o daqtest-static daqtest_static-daqtest.o ../api/libdaq.la -lpthread ../modules/afpacket/libdaq_static_afpacket.la -lpcap -lpthread ../modules/bpf/libdaq_static_bpf.la -lpcap -lpthread  ../modules/dump/libdaq_static_dump.la -lpcap ../modules/fst/libdaq_static_fst.la -lstdc++  ../modules/nfq/libdaq_static_nfq.la -lmnl ../modules/pcap/libdaq_static_pcap.la -lpcap -lpthread ../modules/trace/libdaq_static_trace.la 
+libtool: link: gcc -Wall -I../api -DUSE_STATIC_MODULES -DBUILD_AFPACKET_MODULE -DBUILD_BPF_MODULE -DBUILD_DUMP_MODULE -DBUILD_FST_MODULE -DBUILD_NFQ_MODULE -DBUILD_PCAP_MODULE -DBUILD_TRACE_MODULE -g -O2 -o daqtest-static daqtest_static-daqtest.o  ../api/.libs/libdaq.a -ldl ../modules/afpacket/.libs/libdaq_static_afpacket.a ../modules/bpf/.libs/libdaq_static_bpf.a ../modules/dump/.libs/libdaq_static_dump.a ../modules/fst/.libs/libdaq_static_fst.a -lstdc++ ../modules/nfq/.libs/libdaq_static_nfq.a -lmnl ../modules/pcap/.libs/libdaq_static_pcap.a -lpcap -lpthread ../modules/trace/.libs/libdaq_static_trace.a
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+Making all in test
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0# make installMaking install in api
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libdaq.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libdaq.so.3.0.0 /usr/local/lib/libdaq.so.3.0.0
+libtool: install: (cd /usr/local/lib && { ln -s -f libdaq.so.3.0.0 libdaq.so.3 || { rm -f libdaq.so.3 && ln -s libdaq.so.3.0.0 libdaq.so.3; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libdaq.so.3.0.0 libdaq.so || { rm -f libdaq.so && ln -s libdaq.so.3.0.0 libdaq.so; }; })
+libtool: install: /usr/bin/install -c .libs/libdaq.lai /usr/local/lib/libdaq.la
+libtool: install: /usr/bin/install -c .libs/libdaq.a /usr/local/lib/libdaq.a
+libtool: install: chmod 644 /usr/local/lib/libdaq.a
+libtool: install: ranlib /usr/local/lib/libdaq.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/include'
+ /usr/bin/install -c -m 644 daq.h daq_common.h daq_dlt.h daq_module_api.h daq_version.h '/usr/local/include'
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/api'
+Making install in modules
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   afpacket/libdaq_static_afpacket.la bpf/libdaq_static_bpf.la dump/libdaq_static_dump.la fst/libdaq_static_fst.la nfq/libdaq_static_nfq.la pcap/libdaq_static_pcap.la trace/libdaq_static_trace.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c afpacket/.libs/libdaq_static_afpacket.lai /usr/local/lib/libdaq_static_afpacket.la
+libtool: install: /usr/bin/install -c bpf/.libs/libdaq_static_bpf.lai /usr/local/lib/libdaq_static_bpf.la
+libtool: install: /usr/bin/install -c dump/.libs/libdaq_static_dump.lai /usr/local/lib/libdaq_static_dump.la
+libtool: install: /usr/bin/install -c fst/.libs/libdaq_static_fst.lai /usr/local/lib/libdaq_static_fst.la
+libtool: install: /usr/bin/install -c nfq/.libs/libdaq_static_nfq.lai /usr/local/lib/libdaq_static_nfq.la
+libtool: install: /usr/bin/install -c pcap/.libs/libdaq_static_pcap.lai /usr/local/lib/libdaq_static_pcap.la
+libtool: install: /usr/bin/install -c trace/.libs/libdaq_static_trace.lai /usr/local/lib/libdaq_static_trace.la
+libtool: install: /usr/bin/install -c afpacket/.libs/libdaq_static_afpacket.a /usr/local/lib/libdaq_static_afpacket.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_afpacket.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_afpacket.a
+libtool: install: /usr/bin/install -c bpf/.libs/libdaq_static_bpf.a /usr/local/lib/libdaq_static_bpf.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_bpf.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_bpf.a
+libtool: install: /usr/bin/install -c dump/.libs/libdaq_static_dump.a /usr/local/lib/libdaq_static_dump.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_dump.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_dump.a
+libtool: install: /usr/bin/install -c fst/.libs/libdaq_static_fst.a /usr/local/lib/libdaq_static_fst.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_fst.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_fst.a
+libtool: install: /usr/bin/install -c nfq/.libs/libdaq_static_nfq.a /usr/local/lib/libdaq_static_nfq.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_nfq.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_nfq.a
+libtool: install: /usr/bin/install -c pcap/.libs/libdaq_static_pcap.a /usr/local/lib/libdaq_static_pcap.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_pcap.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_pcap.a
+libtool: install: /usr/bin/install -c trace/.libs/libdaq_static_trace.a /usr/local/lib/libdaq_static_trace.a
+libtool: install: chmod 644 /usr/local/lib/libdaq_static_trace.a
+libtool: install: ranlib /usr/local/lib/libdaq_static_trace.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/lib/daq'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   afpacket/daq_afpacket.la bpf/daq_bpf.la dump/daq_dump.la fst/daq_fst.la nfq/daq_nfq.la pcap/daq_pcap.la trace/daq_trace.la '/usr/local/lib/daq'
+libtool: install: /usr/bin/install -c afpacket/.libs/daq_afpacket.so /usr/local/lib/daq/daq_afpacket.so
+libtool: install: /usr/bin/install -c afpacket/.libs/daq_afpacket.lai /usr/local/lib/daq/daq_afpacket.la
+libtool: install: /usr/bin/install -c bpf/.libs/daq_bpf.so /usr/local/lib/daq/daq_bpf.so
+libtool: install: /usr/bin/install -c bpf/.libs/daq_bpf.lai /usr/local/lib/daq/daq_bpf.la
+libtool: install: /usr/bin/install -c dump/.libs/daq_dump.so /usr/local/lib/daq/daq_dump.so
+libtool: install: /usr/bin/install -c dump/.libs/daq_dump.lai /usr/local/lib/daq/daq_dump.la
+libtool: install: /usr/bin/install -c fst/.libs/daq_fst.so /usr/local/lib/daq/daq_fst.so
+libtool: install: /usr/bin/install -c fst/.libs/daq_fst.lai /usr/local/lib/daq/daq_fst.la
+libtool: install: /usr/bin/install -c nfq/.libs/daq_nfq.so /usr/local/lib/daq/daq_nfq.so
+libtool: install: /usr/bin/install -c nfq/.libs/daq_nfq.lai /usr/local/lib/daq/daq_nfq.la
+libtool: install: /usr/bin/install -c pcap/.libs/daq_pcap.so /usr/local/lib/daq/daq_pcap.so
+libtool: install: /usr/bin/install -c pcap/.libs/daq_pcap.lai /usr/local/lib/daq/daq_pcap.la
+libtool: install: /usr/bin/install -c trace/.libs/daq_trace.so /usr/local/lib/daq/daq_trace.so
+libtool: install: /usr/bin/install -c trace/.libs/daq_trace.lai /usr/local/lib/daq/daq_trace.la
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib/daq
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib/daq
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 afpacket/libdaq_static_afpacket.pc bpf/libdaq_static_bpf.pc dump/libdaq_static_dump.pc fst/libdaq_static_fst.pc nfq/libdaq_static_nfq.pc pcap/libdaq_static_pcap.pc trace/libdaq_static_trace.pc '/usr/local/lib/pkgconfig'
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/modules'
+Making install in example
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+ /bin/mkdir -p '/usr/local/bin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c daqtest daqtest-static '/usr/local/bin'
+libtool: install: /usr/bin/install -c .libs/daqtest /usr/local/bin/daqtest
+libtool: install: /usr/bin/install -c daqtest-static /usr/local/bin/daqtest-static
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/example'
+Making install in test
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0/test'
+make[1]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+make[2]: Entering directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libdaq.pc '/usr/local/lib/pkgconfig'
+make[2]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+make[1]: Leaving directory '/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0'
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+snort3+0x2F+libdaq/libdaq-3.0.0# ldconfig

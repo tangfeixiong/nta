@@ -1,0 +1,1579 @@
+root@96f413953c2f:/tmp/github.com# \
+mkdir -p /tmp/github.com+0x2F+rurban+0x2F+safeclib/ && \
+curl -sSL https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-02092020.tar.gz | \
+tar -C /tmp/github.com+0x2F+rurban+0x2F+safeclib/ -zx
+
+# Previously build
+# + v31082020
+# + v08112019
+
+
+
+# Optional
+#
+vagrant@ubuntu-bionic:/Users/fanhongling/Downloads/workspace/src/github.com/rurban/safeclib$ ./build-aux/autogen.sh 
+aclocal: installing 'm4/libtool.m4' from '/usr/share/aclocal/libtool.m4'
+aclocal: installing 'm4/ltoptions.m4' from '/usr/share/aclocal/ltoptions.m4'
+aclocal: installing 'm4/ltsugar.m4' from '/usr/share/aclocal/ltsugar.m4'
+aclocal: installing 'm4/ltversion.m4' from '/usr/share/aclocal/ltversion.m4'
+aclocal: installing 'm4/lt~obsolete.m4' from '/usr/share/aclocal/lt~obsolete.m4'
+aclocal: installing 'm4/pkg.m4' from '/usr/share/aclocal/pkg.m4'
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'build-aux'.
+libtoolize: copying file 'build-aux/ltmain.sh'
+configure.ac:76: installing 'build-aux/compile'
+configure.ac:76: installing 'build-aux/config.guess'
+configure.ac:76: installing 'build-aux/config.sub'
+configure.ac:61: installing 'build-aux/install-sh'
+configure.ac:61: installing 'build-aux/missing'
+src/Makefile.am: installing 'build-aux/depcomp'
+parallel-tests: installing 'build-aux/test-driver'
+
+
+
+# Alternative:
+# ./configure --disable-doc
+#
+root@96f413953c2f:/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d9
+21f# ./configure       
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc-ar... gcc-ar
+checking for gcc-ranlib... gcc-ranlib
+checking for gcc-nm... gcc-nm
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C89 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... gcc-nm
+checking the name lister (gcc-nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) gcc-ranlib
+checking command to parse gcc-nm output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for --enable-gcov... no (default)
+checking for --enable-debug... no CFLAGS = -O2 -D_FORTIFY_SOURCE=2
+checking for --disable-extensions... no (default)
+checking for --enable-memmax... (256UL << 20)  /* 256MB */
+checking for --enable-strmax... (4UL << 10) /* 4KB */
+checking for --disable-nullslack... no (default)
+checking for --disable-constraint-handler... no (default)
+checking for --enable-unsafe... no
+checking for --enable-norm-compat... no (default)
+checking for --enable-warn-dmax... no (default)
+checking for --enable-error-dmax... no (default)
+configure: Check programs
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C89 features... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking for gcc option to enable C99 features... none needed
+checking for gcc option to enable C11 features... none needed
+checking for -Wmissing-format-attribute usability... no
+checking whether C compiler accepts -Werror=unknown-warning-option... no
+checking whether C compiler accepts -Wno-suggest-attribute=format... yes
+checking whether C compiler accepts -mcet -fcf-protection=full  -fPIC -DPIC -DRETPOLINE... no
+checking whether C compiler accepts -mretpoline -DRETPOLINE  -fPIC -DPIC... no
+checking whether C compiler accepts -mindirect-branch=thunk-extern -mfunction-return=thunk-extern -mindirect-branch-register  -fPIC -DPIC -DRETPOLINE... yes
+checking whether C compiler accepts -fno-strict-aliasing... yes
+checking whether C compiler accepts -Wall... yes
+checking whether C compiler accepts -Wextra... yes
+checking whether C compiler accepts -Wundef... yes
+checking whether C compiler accepts -Wwrite-strings... yes
+checking whether C compiler accepts -Wpointer-arith... yes
+checking whether C compiler accepts -Wmissing-declarations... yes
+checking whether C compiler accepts -Wredundant-decls... yes
+checking whether C compiler accepts -Wno-unused-parameter... yes
+checking whether C compiler accepts -Wno-missing-field-initializers... yes
+checking whether C compiler accepts -Wformat=2... (cached) no
+checking whether C compiler accepts -Wcast-align... yes
+checking whether C compiler accepts -Wformat-nonliteral... (cached) no
+checking whether C compiler accepts -Wformat-security... yes
+checking whether C compiler accepts -Wsign-compare... yes
+checking whether C compiler accepts -Wstrict-aliasing... yes
+checking whether C compiler accepts -Wshadow... yes
+checking whether C compiler accepts -Winline... (cached) no
+checking whether C compiler accepts -Wpacked... yes
+checking whether C compiler accepts -Wmissing-format-attribute... (cached) no
+checking whether C compiler accepts -Wmissing-noreturn... yes
+checking whether C compiler accepts -Winit-self... yes
+checking whether C compiler accepts -Wredundant-decls... (cached) yes
+checking whether C compiler accepts -Wmissing-include-dirs... yes
+checking whether C compiler accepts -Wunused-but-set-variable... yes
+checking whether C compiler accepts -Warray-bounds... yes
+checking whether C compiler accepts -Wreturn-type... yes
+checking whether C compiler accepts -Wswitch-enum... yes
+checking whether C compiler accepts -Wswitch-default... yes
+checking whether C compiler accepts -Wduplicated-cond... yes
+checking whether C compiler accepts -Wduplicated-branches... yes
+checking whether C compiler accepts -Wlogical-op... yes
+checking whether C compiler accepts -Wrestrict... yes
+checking whether C compiler accepts -Wnull-dereference... yes
+checking whether C compiler accepts -Wdouble-promotion... yes
+checking whether C compiler accepts -Wnested-externs... yes
+checking whether C compiler accepts -Wmissing-prototypes... yes
+checking whether C compiler accepts -Wstrict-prototypes... yes
+checking whether C compiler accepts -Wdeclaration-after-statement... yes
+checking whether C compiler accepts -Wimplicit-function-declaration... yes
+checking whether C compiler accepts -Wold-style-definition... yes
+checking whether C compiler accepts -Wjump-misses-init... yes
+checking whether C compiler accepts -Wno-suggest-attribute=format... yes
+checking whether C compiler accepts -Wno-error=unused-parameter... yes
+checking whether C compiler accepts -Wno-error=missing-field-initializers... yes
+checking whether C compiler accepts -Werror=unknown-warning-option... (cached) no
+checking whether the linker accepts -Wl,--as-needed... yes
+checking whether the linker accepts -Wl,-z,relro... yes
+checking whether the linker accepts -Wl,-z,now... yes
+checking whether the linker accepts -Wl,-z,noexecstack... yes
+checking whether the linker accepts -mindirect-branch=thunk-extern -mfunction-return=thunk-extern -mindirect-branch-register  -fPIC -DPIC -DRETPOLINE -Wl,-z,retpolineplt... no
+configure: WARNING: Your LD does not support -z,retpolineplt try -fuse-ld=lld-7
+checking whether the linker accepts -Wl,--fatal-warnings... (cached) no
+checking whether the linker accepts -Wl,-fatal_warnings... (cached) no
+checking whether C compiler accepts -Werror=unknown-warning-option... (cached) no
+checking whether C compiler accepts -fstack-protector-strong... yes
+checking whether C compiler accepts -fstack-clash-protection... no
+checking whether C compiler accepts -fcf-protection... no
+checking whether the linker accepts -fstack-protector-strong... yes
+checking whether the linker accepts -fstack-clash-protection... no
+checking whether the linker accepts -fcf-protection... no
+checking for __builtin_object_size... yes
+checking whether C compiler accepts -Wuser-defined-warnings... no
+checking whether C compiler accepts  -Wgcc-compat... no
+checking for diagnose_if attribute... no
+checking for inline assembly style... __asm__
+checking for doxygen... doxygen
+checking for pod2man... pod2man
+checking for valgrind... no
+configure: Check header files
+checking for ANSI C header files... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for stdlib.h... (cached) yes
+checking for memory.h... (cached) yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for string.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for sys/types.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking valgrind/valgrind.h usability... no
+checking valgrind/valgrind.h presence... no
+checking for valgrind/valgrind.h... no
+checking intrin.h usability... no
+checking intrin.h presence... no
+checking for intrin.h... no
+checking xmmintrin.h usability... yes
+checking xmmintrin.h presence... yes
+checking for xmmintrin.h... yes
+checking emmintrin.h usability... yes
+checking emmintrin.h presence... yes
+checking for emmintrin.h... yes
+checking x86intrin.h usability... yes
+checking x86intrin.h presence... yes
+checking for x86intrin.h... yes
+checking arm_neon.h usability... no
+checking arm_neon.h presence... no
+checking for arm_neon.h... no
+checking mmintrin.h usability... yes
+checking mmintrin.h presence... yes
+checking for mmintrin.h... yes
+checking altivec.h usability... no
+checking altivec.h presence... no
+checking for altivec.h... no
+checking spe.h usability... no
+checking spe.h presence... no
+checking for spe.h... no
+checking mbarrier.h usability... no
+checking mbarrier.h presence... no
+checking for mbarrier.h... no
+configure: Check typedefs, structures, and compiler characteristics
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for C/C++ restrict keyword... __restrict
+checking for size_t... yes
+checking for int32_t... yes
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for uintptr_t... yes
+checking size of size_t... 8
+checking for errno_t... no
+checking for mbstate_t... yes
+checking for struct tm.tm_gmtoff... yes
+checking size of time_t... 8
+checking for wchar_t... yes
+checking for __builtin_ctz... yes
+checking for __builtin_constant_p... yes
+checking for __attribute__((format))... yes
+checking for __attribute__((malloc))... yes
+checking for __attribute__((returns_nonnull))... yes
+checking for __attribute__((format_wprintf))... no
+checking for __attribute__((format_wscanf))... no
+checking for __builtin___bnd_set_ptr_bounds... yes
+checking for __builtin___bnd_null_ptr_bounds... yes
+checking for __builtin___bnd_chk_ptr_bounds... yes
+configure: Check library functions
+checking for __bnd_chk_ptr_bounds... no
+checking for __bnd_set_ptr_bounds... no
+checking for __bnd_null_ptr_bounds... no
+checking for __memcpy_chk... yes
+checking for __memmove_chk... yes
+checking for __memset_chk... yes
+checking for __strcpy_chk... yes
+checking for __strncpy_chk... yes
+checking for __strcat_chk... yes
+checking for __strncat_chk... yes
+checking for __printf_chk... yes
+checking for __sprintf_chk... yes
+checking for __snprintf_chk... yes
+checking for __swprintf_chk... yes
+checking for __vfprintf_chk... yes
+checking for __vfwprintf_chk... yes
+checking for __vsprintf_chk... yes
+checking for __vsnprintf_chk... yes
+checking for __vsscanf_chk... no
+checking for __vswscanf_chk... no
+checking for working memcmp... yes
+checking for memset... yes
+checking for strcmp... yes
+checking for strcasecmp... yes
+checking for strcasestr... yes
+checking for strcspn... yes
+checking for strpbrk... yes
+checking for strspn... yes
+checking for strnstr... no
+checking for strnlen... yes
+checking for strrchr... yes
+checking for memrchr... yes
+checking for strstr... yes
+checking for wmemchr... yes
+checking for wmemcmp... yes
+checking for wcscmp... yes
+checking for wcsstr... yes
+checking for vswprintf... yes
+checking for vsnwprintf... no
+checking for vswscanf... yes
+checking for mbsrtowcs... yes
+checking for mbstowcs... yes
+checking for iswdigit... yes
+checking for iswspace... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for towctrans... yes
+checking for bcmp... yes
+checking for secure_getenv... yes
+checking for timingsafe_memcmp... no
+checking for timingsafe_bcmp... no
+checking for explicit_bzero... yes
+checking for explicit_memset... no
+checking for asctime_r... yes
+checking for ctime_r... yes
+checking for gmtime_r... yes
+checking for localtime_r... yes
+checking for memccpy... yes
+checking for _memcpy_s_chk... no
+checking for _memmove_s_chk... no
+checking for _memset_s_chk... no
+checking for _memcmp_s_chk... no
+checking for _strcpy_s_chk... no
+checking for _strncpy_s_chk... no
+checking for _strcat_s_chk... no
+checking for _strncat_s_chk... no
+checking for _strnlen_s_chk... no
+checking for _printf_s_chk... no
+checking for _sprintf_s_chk... no
+checking for _snprintf_s_chk... no
+checking for _swprintf_s_chk... no
+checking for _vfprintf_s_chk... no
+checking for _vfwprintf_s_chk... no
+checking for _vsprintf_s_chk... no
+checking for _vsnprintf_s_chk... no
+checking for memset_s... no
+checking for memcpy_s... no
+checking for memmove_s... no
+checking for memzero_s... no
+checking for memchr_s... no
+checking for memrchr_s... no
+checking for memccpy_s... no
+checking for sprintf_s... no
+checking for strcat_s... no
+checking for strcpy_s... no
+checking for strncat_s... no
+checking for strncpy_s... no
+checking for strnlen_s... no
+checking for strtok_s... no
+checking for strerror_s... no
+checking for vsprintf_s... no
+checking for tmpnam_s... no
+checking for snprintf_s... no
+checking for vsnprintf_s... no
+checking for snwprintf_s... no
+checking for strspn_s... no
+checking for strset_s... no
+checking for strchr_s... no
+checking for strrchr_s... no
+checking for strstr_s... no
+checking for strzero_s... no
+checking for strnset_s... no
+checking for mbsrtowcs_s... no
+checking for mbstowcs_s... no
+checking for wcsrtombs_s... no
+checking for wcstombs_s... no
+checking for wcrtomb_s... no
+checking for wctomb_s... no
+checking for wcsnlen_s... no
+checking for wcscpy_s... no
+checking for wcsncpy_s... no
+checking for wcscat_s... no
+checking for wcsncat_s... no
+checking for wmemcpy_s... no
+checking for wmemmove_s... no
+checking for wcstok_s... no
+checking for vswprintf_s... no
+checking for swprintf_s... no
+checking for vfwprintf_s... no
+checking for vwprintf_s... no
+checking for wprintf_s... no
+checking for fwprintf_s... no
+checking for swscanf_s... no
+checking for vswscanf_s... no
+checking for wscanf_s... no
+checking for vfwscanf_s... no
+checking for fwscanf_s... no
+checking for vwscanf_s... no
+checking for vsnwprintf_s... no
+checking for wcsstr_s... no
+checking for wmemcmp_s... no
+checking for wcscmp_s... no
+checking for wcsncmp_s... no
+checking for wcsicmp_s... no
+checking for wcsset_s... no
+checking for wcsnset_s... no
+checking for wcscoll_s... no
+checking for wcslwr_s... no
+checking for wcsupr_s... no
+checking for towfc_s... no
+checking for wcsfc_s... no
+checking for sscanf_s... no
+checking for fscanf_s... no
+checking for scanf_s... no
+checking for vfscanf_s... no
+checking for vsscanf_s... no
+checking for vscanf_s... no
+checking for printf_s... no
+checking for fprintf_s... no
+checking for tmpfile_s... no
+checking for vfprintf_s... no
+checking for vprintf_s... no
+checking for fopen_s... no
+checking for freopen_s... no
+checking for gets_s... no
+checking for bsearch_s... no
+checking for qsort_s... no
+checking for gmtime_s... no
+checking for localtime_s... no
+checking for asctime_s... no
+checking for ctime_s... no
+checking for getenv_s... no
+checking for towupper usability... no
+checking for --disable-wchar or broken wchar usability... no (default)
+checking size of wchar_t... 4
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating libsafec.pc
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating include/safe_config.h
+config.status: creating include/safe_lib_errno.h
+config.status: creating include/safe_types.h
+config.status: creating Doxyfile
+config.status: creating doc/footer
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+root@96f413953c2f:/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d9
+21f# make
+make  all-recursive
+make[1]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+Making all in src
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+  CC       mem/safe_mem_constraint.lo
+  CC       mem/memset_s.lo
+  CC       mem/memcpy_s.lo
+  CC       mem/memmove_s.lo
+  CC       str/safe_str_constraint.lo
+  CC       str/sprintf_s.lo
+  CC       str/strcat_s.lo
+  CC       str/strcpy_s.lo
+  CC       str/strncat_s.lo
+  CC       str/strncpy_s.lo
+  CC       str/strnlen_s.lo
+  CC       str/strtok_s.lo
+  CC       str/strerror_s.lo
+  CC       str/vsprintf_s.lo
+  CC       str/snprintf_s.lo
+  CC       str/vsnprintf_s.lo
+  CC       io/sscanf_s.lo
+  CC       io/fscanf_s.lo
+  CC       io/scanf_s.lo
+  CC       io/vfscanf_s.lo
+  CC       io/vsscanf_s.lo
+  CC       io/vscanf_s.lo
+  CC       io/printf_s.lo
+  CC       io/fprintf_s.lo
+  CC       io/tmpfile_s.lo
+  CC       io/vfprintf_s.lo
+  CC       io/vprintf_s.lo
+  CC       io/fopen_s.lo
+  CC       io/freopen_s.lo
+  CC       io/gets_s.lo
+  CC       os/gmtime_s.lo
+  CC       os/localtime_s.lo
+  CC       os/asctime_s.lo
+  CC       os/ctime_s.lo
+  CC       os/getenv_s.lo
+  CC       misc/bsearch_s.lo
+  CC       misc/qsort_s.lo
+  CC       wchar/mbsrtowcs_s.lo
+  CC       wchar/mbstowcs_s.lo
+  CC       wchar/wcsrtombs_s.lo
+  CC       wchar/wcstombs_s.lo
+  CC       wchar/wcrtomb_s.lo
+  CC       wchar/wctomb_s.lo
+  CC       wchar/wcsnlen_s.lo
+  CC       wchar/wcscpy_s.lo
+  CC       wchar/wcsncpy_s.lo
+  CC       wchar/wcscat_s.lo
+  CC       wchar/wcsncat_s.lo
+  CC       wchar/wmemcpy_s.lo
+  CC       wchar/wmemmove_s.lo
+  CC       wchar/wcstok_s.lo
+  CC       wchar/vswprintf_s.lo
+  CC       wchar/swprintf_s.lo
+  CC       wchar/vfwprintf_s.lo
+  CC       wchar/vwprintf_s.lo
+  CC       wchar/wprintf_s.lo
+  CC       wchar/fwprintf_s.lo
+  CC       wchar/swscanf_s.lo
+  CC       wchar/vswscanf_s.lo
+  CC       wchar/wscanf_s.lo
+  CC       wchar/vfwscanf_s.lo
+  CC       wchar/fwscanf_s.lo
+  CC       wchar/vwscanf_s.lo
+  CC       wchar/snwprintf_s.lo
+  CC       wchar/vsnwprintf_s.lo
+  CC       extwchar/wcsstr_s.lo
+  CC       extwchar/wmemcmp_s.lo
+  CC       extwchar/wcscmp_s.lo
+  CC       extwchar/wcsncmp_s.lo
+  CC       extwchar/wcsicmp_s.lo
+  CC       extwchar/wcsnatcmp_s.lo
+  CC       extwchar/wcsset_s.lo
+  CC       extwchar/wcsnset_s.lo
+  CC       extwchar/wcscoll_s.lo
+  CC       extwchar/wcslwr_s.lo
+  CC       extwchar/wcsupr_s.lo
+  CC       extwchar/towfc_s.lo
+  CC       extwchar/towctrans.lo
+  CC       extwchar/wcsfc_s.lo
+  CC       extwchar/wcsnorm_s.lo
+  CC       extmem/memset16_s.lo
+  CC       extmem/memset32_s.lo
+  CC       extmem/memcpy16_s.lo
+  CC       extmem/memcpy32_s.lo
+  CC       extmem/memmove16_s.lo
+  CC       extmem/memmove32_s.lo
+  CC       extmem/memcmp_s.lo
+  CC       extmem/memcmp16_s.lo
+  CC       extmem/memcmp32_s.lo
+  CC       extmem/memzero_s.lo
+  CC       extmem/memzero16_s.lo
+  CC       extmem/memzero32_s.lo
+  CC       extmem/memchr_s.lo
+  CC       extmem/memrchr_s.lo
+  CC       extmem/memccpy_s.lo
+  CC       extmem/timingsafe_memcmp.lo
+  CC       extmem/timingsafe_bcmp.lo
+  CC       extstr/strcasecmp_s.lo
+  CC       extstr/strcasestr_s.lo
+  CC       extstr/strcmp_s.lo
+  CC       extstr/strcmpfld_s.lo
+  CC       extstr/strcpyfld_s.lo
+  CC       extstr/strcpyfldin_s.lo
+  CC       extstr/strcpyfldout_s.lo
+  CC       extstr/strcspn_s.lo
+  CC       extstr/strfirstchar_s.lo
+  CC       extstr/strfirstdiff_s.lo
+  CC       extstr/strfirstsame_s.lo
+  CC       extstr/strisalphanumeric_s.lo
+  CC       extstr/strisascii_s.lo
+  CC       extstr/strisdigit_s.lo
+  CC       extstr/strishex_s.lo
+  CC       extstr/strislowercase_s.lo
+  CC       extstr/strismixedcase_s.lo
+  CC       extstr/strispassword_s.lo
+  CC       extstr/strisuppercase_s.lo
+  CC       extstr/strlastchar_s.lo
+  CC       extstr/strlastdiff_s.lo
+  CC       extstr/strlastsame_s.lo
+  CC       extstr/strljustify_s.lo
+  CC       extstr/strnatcmp_s.lo
+  CC       extstr/strnterminate_s.lo
+  CC       extstr/strpbrk_s.lo
+  CC       extstr/strprefix_s.lo
+  CC       extstr/strremovews_s.lo
+  CC       extstr/strspn_s.lo
+  CC       extstr/strchr_s.lo
+  CC       extstr/strrchr_s.lo
+  CC       extstr/strstr_s.lo
+  CC       extstr/strtolowercase_s.lo
+  CC       extstr/strtouppercase_s.lo
+  CC       extstr/strzero_s.lo
+  CC       extstr/strset_s.lo
+  CC       extstr/strnset_s.lo
+  CC       extstr/strcoll_s.lo
+  CC       mem/mem_primitives_lib.lo
+  CCLD     libmemprims.la
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+  CC       abort_handler_s.lo
+  CC       ignore_handler_s.lo
+  CCLD     libsafeccore.la
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+  CCLD     libsafec-3.6.0.la
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+Making all in tests
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+  CC       perf_memcpy_s.o
+  CCLD     p_memcpy_s
+  CC       perf_memset_s.o
+  CCLD     p_memset_s
+  CC       perf_strcpy_s.o
+  CCLD     p_strcpy_s
+  CC       perf_memcpy32_s.o
+  CCLD     p_memcpy32_s
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+cp ./README README.md
+rm doc/man/man3/EOK.3
+doxygen
+warning: Included by graph for 'safe_lib.h' not generated, too many nodes. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'safe_mem_lib.h' not generated, too many nodes. Consider increasing DOT_GRAPH_MAX_NODES.
+warning: Included by graph for 'safe_str_lib.h' not generated, too many nodes. Consider increasing DOT_GRAPH_MAX_NODES.
+/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src/str/sprintf_s.c:44: warning: argument 'fmt' of command @param is not found in the argument list of sprintf_s(dest, dmax,...)
+/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src/str/snprintf_s.c:45: warning: argument 'fmt' of command @param is not found in the argument list of snprintf_s(dest, dmax,...)
+/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src/wchar/snwprintf_s.c:45: warning: argument 'fmt' of command @param is not found in the argument list of snwprintf_s(dest, dmax,...)
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da5/ctime__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da5/ctime__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da5/ctime__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/de4/bsearch__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/de4/bsearch__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/de4/bsearch__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d35/asctime__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d35/asctime__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d35/asctime__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d31/freopen__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d31/freopen__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d31/freopen__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddd/fscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddd/fscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddd/fscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da3/fwprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da3/fwprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da3/fwprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/def/fopen__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/def/fopen__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/def/fopen__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dfb/fprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dfb/fprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dfb/fprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dc5/fwscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dc5/fwscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dc5/fwscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dc6/getenv__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dc6/getenv__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dc6/getenv__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d82/abort__handler__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d82/abort__handler__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d82/abort__handler__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dbf/gmtime__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dbf/gmtime__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dbf/gmtime__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d9a/gets__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d9a/gets__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d9a/gets__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbc/ignore__handler__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbc/ignore__handler__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbc/ignore__handler__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/df4/localtime__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/df4/localtime__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/df4/localtime__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/mbstowcs__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/mbstowcs__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/mbstowcs__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d3d/mem__primitives__lib_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d3d/mem__primitives__lib_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d3d/mem__primitives__lib_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d54/hangul_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d54/hangul_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d54/hangul_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da4/mem__primitives__lib_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da4/mem__primitives__lib_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da4/mem__primitives__lib_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d08/mbsrtowcs__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d08/mbsrtowcs__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d08/mbsrtowcs__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d8e/memccpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d8e/memccpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d8e/memccpy__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d37/memcmp16__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d37/memcmp16__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d37/memcmp16__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/df7/memcmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/df7/memcmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/df7/memcmp__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d85/memchr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d85/memchr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d85/memchr__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dc0/memcpy16__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dc0/memcpy16__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dc0/memcpy16__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dd9/memcpy32__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dd9/memcpy32__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dd9/memcpy32__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/dc2/memcmp32__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/dc2/memcmp32__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/dc2/memcmp32__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d16/memmove16__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d16/memmove16__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d16/memmove16__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da4/memmove32__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da4/memmove32__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da4/memmove32__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d36/memcpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d36/memcpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d36/memcpy__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d61/memset16__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d61/memset16__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d61/memset16__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d6c/memrchr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d6c/memrchr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d6c/memrchr__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/memset32__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/memset32__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/memset32__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d80/memmove__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d80/memmove__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d80/memmove__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d18/memset__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d18/memset__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d18/memset__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dfa/memzero16__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dfa/memzero16__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dfa/memzero16__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d9f/memzero32__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d9f/memzero32__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d9f/memzero32__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d32/memzero__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d32/memzero__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d32/memzero__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dd6/printf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dd6/printf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dd6/printf__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d0e/safe__config_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d0e/safe__config_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d0e/safe__config_8h__dep__incl.map"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d0d/safe__compile_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d0d/safe__compile_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d0d/safe__compile_8h__dep__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddf/qsort__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddf/qsort__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddf/qsort__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d07/safe__lib_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d07/safe__lib_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d07/safe__lib_8h__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd4/safe__lib__errno_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd4/safe__lib__errno_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd4/safe__lib__errno_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d82/safe__lib__errno_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d82/safe__lib__errno_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d82/safe__lib__errno_8h__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/safe__mem__constraint_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/safe__mem__constraint_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/safe__mem__constraint_8h__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d12/safe__mem__constraint_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d12/safe__mem__constraint_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d12/safe__mem__constraint_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/dca/safe__mem__constraint_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/dca/safe__mem__constraint_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/dca/safe__mem__constraint_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da0/safe__mem__lib_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da0/safe__mem__lib_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da0/safe__mem__lib_8h__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d7b/safe__str__constraint_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d7b/safe__str__constraint_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d7b/safe__str__constraint_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d1f/safe__str__lib_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d1f/safe__str__lib_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d1f/safe__str__lib_8h__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d8b/safe__str__constraint_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d8b/safe__str__constraint_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d8b/safe__str__constraint_8h__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/da7/safe__str__constraint_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/da7/safe__str__constraint_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/da7/safe__str__constraint_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/da5/safe__types_8h__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/da5/safe__types_8h__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/da5/safe__types_8h__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc2/scanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc2/scanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc2/scanf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d28/safe__types_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d28/safe__types_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d28/safe__types_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d33/slkm__init_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d33/slkm__init_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d33/slkm__init_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d12/snwprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d12/snwprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d12/snwprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/ddc/sprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/ddc/sprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/ddc/sprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/de3/strcasecmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/de3/strcasecmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/de3/strcasecmp__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d2b/snprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d2b/snprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d2b/snprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d88/strcasestr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d88/strcasestr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d88/strcasestr__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d6a/sscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d6a/sscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d6a/sscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddf/strcat__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddf/strcat__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddf/strcat__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d5b/strcmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d5b/strcmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d5b/strcmp__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dc7/strcmpfld__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dc7/strcmpfld__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dc7/strcmpfld__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/deb/strcoll__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/deb/strcoll__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/deb/strcoll__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc9/strchr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc9/strchr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc9/strchr__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/dca/strcpyfld__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/dca/strcpyfld__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/dca/strcpyfld__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/da8/strcpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/da8/strcpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/da8/strcpy__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dff/strcpyfldin__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dff/strcpyfldin__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dff/strcpyfldin__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/def/strcspn__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/def/strcspn__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/def/strcspn__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d2b/strerror__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d2b/strerror__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d2b/strerror__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/strcpyfldout__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/strcpyfldout__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/strcpyfldout__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d2b/strfirstchar__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d2b/strfirstchar__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d2b/strfirstchar__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/dbf/strfirstdiff__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/dbf/strfirstdiff__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/dbf/strfirstdiff__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d31/strisdigit__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d31/strisdigit__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d31/strisdigit__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d14/strisalphanumeric__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d14/strisalphanumeric__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d14/strisalphanumeric__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d9d/strishex__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d9d/strishex__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d9d/strishex__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d0a/strfirstsame__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d0a/strfirstsame__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d0a/strfirstsame__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/db3/strisascii__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/db3/strisascii__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/db3/strisascii__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d35/strismixedcase__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d35/strismixedcase__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d35/strismixedcase__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d9e/strispassword__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d9e/strispassword__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d9e/strispassword__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dfe/strlastchar__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dfe/strlastchar__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dfe/strlastchar__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d63/strlastdiff__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d63/strlastdiff__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d63/strlastdiff__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddc/strislowercase__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddc/strislowercase__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddc/strislowercase__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd7/strnatcmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd7/strnatcmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd7/strnatcmp__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dfd/strlastsame__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dfd/strlastsame__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dfd/strlastsame__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d46/strisuppercase__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d46/strisuppercase__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d46/strisuppercase__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d43/strncat__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d43/strncat__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d43/strncat__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8b/strnset__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8b/strnset__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8b/strnset__s_8c__incl.map"'
+sh: 1: dot: not found
+dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd5/strljustify__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd5/strljustify__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd5/strljustify__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7e/strncpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7e/strncpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7e/strncpy__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7b/strnlen__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7b/strnlen__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7b/strnlen__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/df1/strpbrk__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/df1/strpbrk__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/df1/strpbrk__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc0/strprefix__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc0/strprefix__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc0/strprefix__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d66/strnterminate__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d66/strnterminate__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d66/strnterminate__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d47/strrchr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d47/strrchr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d47/strrchr__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d8c/strremovews__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d8c/strremovews__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d8c/strremovews__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d70/strset__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d70/strset__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d70/strset__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd1/strspn__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd1/strspn__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd1/strspn__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d31/strtok__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d31/strtok__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d31/strtok__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbe/strstr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbe/strstr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbe/strstr__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/strtouppercase__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/strtouppercase__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/strtouppercase__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d84/strtolowercase__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d84/strtolowercase__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d84/strtolowercase__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d24/strzero__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d24/strzero__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d24/strzero__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d36/swprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d36/swprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d36/swprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d01/swscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d01/swscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d01/swscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d90/timingsafe__memcmp_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d90/timingsafe__memcmp_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d90/timingsafe__memcmp_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d78/tmpfile__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d78/tmpfile__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d78/tmpfile__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/df4/timingsafe__bcmp_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/df4/timingsafe__bcmp_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/df4/timingsafe__bcmp_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dae/towctrans_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dae/towctrans_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dae/towctrans_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d55/towfc__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d55/towfc__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d55/towfc__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d10/unw16ifcan_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d10/unw16ifcan_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d10/unw16ifcan_8h__dep__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d9f/unw16ifcmb_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d9f/unw16ifcmb_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d9f/unw16ifcmb_8h__dep__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da2/unw16ifexc_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da2/unw16ifexc_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da2/unw16ifexc_8h__dep__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/db1/tmpnam__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/db1/tmpnam__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/db1/tmpnam__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d73/vfprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d73/vfprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d73/vfprintf__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d54/unw16ifcmp_8h__dep__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d54/unw16ifcmp_8h__dep__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d54/unw16ifcmp_8h__dep__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d47/vfscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d47/vfscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d47/vfscanf__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d9a/vfwprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d9a/vfwprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d9a/vfwprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/dfb/vprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/dfb/vprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/dfb/vprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d85/vfwscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d85/vfwscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d85/vfwscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d01/vscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d01/vscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d01/vscanf__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d77/vsnwprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d77/vsnwprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d77/vsnwprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d2e/vsprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d2e/vsprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d2e/vsprintf__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d4a/vswscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d4a/vswscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d4a/vswscanf__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d5c/vsscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d5c/vsscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d5c/vsscanf__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d4b/vsnprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d4b/vsnprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d4b/vsnprintf__s_8c__incl.map"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d2c/vswprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d2c/vswprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d2c/vswprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/da2/wcrtomb__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/da2/wcrtomb__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/da2/wcrtomb__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d9f/vwscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d9f/vwscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d9f/vwscanf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d57/wcscat__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d57/wcscat__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d57/wcscat__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dd0/vwprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dd0/vwprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dd0/vwprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d0e/wcscmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d0e/wcscmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d0e/wcscmp__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/db8/wcscpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/db8/wcscpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/db8/wcscpy__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d82/wcscoll__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d82/wcscoll__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d82/wcscoll__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/df0/wcsfc__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/df0/wcsfc__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/df0/wcsfc__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d15/wcslwr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d15/wcslwr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d15/wcslwr__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8f/wcsnatcmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8f/wcsnatcmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8f/wcsnatcmp__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d28/wcsicmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d28/wcsicmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d28/wcsicmp__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da1/wcsncat__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da1/wcsncat__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da1/wcsncat__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc2/wcsncmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc2/wcsncmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc2/wcsncmp__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dd0/wcsncpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dd0/wcsncpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dd0/wcsncpy__s_8c__incl.map"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/db0/wcsnorm__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/db0/wcsnorm__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/db0/wcsnorm__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/dfa/wcsnlen__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/dfa/wcsnlen__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/dfa/wcsnlen__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d45/wcsrtombs__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d45/wcsrtombs__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d45/wcsrtombs__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d08/wcsnset__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d08/wcsnset__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d08/wcsnset__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d71/wcsstr_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d71/wcsstr_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d71/wcsstr_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d65/wcsset__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d65/wcsset__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d65/wcsset__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d13/wcstombs__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d13/wcstombs__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d13/wcstombs__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d4f/wcsupr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d4f/wcsupr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d4f/wcsupr__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da7/wcsstr__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da7/wcsstr__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da7/wcsstr__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d2d/wcstok__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d2d/wcstok__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d2d/wcstok__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d0e/wctomb__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d0e/wctomb__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d0e/wctomb__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc7/wmemcpy__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc7/wmemcpy__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc7/wmemcpy__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d94/wmemcmp__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d94/wmemcmp__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d94/wmemcmp__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/da9/wmemmove__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/da9/wmemmove__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/da9/wmemmove__s_8c__incl.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dff/wprintf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dff/wprintf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dff/wprintf__s_8c__incl.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/wscanf__s_8c__incl.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/wscanf__s_8c__incl.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/wscanf__s_8c__incl.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_098f96d9aedd707c995695089b479f0c_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_098f96d9aedd707c995695089b479f0c_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_098f96d9aedd707c995695089b479f0c_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_52950a69661d8f09edbff6c0ef8ebd11_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_52950a69661d8f09edbff6c0ef8ebd11_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_52950a69661d8f09edbff6c0ef8ebd11_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_c184e51c84f2c3f0345bbc8a0d75d3e1_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_c184e51c84f2c3f0345bbc8a0d75d3e1_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_c184e51c84f2c3f0345bbc8a0d75d3e1_dep.map"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_9d06de122c6b3cd03cc49101ab68d3b6_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_9d06de122c6b3cd03cc49101ab68d3b6_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_9d06de122c6b3cd03cc49101ab68d3b6_dep.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/graph_legend.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/graph_legend.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_622d6f97fa5c1d8a93db70ff15b3a1df_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_622d6f97fa5c1d8a93db70ff15b3a1df_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_622d6f97fa5c1d8a93db70ff15b3a1df_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_a71443761d886d6152d96ebd3fda63af_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_a71443761d886d6152d96ebd3fda63af_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_a71443761d886d6152d96ebd3fda63af_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_3626fa24880620b7f1cffd2b3442ca73_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_3626fa24880620b7f1cffd2b3442ca73_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_3626fa24880620b7f1cffd2b3442ca73_dep.map"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_88826aa2a10e1882b573f502bc7f4b55_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_88826aa2a10e1882b573f502bc7f4b55_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_88826aa2a10e1882b573f502bc7f4b55_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_ce758a24fd4f9b8e2b762ee99b07530a_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_ce758a24fd4f9b8e2b762ee99b07530a_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_ce758a24fd4f9b8e2b762ee99b07530a_dep.map"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.dot" -Tpng -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.png" -Tcmapx -o "/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.map"'
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d82/abort__handler__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d35/asctime__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/de4/bsearch__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da5/ctime__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/def/fopen__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dfb/fprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d31/freopen__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddd/fscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da3/fwprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dc5/fwscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dc6/getenv__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d9a/gets__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dbf/gmtime__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d54/hangul_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbc/ignore__handler__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/df4/localtime__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d08/mbsrtowcs__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/mbstowcs__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d3d/mem__primitives__lib_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/da4/mem__primitives__lib_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d8e/memccpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d85/memchr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d37/memcmp16__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/dc2/memcmp32__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/df7/memcmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dc0/memcpy16__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dd9/memcpy32__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d36/memcpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d16/memmove16__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da4/memmove32__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d80/memmove__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d6c/memrchr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d61/memset16__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/memset32__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d18/memset__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dfa/memzero16__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d9f/memzero32__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/d32/memzero__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dd6/printf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/ddf/qsort__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d0d/safe__compile_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d0e/safe__config_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d07/safe__lib_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d82/safe__lib__errno_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd4/safe__lib__errno_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d12/safe__mem__constraint_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/dda/safe__mem__constraint_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/dca/safe__mem__constraint_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/da0/safe__mem__lib_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d7b/safe__str__constraint_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d8b/safe__str__constraint_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/da7/safe__str__constraint_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d1f/safe__str__lib_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/da5/safe__types_8h__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d28/safe__types_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc2/scanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d33/slkm__init_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d2b/snprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d12/snwprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/ddc/sprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d6a/sscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/de3/strcasecmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d88/strcasestr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddf/strcat__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc9/strchr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d5b/strcmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dc7/strcmpfld__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/deb/strcoll__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/da8/strcpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/dca/strcpyfld__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/dff/strcpyfldin__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/strcpyfldout__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/def/strcspn__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d2b/strerror__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d2b/strfirstchar__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/dbf/strfirstdiff__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d0a/strfirstsame__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d14/strisalphanumeric__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/db3/strisascii__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d31/strisdigit__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d9d/strishex__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/ddc/strislowercase__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d35/strismixedcase__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d9e/strispassword__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d46/strisuppercase__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/dfe/strlastchar__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/d63/strlastdiff__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/dfd/strlastsame__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd5/strljustify__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/dd7/strnatcmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d43/strncat__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7e/strncpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d7b/strnlen__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8b/strnset__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d66/strnterminate__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/df1/strpbrk__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc0/strprefix__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d47/strrchr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d8c/strremovews__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d70/strset__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dd1/strspn__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/dbe/strstr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d31/strtok__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d84/strtolowercase__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/da3/strtouppercase__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d24/strzero__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d36/swprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d01/swscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/df4/timingsafe__bcmp_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d90/timingsafe__memcmp_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d78/tmpfile__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/db1/tmpnam__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/dae/towctrans_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d55/towfc__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d10/unw16ifcan_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d9f/unw16ifcmb_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/d54/unw16ifcmp_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/da2/unw16ifexc_8h__dep__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d73/vfprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d47/vfscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d9a/vfwprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/d85/vfwscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d7/dfb/vprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d01/vscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d4b/vsnprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d77/vsnwprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d2e/vsprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/df/d5c/vsscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/d2c/vswprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d4a/vswscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dd0/vwprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d9f/vwscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/da2/wcrtomb__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d57/wcscat__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d0e/wcscmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/d82/wcscoll__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/db8/wcscpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d0/df0/wcsfc__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d28/wcsicmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/d15/wcslwr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dd/d8f/wcsnatcmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da1/wcsncat__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d1/dc2/wcsncmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d3/dd0/wcsncpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d2/dfa/wcsnlen__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/de/db0/wcsnorm__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dc/d08/wcsnset__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d45/wcsrtombs__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d65/wcsset__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d71/wcsstr_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d4/da7/wcsstr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d8/d2d/wcstok__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d6/d13/wcstombs__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/d4f/wcsupr__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d9/d0e/wctomb__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/db/d94/wmemcmp__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dc7/wmemcpy__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/da9/wmemmove__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/da/dff/wprintf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/d5/d45/wscanf__s_8c__incl.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_098f96d9aedd707c995695089b479f0c_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_52950a69661d8f09edbff6c0ef8ebd11_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_9d06de122c6b3cd03cc49101ab68d3b6_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_c184e51c84f2c3f0345bbc8a0d75d3e1_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_622d6f97fa5c1d8a93db70ff15b3a1df_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_88826aa2a10e1882b573f502bc7f4b55_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_a71443761d886d6152d96ebd3fda63af_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_68267d1309a1af8e8297ef4c3efbcdba_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_3626fa24880620b7f1cffd2b3442ca73_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/doc/html/dir_ce758a24fd4f9b8e2b762ee99b07530a_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+make[1]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+
+root@96f413953c2f:/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d9
+21f# make install
+make  install-recursive
+make[1]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+Making install in src
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+make[3]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+ /bin/mkdir -p '/usr/local/lib'
+ /bin/bash ../libtool   --mode=install /usr/bin/install -c   libsafec-3.6.0.la '/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libsafec-3.6.0.so.3.0.6 /usr/local/lib/libsafec-3.6.0.so.3.0.6
+libtool: install: (cd /usr/local/lib && { ln -s -f libsafec-3.6.0.so.3.0.6 libsafec-3.6.0.so.3 || { rm -f libsafec-3.6.0.so.3 && ln -s libsafec-3.6.0.so.3.0.6 libsafec-3.6.0.so.3; }; })
+libtool: install: (cd /usr/local/lib && { ln -s -f libsafec-3.6.0.so.3.0.6 libsafec-3.6.0.so || { rm -f libsafec-3.6.0.so && ln -s libsafec-3.6.0.so.3.0.6 libsafec-3.6.0.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsafec-3.6.0.lai /usr/local/lib/libsafec-3.6.0.la
+libtool: install: /usr/bin/install -c .libs/libsafec-3.6.0.a /usr/local/lib/libsafec-3.6.0.a
+libtool: install: chmod 644 /usr/local/lib/libsafec-3.6.0.a
+libtool: install: gcc-ranlib /usr/local/lib/libsafec-3.6.0.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /usr/local/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/src'
+Making install in tests
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+make[3]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f/tests'
+make[2]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+make[3]: Entering directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+ /bin/mkdir -p '/usr/local/bin'
+ /usr/bin/install -c ./scripts/check_for_unsafe_apis '/usr/local/bin'
+ /bin/mkdir -p '/usr/local/include/libsafec'
+ /usr/bin/install -c -m 644 include/safe_config.h include/safe_types.h include/safe_lib_errno.h '/usr/local/include/libsafec'
+ /bin/mkdir -p '/usr/local/share/man/man1'
+ /usr/bin/install -c -m 644 doc/man/man1/check_for_unsafe_apis.1 '/usr/local/share/man/man1'
+ /bin/mkdir -p '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/EOK.3 doc/man/man3/ESEMPTY.3 doc/man/man3/ESLAST.3 doc/man/man3/ESLEMAX.3 doc/man/man3/ESLEMIN.3 doc/man/man3/ESLEWRNG.3 doc/man/man3/ESNODIFF.3 doc/man/man3/ESNOSPC.3 doc/man/man3/ESNOTFND.3 doc/man/man3/ESNULLP.3 doc/man/man3/ESOVRLP.3 doc/man/man3/ESUNTERM.3 doc/man/man3/ESZEROL.3 doc/man/man3/L_tmpnam_s.3 doc/man/man3/RSIZE_MAX.3 doc/man/man3/RSIZE_MAX_MEM.3 doc/man/man3/RSIZE_MAX_MEM16.3 doc/man/man3/RSIZE_MAX_MEM32.3 doc/man/man3/RSIZE_MAX_STR.3 doc/man/man3/RSIZE_MAX_WMEM.3 doc/man/man3/RSIZE_MAX_WSTR.3 doc/man/man3/RSIZE_MIN_STR.3 doc/man/man3/SAFECLIB_STR_NULL_SLACK.3 doc/man/man3/SAFE_STR_MIN_LOWERCASE.3 doc/man/man3/SAFE_STR_MIN_NUMBERS.3 doc/man/man3/SAFE_STR_MIN_SPECIALS.3 doc/man/man3/SAFE_STR_MIN_UPPERCASE.3 doc/man/man3/SAFE_STR_PASSWORD_MAX_LENGTH.3 doc/man/man3/SAFE_STR_PASSWORD_MIN_LENGTH.3 doc/man/man3/STRTOK_DELIM_MAX_LEN.3 doc/man/man3/TMP_MAX_S.3 doc/man/man3/abort_handler_s.3 doc/man/man3/abort_handler_s.c.3 doc/man/man3/asctime_s.3 doc/man/man3/asctime_s.c.3 doc/man/man3/bsearch_s.3 doc/man/man3/bsearch_s.c.3 doc/man/man3/constraint_handler_t.3 doc/man/man3/ctime_s.3 doc/man/man3/ctime_s.c.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/fopen_s.3 doc/man/man3/fopen_s.c.3 doc/man/man3/fprintf_s.3 doc/man/man3/fprintf_s.c.3 doc/man/man3/freopen_s.3 doc/man/man3/freopen_s.c.3 doc/man/man3/fscanf_s.3 doc/man/man3/fscanf_s.c.3 doc/man/man3/fwprintf_s.3 doc/man/man3/fwprintf_s.c.3 doc/man/man3/fwscanf_s.3 doc/man/man3/fwscanf_s.c.3 doc/man/man3/getenv_s.3 doc/man/man3/getenv_s.c.3 doc/man/man3/gets_s.3 doc/man/man3/gets_s.c.3 doc/man/man3/gmtime_s.3 doc/man/man3/gmtime_s.c.3 doc/man/man3/ignore_handler_s.3 doc/man/man3/ignore_handler_s.c.3 doc/man/man3/invoke_safe_mem_constraint_handler.3 doc/man/man3/invoke_safe_str_constraint_handler.3 doc/man/man3/localtime_s.3 doc/man/man3/localtime_s.c.3 doc/man/man3/mbsrtowcs_s.3 doc/man/man3/mbsrtowcs_s.c.3 doc/man/man3/mbstowcs_s.3 doc/man/man3/mbstowcs_s.c.3 doc/man/man3/mem_handler.3 doc/man/man3/mem_prim_move.3 doc/man/man3/mem_prim_move16.3 doc/man/man3/mem_prim_move32.3 doc/man/man3/mem_prim_move8.3 doc/man/man3/mem_prim_set.3 doc/man/man3/mem_prim_set16.3 doc/man/man3/mem_prim_set32.3 doc/man/man3/mem_primitives_lib.c.3 doc/man/man3/mem_primitives_lib.h.3 doc/man/man3/memccpy_s.3 doc/man/man3/memccpy_s.c.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/memchr_s.3 doc/man/man3/memchr_s.c.3 doc/man/man3/memcmp16_s.3 doc/man/man3/memcmp16_s.c.3 doc/man/man3/memcmp32_s.3 doc/man/man3/memcmp32_s.c.3 doc/man/man3/memcmp_s.3 doc/man/man3/memcmp_s.c.3 doc/man/man3/memcpy16_s.3 doc/man/man3/memcpy16_s.c.3 doc/man/man3/memcpy32_s.3 doc/man/man3/memcpy32_s.c.3 doc/man/man3/memcpy_s.3 doc/man/man3/memcpy_s.c.3 doc/man/man3/memmove16_s.3 doc/man/man3/memmove16_s.c.3 doc/man/man3/memmove32_s.3 doc/man/man3/memmove32_s.c.3 doc/man/man3/memmove_s.3 doc/man/man3/memmove_s.c.3 doc/man/man3/memrchr_s.3 doc/man/man3/memrchr_s.c.3 doc/man/man3/memset16_s.3 doc/man/man3/memset16_s.c.3 doc/man/man3/memset32_s.3 doc/man/man3/memset32_s.c.3 doc/man/man3/memset_s.3 doc/man/man3/memset_s.c.3 doc/man/man3/memzero16_s.3 doc/man/man3/memzero16_s.c.3 doc/man/man3/memzero32_s.3 doc/man/man3/memzero32_s.c.3 doc/man/man3/memzero_s.3 doc/man/man3/memzero_s.c.3 doc/man/man3/printf_s.3 doc/man/man3/printf_s.c.3 doc/man/man3/qsort_s.3 doc/man/man3/qsort_s.c.3 doc/man/man3/rsize_t.3 doc/man/man3/safe_compile.h.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/safe_config.h.3 doc/man/man3/safe_lib.h.3 doc/man/man3/safe_lib_errno.h.3 doc/man/man3/safe_mem_constraint.c.3 doc/man/man3/safe_mem_constraint.h.3 doc/man/man3/safe_mem_lib.h.3 doc/man/man3/safe_str_constraint.c.3 doc/man/man3/safe_str_constraint.h.3 doc/man/man3/safe_str_lib.h.3 doc/man/man3/safe_types.h.3 doc/man/man3/scanf_s.3 doc/man/man3/scanf_s.c.3 doc/man/man3/set_mem_constraint_handler_s.3 doc/man/man3/set_str_constraint_handler_s.3 doc/man/man3/snprintf_s.3 doc/man/man3/snprintf_s.c.3 doc/man/man3/snwprintf_s.3 doc/man/man3/snwprintf_s.c.3 doc/man/man3/sprintf_s.3 doc/man/man3/sprintf_s.c.3 doc/man/man3/sscanf_s.3 doc/man/man3/sscanf_s.c.3 doc/man/man3/str_handler.3 doc/man/man3/strcasecmp_s.3 doc/man/man3/strcasecmp_s.c.3 doc/man/man3/strcasestr_s.3 doc/man/man3/strcasestr_s.c.3 doc/man/man3/strcat_s.3 doc/man/man3/strcat_s.c.3 doc/man/man3/strchr_s.3 doc/man/man3/strchr_s.c.3 doc/man/man3/strcmp_s.3 doc/man/man3/strcmp_s.c.3 doc/man/man3/strcmpfld_s.3 doc/man/man3/strcmpfld_s.c.3 doc/man/man3/strcoll_s.3 doc/man/man3/strcoll_s.c.3 doc/man/man3/strcpy_s.3 doc/man/man3/strcpy_s.c.3 doc/man/man3/strcpyfld_s.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/strcpyfld_s.c.3 doc/man/man3/strcpyfldin_s.3 doc/man/man3/strcpyfldin_s.c.3 doc/man/man3/strcpyfldout_s.3 doc/man/man3/strcpyfldout_s.c.3 doc/man/man3/strcspn_s.3 doc/man/man3/strcspn_s.c.3 doc/man/man3/strerror_s.3 doc/man/man3/strerror_s.c.3 doc/man/man3/strerror_s.h.3 doc/man/man3/strerrorlen_s.3 doc/man/man3/strfirstchar_s.3 doc/man/man3/strfirstchar_s.c.3 doc/man/man3/strfirstdiff_s.3 doc/man/man3/strfirstdiff_s.c.3 doc/man/man3/strfirstsame_s.3 doc/man/man3/strfirstsame_s.c.3 doc/man/man3/strisalphanumeric_s.3 doc/man/man3/strisalphanumeric_s.c.3 doc/man/man3/strisascii_s.3 doc/man/man3/strisascii_s.c.3 doc/man/man3/strisdigit_s.3 doc/man/man3/strisdigit_s.c.3 doc/man/man3/strishex_s.3 doc/man/man3/strishex_s.c.3 doc/man/man3/strislowercase_s.3 doc/man/man3/strislowercase_s.c.3 doc/man/man3/strismixedcase_s.3 doc/man/man3/strismixedcase_s.c.3 doc/man/man3/strispassword_s.3 doc/man/man3/strispassword_s.c.3 doc/man/man3/strisuppercase_s.3 doc/man/man3/strisuppercase_s.c.3 doc/man/man3/strlastchar_s.3 doc/man/man3/strlastchar_s.c.3 doc/man/man3/strlastdiff_s.3 doc/man/man3/strlastdiff_s.c.3 doc/man/man3/strlastsame_s.3 doc/man/man3/strlastsame_s.c.3 doc/man/man3/strljustify_s.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/strljustify_s.c.3 doc/man/man3/strlwr_s.3 doc/man/man3/strnatcasecmp_s.3 doc/man/man3/strnatcmp_s.3 doc/man/man3/strnatcmp_s.c.3 doc/man/man3/strncat_s.3 doc/man/man3/strncat_s.c.3 doc/man/man3/strncpy_s.3 doc/man/man3/strncpy_s.c.3 doc/man/man3/strnlen_s.3 doc/man/man3/strnlen_s.c.3 doc/man/man3/strnset_s.3 doc/man/man3/strnset_s.c.3 doc/man/man3/strnterminate_s.3 doc/man/man3/strnterminate_s.c.3 doc/man/man3/strpbrk_s.3 doc/man/man3/strpbrk_s.c.3 doc/man/man3/strprefix_s.3 doc/man/man3/strprefix_s.c.3 doc/man/man3/strrchr_s.3 doc/man/man3/strrchr_s.c.3 doc/man/man3/strremovews_s.3 doc/man/man3/strremovews_s.c.3 doc/man/man3/strset_s.3 doc/man/man3/strset_s.c.3 doc/man/man3/strspn_s.3 doc/man/man3/strspn_s.c.3 doc/man/man3/strstr_s.3 doc/man/man3/strstr_s.c.3 doc/man/man3/strtok_s.3 doc/man/man3/strtok_s.c.3 doc/man/man3/strtolowercase_s.3 doc/man/man3/strtolowercase_s.c.3 doc/man/man3/strtouppercase_s.3 doc/man/man3/strtouppercase_s.c.3 doc/man/man3/strupr_s.3 doc/man/man3/strzero_s.3 doc/man/man3/strzero_s.c.3 doc/man/man3/swprintf_s.3 doc/man/man3/swprintf_s.c.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/swscanf_s.3 doc/man/man3/swscanf_s.c.3 doc/man/man3/timingsafe_bcmp.3 doc/man/man3/timingsafe_bcmp.c.3 doc/man/man3/timingsafe_memcmp.3 doc/man/man3/timingsafe_memcmp.c.3 doc/man/man3/tmpfile_s.3 doc/man/man3/tmpfile_s.c.3 doc/man/man3/tmpnam_s.3 doc/man/man3/tmpnam_s.c.3 doc/man/man3/towctrans.c.3 doc/man/man3/towfc_s.3 doc/man/man3/towfc_s.c.3 doc/man/man3/towlower.3 doc/man/man3/towupper.3 doc/man/man3/unw16ifcan.h.3 doc/man/man3/unw16ifcmb.h.3 doc/man/man3/unw16ifcmp.h.3 doc/man/man3/unw16ifcpt.h.3 doc/man/man3/unw16ifexc.h.3 doc/man/man3/unwifcan.h.3 doc/man/man3/unwifcmb.h.3 doc/man/man3/unwifcmp.h.3 doc/man/man3/unwifcpt.h.3 doc/man/man3/unwifexc.h.3 doc/man/man3/vfprintf_s.3 doc/man/man3/vfprintf_s.c.3 doc/man/man3/vfscanf_s.3 doc/man/man3/vfscanf_s.c.3 doc/man/man3/vfwprintf_s.3 doc/man/man3/vfwprintf_s.c.3 doc/man/man3/vfwscanf_s.3 doc/man/man3/vfwscanf_s.c.3 doc/man/man3/vprintf_s.3 doc/man/man3/vprintf_s.c.3 doc/man/man3/vscanf_s.3 doc/man/man3/vscanf_s.c.3 doc/man/man3/vsnprintf_s.3 doc/man/man3/vsnprintf_s.c.3 doc/man/man3/vsnwprintf_s.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/vsnwprintf_s.c.3 doc/man/man3/vsprintf_s.3 doc/man/man3/vsprintf_s.c.3 doc/man/man3/vsscanf_s.3 doc/man/man3/vsscanf_s.c.3 doc/man/man3/vswprintf_s.3 doc/man/man3/vswprintf_s.c.3 doc/man/man3/vswscanf_s.3 doc/man/man3/vswscanf_s.c.3 doc/man/man3/vwprintf_s.3 doc/man/man3/vwprintf_s.c.3 doc/man/man3/vwscanf_s.3 doc/man/man3/vwscanf_s.c.3 doc/man/man3/wcrtomb_s.3 doc/man/man3/wcrtomb_s.c.3 doc/man/man3/wcscat_s.3 doc/man/man3/wcscat_s.c.3 doc/man/man3/wcscmp_s.3 doc/man/man3/wcscmp_s.c.3 doc/man/man3/wcscoll_s.3 doc/man/man3/wcscoll_s.c.3 doc/man/man3/wcscpy_s.3 doc/man/man3/wcscpy_s.c.3 doc/man/man3/wcsfc_s.3 doc/man/man3/wcsfc_s.c.3 doc/man/man3/wcsicmp_s.3 doc/man/man3/wcsicmp_s.c.3 doc/man/man3/wcslwr_s.3 doc/man/man3/wcslwr_s.c.3 doc/man/man3/wcsnatcmp_s.3 doc/man/man3/wcsnatcmp_s.c.3 doc/man/man3/wcsnaticmp_s.3 doc/man/man3/wcsncat_s.3 doc/man/man3/wcsncat_s.c.3 doc/man/man3/wcsncmp_s.3 doc/man/man3/wcsncmp_s.c.3 doc/man/man3/wcsncpy_s.3 doc/man/man3/wcsncpy_s.c.3 doc/man/man3/wcsnlen_s.3 doc/man/man3/wcsnlen_s.c.3 '/usr/local/share/man/man3'
+ /usr/bin/install -c -m 644 doc/man/man3/wcsnorm_compose_s.3 doc/man/man3/wcsnorm_decompose_s.3 doc/man/man3/wcsnorm_reorder_s.3 doc/man/man3/wcsnorm_s.3 doc/man/man3/wcsnorm_s.c.3 doc/man/man3/wcsnset_s.3 doc/man/man3/wcsnset_s.c.3 doc/man/man3/wcsrtombs_s.3 doc/man/man3/wcsrtombs_s.c.3 doc/man/man3/wcsset_s.3 doc/man/man3/wcsset_s.c.3 doc/man/man3/wcsstr.3 doc/man/man3/wcsstr.c.3 doc/man/man3/wcsstr_s.3 doc/man/man3/wcsstr_s.c.3 doc/man/man3/wcstok_s.3 doc/man/man3/wcstok_s.c.3 doc/man/man3/wcstombs_s.3 doc/man/man3/wcstombs_s.c.3 doc/man/man3/wcsupr_s.3 doc/man/man3/wcsupr_s.c.3 doc/man/man3/wctomb_s.3 doc/man/man3/wctomb_s.c.3 doc/man/man3/wmemcmp_s.3 doc/man/man3/wmemcmp_s.c.3 doc/man/man3/wmemcpy_s.3 doc/man/man3/wmemcpy_s.c.3 doc/man/man3/wmemmove_s.3 doc/man/man3/wmemmove_s.c.3 doc/man/man3/wprintf_s.3 doc/man/man3/wprintf_s.c.3 doc/man/man3/wscanf_s.3 doc/man/man3/wscanf_s.c.3 '/usr/local/share/man/man3'
+ /bin/mkdir -p '/usr/local/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libsafec.pc '/usr/local/lib/pkgconfig'
+ /bin/mkdir -p '/usr/local/include/libsafec'
+ /usr/bin/install -c -m 644 include/safe_compile.h include/safe_lib.h include/safe_mem_lib.h include/safe_str_lib.h '/usr/local/include/libsafec'
+make[3]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+make[2]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'
+make[1]: Leaving directory '/tmp/github.com+0x2F+rurban+0x2F+safeclib/libsafec-02092020.0-g6d921f'

@@ -1,0 +1,178 @@
+root@96f413953c2f:/tmp# \
+mkdir -p github.com+0x2F+google+0x2F+flatbuffers && \
+curl -sSL https://github.com/google/flatbuffers/archive/v1.12.0.tar.gz | \
+tar -C github.com+0x2F+google+0x2F+flatbuffers -zxf-
+
+root@96f413953c2f:/tmp/github.com+0x2F+google+0x2F+flatbuffers/flatbuffers-1.12.0# \
+mkdir build && cd build
+
+root@96f413953c2f:/tmp/github.com+0x2F+google+0x2F+flatbuffers/flatbuffers-1.12.0/bu
+ild# cmake -DCMAKE_BUILD_TYPE=Release ..
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for strtof_l
+-- Looking for strtof_l - found
+-- Looking for strtoull_l
+-- Looking for strtoull_l - found
+-- `tests/monster_test.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `tests/monster_test.fbs`: add generation of binary (.bfbs) schema
+-- `tests/namespace_test/namespace_test1.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `tests/namespace_test/namespace_test2.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `tests/union_vector/union_vector.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `tests/native_type_test.fbs`: add generation of C++ code with ''
+-- `tests/arrays_test.fbs`: add generation of C++ code with '--scoped-enums;--gen-compare'
+-- `tests/arrays_test.fbs`: add generation of binary (.bfbs) schema
+-- `tests/monster_test.fbs`: add generation of C++ embedded binary schema code with '--no-includes;--gen-compare'
+-- `tests/monster_extra.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `samples/monster.fbs`: add generation of C++ code with '--no-includes;--gen-compare'
+-- `samples/monster.fbs`: add generation of binary (.bfbs) schema
+fatal: not a git repository (or any of the parent directories): .git
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/github.com+0x2F+google+0x2F+flatbuffers/flatbuffers-1.12.0/build
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+google+0x2F+flatbuffers/flatbuffers-1.12.0/bu
+ild# make
+Scanning dependencies of target flatc
+[  1%] Building CXX object CMakeFiles/flatc.dir/src/idl_parser.cpp.o
+[  2%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_text.cpp.o
+[  3%] Building CXX object CMakeFiles/flatc.dir/src/reflection.cpp.o
+[  4%] Building CXX object CMakeFiles/flatc.dir/src/util.cpp.o
+[  5%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_cpp.cpp.o
+[  7%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_csharp.cpp.o
+[  8%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_dart.cpp.o
+[  9%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_kotlin.cpp.o
+[ 10%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_go.cpp.o
+[ 11%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_java.cpp.o
+[ 12%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_js_ts.cpp.o
+[ 14%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_php.cpp.o
+[ 15%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_python.cpp.o
+[ 16%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_lobster.cpp.o
+[ 17%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_lua.cpp.o
+[ 18%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_rust.cpp.o
+[ 20%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_fbs.cpp.o
+[ 21%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_grpc.cpp.o
+[ 22%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_json_schema.cpp.o
+[ 23%] Building CXX object CMakeFiles/flatc.dir/src/idl_gen_swift.cpp.o
+[ 24%] Building CXX object CMakeFiles/flatc.dir/src/flatc.cpp.o
+[ 25%] Building CXX object CMakeFiles/flatc.dir/src/flatc_main.cpp.o
+[ 27%] Building CXX object CMakeFiles/flatc.dir/src/code_generators.cpp.o
+[ 28%] Building CXX object CMakeFiles/flatc.dir/grpc/src/compiler/cpp_generator.cc.o
+[ 29%] Building CXX object CMakeFiles/flatc.dir/grpc/src/compiler/go_generator.cc.o
+[ 30%] Building CXX object CMakeFiles/flatc.dir/grpc/src/compiler/java_generator.cc.o
+[ 31%] Building CXX object CMakeFiles/flatc.dir/grpc/src/compiler/python_generator.cc.o
+[ 32%] Building CXX object CMakeFiles/flatc.dir/grpc/src/compiler/swift_generator.cc.o
+[ 34%] Linking CXX executable flatc
+[ 34%] Built target flatc
+Scanning dependencies of target generated_code
+[ 35%] Run generation: 'tests/monster_test_generated.h'
+[ 36%] Run generation: 'tests/namespace_test/namespace_test1_generated.h'
+[ 37%] Run generation: 'tests/namespace_test/namespace_test2_generated.h'
+[ 38%] Run generation: 'tests/union_vector/union_vector_generated.h'
+[ 40%] Run generation: 'tests/native_type_test_generated.h'
+[ 41%] Run generation: 'tests/arrays_test_generated.h'
+[ 42%] Run generation: 'tests/monster_test_bfbs_generated.h'
+[ 43%] Run generation: 'tests/monster_extra_generated.h'
+[ 44%] Run generation: 'samples/monster_generated.h'
+[ 45%] All generated files were updated.
+[ 47%] Run generation: 'tests/monster_test.bfbs'
+[ 48%] Run generation: 'tests/arrays_test.bfbs'
+[ 49%] Run generation: 'samples/monster.bfbs'
+[ 49%] Built target generated_code
+Scanning dependencies of target flattests
+[ 50%] Building CXX object CMakeFiles/flattests.dir/src/idl_parser.cpp.o
+[ 51%] Building CXX object CMakeFiles/flattests.dir/src/idl_gen_text.cpp.o
+[ 52%] Building CXX object CMakeFiles/flattests.dir/src/reflection.cpp.o
+[ 54%] Building CXX object CMakeFiles/flattests.dir/src/util.cpp.o
+[ 55%] Building CXX object CMakeFiles/flattests.dir/src/idl_gen_fbs.cpp.o
+[ 56%] Building CXX object CMakeFiles/flattests.dir/tests/test.cpp.o
+[ 57%] Building CXX object CMakeFiles/flattests.dir/tests/test_assert.cpp.o
+[ 58%] Building CXX object CMakeFiles/flattests.dir/tests/test_builder.cpp.o
+[ 60%] Building CXX object CMakeFiles/flattests.dir/tests/native_type_test_impl.cpp.o
+[ 61%] Building CXX object CMakeFiles/flattests.dir/src/code_generators.cpp.o
+[ 62%] Linking CXX executable flattests
+[ 71%] Built target flattests
+Scanning dependencies of target flatsamplebfbs
+[ 72%] Building CXX object CMakeFiles/flatsamplebfbs.dir/src/idl_parser.cpp.o
+[ 74%] Building CXX object CMakeFiles/flatsamplebfbs.dir/src/idl_gen_text.cpp.o
+[ 75%] Building CXX object CMakeFiles/flatsamplebfbs.dir/src/reflection.cpp.o
+[ 76%] Building CXX object CMakeFiles/flatsamplebfbs.dir/src/util.cpp.o
+[ 77%] Building CXX object CMakeFiles/flatsamplebfbs.dir/samples/sample_bfbs.cpp.o
+[ 78%] Linking CXX executable flatsamplebfbs
+[ 80%] Built target flatsamplebfbs
+Scanning dependencies of target flathash
+[ 81%] Building CXX object CMakeFiles/flathash.dir/src/flathash.cpp.o
+[ 82%] Linking CXX executable flathash
+[ 82%] Built target flathash
+Scanning dependencies of target flatsampletext
+[ 83%] Building CXX object CMakeFiles/flatsampletext.dir/src/idl_parser.cpp.o
+[ 84%] Building CXX object CMakeFiles/flatsampletext.dir/src/idl_gen_text.cpp.o
+[ 85%] Building CXX object CMakeFiles/flatsampletext.dir/src/reflection.cpp.o
+[ 87%] Building CXX object CMakeFiles/flatsampletext.dir/src/util.cpp.o
+[ 88%] Building CXX object CMakeFiles/flatsampletext.dir/samples/sample_text.cpp.o
+[ 89%] Linking CXX executable flatsampletext
+[ 90%] Built target flatsampletext
+Scanning dependencies of target flatbuffers
+[ 91%] Building CXX object CMakeFiles/flatbuffers.dir/src/idl_parser.cpp.o
+[ 92%] Building CXX object CMakeFiles/flatbuffers.dir/src/idl_gen_text.cpp.o
+[ 94%] Building CXX object CMakeFiles/flatbuffers.dir/src/reflection.cpp.o
+[ 95%] Building CXX object CMakeFiles/flatbuffers.dir/src/util.cpp.o
+[ 96%] Linking CXX static library libflatbuffers.a
+[ 96%] Built target flatbuffers
+Scanning dependencies of target flatsamplebinary
+[ 97%] Building CXX object CMakeFiles/flatsamplebinary.dir/samples/sample_binary.cpp.o
+[ 98%] Linking CXX executable flatsamplebinary
+[100%] Built target flatsamplebinary
+
+
+
+root@96f413953c2f:/tmp/github.com+0x2F+google+0x2F+flatbuffers/flatbuffers-1.12.0/bu
+ild# make install
+[ 34%] Built target flatc
+[ 35%] All generated files were updated.
+[ 49%] Built target generated_code
+[ 71%] Built target flattests
+[ 80%] Built target flatsamplebfbs
+[ 82%] Built target flathash
+[ 90%] Built target flatsampletext
+[ 96%] Built target flatbuffers
+[100%] Built target flatsamplebinary
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/local/include/flatbuffers
+-- Installing: /usr/local/include/flatbuffers/base.h
+-- Installing: /usr/local/include/flatbuffers/registry.h
+-- Installing: /usr/local/include/flatbuffers/reflection.h
+-- Installing: /usr/local/include/flatbuffers/util.h
+-- Installing: /usr/local/include/flatbuffers/idl.h
+-- Installing: /usr/local/include/flatbuffers/code_generators.h
+-- Installing: /usr/local/include/flatbuffers/flexbuffers.h
+-- Installing: /usr/local/include/flatbuffers/stl_emulation.h
+-- Installing: /usr/local/include/flatbuffers/reflection_generated.h
+-- Installing: /usr/local/include/flatbuffers/flatbuffers.h
+-- Installing: /usr/local/include/flatbuffers/hash.h
+-- Installing: /usr/local/include/flatbuffers/flatc.h
+-- Installing: /usr/local/include/flatbuffers/minireflect.h
+-- Installing: /usr/local/include/flatbuffers/grpc.h
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatbuffersConfig.cmake
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatbuffersConfigVersion.cmake
+-- Installing: /usr/local/lib/libflatbuffers.a
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatbuffersTargets.cmake
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatbuffersTargets-release.cmake
+-- Installing: /usr/local/bin/flatc
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatcTargets.cmake
+-- Installing: /usr/local/lib/cmake/flatbuffers/FlatcTargets-release.cmake

@@ -149,7 +149,18 @@ binder =
 ---------------------------------------------------------------------------
 
 -- use latency to monitor / enforce packet and rule thresholds
-latency = { }
+--latency = {
+--    packet = {
+--	      max_time = 100,
+--		  fastpath = false,
+--    },
+--    rule = {
+--	      max_time = 100,
+--		  suspend = false,
+--        suspend_threshold = 1,
+--        max_suspend_time = 6000,
+--	  }
+--}
 
 -- use these to capture perf data for analysis and tuning
 profiler = { }
@@ -158,6 +169,69 @@ perf_monitor = { }
 ---------------------------------------------------------------------------
 -- 5. configure detection
 ---------------------------------------------------------------------------
+--inspection = { mode = 'inline' }
+
+--alerts = { stateful = true }
+
+--event_queue = { }
+
+-------------
+-- hyperscan
+-------------
+search_engine = {
+	-- show_fast_patterns = true,
+    search_method = "hyperscan"
+} 
+detection = {
+    hyperscan_literals = true,
+	pcre_to_regex = true
+} 
+
+-- Issue
+-- NFQ inline mode error (FATAL: Active response: can't open) #142 (https://github.com/snort3/snort3/issues/142)
+active = {
+	attempts = 2,
+    device = 'ip',
+--    device = 'enp0s8',
+--	dst_mac = '',
+--	max_responses = 255,
+--	min_interval = 64
+}
+
+daq =
+{
+    module_dirs =
+	{
+	    path = '/usr/local/lib/daq'
+	},
+    modules =
+    {
+        {
+            name = 'nfq',
+            mode = 'inline',
+            --variables = {
+            --    'debug',
+            --    'fail_open',
+            --    'queue_maxlen = 1024'
+            --}
+			variables = {
+				'fail_open',
+				'queue_maxlen = 4096'
+			}
+        },
+        --{
+        --    name = 'dump',
+        --    variables = { 'output=none' }
+        --},
+    },
+	inputs =
+	{
+	    '1'
+        --'enp0s8'
+	},
+	snaplen = 65535,
+	batch_size = 1024
+}
 
 references = default_references
 classifications = default_classifications
@@ -170,13 +244,70 @@ ips =
     -- use include for rules files; be sure to set your path
     -- note that rules files can include other rules files
     --include = 'snort3-community.rules'
+
+	-- The following include syntax is only valid for ...
+	-- RULE_PATH is typically set in snort_defaults.lua
+	rules = [[
+	    # include $BUILTIN_RULE_PATH/builtins.rules
+	
+	    # include $RULE_PATH/snort3-app-detect.rules
+	    # include $RULE_PATH/snort3-browser-chrome.rules
+		
+		# include $RULE_PATH/local.rules
+    ]],
+	
+	-- ISSUE:
+	-- https://github.com/snort3/snort3/issues/147
+	-- https://github.com/snort3/snort3/commit/75ec38edbfe6865a9cdcf308f3a68078378024d2
+    variables =
+    {
+        nets =
+        {
+	        HOME_NET = HOME_NET,
+	        EXTERNAL_NET = EXTERNAL_NET,
+	        DNS_SERVERS = DNS_SERVERS,
+	        FTP_SERVERS = FTP_SERVERS,
+	        HTTP_SERVERS = HTTP_SERVERS,
+	        SIP_SERVERS = SIP_SERVERS,
+	        SMTP_SERVERS = SMTP_SERVERS,
+	        SQL_SERVERS = SQL_SERVERS,
+	        SSH_SERVERS = SSH_SERVERS,
+	        TELNET_SERVERS = TELNET_SERVERS,
+        },
+	    paths = {
+	        RULE_PATH = RULE_PATH,
+	        BUILTIN_RULE_PATH = BUILTIN_RULE_PATH,
+	        PLUGIN_RULE_PATH = PLUGIN_RULE_PATH,
+	        WHITE_LIST_PATH = WHITE_LIST_PATH,
+	        BLACK_LIST_PATH = BLACK_LIST_PATH,
+	    },
+        ports =
+        {
+	        FTP_PORTS = FTP_PORTS,
+	        HTTP_PORTS = HTTP_PORTS,
+	        MAIL_PORTS = MAIL_PORTS,
+	        ORACLE_PORTS = ORACLE_PORTS,
+	        SIP_PORTS = SIP_PORTS,
+	        SSH_PORTS = SSH_PORTS,
+	        FILE_DATA_PORTS = FILE_DATA_PORTS,
+        }
+    }	
 }
 
-rewrite = { }
+--rewrite = {
+  -- disable_replace = true,
+--}
 
 -- use these to configure additional rule actions
 -- react = { }
+--react = { 
+  -- page = '/tmp/block.html',
+--}
+--payload_injector = { }
+--normalizer = { }
+
 -- reject = { }
+reject = { reset = "both", control = "all" }
 
 ---------------------------------------------------------------------------
 -- 6. configure filters
@@ -222,15 +353,22 @@ rate_filter =
 -- 7. configure outputs
 ---------------------------------------------------------------------------
 
+output = {
+	dump_payload = false,
+	logdir = '/var/log/snort',
+	verbose = true,
+}
+
 -- event logging
 -- you can enable with defaults from the command line with -A <alert_type>
 -- uncomment below to set non-default configs
---alert_csv = { }
+alert_csv = { }
 --alert_fast = { }
 --alert_full = { }
 --alert_json = { }
 alert_json = {
---	file = true, 
+	-- Output into file or STDOUT
+	file = true, 
 --	limit = 10, 
 --	fields = 'seconds action class b64_data dir dst_addr \
 --	    dst_ap dst_port eth_dst eth_len eth_src eth_type gid icmp_code \
@@ -238,25 +376,28 @@ alert_json = {
 --		pkt_len pkt_num priority proto rev rule service sid src_addr \
 --	    src_ap src_port target tcp_ack tcp_flags tcp_len tcp_seq \
 --		tcp_win tos ttl udp_len vlan timestamp',
+    --fields = 'timestamp pkt_num pkt_len pkt_gen src_ap dst_ap proto action rule msg'
 }
-alert_sfsocket = 
-{
-    file = '/dev/log',
-}
+--alert_sfsocket = 
+--{
+	-- file = '/run/systemd/journal/syslog',
+	-- When run as Docker container, mount Systemd syslog socket first
+	--file = '/tmp/syslog'
+--}
 --alert_syslog = { }
-alert_syslog = {
+--alert_syslog = {
 	-- facility = 'auth | authpriv | daemon | user | local0 | local1 | local2 | local3 | local4 | local5 | local6 | local7',
 	-- level = 'emerg | alert | crit | err | warning | notice | info | debug',
-	facility = 'user',
-	level = 'info',
-}
-alert_unixsocket = { }
-unified2 = { }
+	--facility = 'user',
+	--level = 'info',
+--}
+--alert_unixsocket = { }
+--unified2 = { }
 
 -- packet logging
 -- you can enable with defaults from the command line with -L <log_type>
 log_codecs = { }
---log_hext = { }
+log_hext = { }
 --log_pcap = { }
 
 -- additional logs

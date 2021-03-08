@@ -1,0 +1,1442 @@
+# Previous builds
+# Boost:
+# + 1.74.0
+# Hyperscan:
+# + v5.3.0
+
+# Depends
+# [Ragel](./snort3_dev-hyperscan_dep-tagel.txt) 
+# [PCRE](./snort3_dev-pcre.txt)
+# libsqlite3-dev - optional
+# libpcap-dev - optional
+
+root@96f413953c2f:/tmp# \
+mkdir -p /tmp/boost.org/users/download && \
+curl -sSL https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.gz | \
+tar -C /tmp/boost.org/users/download/ -zx
+
+root@96f413953c2f:/tmp/github.com# \
+mkdir -p intel/hyperscan-v5.4.0 && \
+curl -sSL https://github.com/intel/hyperscan/archive/v5.4.0.tar.gz | \
+tar -C ./intel/hyperscan-v5.4.0 --strip-components=1 -zx
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0# mkdir -p build && cd build 
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# lscpu | egrep 'sse3' 
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase avx2 invpcid rdseed
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# lscpu | egrep 'sse4_2|popcnt'
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti fsgsbase avx2 invpcid rdseed
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# \
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local \
+-DBOOST_ROOT=/tmp/boost.org/users/download/boost_1_75_0/ \
+-DCMAKE_BUILD_TYPE=Release \
+-DCMAKE_C_FLAGS="-march=corei7" -DCMAKE_CXX_FLAGS="-march=corei7" \
+-DFAT_RUNTIME=false ../
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test ARCH_64_BIT
+-- Performing Test ARCH_64_BIT - Success
+-- Performing Test ARCH_32_BIT
+-- Performing Test ARCH_32_BIT - Failed
+-- Build type RELEASE
+-- using release build
+-- Boost version: 1.75.0
+-- Found PythonInterp: /usr/bin/python3.6 (found version "3.6.9") 
+-- Build date: 2021-02-26
+-- Building static libraries
+-- gcc version 7.5.0
+-- g++ version 7.5.0
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file intrin.h
+-- Looking for include file intrin.h - not found
+-- Looking for C++ include intrin.h
+-- Looking for C++ include intrin.h - not found
+-- Looking for include file x86intrin.h
+-- Looking for include file x86intrin.h - found
+-- Looking for C++ include x86intrin.h
+-- Looking for C++ include x86intrin.h - found
+-- Looking for posix_memalign
+-- Looking for posix_memalign - found
+-- Looking for _aligned_malloc
+-- Looking for _aligned_malloc - not found
+-- Performing Test HAS_C_HIDDEN
+-- Performing Test HAS_C_HIDDEN - Success
+-- Performing Test HAS_CXX_HIDDEN
+-- Performing Test HAS_CXX_HIDDEN - Success
+-- Looking for _LIBCPP_VERSION
+-- Looking for _LIBCPP_VERSION - not found
+-- generator is Unix Makefiles
+-- Performing Test HAS_C_ATTR_IFUNC
+-- Performing Test HAS_C_ATTR_IFUNC - Success
+-- Performing Test HAVE_SSSE3
+-- Performing Test HAVE_SSSE3 - Success
+-- Performing Test HAVE_AVX2
+-- Performing Test HAVE_AVX2 - Failed
+-- Performing Test HAVE_AVX512
+-- Performing Test HAVE_AVX512 - Failed
+-- Performing Test HAVE_AVX512VBMI
+-- Performing Test HAVE_AVX512VBMI - Failed
+-- Building without AVX2 support
+-- Building without AVX512 support
+-- Building without AVX512VBMI support
+-- Performing Test HAVE_CC_BUILTIN_ASSUME_ALIGNED
+-- Performing Test HAVE_CC_BUILTIN_ASSUME_ALIGNED - Success
+-- Performing Test HAVE_CXX_BUILTIN_ASSUME_ALIGNED
+-- Performing Test HAVE_CXX_BUILTIN_ASSUME_ALIGNED - Success
+-- Performing Test HAVE__BUILTIN_CONSTANT_P
+-- Performing Test HAVE__BUILTIN_CONSTANT_P - Success
+-- Performing Test C_FLAG_Wvla
+-- Performing Test C_FLAG_Wvla - Success
+-- Performing Test C_FLAG_Wpointer_arith
+-- Performing Test C_FLAG_Wpointer_arith - Success
+-- Performing Test C_FLAG_Wstrict_prototypes
+-- Performing Test C_FLAG_Wstrict_prototypes - Success
+-- Performing Test C_FLAG_Wmissing_prototypes
+-- Performing Test C_FLAG_Wmissing_prototypes - Success
+-- Performing Test CXX_FLAG_Wvla
+-- Performing Test CXX_FLAG_Wvla - Success
+-- Performing Test CXX_FLAG_Wpointer_arith
+-- Performing Test CXX_FLAG_Wpointer_arith - Success
+-- Performing Test CC_SELF_ASSIGN
+-- Performing Test CC_SELF_ASSIGN - Failed
+-- Performing Test CXX_SELF_ASSIGN
+-- Performing Test CXX_SELF_ASSIGN - Failed
+-- Performing Test CC_PAREN_EQUALITY
+-- Performing Test CC_PAREN_EQUALITY - Failed
+-- Performing Test CXX_UNUSED_CONST_VAR
+-- Performing Test CXX_UNUSED_CONST_VAR - Success
+-- Performing Test CXX_IGNORED_ATTR
+-- Performing Test CXX_IGNORED_ATTR - Success
+-- Performing Test CXX_REDUNDANT_MOVE
+-- Performing Test CXX_REDUNDANT_MOVE - Failed
+-- Performing Test CXX_WEAK_VTABLES
+-- Performing Test CXX_WEAK_VTABLES - Failed
+-- Performing Test CXX_MISSING_DECLARATIONS
+-- Performing Test CXX_MISSING_DECLARATIONS - Success
+-- Performing Test CXX_UNUSED_LOCAL_TYPEDEFS
+-- Performing Test CXX_UNUSED_LOCAL_TYPEDEFS - Success
+-- Performing Test CXX_WUNUSED_VARIABLE
+-- Performing Test CXX_WUNUSED_VARIABLE - Success
+-- Performing Test CC_STRINGOP_OVERFLOW
+-- Performing Test CC_STRINGOP_OVERFLOW - Success
+-- Building for current host CPU: 
+-- Looking for mmap
+-- Looking for mmap - found
+-- Sphinx not found, unable to generate developer reference
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Checking for module 'libpcre>=8.41'
+--   Found libpcre, version 8.44
+-- PCRE version 8.41 or above
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Checking for module 'sqlite3'
+--   Found sqlite3, version 3.22.0
+-- Performing Test SQLITE_VERSION_OK
+-- Performing Test SQLITE_VERSION_OK - Success
+-- Looking for sqlite3_open_v2
+-- Looking for sqlite3_open_v2 - found
+-- Looking for C++ include pthread_np.h
+-- Looking for C++ include pthread_np.h - not found
+-- Looking for pthread_setaffinity_np
+-- Looking for pthread_setaffinity_np - found
+-- Looking for malloc_info
+-- Looking for malloc_info - found
+-- Looking for shmget
+-- Looking for shmget - found
+-- Performing Test BACKTRACE_LIBC
+-- Performing Test BACKTRACE_LIBC - Success
+-- Performing Test HAS_RDYNAMIC
+-- Performing Test HAS_RDYNAMIC - Success
+-- Looking for sigaltstack
+-- Looking for sigaltstack - found
+-- Looking for sigaction
+-- Looking for sigaction - found
+-- Looking for setrlimit
+-- Looking for setrlimit - found
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/github.com/intel/hyperscan-v5.4.0/build
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# make   
+[  0%] Generating src/parser/control_verbs.cpp
+[  0%] Generating src/parser/Parser.cpp
+Scanning dependencies of target hs_compile
+[  1%] Building CXX object CMakeFiles/hs_compile.dir/src/grey.cpp.o
+[  1%] Building CXX object CMakeFiles/hs_compile.dir/src/hs.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/hs.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  1%] Building CXX object CMakeFiles/hs_compile.dir/src/compiler/asserts.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/compiler/asserts.cpp:47:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  2%] Building CXX object CMakeFiles/hs_compile.dir/src/compiler/compiler.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/compiler/compiler.cpp:43:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  2%] Building CXX object CMakeFiles/hs_compile.dir/src/compiler/error.cpp.o
+[  2%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/engine_description.cpp.o
+[  3%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/fdr_compile.cpp.o
+[  3%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/fdr_compile_util.cpp.o
+[  4%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/fdr_confirm_compile.cpp.o
+[  4%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/fdr_engine_description.cpp.o
+[  4%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/flood_compile.cpp.o
+[  5%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/teddy_compile.cpp.o
+[  5%] Building CXX object CMakeFiles/hs_compile.dir/src/fdr/teddy_engine_description.cpp.o
+[  5%] Building CXX object CMakeFiles/hs_compile.dir/src/hwlm/hwlm_build.cpp.o
+[  6%] Building CXX object CMakeFiles/hs_compile.dir/src/hwlm/hwlm_literal.cpp.o
+[  6%] Building CXX object CMakeFiles/hs_compile.dir/src/hwlm/noodle_build.cpp.o
+[  6%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/accel_dfa_build_strat.cpp.o
+[  7%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/accelcompile.cpp.o
+[  7%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/castlecompile.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/castlecompile.cpp:46:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  7%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/dfa_build_strat.cpp.o
+[  8%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/dfa_min.cpp.o
+[  8%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/goughcompile.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/detail/adjacency_list.hpp:37,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_list.hpp:255,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_internal.h:45,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_dump.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  9%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/goughcompile_accel.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/detail/adjacency_list.hpp:37,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_list.hpp:255,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_internal.h:45,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_accel.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  9%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/goughcompile_reg.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/detail/adjacency_list.hpp:37,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_list.hpp:255,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_internal.h:45,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_dump.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/goughcompile_reg.cpp:30:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[  9%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/mcclellancompile.cpp.o
+[ 10%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/mcclellancompile_util.cpp.o
+[ 10%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/mcsheng_compile.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/mcsheng_compile.cpp:49:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 10%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/limex_compile.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfa/limex_compile.cpp:47:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 11%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/mpvcompile.cpp.o
+[ 11%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/nfa_build_util.cpp.o
+[ 11%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/rdfa.cpp.o
+[ 12%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/rdfa_graph.cpp.o
+[ 12%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/rdfa_merge.cpp.o
+[ 12%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/repeatcompile.cpp.o
+[ 13%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/shengcompile.cpp.o
+[ 13%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/shufticompile.cpp.o
+[ 14%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/tamaramacompile.cpp.o
+[ 14%] Building CXX object CMakeFiles/hs_compile.dir/src/nfa/trufflecompile.cpp.o
+[ 14%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 15%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_anchored_acyclic.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_anchored_acyclic.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 15%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_anchored_dots.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_anchored_dots.cpp:45:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 15%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_asserts.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_asserts.cpp:46:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 16%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_builder.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_builder.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 16%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_calc_components.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_calc_components.cpp:56:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 16%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_cyclic_redundancy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_cyclic_redundancy.cpp:63:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 17%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_depth.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_depth.cpp:34:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 17%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_dominators.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_dominators.cpp:38:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 18%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_edge_redundancy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_edge_redundancy.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 18%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_equivalence.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_equivalence.cpp:38:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 18%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_execute.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_execute.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 19%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_expr_info.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_expr_info.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 19%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_extparam.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_extparam.cpp:45:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 19%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_fixed_width.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_fixed_width.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 20%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_fuzzy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_fuzzy.cpp:35:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 20%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_haig.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_util.h:36,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_haig.cpp:38:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 20%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_holder.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_holder.cpp:31:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 21%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_is_equal.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_is_equal.cpp:39:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 21%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_lbr.cpp.o
+[ 21%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_literal_analysis.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_literal_analysis.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 22%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_literal_component.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_literal_component.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 22%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_literal_decorated.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_literal_decorated.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 23%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_mcclellan.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_mcclellan.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 23%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_limex.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_limex.cpp:46:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 23%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_limex_accel.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_limex_accel.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 24%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_misc_opt.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_misc_opt.cpp:68:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 24%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_netflow.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_netflow.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 24%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_prefilter.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_prefilter.cpp:52:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 25%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_prune.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_prune.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 25%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_puff.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_puff.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 25%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_redundancy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_redundancy.cpp:78:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 26%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_region.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_region.cpp:56:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 26%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_region_redundancy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_region_redundancy.cpp:39:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 26%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_repeat.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_util.h:36,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_repeat.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 27%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_reports.cpp.o
+[ 27%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_restructuring.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_restructuring.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 28%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_revacc.cpp.o
+[ 28%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_sep.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_sep.cpp:49:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 28%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_small_literal_set.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_small_literal_set.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 29%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_som.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 29%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_som_add_redundancy.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_add_redundancy.cpp:66:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 29%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_som_util.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_util.h:36,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_util.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 30%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_split.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_split.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 30%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_squash.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_som_util.h:36,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_squash.cpp:105:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 30%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_stop.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_stop.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 31%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_uncalc_components.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_uncalc_components.cpp:43:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 31%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_utf8.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_utf8.cpp:34:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 31%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_util.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 32%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_vacuous.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_vacuous.cpp:35:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 32%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_violet.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_violet.cpp:49:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 33%] Building CXX object CMakeFiles/hs_compile.dir/src/nfagraph/ng_width.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_width.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 33%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/AsciiComponentClass.cpp.o
+[ 33%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/Component.cpp.o
+[ 34%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentAlternation.cpp.o
+[ 34%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentAssertion.cpp.o
+[ 34%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentAtomicGroup.cpp.o
+[ 35%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentBackReference.cpp.o
+[ 35%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentBoundary.cpp.o
+[ 35%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentByte.cpp.o
+[ 36%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentClass.cpp.o
+[ 36%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentCondReference.cpp.o
+[ 37%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentEUS.cpp.o
+[ 37%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentEmpty.cpp.o
+[ 37%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentRepeat.cpp.o
+[ 38%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentSequence.cpp.o
+[ 38%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentVisitor.cpp.o
+[ 38%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ComponentWordBoundary.cpp.o
+[ 39%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ConstComponentVisitor.cpp.o
+[ 39%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/Parser.cpp.o
+[ 39%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/Utf8ComponentClass.cpp.o
+[ 40%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/buildstate.cpp.o
+[ 40%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/check_refs.cpp.o
+[ 40%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/control_verbs.cpp.o
+[ 41%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/logical_combination.cpp.o
+[ 41%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/parse_error.cpp.o
+[ 42%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/parser_util.cpp.o
+[ 42%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/prefilter.cpp.o
+[ 42%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/shortcut_literal.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/parser/shortcut_literal.cpp:48:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 43%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/ucp_table.cpp.o
+[ 43%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/unsupported.cpp.o
+[ 43%] Building CXX object CMakeFiles/hs_compile.dir/src/parser/utf8_validate.cpp.o
+[ 44%] Building CXX object CMakeFiles/hs_compile.dir/src/smallwrite/smallwrite_build.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/smallwrite/smallwrite_build.cpp:45:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 44%] Building CXX object CMakeFiles/hs_compile.dir/src/som/slot_manager.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/som/slot_manager_internal.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/som/slot_manager.cpp:36:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 44%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_add.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_add.cpp:30:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 45%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_add_mask.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_add_mask.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 45%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_anchored.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_anchored.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_anchored.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 45%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_bytecode.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_bytecode.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 46%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_castle.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_castle.cpp:31:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 46%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_compile.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_compile.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 47%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_convert.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_convert.cpp:33:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 47%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_dedupe.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_dedupe.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 47%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_engine_blob.cpp.o
+[ 48%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_exclusive.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_exclusive.h:42,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_exclusive.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 48%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_groups.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_groups.h:37,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_groups.cpp:34:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 48%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_infix.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_infix.cpp:35:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 49%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_instructions.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_program.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_instructions.h:41,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_instructions.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 49%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_lit_accel.cpp.o
+[ 49%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_long_lit.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_long_lit.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 50%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_lookaround.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_lookaround.cpp:34:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 50%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_matchers.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_matchers.h:37,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_matchers.cpp:34:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 50%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_merge.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_merge.cpp:37:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 51%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_misc.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_misc.cpp:30:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 51%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_program.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_program.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_program.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 52%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_role_aliasing.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_role_aliasing.cpp:32:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 52%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_scatter.cpp.o
+[ 52%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_build_width.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_impl.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_width.h:32,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_width.cpp:29:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 53%] Building CXX object CMakeFiles/hs_compile.dir/src/rose/rose_in_util.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_build_util.h:33,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/rose/rose_in_util.cpp:31:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 53%] Building CXX object CMakeFiles/hs_compile.dir/src/util/alloc.cpp.o
+[ 53%] Building CXX object CMakeFiles/hs_compile.dir/src/util/charreach.cpp.o
+[ 54%] Building CXX object CMakeFiles/hs_compile.dir/src/util/clique.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/detail/adjacency_list.hpp:37,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_list.hpp:255,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/clique.h:40,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/clique.cpp:33:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 54%] Building CXX object CMakeFiles/hs_compile.dir/src/util/compile_context.cpp.o
+[ 54%] Building CXX object CMakeFiles/hs_compile.dir/src/util/compile_error.cpp.o
+[ 55%] Building CXX object CMakeFiles/hs_compile.dir/src/util/depth.cpp.o
+[ 55%] Building CXX object CMakeFiles/hs_compile.dir/src/util/dump_mask.cpp.o
+[ 56%] Building CXX object CMakeFiles/hs_compile.dir/src/util/fatbit_build.cpp.o
+[ 56%] Building CXX object CMakeFiles/hs_compile.dir/src/util/multibit_build.cpp.o
+[ 56%] Building CXX object CMakeFiles/hs_compile.dir/src/util/report_manager.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/report_manager.cpp:38:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 57%] Building CXX object CMakeFiles/hs_compile.dir/src/util/target_info.cpp.o
+[ 57%] Building CXX object CMakeFiles/hs_compile.dir/src/util/ue2string.cpp.o
+[ 57%] Built target hs_compile
+Scanning dependencies of target hs_exec
+[ 57%] Building C object CMakeFiles/hs_exec.dir/src/crc32.c.o
+[ 58%] Building C object CMakeFiles/hs_exec.dir/src/runtime.c.o
+[ 58%] Building C object CMakeFiles/hs_exec.dir/src/stream_compress.c.o
+[ 58%] Building C object CMakeFiles/hs_exec.dir/src/fdr/fdr.c.o
+[ 59%] Building C object CMakeFiles/hs_exec.dir/src/fdr/teddy.c.o
+[ 59%] Building C object CMakeFiles/hs_exec.dir/src/hwlm/hwlm.c.o
+[ 59%] Building C object CMakeFiles/hs_exec.dir/src/hwlm/noodle_engine.c.o
+[ 60%] Building C object CMakeFiles/hs_exec.dir/src/nfa/accel.c.o
+[ 60%] Building C object CMakeFiles/hs_exec.dir/src/nfa/castle.c.o
+[ 61%] Building C object CMakeFiles/hs_exec.dir/src/nfa/gough.c.o
+[ 61%] Building C object CMakeFiles/hs_exec.dir/src/nfa/lbr.c.o
+[ 61%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_accel.c.o
+[ 62%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_native.c.o
+[ 62%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_64.c.o
+[ 62%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_simd128.c.o
+[ 63%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_simd256.c.o
+[ 63%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_simd384.c.o
+[ 63%] Building C object CMakeFiles/hs_exec.dir/src/nfa/limex_simd512.c.o
+[ 64%] Building C object CMakeFiles/hs_exec.dir/src/nfa/mcclellan.c.o
+[ 64%] Building C object CMakeFiles/hs_exec.dir/src/nfa/mcsheng.c.o
+[ 64%] Building C object CMakeFiles/hs_exec.dir/src/nfa/mcsheng_data.c.o
+[ 65%] Building C object CMakeFiles/hs_exec.dir/src/nfa/mpv.c.o
+[ 65%] Building C object CMakeFiles/hs_exec.dir/src/nfa/nfa_api_dispatch.c.o
+[ 66%] Building C object CMakeFiles/hs_exec.dir/src/nfa/repeat.c.o
+[ 66%] Building C object CMakeFiles/hs_exec.dir/src/nfa/sheng.c.o
+[ 66%] Building C object CMakeFiles/hs_exec.dir/src/nfa/shufti.c.o
+[ 67%] Building C object CMakeFiles/hs_exec.dir/src/nfa/tamarama.c.o
+[ 67%] Building C object CMakeFiles/hs_exec.dir/src/nfa/truffle.c.o
+[ 67%] Building C object CMakeFiles/hs_exec.dir/src/som/som_runtime.c.o
+[ 68%] Building C object CMakeFiles/hs_exec.dir/src/som/som_stream.c.o
+[ 68%] Building C object CMakeFiles/hs_exec.dir/src/rose/block.c.o
+[ 68%] Building C object CMakeFiles/hs_exec.dir/src/rose/catchup.c.o
+[ 69%] Building C object CMakeFiles/hs_exec.dir/src/rose/init.c.o
+[ 69%] Building C object CMakeFiles/hs_exec.dir/src/rose/stream.c.o
+[ 69%] Building C object CMakeFiles/hs_exec.dir/src/rose/match.c.o
+[ 70%] Building C object CMakeFiles/hs_exec.dir/src/rose/program_runtime.c.o
+[ 70%] Building C object CMakeFiles/hs_exec.dir/src/util/multibit.c.o
+[ 71%] Building C object CMakeFiles/hs_exec.dir/src/util/simd_utils.c.o
+[ 71%] Building C object CMakeFiles/hs_exec.dir/src/util/state_compress.c.o
+[ 71%] Building C object CMakeFiles/hs_exec.dir/src/database.c.o
+[ 72%] Building C object CMakeFiles/hs_exec.dir/src/alloc.c.o
+[ 72%] Building C object CMakeFiles/hs_exec.dir/src/scratch.c.o
+[ 72%] Building C object CMakeFiles/hs_exec.dir/src/util/cpuid_flags.c.o
+[ 72%] Built target hs_exec
+Scanning dependencies of target ragel_Parser
+[ 72%] Built target ragel_Parser
+Scanning dependencies of target hs
+[ 72%] Building C object CMakeFiles/hs.dir/src/hs_version.c.o
+[ 72%] Building C object CMakeFiles/hs.dir/src/hs_valid_platform.c.o
+[ 73%] Linking CXX static library lib/libhs.a
+[ 73%] Built target hs
+Scanning dependencies of target hs_runtime
+[ 74%] Building C object CMakeFiles/hs_runtime.dir/src/hs_version.c.o
+[ 74%] Building C object CMakeFiles/hs_runtime.dir/src/hs_valid_platform.c.o
+[ 74%] Linking C static library lib/libhs_runtime.a
+[ 74%] Built target hs_runtime
+Scanning dependencies of target ragel_ExpressionParser
+[ 75%] Generating ExpressionParser.cpp
+[ 75%] Built target ragel_ExpressionParser
+Scanning dependencies of target expressionutil
+[ 76%] Building CXX object util/CMakeFiles/expressionutil.dir/expressions.cpp.o
+[ 76%] Building CXX object util/CMakeFiles/expressionutil.dir/ExpressionParser.cpp.o
+[ 77%] Linking CXX static library ../lib/libexpressionutil.a
+[ 77%] Built target expressionutil
+Scanning dependencies of target crosscompileutil
+[ 78%] Building CXX object util/CMakeFiles/crosscompileutil.dir/cross_compile.cpp.o
+[ 78%] Linking CXX static library ../lib/libcrosscompileutil.a
+[ 78%] Built target crosscompileutil
+Scanning dependencies of target corpusomatic
+[ 78%] Building CXX object util/CMakeFiles/corpusomatic.dir/ng_corpus_editor.cpp.o
+[ 78%] Building CXX object util/CMakeFiles/corpusomatic.dir/ng_corpus_generator.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/util/ng_corpus_generator.cpp:39:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 79%] Building CXX object util/CMakeFiles/corpusomatic.dir/ng_corpus_properties.cpp.o
+[ 79%] Building CXX object util/CMakeFiles/corpusomatic.dir/ng_find_matches.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng_util.h:39,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/util/ng_find_matches.cpp:38:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 79%] Linking CXX static library ../lib/libcorpusomatic.a
+[ 79%] Built target corpusomatic
+Scanning dependencies of target databaseutil
+[ 79%] Building CXX object util/CMakeFiles/databaseutil.dir/database_util.cpp.o
+[ 80%] Linking CXX static library ../lib/libdatabaseutil.a
+[ 80%] Built target databaseutil
+Scanning dependencies of target unit-hyperscan
+[ 80%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/gtest/gtest-all.cc.o
+[ 81%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/allocators.cpp.o
+[ 81%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/arg_checks.cpp.o
+[ 81%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/bad_patterns.cpp.o
+[ 82%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/behaviour.cpp.o
+[ 82%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/expr_info.cpp.o
+[ 82%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/extparam.cpp.o
+[ 83%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/identical.cpp.o
+[ 83%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/literals.cpp.o
+[ 84%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/logical_combination.cpp.o
+[ 84%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/main.cpp.o
+[ 84%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/multi.cpp.o
+[ 85%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/order.cpp.o
+[ 85%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/scratch_op.cpp.o
+[ 85%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/scratch_in_use.cpp.o
+[ 86%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/serialize.cpp.o
+[ 86%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/single.cpp.o
+[ 86%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/som.cpp.o
+[ 87%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/stream_op.cpp.o
+[ 87%] Building CXX object unit/CMakeFiles/unit-hyperscan.dir/hyperscan/test_util.cpp.o
+[ 88%] Linking CXX executable ../bin/unit-hyperscan
+[ 88%] Built target unit-hyperscan
+Scanning dependencies of target hsbench
+[ 89%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/data_corpus.cpp.o
+[ 89%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/engine.cpp.o
+[ 90%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/engine_hyperscan.cpp.o
+[ 90%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/heapstats.cpp.o
+[ 90%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/huge.cpp.o
+[ 91%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/main.cpp.o
+[ 91%] Building CXX object tools/hsbench/CMakeFiles/hsbench.dir/sqldb.cpp.o
+[ 91%] Linking CXX executable ../../bin/hsbench
+[ 91%] Built target hsbench
+Scanning dependencies of target hscheck
+[ 92%] Building CXX object tools/hscheck/CMakeFiles/hscheck.dir/main.cpp.o
+[ 92%] Linking CXX executable ../../bin/hscheck
+[ 92%] Built target hscheck
+Scanning dependencies of target ragel_ColliderCorporaParser
+[ 92%] Generating ColliderCorporaParser.cpp
+[ 92%] Built target ragel_ColliderCorporaParser
+Scanning dependencies of target hscollider
+[ 93%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/Corpora.cpp.o
+[ 93%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/FileCorpora.cpp.o
+[ 93%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/ColliderCorporaParser.cpp.o
+[ 94%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/NfaGeneratedCorpora.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/tools/hscollider/NfaGeneratedCorpora.cpp:40:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 94%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/GraphTruth.cpp.o
+In file included from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/adjacency_iterator.hpp:13:0,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/reverse_graph.hpp:9,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/transpose_graph.hpp:16,
+                 from /tmp/boost.org/users/download/boost_1_75_0/boost/graph/strong_components.hpp:267,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/util/graph.h:43,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/src/nfagraph/ng.h:44,
+                 from /tmp/github.com/intel/hyperscan-v5.4.0/tools/hscollider/GraphTruth.cpp:43:
+/tmp/boost.org/users/download/boost_1_75_0/boost/detail/iterator.hpp:13:37: note: #pragma message: This header is deprecated. Use <iterator> instead.
+ BOOST_HEADER_DEPRECATED("<iterator>")
+                                     ^
+[ 95%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/GroundTruth.cpp.o
+[ 95%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/UltimateTruth.cpp.o
+[ 95%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/args.cpp.o
+[ 96%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/limit.cpp.o
+[ 96%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/pcre_util.cpp.o
+[ 96%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/sig.cpp.o
+[ 97%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/Thread.cpp.o
+[ 97%] Building CXX object tools/hscollider/CMakeFiles/hscollider.dir/main.cpp.o
+[ 97%] Linking CXX executable ../../bin/hscollider
+[ 97%] Built target hscollider
+Scanning dependencies of target pcapscan
+[ 97%] Building CXX object examples/CMakeFiles/pcapscan.dir/pcapscan.cc.o
+[ 98%] Linking CXX executable ../bin/pcapscan
+[ 98%] Built target pcapscan
+Scanning dependencies of target patbench
+[ 99%] Building CXX object examples/CMakeFiles/patbench.dir/patbench.cc.o
+[ 99%] Linking CXX executable ../bin/patbench
+[ 99%] Built target patbench
+Scanning dependencies of target simplegrep
+[100%] Building C object examples/CMakeFiles/simplegrep.dir/simplegrep.c.o
+[100%] Linking CXX executable ../bin/simplegrep
+[100%] Built target simplegrep
+
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# make install
+[ 57%] Built target hs_compile
+[ 72%] Built target hs_exec
+[ 72%] Built target ragel_Parser
+[ 73%] Built target hs
+[ 74%] Built target hs_runtime
+[ 75%] Built target ragel_ExpressionParser
+[ 77%] Built target expressionutil
+[ 78%] Built target crosscompileutil
+[ 79%] Built target corpusomatic
+[ 80%] Built target databaseutil
+[ 88%] Built target unit-hyperscan
+[ 91%] Built target hsbench
+[ 92%] Built target hscheck
+[ 92%] Built target ragel_ColliderCorporaParser
+[ 97%] Built target hscollider
+[ 98%] Built target pcapscan
+[ 99%] Built target patbench
+[100%] Built target simplegrep
+Install the project...
+-- Install configuration: "RELEASE"
+-- Installing: /usr/local/lib/pkgconfig/libhs.pc
+-- Installing: /usr/local/include/hs/hs.h
+-- Installing: /usr/local/include/hs/hs_common.h
+-- Installing: /usr/local/include/hs/hs_compile.h
+-- Installing: /usr/local/include/hs/hs_runtime.h
+-- Installing: /usr/local/lib/libhs_runtime.a
+-- Installing: /usr/local/lib/libhs.a
+-- Installing: /usr/local/share/doc/hyperscan/examples/simplegrep.c
+-- Installing: /usr/local/share/doc/hyperscan/examples/pcapscan.cc
+-- Installing: /usr/local/share/doc/hyperscan/examples/patbench.cc
+-- Installing: /usr/local/share/doc/hyperscan/examples/README.md
+
+root@96f413953c2f:/tmp/github.com/intel/hyperscan-v5.4.0/build# ./bin/unit-hyperscan 
+[==========] Running 3746 tests from 33 test cases.
+[----------] Global test environment set-up.
+[----------] 9 tests from CustomAllocator
+[ RUN      ] CustomAllocator.DatabaseInfoBadAlloc
+[       OK ] CustomAllocator.DatabaseInfoBadAlloc (1 ms)
+### ...
+[----------] Global test environment tear-down
+[==========] 3746 tests from 33 test cases ran. (252805 ms total)
+[  PASSED  ] 3746 tests.

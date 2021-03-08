@@ -6,126 +6,182 @@
 
 #;; Detect ICMP traffic
 
-alert icmp any any -> any any (msg:"ICMP Traffic Detected";sid:10000002;)
+alert icmp any any -> any any (msg:"ICMP Traffic Detected"; sid:10000002;)
 
 #;; Bad rule for validate
 
-# alert ip any any -> any any (msg: "IP Packet detected";sid:10000003;)
+# IP 
+#alert ip any any -> any any (
+#    msg:"IP Packet detected";
+#    flow:to_server,established;
+#    ip_proto: 4;
+#    sid:10000201; 
+#)
+
+# TCP
+alert tcp any any -> any 3306 (
+    msg:"TCP/IPv4 Packet detected";
+    flow:to_server,established;
+    ip_proto: 4;
+    pcre:"/MySQL_Server_/";
+    #sd_pattern:"\d{11}",threshold 1;
+    #regex:'/\d{11}/';
+    sid:10000211; 
+)
+
+#alert tcp any any -> any any (
+#    msg:"HTTP traffic detected";
+#    flow:to_server,established;
+#    pcre:"/\d{11}/";
+#    regex:"/\d{11}/";
+#    sid:10000212; 
+#)
+
+# drop tcp any any -> any any ( msg:"tcp/ip traffic detected";flow:to_server,established;sd_pattern:"\w+", threshold 1;sid:10000213; )
 
 #
 # using the http_uri content option after each content match
 #
-alert http any any -> any any
+reject http any any -> any any
+#react http any any -> any any
+#rewrite http any any -> any any
 (
     msg: "Snort 3 http_uri sticky buffer Example";
-    flow: to_server,established; 
-    http_uri;
-    content: "malicious";
-    content: "vulnerability", within 20; 
-    sid:10000004;
+    flow:to_server,established;
+    #http_uri:path;
+    http_client_body;
+    #hexdump;
+    content: "汉字",nocase;
+    #regex:"/cluster[A-Z]/";
+    # content: "vulnerability", within 20; 
+    sid:10000101;
 )
 
 #
 # target the content match at a specific field within the HTTP request header (case insensitive)
 #
-alert http
+reject http
 (
-    msg: "Snort 3 http_header sticky buffer Example";
+    msg: "Snort 3 http_uri sticky buffer Example";
     http_header:field user-agent;
+    #hexdump;
     content: "fake";
-    sid:2;
+    sid:10000102;
 )
 
 #
 # pcre
 #
-alert http any any -> any any
+react http any any -> any any
 (
     msg: "Snort 3 http_uri sticky buffer Example";
-    http_uri;
-    content: "/pcre=";
-    pcre:"/\/pcre\x3d\w+/";
-    sid:3;
+    # http_uri;
+    # http_client_body;
+    # content: "/pcre=";
+    # pcre:"/\/pcre\x3d\w+/";
+    # flow:established,to_client;
+    http_raw_body;
+    regex: "/httpbin\.org/";
+    content:"me@kennethreitz.org";
+    # pcre:"/abcdefghijklmn/";
+    sid:10000103;
+)
+
+rewrite http any any -> any any
+(
+    msg: "Snort 3 http_uri sticky buffer Example";
+    # http_uri;
+    # http_client_body;
+    # content: "/pcre=";
+    # pcre:"/\/pcre\x3d\w+/";
+    flow:established;
+    # http_raw_body;
+    # regex: "/react/";
+    content:"react";
+    # pcre:"/abcdefghijklmn/";
+    sid:10000203;
 )
 
 #
 # URL Length with "bufferlen" Option
 #
-alert http any any -> any any
-(
-    msg: "Snort 3 http_uri sticky buffer - bufferlen";
-    http_uri;
-    content:"/tmp";
-    bufferlen:<40;
-    sid:4;
-)
+#alert http any any -> any any
+#(
+#    msg: "Snort 3 http_uri sticky buffer - bufferlen";
+#    flow: to_server,established; 
+#    http_uri;
+#    # content:"get";
+#    pcre: "/(get|post|delete|put)/";
+#    regex: "/(get|post|delete|put)/";
+#    # bufferlen:<40;
+#    sid:10000104;
+#)
 
 #;; User-Agent Length with "bufferlen" Option
 
-alert http any any -> any any
-(
-msg: "Snort 3 http_uri sticky buffer Example";
-http_header:field user-agent;
-content:"malicious";
-bufferlen:=10;
-sid:5;
-)
+#alert http any any -> any any
+#(
+#msg: "Snort 3 http_uri sticky buffer Example";
+#http_header:field user-agent;
+#content:"malicious";
+#bufferlen:=10;
+#sid:5;
+#)
 
-#
 # detecting malicious content traversing the network over HTTP (download) and SMTP (upload)
-#
-alert file
-(
-    msg:"Alert File example";
-    file_data;
-    content:"malicious-vulnerable";
-    sid:6;
-)
+
+#alert file
+#(
+#    msg:"Alert File example";
+#    file_data;
+#    content:"malicious-vulnerable";
+#    sid:6;
+#)
 
 #;; Detect Single File Type
 
-alert file any any -> any any \
-( \
-    msg: "PDF File Detected"; \
-    file_type: "PDF"; \
-    sid:8; \
-)
+#alert file any any -> any any
+#(
+#    msg: "PDF File Detected";
+#    file_type: "PDF";
+#    sid:8;
+#)
 
 #;; Detect Single File Type with Version
 
-alert file any any -> any any \
-( \
-    msg: "PDF File version 1.5 Detected"; \
-    file_type: "PDF,1.5"; \
-    sid:9; \
-)
+#alert file any any -> any any 
+#(
+#    msg: "PDF File version 1.5 Detected";
+#    file_type: "PDF,1.5";
+#    sid:9;
+#)
 
 #;; Detect Single File Type with Multiple Versions
 
-alert file any any -> any any \
-( \
-    msg: "PDF File version 1.5 Detected"; \
-    file_type: "PDF,1.5,1.7"; \
-    sid:10; \
-)
+#alert file any any -> any any
+#(
+#    msg: "PDF File version 1.5 Detected"; \
+#    file_type: "PDF,1.5,1.7";
+#    sid:10;
+#)
 
 #;; Detect Multiple File Types
 
-alert file any any -> any any \
-( \
-    msg: "PDF or MSEXE Files Detected"; \
-    file_type: "PDF MSEXE"; \
-    sid:11; \
-)
+#alert file any any -> any any
+#(
+#    msg: "PDF or MSEXE Files Detected";
+#    file_type: "PDF MSEXE";
+#    sid:11;
+#)
 
 #;; Detect Multiple File Types and Versions
 
-alert file any any -> any any \
-( \
-    msg: "PDF File version 1.5 Detected"; \
-    file_type: "PDF,1.5,1.7 RAR,1.1"; \
-    sid:12; \
-)
+#alert file any any -> any any
+#(
+#    msg: "PDF File version 1.5 Detected";
+#    file_type: "PDF,1.5,1.7 RAR,1.1";
+#    sid:12;
+#)
 
 #;; Application Detection with OpenAppID (ODP)
 
@@ -139,21 +195,33 @@ alert file any any -> any any \
 #
 #;; ‘Service’ Key in Metadata
 #
-alert tcp any any -> any any
-(
-    msg:"Service Key Example";
-    content:"/svc=";
-    service:http, smtp;
-    sid:14;
-)
+#alert tcp any any -> any any
+#(
+#    msg:"Service Key Example";
+#    content:"/svc=";
+#    service:http, smtp;
+#    sid:14;
+#)
 
 #
 #;; Rule Remarks Option
 #
-alert tcp any any -> any any
-(
-    msg: "rem option Example";
-    content:"/rem=";
-    rem: "tlp white";
-    sid:15;
-)
+#alert tcp any any -> any any
+#(
+#    msg: "rem option Example";
+#    content:"/rem=";
+#    rem: "tlp white";
+#    sid:15;
+#)
+
+#
+#;; 
+#
+#rewrite http any any -> any any
+#(
+#    msg: "Rewrite Example";
+#    http_uri;
+#    content:"anything", nocase;
+#    replace: "anything/rewrite";
+#    sid:10000115;
+#)

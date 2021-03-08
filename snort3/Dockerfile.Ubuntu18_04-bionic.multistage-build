@@ -10,12 +10,12 @@ FROM ubuntu:18.04 as builder
 COPY ./build-dep.sh /build.sh 
 
 RUN set -xe; \
-    # sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list; 
-    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g;s%http://security.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g' /etc/apt/sources.list;
-    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.yun-idc.com/ubuntu/%g' /etc/apt/sources.list;
-    # sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list;
+    `# sed -i 's%http://archive.ubuntu.com/%http://cn.archive.ubuntu.com/%g;s%http://security.ubuntu.com/%http://cn.archive.ubuntu.com/%g' /etc/apt/sources.list;` \ 
+    `# sed -i 's%http://archive.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g;s%http://security.ubuntu.com/%http://mirrors.aliyun.com/ubuntu/%g' /etc/apt/sources.list;` \
+    `# sed -i 's%http://archive.ubuntu.com/%http://mirrors.yun-idc.com/ubuntu/%g' /etc/apt/sources.list;` \
+    `# sed -i 's%http://archive.ubuntu.com/%http://mirrors.tuna.tsinghua.edu.cn/ubuntu/%g' /etc/apt/sources.list;` \
 	\
-    /build.sh init
+    /build.sh init --apt-mirror http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
 
 RUN /build.sh luajit2
 RUN /build.sh safeclib
@@ -74,8 +74,10 @@ RUN set -xe; \
         libmaxminddb0 \
         libunwind8 \
         libyaml-cpp0.5v5 \
-        libnetfilter-queue1 \
+        \
         libmnl0 \
+        libnetfilter-queue1 \
+        \
         uuid \
         \
         flex bison \

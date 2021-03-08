@@ -1,15 +1,5 @@
-builtins/
-etc/
-rules/
-odp/
-snort3-community-rules/
-Changing-from-IDS-to-IPS-with-NFQueue
-ip-block-list
-
-log/
-ubuntu-bionic/
+snort.org/
 vol-mnt/
-
 *.csv
 *.log
 *.bz2

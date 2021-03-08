@@ -7,7 +7,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export DAQ_VERSION=v3.0.0-beta2
+export DAQ_VERSION=v3.0.0
 export DNET_VERSION=libdnet-1.14
 export HWLOC_VERSION=hwloc-2.3.0
 export LUAJIT_VERSION=v2.1-20201027
@@ -24,7 +24,7 @@ export BOOST_VERSION=boost_1_74_0
 export HYPERSCAN_VERSION=v5.3.0
 export FLATBUFFERS_VERSION=v1.12.0
 
-export SNORT_VERSION=3.0.3-5
+export SNORT_VERSION=3.1.0.0
 export SNORT_RULES_SNAPSHOT=3000
 
 ### Nginx and ModSecurity
@@ -212,6 +212,7 @@ build_openssl()
 "
 }
 
+# libsafec
 build_safeclib()
 {
 	echo "To build Safeclib..."
@@ -319,7 +320,9 @@ build_gperftools()
 "
 }
 
-### colm === https://github.com/adrian-thurston/colm
+# colm
+# - http://www.colm.net/open-source/colm/
+# - https://github.com/adrian-thurston/colm
 build_colm()
 {
 	echo "To build Colm..."
@@ -360,7 +363,9 @@ build_colm()
 "	
 }
 
-### ragel === https://github.com/adrian-thurston/ragel
+# ragel
+# - http://www.colm.net/open-source/ragel/
+# - https://github.com/adrian-thurston/ragel
 build_ragel()
 {
     build_colm
@@ -422,6 +427,8 @@ fetch_boost()
 	echo "$src"
 }
 
+# hyperscan
+# - http://intel.github.io/hyperscan/dev-reference/getting_started.html#very-quick-start
 build_hyperscan()
 {
 	echo "To build Hyperscan..."
@@ -700,6 +707,8 @@ build_hwloc()
 "
 }
 
+# flatbuffers
+# - https://google.github.io/flatbuffers/flatbuffers_guide_building.html
 build_flatbuffers()
 {
 	echo "To build flatbuffers..."
@@ -889,7 +898,7 @@ clean_builds()
     find /usr/local -name "*.a" -print | xargs /bin/rm
 }
 
-if [ ! -e "$BUILD_PATH" ]; then
+if [ ! -d "$BUILD_PATH" ]; then
   mkdir --verbose -p "$BUILD_PATH"
 fi
 
@@ -944,12 +953,9 @@ case $cmds in
 	libdaq) build_libdaq;;
 
   *)
-    rmdir $BUILD_PATH
     echo "Execute: $(basename $0) <command>
       Commands: deps-and-opts-with-hyperscan, snort3, all
 " >> /dev/stderr
 	exit 1
     ;;
 esac
-
-
